@@ -1,0 +1,155 @@
+/* Language switch ("English · Español"), see langswitch.js.
+ *
+ * Self-contained: it may sit outside .lam-ui (the library header), so every
+ * colour and font falls back when no --lam-* theme is set, and every rule
+ * carries at least two classes so a host's own `header span` rules (0,1,2)
+ * cannot restyle its parts. The checked option is set in ink with an accent
+ * underline, the other muted; a muted dot sits between. Compact ("EN · ES")
+ * for narrow places. 32 px tall for a mouse, 44 × 44 px targets on touch.
+ */
+.lam-lang[role='radiogroup'] {
+  --lam-lang-ink: var(--lam-ink, #1c1a17);
+  --lam-lang-muted: var(--lam-ink-2, color-mix(in srgb, #1c1a17 70%, #fff));
+  --lam-lang-faint: var(--lam-ink-4, color-mix(in srgb, #1c1a17 38%, #fff));
+  --lam-lang-accent: var(--lam-accent, #9e2b25);
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  font: 450 12.5px/1 var(--lam-sans, ui-sans-serif, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif);
+  letter-spacing: 0.01em;
+  text-transform: none;
+  white-space: nowrap;
+  color: var(--lam-lang-muted);
+  pointer-events: auto;
+}
+.lam-lang .lam-lang-opt {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  min-width: 32px;
+  height: 100%;
+  margin: 0;
+  padding: 0 6px;
+  border: 0;
+  border-radius: 8px;
+  background: none;
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.18s;
+}
+.lam-lang .lam-lang-opt:hover {
+  color: var(--lam-lang-ink);
+}
+.lam-lang .lam-lang-opt[aria-checked='true'] {
+  font-weight: 560;
+  color: var(--lam-lang-ink);
+  cursor: default;
+}
+.lam-lang .lam-lang-opt:focus {
+  outline: none;
+}
+.lam-lang .lam-lang-opt:focus-visible {
+  outline: 2px solid var(--lam-lang-accent);
+  outline-offset: -2px;
+}
+.lam-lang .lam-lang-long,
+.lam-lang .lam-lang-short {
+  display: inline;
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: none;
+  color: inherit;
+  /* the checked option's accent underline (a colour change, never a slide) */
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-decoration-color: transparent;
+  text-underline-offset: 5px;
+  transition: text-decoration-color 0.2s;
+}
+.lam-lang .lam-lang-opt[aria-checked='true'] > span {
+  text-decoration-color: var(--lam-lang-accent);
+}
+.lam-lang .lam-lang-short {
+  display: none;
+  letter-spacing: 0.08em;
+}
+.lam-lang .lam-lang-dot {
+  display: inline;
+  margin: 0;
+  font: inherit;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--lam-lang-faint);
+}
+
+/* compact: EN · ES */
+.lam-lang.lam-lang--compact .lam-lang-long {
+  display: none;
+}
+.lam-lang.lam-lang--compact .lam-lang-short {
+  display: inline;
+}
+@media (max-width: 480px) {
+  .lam-lang.lam-lang--auto .lam-lang-long {
+    display: none;
+  }
+  .lam-lang.lam-lang--auto .lam-lang-short {
+    display: inline;
+  }
+}
+
+/* touch screens: 44 × 44 px targets (WCAG 2.5.5), as every Lámina control */
+@media (hover: none), (pointer: coarse) {
+  .lam-lang[role='radiogroup'] {
+    height: 44px;
+  }
+  .lam-lang .lam-lang-opt {
+    min-width: 44px;
+  }
+}
+
+/* the first switch to a language loads its texts: the new choice breathes */
+.lam-lang[aria-busy='true'] {
+  cursor: progress;
+}
+.lam-lang[aria-busy='true'] .lam-lang-opt[aria-checked='true'] > span {
+  animation: lam-lang-busy 0.8s ease-in-out 0.25s infinite alternate;
+}
+@keyframes lam-lang-busy {
+  to {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lam-lang .lam-lang-opt,
+  .lam-lang .lam-lang-opt > span {
+    transition: none;
+  }
+  .lam-lang[aria-busy='true'] .lam-lang-opt[aria-checked='true'] > span {
+    animation: none;
+  }
+}
+
+/* forced colours replace a transparent underline with the text colour: only
+   the checked option keeps one (in Highlight), the other has none */
+@media (forced-colors: active) {
+  .lam-lang .lam-lang-long,
+  .lam-lang .lam-lang-short {
+    text-decoration-line: none;
+  }
+  .lam-lang .lam-lang-opt[aria-checked='true'] > span {
+    text-decoration-line: underline;
+    text-decoration-color: Highlight;
+  }
+}

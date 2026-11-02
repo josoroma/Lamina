@@ -1,0 +1,2051 @@
+/* Lámina UI — the quiet chrome around the 3D book.
+ *
+ * Everything is scoped under .lam-ui and themed with --lam-* custom
+ * properties (ui.setTheme writes accent / ink / paper). The look: white
+ * glass on a white stage, hairlines instead of borders, letter-spaced small
+ * caps for metadata, a serif for anything that is content (plate names,
+ * binomials, captions, reading text). Motion is short and eased; with
+ * [data-reduced-motion] every transition is removed. Layout variants are
+ * driven by attributes the script sets from the same media queries
+ * ([data-compact] ≤ 640 px, [data-coarse] touch) and from the App's framing
+ * ([data-single-page]: the camera shows one page, the verso is off screen),
+ * so CSS and JS never disagree.
+ */
+
+.lam-ui {
+  --lam-ink: #1c1a17;
+  --lam-paper: #fbf8f1;
+  --lam-accent: #9e2b25;
+  --lam-accent-text: var(--lam-accent); /* small accent text; setTheme darkens a bright accent to AA */
+  --lam-ink-2: color-mix(in srgb, var(--lam-ink) 70%, #fff); /* secondary text, AA on white glass */
+  --lam-ink-3: color-mix(in srgb, var(--lam-ink) 62%, #fff); /* small numerals, AA (≈4.8:1) */
+  --lam-ink-4: color-mix(in srgb, var(--lam-ink) 38%, #fff); /* decorative marks only (dots, ticks) */
+  --lam-hair: color-mix(in srgb, var(--lam-ink) 13%, transparent);
+  --lam-hair-2: color-mix(in srgb, var(--lam-ink) 8%, transparent);
+  --lam-tint: color-mix(in srgb, var(--lam-ink) 5%, transparent);
+  --lam-accent-tint: color-mix(in srgb, var(--lam-accent) 8%, transparent);
+  --lam-glass: rgba(255, 255, 255, 0.82);
+  --lam-glass-strong: rgba(255, 255, 255, 0.95);
+  --lam-blur: saturate(1.7) blur(20px);
+  --lam-shadow: 0 0 0 0.5px var(--lam-hair), 0 1px 1px rgba(28, 26, 23, 0.04),
+    0 8px 24px -10px rgba(28, 26, 23, 0.2), 0 24px 56px -28px rgba(28, 26, 23, 0.26);
+  --lam-shadow-lg: 0 0 0 0.5px var(--lam-hair), 0 2px 4px rgba(28, 26, 23, 0.04),
+    0 18px 48px -14px rgba(28, 26, 23, 0.3);
+  --lam-sans: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  --lam-serif: 'EB Garamond', ui-serif, 'New York', 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --lam-display: 'Cormorant Garamond', 'EB Garamond', ui-serif, 'New York', 'Iowan Old Style', Georgia, serif;
+  --lam-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --lam-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --lam-bar-h: 44px;
+  --lam-bar-gap: calc(18px + env(safe-area-inset-bottom, 0px));
+
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  pointer-events: none;
+  isolation: isolate;
+  font: 400 13px/1.35 var(--lam-sans);
+  color: var(--lam-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lam-ui *,
+.lam-ui *::before,
+.lam-ui *::after {
+  box-sizing: border-box;
+}
+.lam-ui [hidden] {
+  display: none !important;
+}
+:where(.lam-ui) button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+}
+:where(.lam-ui) button:disabled {
+  cursor: default;
+}
+:where(.lam-ui) :focus {
+  outline: none;
+}
+:where(.lam-ui) :focus-visible {
+  outline: 2px solid var(--lam-accent);
+  outline-offset: 2px;
+}
+:where(.lam-ui) p {
+  margin: 0;
+}
+.lam-sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* containers that take focus programmatically never show a ring */
+.lam-pop:focus-visible,
+.lam-drawer:focus-visible,
+.lam-sheet:focus-visible {
+  outline: none;
+}
+
+/* ------------------------------------------------------------------ buttons */
+.lam-btn {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 40px;
+  height: var(--lam-bar-h);
+  border-radius: 999px;
+  color: var(--lam-ink);
+  transition: color 0.2s, opacity 0.2s;
+}
+.lam-btn::before {
+  content: '';
+  position: absolute;
+  inset: 5px 3px;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity 0.18s;
+}
+.lam-btn > * {
+  position: relative;
+}
+.lam-btn:hover:not(:disabled)::before {
+  opacity: 0.06;
+}
+.lam-btn:active:not(:disabled)::before {
+  opacity: 0.11;
+}
+.lam-btn:disabled {
+  opacity: 0.26;
+}
+.lam-btn:focus-visible {
+  outline-offset: -4px;
+}
+.lam-btn[aria-pressed='true'],
+.lam-btn[aria-expanded='true'] {
+  color: var(--lam-accent);
+}
+.lam-btn[aria-expanded='true']::before {
+  opacity: 0.08;
+  background: var(--lam-accent);
+}
+
+/* sound / full screen: two icons, one shown */
+.lam-sound-btn .lam-i-soundOn,
+.lam-sound-btn[aria-pressed='true'] .lam-i-soundOff,
+.lam-fs-btn .lam-i-fullscreenExit,
+.lam-fs-btn[aria-pressed='true'] .lam-i-fullscreen {
+  display: none;
+}
+.lam-sound-btn[aria-pressed='true'] .lam-i-soundOn,
+.lam-fs-btn[aria-pressed='true'] .lam-i-fullscreenExit {
+  display: block;
+}
+.lam-sound-btn,
+.lam-fs-btn {
+  grid-template-areas: 'i';
+}
+.lam-sound-btn > svg,
+.lam-fs-btn > svg {
+  grid-area: i;
+}
+
+/* ------------------------------------------------------------------ toolbar */
+.lam-bar {
+  position: absolute;
+  left: 50%;
+  bottom: var(--lam-bar-gap);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  height: var(--lam-bar-h);
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--lam-glass);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  box-shadow: var(--lam-shadow);
+  transform: translateX(-50%);
+  pointer-events: auto;
+  transition: opacity 0.5s var(--lam-ease), transform 0.5s var(--lam-ease);
+}
+/* figure tools fold away on spreads without a living figure */
+.lam-bar .lam-btn {
+  transition: color 0.2s, opacity 0.28s var(--lam-ease), width 0.36s var(--lam-ease-out), visibility 0s;
+}
+.lam-bar .lam-btn.is-collapsed {
+  width: 0;
+  min-width: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+  transition: color 0.2s, opacity 0.2s var(--lam-ease), width 0.36s var(--lam-ease-out), visibility 0s 0.36s;
+}
+.lam-ui[data-compact] .lam-bar .lam-btn.is-collapsed {
+  flex: 0 0 0;
+  width: 0;
+  min-width: 0;
+  max-width: 0;
+}
+.lam-div {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 20px;
+  margin: 0 6px;
+  background: var(--lam-hair);
+}
+
+/* play / pause with the 5-second ring */
+.lam-play-btn {
+  grid-template-areas: 'i';
+}
+.lam-play-btn > svg {
+  grid-area: i;
+}
+.lam-play-btn .lam-i-pause,
+.lam-play-btn[data-playing='true'] .lam-i-play {
+  display: none;
+}
+.lam-play-btn[data-playing='true'] .lam-i-pause {
+  display: block;
+}
+.lam-play-btn .lam-icon {
+  width: 18px;
+  height: 18px;
+}
+.lam-ring {
+  width: 32px;
+  height: 32px;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+.lam-ring circle {
+  fill: none;
+  stroke-width: 1.5;
+}
+.lam-ring-track {
+  stroke: var(--lam-hair);
+}
+.lam-ring-fill {
+  stroke: var(--lam-accent);
+  stroke-linecap: round;
+}
+.lam-play-btn:disabled .lam-ring-fill {
+  stroke: transparent;
+}
+
+/* export in progress: the play ring's geometry, a short accent arc turning
+   around the icon. Stacked in the icon's cell, so nothing moves or resizes.
+   The busy mark is set as the export starts; the ring only fades in after
+   300 ms, so a quick export shows nothing. Both animations are opacity and
+   transform, which the compositor keeps running while the export holds the
+   main thread (a timer could not fire, nor anything paint, until it ends). */
+.lam-export-btn,
+.lam-mi-icon {
+  grid-template-areas: 'i';
+}
+.lam-export-btn > *,
+.lam-mi-icon > * {
+  grid-area: i;
+}
+.lam-busy {
+  display: block;
+  width: 32px;
+  height: 32px;
+  opacity: 0;
+  pointer-events: none;
+}
+.lam-mi-icon > .lam-busy {
+  width: 30px; /* inside the 38 px tile, clear of its edge */
+  height: 30px;
+}
+.lam-busy > svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.lam-busy circle {
+  fill: none;
+  stroke-width: 1.5;
+}
+.lam-busy-arc {
+  stroke: var(--lam-accent);
+  stroke-linecap: round;
+}
+.is-busy > .lam-busy,
+.is-busy > .lam-mi-icon > .lam-busy {
+  animation: lam-busy-in 0.2s var(--lam-ease) 0.3s both, lam-turn 0.9s linear infinite;
+}
+/* reduced motion: the ring still appears after 300 ms, and stays still */
+.lam-ui[data-reduced-motion] .is-busy > .lam-busy,
+.lam-ui[data-reduced-motion] .is-busy > .lam-mi-icon > .lam-busy {
+  animation: lam-busy-in 1ms linear 0.3s both !important;
+}
+.lam-export-btn.is-busy {
+  cursor: progress;
+}
+@keyframes lam-busy-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes lam-turn {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* plate label (opens contents). Its width is the book's longest numbered
+   entry's (index.js fitPlateWidth: per book and language, never per spread,
+   so a page turn never moves the buttons); a title that still does not fit
+   wraps to two lines when no binomial sits under it (.is-wrap), else steps
+   its type down to an 11 px floor (.is-tight, .is-tighter) */
+.lam-plate {
+  display: grid;
+  align-content: center;
+  flex: 0 0 auto;
+  width: var(--lam-plate-w, 200px);
+  height: var(--lam-bar-h);
+  padding: 0 8px;
+  border-radius: 14px;
+  text-align: center;
+}
+.lam-plate.is-wrap .lam-plate-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  line-height: 15px;
+}
+.lam-plate.is-tight .lam-plate-line {
+  font-size: 12px;
+}
+.lam-plate.is-tight .lam-plate-num {
+  font-size: 14px;
+}
+.lam-plate.is-tight .lam-plate-sci {
+  font-size: 12.5px;
+}
+.lam-plate.is-tighter .lam-plate-line {
+  font-size: 11px;
+}
+.lam-plate.is-tighter .lam-plate-num {
+  font-size: 13px;
+}
+.lam-plate.is-tighter .lam-plate-sci {
+  font-size: 12px;
+}
+/* off-screen twin of the label, for measuring candidate titles */
+.lam-plate-measure {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  justify-items: start;
+  visibility: hidden;
+  pointer-events: none;
+  contain: layout paint;
+}
+.lam-plate-measure :is(.lam-plate-line, .lam-plate-sci) {
+  width: max-content;
+  overflow: visible;
+}
+.lam-plate-inner {
+  display: grid;
+  min-width: 0;
+  transition: opacity 0.16s var(--lam-ease), transform 0.22s var(--lam-ease);
+}
+.lam-plate.is-out .lam-plate-inner {
+  opacity: 0;
+  transform: translateY(3px);
+}
+.lam-plate:hover .lam-plate-name {
+  color: var(--lam-accent-text);
+}
+.lam-plate:focus-visible {
+  outline-offset: -3px;
+}
+.lam-plate-line {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  line-height: 16px;
+}
+/* the Roman numeral is set like the printed plate (display serif), so 'II'
+   never reads as a second pause glyph beside the play button */
+.lam-plate-num {
+  font: 600 15px/1 var(--lam-display);
+  letter-spacing: 0.04em;
+  color: var(--lam-accent-text);
+}
+.lam-plate-num::after {
+  content: '·';
+  margin: 0 0.45em 0 0.4em;
+  font: 400 13px/1 var(--lam-sans);
+  color: var(--lam-ink-4);
+}
+.lam-plate-name {
+  font-weight: 560;
+  letter-spacing: 0.005em;
+  transition: color 0.2s;
+}
+.lam-plate-sci {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font: italic 13px/15px var(--lam-serif);
+  color: var(--lam-ink-2);
+}
+
+/* the Read button: phones, any view that frames one page (the verso is off
+   screen) and short screens (the verso's type is too small to read there);
+   other spreads hide it ([hidden] still wins on spreads with nothing to read) */
+.lam-ui:not([data-compact]):not([data-single-page]):not([data-short]) .lam-read-btn {
+  display: none;
+}
+.lam-read-btn {
+  width: auto;
+  min-width: 56px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 620;
+  letter-spacing: 0.01em;
+  color: var(--lam-accent-text);
+}
+.lam-read-btn::before {
+  background: var(--lam-accent);
+  opacity: 0.09;
+  inset: 6px 3px;
+}
+.lam-read-btn.lam-btn:hover:not(:disabled)::before {
+  opacity: 0.14;
+}
+
+/* ------------------------------------------------------------------ top bar */
+.lam-top {
+  position: absolute;
+  top: calc(14px + env(safe-area-inset-top, 0px));
+  left: calc(16px + env(safe-area-inset-left, 0px));
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  pointer-events: auto;
+  transition: opacity 0.5s var(--lam-ease);
+}
+.lam-library {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 12px 0 8px;
+  border-radius: 999px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--lam-ink-2);
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+.lam-library .lam-icon {
+  width: 18px;
+  height: 18px;
+}
+.lam-library:hover {
+  background: var(--lam-tint);
+  color: var(--lam-ink);
+}
+.lam-top-rule {
+  width: 1px;
+  height: 14px;
+  background: var(--lam-hair);
+}
+.lam-book-title {
+  font-size: 10.5px;
+  font-weight: 560;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lam-ink-2);
+  white-space: nowrap;
+}
+.lam-top-plate {
+  display: none;
+  align-items: center;
+  min-width: 0;
+  max-width: calc(100vw - 90px);
+  height: 36px;
+  padding: 0 14px 0 4px;
+  border-radius: 999px;
+  text-align: left;
+}
+.lam-top-plate .lam-plate-line {
+  font-size: 13px;
+}
+.lam-top-sound {
+  display: none;
+}
+/* the language switch ends the bar, behind its own hairline (langswitch.css
+   styles it; here only its place). Its arrows must not turn pages: the
+   switch keeps them (preventDefault). */
+.lam-top .lam-top-lang {
+  margin-left: -2px;
+}
+
+.lam-help-btn {
+  position: absolute;
+  top: calc(12px + env(safe-area-inset-top, 0px));
+  right: calc(14px + env(safe-area-inset-right, 0px));
+  z-index: 4;
+  width: 40px;
+  height: 40px;
+  color: var(--lam-ink-2);
+  opacity: 0.75;
+  pointer-events: auto;
+  transition: opacity 0.5s var(--lam-ease), color 0.2s;
+}
+.lam-help-btn:hover,
+.lam-help-btn[aria-expanded='true'] {
+  opacity: 1;
+}
+
+/* ------------------------------------------------------------------ idle & modes */
+.lam-ui[data-idle] .lam-bar {
+  opacity: 0;
+  transform: translate(-50%, 12px);
+  pointer-events: none;
+}
+.lam-ui[data-idle] .lam-top,
+.lam-ui[data-idle] .lam-help-btn {
+  opacity: 0;
+  pointer-events: none;
+}
+.lam-ui[data-chrome-off] :is(.lam-bar, .lam-top, .lam-help-btn, .lam-caption, .lam-tip) {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------------ tooltip */
+.lam-tip {
+  position: absolute;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 7px 6px 10px;
+  border-radius: 9px;
+  background: color-mix(in srgb, var(--lam-ink) 94%, transparent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(-50%, 3px);
+  transition: opacity 0.14s, transform 0.2s var(--lam-ease);
+  pointer-events: none;
+}
+.lam-tip[data-place='bottom'] {
+  transform: translate(-50%, -3px);
+}
+.lam-tip.is-on {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.lam-tip:not(:has(.lam-kbd)) {
+  padding-right: 10px;
+}
+.lam-tip .lam-kbd {
+  height: 18px;
+  min-width: 18px;
+  font-size: 10.5px;
+  background: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.88);
+  box-shadow: none;
+}
+
+/* ------------------------------------------------------------------ keycaps */
+.lam-kbd {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 0 0 0.5px var(--lam-hair), 0 1px 0 var(--lam-hair);
+  font: 550 10.5px/1 var(--lam-sans);
+  color: var(--lam-ink-2);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.lam-ui[data-coarse] .lam-pop .lam-kbd,
+.lam-ui[data-coarse] .lam-pop .lam-help-dash,
+.lam-ui[data-coarse] .lam-drawer-foot {
+  display: none;
+}
+
+/* ------------------------------------------------------------------ labels */
+.lam-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: opacity 0.28s var(--lam-ease);
+}
+.lam-labels.is-off,
+.lam-labels.is-busy {
+  opacity: 0;
+}
+.lam-labels.is-off .lam-pill,
+.lam-labels.is-busy .lam-pill {
+  pointer-events: none;
+}
+.lam-leaders {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+.lam-leader-halo {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.8);
+  stroke-width: 3.25;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.lam-leader-line {
+  fill: none;
+  stroke: var(--lam-ink);
+  stroke-opacity: 0.66;
+  stroke-width: 1;
+  stroke-linejoin: round;
+  transition: stroke 0.2s, stroke-opacity 0.2s;
+}
+/* body features: a small dot on the anchor (r 2.25, set in labels.js) */
+.lam-leader-dot {
+  fill: var(--lam-ink);
+  stroke: #fff;
+  stroke-width: 1;
+  transition: fill 0.2s;
+}
+.lam-leader.is-far .lam-leader-dot {
+  fill: #fff;
+  stroke: var(--lam-ink);
+  stroke-width: 1;
+}
+/* face features are never covered: a hairline ring around the feature (its
+   leader stops at the ring), or no mark at all (a tick: the leader stops
+   just short of the feature) — no fill, no white stroke on the face */
+.lam-leader-ring {
+  display: none;
+  fill: none;
+  stroke: var(--lam-ink);
+  stroke-opacity: 0.75;
+  stroke-width: 1;
+  transition: stroke 0.2s, stroke-opacity 0.2s;
+}
+.lam-leader.is-ring .lam-leader-ring {
+  display: inline;
+}
+.lam-leader:is(.is-ring, .is-tick) .lam-leader-dot {
+  display: none;
+}
+.lam-leader.is-far .lam-leader-ring {
+  stroke-dasharray: 2 2;
+}
+.lam-leader.is-active .lam-leader-line {
+  stroke: var(--lam-accent);
+  stroke-opacity: 1;
+}
+.lam-leader.is-active .lam-leader-dot {
+  fill: var(--lam-accent);
+  stroke: #fff;
+}
+.lam-leader.is-active .lam-leader-ring {
+  stroke: var(--lam-accent);
+  stroke-opacity: 1;
+}
+.lam-pill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  max-width: var(--lam-pill-max, 210px);
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 0 0 0.5px var(--lam-hair), 0 1px 2px rgba(28, 26, 23, 0.06), 0 6px 14px -8px rgba(28, 26, 23, 0.28);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.012em;
+  color: var(--lam-ink);
+  white-space: nowrap;
+  pointer-events: auto;
+  will-change: transform, opacity;
+  transition: box-shadow 0.2s, color 0.2s;
+}
+.lam-pill-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* another label is being read: this pill steps back (labels.js fades its
+   leader) but keeps its paper, so its words stay ≥ 4.5:1 on any figure */
+.lam-pill.is-dimmed {
+  color: var(--lam-ink-2);
+  box-shadow: 0 0 0 0.5px var(--lam-hair), 0 1px 2px rgba(28, 26, 23, 0.05);
+}
+.lam-pill:hover,
+.lam-pill.is-active {
+  color: var(--lam-accent-text);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--lam-accent) 55%, transparent), 0 1px 2px rgba(28, 26, 23, 0.06),
+    0 8px 18px -8px rgba(28, 26, 23, 0.3);
+}
+.lam-ui[data-compact] .lam-pill {
+  height: 26px;
+  font-size: 12.5px;
+}
+/* touch: a taller pill whose hit area reaches halfway into the 8 px gap, so a
+   fingertip on a stacked column never lands on the neighbour */
+.lam-ui[data-coarse] .lam-pill {
+  height: 28px;
+}
+.lam-ui[data-coarse] .lam-pill::before {
+  content: '';
+  position: absolute;
+  inset: -4px -3px;
+}
+
+.lam-card {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 264px;
+  padding: 12px 15px 14px;
+  border-radius: 14px;
+  background: var(--lam-glass-strong);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  box-shadow: var(--lam-shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  transition: opacity 0.18s var(--lam-ease), visibility 0s 0.18s;
+}
+.lam-card.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+/* its pill is fading to another place: a floating card waits unseen and
+   returns beside the pill (a docked card stays where it is) */
+.lam-card.is-open.is-away:not(.is-docked) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.12s var(--lam-ease), visibility 0s 0.12s;
+}
+.lam-card-kicker {
+  font-size: 10.5px;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lam-accent-text);
+}
+.lam-card-text {
+  margin-top: 6px;
+  font: 15.5px/1.42 var(--lam-serif);
+  color: var(--lam-ink);
+  text-wrap: pretty;
+}
+.lam-card.is-docked {
+  left: 10px;
+  right: 10px;
+  top: auto;
+  bottom: calc(var(--lam-bar-gap) + var(--lam-bar-h) + 10px);
+  width: auto;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------ caption */
+.lam-caption {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--lam-bar-gap) + var(--lam-bar-h) + 12px);
+  z-index: 2;
+  width: min(640px, calc(100% - 32px));
+  height: 44px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  transition: transform 0.5s var(--lam-ease), opacity 0.3s var(--lam-ease);
+}
+/* The line sits on the toolbar's frosted glass: invisible on the white stage,
+   a legible pill wherever it crosses the book (cloth, page edge, inspect). */
+.lam-cap-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 3px 14px 4px;
+  border-radius: 16px;
+  background: var(--lam-glass);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  text-align: center;
+  font: italic 16px/1.38 var(--lam-serif);
+  color: var(--lam-ink-2);
+  text-wrap: balance;
+  opacity: 0;
+  transform: translateY(5px);
+  /* leaving: quick, so two sentences never overlap */
+  transition: opacity 0.16s var(--lam-ease), transform 0.2s var(--lam-ease);
+}
+.lam-cap-line.is-on {
+  opacity: 1;
+  transform: none;
+  /* arriving: once the old line has gone */
+  transition: opacity 0.45s var(--lam-ease) 0.16s, transform 0.6s var(--lam-ease-out) 0.16s;
+}
+.lam-cap-line:empty {
+  visibility: hidden;
+}
+.lam-cap-kicker {
+  margin-right: 0.6em;
+  font: 650 10px/1 var(--lam-sans);
+  font-style: normal;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  vertical-align: 0.18em;
+  color: var(--lam-accent-text);
+}
+.lam-ui[data-idle] .lam-caption {
+  transform: translate(-50%, calc(var(--lam-bar-h) + 2px));
+}
+/* steps aside for whatever takes its band: a turn, a toast, a docked label
+   card, or a popover over the toolbar (also while a slider drag clears the
+   popover's glass, so two texts never print over each other) */
+.lam-ui[data-busy] .lam-caption,
+.lam-ui[data-toasting] .lam-caption,
+.lam-ui[data-pop-open] .lam-caption,
+.lam-ui:has(.lam-card.is-docked.is-open) .lam-caption {
+  opacity: 0;
+}
+
+/* ------------------------------------------------------------------ toasts */
+.lam-toasts {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--lam-bar-gap) + var(--lam-bar-h) + 14px);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: calc(100% - 32px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+/* one line where it fits; a longer message (Spanish runs longer) takes two
+   balanced lines rather than losing its end to an ellipsis */
+.lam-toast {
+  max-width: min(100%, 520px);
+  padding: 9px 16px 10px;
+  border-radius: 20px;
+  background: color-mix(in srgb, var(--lam-ink) 92%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 32px -12px rgba(28, 26, 23, 0.45);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+  text-align: center;
+  text-wrap: balance;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 0.26s var(--lam-ease), transform 0.36s var(--lam-ease-out);
+}
+.lam-toast.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ------------------------------------------------------------------ popovers */
+.lam-pop {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 6;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 6px;
+  border-radius: 18px;
+  background: var(--lam-glass-strong);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  box-shadow: var(--lam-shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(6px) scale(0.985);
+  transform-origin: var(--lam-origin, 50% 100%);
+  transition: opacity 0.16s var(--lam-ease), transform 0.24s var(--lam-ease-out), visibility 0s 0.24s;
+  pointer-events: none;
+  scrollbar-width: thin;
+}
+.lam-pop-help {
+  transform: translateY(-6px) scale(0.985);
+}
+.lam-pop.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+.lam-pop-body {
+  display: flex;
+  flex-direction: column;
+}
+/* dragging Explode or Moment: the popover clears away (only the field being
+   dragged stays, on its own glass) so the dissection is seen, not covered */
+.lam-pop {
+  transition: opacity 0.16s var(--lam-ease), transform 0.24s var(--lam-ease-out), visibility 0s 0.24s,
+    background-color 0.2s var(--lam-ease), box-shadow 0.2s var(--lam-ease);
+}
+.lam-pop.is-scrubbing {
+  background-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+.lam-pop-body > * {
+  transition: opacity 0.2s var(--lam-ease);
+}
+.lam-pop.is-scrubbing .lam-pop-body > :not(.is-scrubbed) {
+  opacity: 0.12;
+}
+.lam-field.is-scrubbed {
+  border-radius: 14px;
+  background: var(--lam-glass-strong);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  box-shadow: var(--lam-shadow);
+}
+.lam-pop-title {
+  padding: 10px 10px 6px;
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lam-ink-2);
+}
+.lam-sep {
+  height: 0.5px;
+  margin: 6px 10px;
+  background: var(--lam-hair);
+  flex: none;
+}
+.lam-empty {
+  padding: 6px 10px 10px;
+  font-size: 12.5px;
+  color: var(--lam-ink-2);
+}
+
+/* switch rows (layers, labels) */
+.lam-rows {
+  display: flex;
+  flex-direction: column;
+}
+.lam-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  column-gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 7px 10px;
+  border-radius: 12px;
+  text-align: left;
+  transition: background 0.16s;
+}
+.lam-row:hover {
+  background: var(--lam-tint);
+}
+.lam-row:focus-visible {
+  outline-offset: -2px;
+}
+.lam-row-text {
+  display: grid;
+  min-width: 0;
+}
+.lam-row-title {
+  font-size: 13.5px;
+  font-weight: 560;
+  line-height: 1.3;
+}
+.lam-row-hint {
+  margin-top: 1px;
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--lam-ink-2);
+}
+.lam-switch {
+  position: relative;
+  flex: none;
+  width: 34px;
+  height: 20px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--lam-ink) 14%, #fff);
+  box-shadow: inset 0 0 0 0.5px var(--lam-hair);
+  transition: background 0.22s var(--lam-ease);
+}
+.lam-switch::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--lam-ink) 42%, transparent), 0 1px 2px rgba(0, 0, 0, 0.16);
+  transition: transform 0.24s var(--lam-ease-out), box-shadow 0.2s;
+}
+[aria-checked='true'] > .lam-switch {
+  background: var(--lam-accent);
+  box-shadow: none;
+}
+[aria-checked='true'] > .lam-switch::after {
+  transform: translateX(14px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22);
+}
+
+/* range fields (explode, moment) */
+.lam-field {
+  padding: 8px 10px 6px;
+}
+.lam-field-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 22px;
+  color: var(--lam-ink);
+}
+.lam-field-head .lam-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--lam-ink-2);
+  flex: none;
+}
+.lam-field-title {
+  font-size: 13.5px;
+  font-weight: 560;
+}
+.lam-field-note {
+  font-size: 11.5px;
+  color: var(--lam-ink-2);
+}
+.lam-field-value {
+  margin-left: auto;
+  font-size: 12px;
+  font-weight: 560;
+  color: var(--lam-ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.lam-range-wrap {
+  position: relative;
+  margin-top: 4px;
+}
+.lam-ticks {
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  top: 50%;
+  height: 0;
+  pointer-events: none;
+}
+.lam-ticks i {
+  position: absolute;
+  top: -7px;
+  width: 1px;
+  height: 14px;
+  margin-left: -0.5px;
+  background: var(--lam-ink-4);
+}
+.lam-range {
+  --lam-p: 0%;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 28px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: pan-y;
+}
+.lam-range:focus-visible {
+  outline-offset: 0;
+  border-radius: 8px;
+}
+.lam-range::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 3px;
+  background: linear-gradient(to right, var(--lam-accent) var(--lam-p), color-mix(in srgb, var(--lam-ink) 16%, #fff) var(--lam-p));
+}
+.lam-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  margin-top: -7.5px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 10px -2px rgba(0, 0, 0, 0.18);
+  transition: transform 0.15s;
+}
+.lam-range:active::-webkit-slider-thumb {
+  transform: scale(1.12);
+}
+.lam-range::-moz-range-track {
+  height: 3px;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--lam-ink) 16%, #fff);
+}
+.lam-range::-moz-range-progress {
+  height: 3px;
+  border-radius: 3px;
+  background: var(--lam-accent);
+}
+.lam-range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.14), 0 1px 3px rgba(0, 0, 0, 0.2), 0 4px 10px -2px rgba(0, 0, 0, 0.18);
+}
+/* touch: a 44 px tall slider (the 3 px track stays centred) with a 26 px
+   thumb; the ticks keep under the thumb's centre at either end */
+.lam-ui[data-coarse] .lam-range {
+  height: 44px;
+}
+.lam-ui[data-coarse] .lam-range::-webkit-slider-thumb {
+  width: 26px;
+  height: 26px;
+  margin-top: -11.5px;
+}
+.lam-ui[data-coarse] .lam-range::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+}
+.lam-ui[data-coarse] .lam-ticks {
+  left: 13px;
+  right: 13px;
+}
+
+/* export menu */
+.lam-menuitem {
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: center;
+  column-gap: 12px;
+  width: 100%;
+  min-height: 54px;
+  padding: 8px 10px 8px 8px;
+  border-radius: 12px;
+  text-align: left;
+  transition: background 0.16s;
+}
+.lam-menuitem:hover,
+.lam-menuitem:focus-visible {
+  background: var(--lam-tint);
+}
+.lam-menuitem:focus-visible {
+  outline-offset: -2px;
+}
+/* while an export runs, the other entries rest (one export at a time) */
+.lam-menuitem[aria-disabled='true']:not(.is-busy) {
+  opacity: 0.45;
+  cursor: default;
+}
+.lam-menuitem[aria-disabled='true']:hover {
+  background: none;
+}
+.lam-menuitem.is-busy {
+  cursor: progress;
+}
+.lam-mi-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 0 0 0.5px var(--lam-hair), 0 1px 2px rgba(28, 26, 23, 0.06);
+  color: var(--lam-ink);
+}
+.lam-mi-text {
+  display: grid;
+  min-width: 0;
+}
+.lam-mi-title {
+  font-size: 13.5px;
+  font-weight: 560;
+  line-height: 1.3;
+}
+.lam-mi-hint {
+  font-size: 11.5px;
+  line-height: 1.35;
+  color: var(--lam-ink-2);
+}
+
+/* help card */
+.lam-help-grid {
+  display: grid;
+  /* named key caps are wider in some languages ("Re Pág", "Av Pág") */
+  grid-template-columns: minmax(92px, max-content) minmax(0, 1fr);
+  align-items: center;
+  gap: 7px 14px;
+  margin: 0;
+  padding: 2px 10px 8px;
+}
+.lam-help-keys {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin: 0;
+}
+.lam-help-dash {
+  font-size: 11px;
+  color: var(--lam-ink-4);
+}
+.lam-help-label {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--lam-ink);
+}
+.lam-help-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4px 4px 2px;
+  padding: 10px 6px 6px;
+  border-top: 0.5px solid var(--lam-hair);
+  font-size: 11.5px;
+  color: var(--lam-ink-2);
+}
+.lam-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 22px;
+  padding: 0 9px;
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 0.5px var(--lam-hair);
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  color: var(--lam-ink);
+}
+.lam-badge i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3d8a57;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #3d8a57 18%, transparent);
+}
+.lam-badge[data-backend='webgl'] i {
+  background: #b98523;
+  box-shadow: 0 0 0 3px color-mix(in srgb, #b98523 18%, transparent);
+}
+
+/* ------------------------------------------------------------------ scrims */
+.lam-scrim {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--lam-paper) 34%, transparent);
+  -webkit-backdrop-filter: blur(1.5px);
+  backdrop-filter: blur(1.5px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.32s var(--lam-ease), visibility 0s 0.32s;
+}
+.lam-scrim.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+.lam-drawer-scrim {
+  z-index: 7;
+}
+.lam-sheet-scrim {
+  z-index: 9;
+  background: color-mix(in srgb, var(--lam-ink) 16%, transparent);
+}
+
+/* ------------------------------------------------------------------ contents drawer */
+.lam-drawer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  width: min(392px, 90vw);
+  background: rgba(255, 255, 255, 0.97);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  box-shadow: 0.5px 0 0 var(--lam-hair), 30px 0 80px -40px rgba(28, 26, 23, 0.34);
+  transform: translateX(-104%);
+  visibility: hidden;
+  transition: transform 0.46s var(--lam-ease-out), visibility 0s 0.46s;
+}
+.lam-drawer.is-open {
+  transform: none;
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+.lam-drawer-head {
+  position: relative;
+  padding: calc(34px + env(safe-area-inset-top, 0px)) 30px 22px 32px;
+}
+.lam-drawer-kicker {
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--lam-accent-text);
+}
+.lam-drawer-title {
+  margin: 12px 0 0;
+  font: 500 36px/1.02 var(--lam-display);
+  letter-spacing: -0.005em;
+  color: var(--lam-ink);
+}
+.lam-drawer-sub {
+  margin-top: 8px;
+  font: italic 16.5px/1.35 var(--lam-serif);
+  color: var(--lam-ink-2);
+  text-wrap: balance;
+}
+.lam-drawer-close {
+  position: absolute;
+  top: calc(16px + env(safe-area-inset-top, 0px));
+  right: 12px;
+  height: 44px;
+  width: 44px;
+  color: var(--lam-ink-2);
+}
+.lam-drawer-nav {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  border-top: 0.5px solid var(--lam-hair);
+  scrollbar-width: thin;
+}
+.lam-toc {
+  margin: 0;
+  padding: 10px 14px 28px;
+  list-style: none;
+}
+.lam-toc li + li::before {
+  content: '';
+  display: block;
+  height: 0.5px;
+  margin: 0 14px 0 62px;
+  background: var(--lam-hair-2);
+  transition: opacity 0.16s;
+}
+/* no rule may cut through the highlighted or hovered entry */
+.lam-toc li:has(> .lam-toc-item:is([aria-current='page'], :hover))::before,
+.lam-toc li:has(> .lam-toc-item:is([aria-current='page'], :hover)) + li::before {
+  opacity: 0;
+}
+.lam-toc-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  column-gap: 14px;
+  align-items: baseline;
+  width: 100%;
+  padding: 14px 16px 14px 6px;
+  border-radius: 14px;
+  text-align: left;
+  transition: background 0.16s;
+}
+.lam-toc-item:hover {
+  background: var(--lam-tint);
+}
+.lam-toc-item:focus-visible {
+  outline-offset: -2px;
+}
+.lam-toc-num {
+  grid-row: 1 / span 2;
+  justify-self: end;
+  align-self: start;
+  padding-top: 6px;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: var(--lam-ink-3);
+  font-variant-numeric: tabular-nums;
+}
+.lam-toc-name {
+  font: 500 21px/1.2 var(--lam-display);
+  color: var(--lam-ink);
+}
+.lam-toc-sci {
+  grid-column: 2;
+  margin-top: 2px;
+  font: italic 15px/1.3 var(--lam-serif);
+  color: var(--lam-ink-2);
+}
+.lam-toc-item[aria-current='page'] {
+  background: var(--lam-accent-tint);
+}
+.lam-toc-item[aria-current='page'] .lam-toc-num {
+  color: var(--lam-accent-text);
+}
+.lam-toc-item[aria-current='page']::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--lam-accent);
+}
+.lam-drawer-foot {
+  display: flex;
+  gap: 16px;
+  padding: 14px 32px calc(16px + env(safe-area-inset-bottom, 0px));
+  border-top: 0.5px solid var(--lam-hair);
+  font-size: 11.5px;
+  color: var(--lam-ink-2);
+}
+.lam-drawer-foot span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.lam-drawer-foot .lam-kbd {
+  margin-right: 2px;
+}
+
+/* ------------------------------------------------------------------ reading sheet */
+.lam-sheet {
+  --lam-drag: 0px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: min(680px, 100%);
+  max-height: min(84vh, 920px);
+  border-radius: 22px 22px 0 0;
+  background: var(--lam-paper);
+  box-shadow: 0 -0.5px 0 var(--lam-hair), 0 -24px 70px -24px rgba(28, 26, 23, 0.36);
+  transform: translate(-50%, 104%);
+  visibility: hidden;
+  transition: transform 0.46s var(--lam-ease-out), visibility 0s 0.46s;
+}
+.lam-sheet.is-open {
+  transform: translate(-50%, var(--lam-drag));
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+.lam-sheet.is-dragging {
+  transition: none;
+}
+.lam-sheet-grab {
+  display: grid;
+  place-items: center;
+  flex: none;
+  height: 22px;
+  cursor: grab;
+  touch-action: none;
+}
+.lam-sheet-grab::before {
+  content: '';
+  width: 38px;
+  height: 4px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--lam-ink) 20%, transparent);
+}
+.lam-sheet-head {
+  position: relative;
+  flex: none;
+  padding: 6px 64px 16px 26px;
+  border-bottom: 0.5px solid var(--lam-hair);
+  touch-action: none;
+}
+.lam-sheet-kicker,
+.lam-sheet-own .kicker {
+  font-size: 10.5px;
+  font-weight: 650;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lam-accent-text);
+}
+.lam-sheet-title,
+.lam-sheet-own h2 {
+  margin: 6px 0 0;
+  font: 500 30px/1.05 var(--lam-display);
+  color: var(--lam-ink);
+}
+.lam-sheet-own h2 small {
+  display: block;
+  margin-top: 3px;
+  font: italic 17px/1.3 var(--lam-serif);
+  color: var(--lam-ink-2);
+}
+.lam-sheet-sci,
+.lam-sheet-own .sci {
+  margin-top: 4px;
+  font: 17px/1.3 var(--lam-serif);
+  color: var(--lam-ink-2);
+}
+.lam-sheet-sci,
+.lam-sheet-own .sci em {
+  font-style: italic;
+}
+.lam-sheet-own .family {
+  margin-top: 6px;
+  font: 600 10.5px/1.4 var(--lam-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lam-ink-2);
+}
+.lam-sheet-close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 44px;
+  color: var(--lam-ink-2);
+}
+.lam-sheet-body {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px 26px calc(30px + env(safe-area-inset-bottom, 0px));
+}
+.lam-sheet-body:focus-visible {
+  outline-offset: -3px;
+}
+
+/* reading prose */
+.lam-prose {
+  font: 17.5px/1.56 var(--lam-serif);
+  color: var(--lam-ink);
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  text-wrap: pretty;
+  font-variant-numeric: oldstyle-nums;
+}
+.lam-prose p {
+  margin: 0 0 0.8em;
+}
+.lam-prose .lede {
+  font-size: 19.5px;
+  line-height: 1.42;
+  font-style: italic;
+  color: var(--lam-ink);
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  text-wrap: balance;
+}
+.lam-prose .lede em,
+.lam-prose .lede i {
+  font-style: normal;
+}
+.lam-prose h2 {
+  margin: 0 0 0.5em;
+  font: 500 26px/1.1 var(--lam-display);
+}
+.lam-prose h3,
+.lam-prose h4 {
+  margin: 1.5em 0 0.6em;
+  font: 650 10.5px/1.2 var(--lam-sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--lam-accent-text);
+}
+.lam-prose dl {
+  display: grid;
+  /* long keys ("Double-click the figure") wrap rather than squeeze the values */
+  grid-template-columns: minmax(0, max-content) minmax(58%, 1fr);
+  gap: 7px 18px;
+  margin: 0 0 1em;
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+.lam-prose dt {
+  padding-top: 3px;
+  font: 600 10.5px/1.4 var(--lam-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lam-ink-2);
+}
+.lam-prose dd {
+  margin: 0;
+}
+/* field facts, set like the printed verso: small-caps keys, serif values, hairlines */
+.lam-prose table {
+  width: 100%;
+  margin: 1.3em 0 1em;
+  border-collapse: collapse;
+  font-size: 15.5px;
+  line-height: 1.4;
+}
+.lam-prose th,
+.lam-prose td {
+  padding: 8px 0;
+  border-top: 0.5px solid var(--lam-hair);
+  text-align: left;
+  vertical-align: baseline;
+}
+.lam-prose tr:last-child > * {
+  border-bottom: 0.5px solid var(--lam-hair);
+}
+.lam-prose th {
+  width: 38%;
+  padding-right: 14px;
+  font: 600 10.5px/1.4 var(--lam-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lam-ink-2);
+}
+.lam-prose ul,
+.lam-prose ol {
+  margin: 0 0 1em;
+  padding-left: 1.2em;
+}
+.lam-prose li {
+  margin: 0 0 0.35em;
+}
+.lam-prose blockquote,
+.lam-prose aside,
+.lam-prose .dyk,
+.lam-prose .tip {
+  margin: 1.2em 0;
+  padding: 12px 16px;
+  border-left: 2px solid var(--lam-accent);
+  background: color-mix(in srgb, var(--lam-accent) 5%, transparent);
+  border-radius: 0 10px 10px 0;
+  font-size: 16px;
+}
+.lam-prose .dyk > b:first-child,
+.lam-prose .tip > b:first-child {
+  display: block;
+  margin-bottom: 3px;
+  font: 650 10.5px/1.4 var(--lam-sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lam-accent-text);
+}
+.lam-prose ol.steps {
+  padding-left: 1.4em;
+}
+.lam-prose ol.steps > li {
+  margin-bottom: 0.7em;
+  padding-left: 0.2em;
+}
+.lam-prose ol.steps > li::marker {
+  font: 600 13px var(--lam-sans);
+  color: var(--lam-accent-text);
+}
+.lam-prose ol.steps > li > b:first-child {
+  display: block;
+  font-weight: 600;
+}
+/* look-closer notes are actions (they show the part on the figure): quiet
+   rows with a small cue, not a run of underlined links */
+.lam-prose ul.look {
+  margin: 0 0 1.2em;
+  padding: 0;
+  list-style: none;
+}
+.lam-prose ul.look > li {
+  margin: 0;
+}
+.lam-prose ul.look > li + li {
+  border-top: 0.5px solid var(--lam-hair);
+}
+.lam-prose a.lam-look {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  column-gap: 14px;
+  min-height: 44px;
+  padding: 9px 2px;
+  color: var(--lam-ink);
+  text-decoration: none;
+  border-radius: 8px;
+}
+.lam-prose a.lam-look::after {
+  content: var(--lam-t-show, 'Show'); /* the word in the page's language (index.js localize) */
+  font: 650 10px/1 var(--lam-sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--lam-accent-text);
+}
+.lam-prose a.lam-look:hover {
+  background: var(--lam-tint);
+}
+/* the 5-second loop's narration (the caption's words), timed like the Moment readout */
+.lam-prose ol.lam-beats {
+  margin: 0 0 1.2em;
+  padding: 0;
+  list-style: none;
+}
+.lam-prose ol.lam-beats > li {
+  display: grid;
+  grid-template-columns: 3.2em 1fr;
+  column-gap: 12px;
+  align-items: baseline;
+  margin: 0;
+  padding: 8px 0;
+  border-top: 0.5px solid var(--lam-hair);
+  font-size: 16px;
+  line-height: 1.4;
+}
+.lam-prose ol.lam-beats > li:last-child {
+  border-bottom: 0.5px solid var(--lam-hair);
+}
+.lam-prose .lam-beat-t {
+  font: 600 11px/1.4 var(--lam-sans);
+  letter-spacing: 0.04em;
+  color: var(--lam-ink-2);
+  font-variant-numeric: tabular-nums;
+}
+.lam-prose .lam-beat-text {
+  font-style: italic;
+}
+.lam-prose .status {
+  font-size: 15.5px;
+  color: var(--lam-ink-2);
+}
+.lam-prose ul.sources,
+.lam-prose ol.sources {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--lam-ink-2);
+}
+.lam-prose .badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--lam-accent-text);
+  color: #fff;
+  font: 650 10px/1.3 var(--lam-sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.9em;
+}
+.lam-prose a {
+  color: var(--lam-accent-text);
+  text-underline-offset: 2px;
+}
+/* source paths and quoted prompts ("How this book was made"): URLs and
+   paths break anywhere rather than run off a phone's sheet */
+.lam-prose code,
+.lam-prose .mono {
+  font: 0.82em/1.4 ui-monospace, 'SF Mono', 'IBM Plex Mono', Menlo, Consolas, monospace;
+  color: var(--lam-ink-2);
+  overflow-wrap: anywhere;
+}
+.lam-prose .source {
+  font-size: 14px;
+  color: var(--lam-ink-2);
+}
+.lam-prose .note {
+  font: 600 10.5px/1.4 var(--lam-sans);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--lam-ink-2);
+}
+.lam-prose .later {
+  font-size: 15.5px;
+  font-style: italic;
+  color: var(--lam-ink-2);
+}
+.lam-prose blockquote {
+  overflow-wrap: anywhere;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
+
+/* ------------------------------------------------------------------ compact (≤ 640 px) */
+.lam-ui[data-compact] {
+  --lam-bar-gap: calc(10px + env(safe-area-inset-bottom, 0px));
+}
+.lam-ui[data-compact] .lam-bar {
+  left: 10px;
+  right: 10px;
+  justify-content: space-between;
+  padding: 0 4px;
+  transform: none;
+}
+.lam-ui[data-compact][data-idle] .lam-bar {
+  transform: translateY(12px);
+}
+.lam-ui[data-compact] .lam-btn {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 34px;
+  max-width: 52px;
+}
+.lam-ui[data-compact] .lam-read-btn {
+  flex: 0 0 auto;
+  min-width: 52px;
+  max-width: none;
+  padding: 0 12px;
+}
+.lam-ui[data-compact] .lam-div {
+  margin: 0;
+}
+.lam-ui[data-compact] :is(.lam-plate, .lam-fs-btn, .lam-book-title, .lam-top-rule, .lam-help-btn, .lam-library-text) {
+  display: none;
+}
+/* the pill runs the width of the screen (up to 420 px), so the switch and
+   Sound keep one place at its right end whatever the plate's name is in
+   either language: a second tap on the same spot switches back, it never
+   lands on the name (which opens the contents) */
+.lam-ui[data-compact] .lam-top {
+  top: calc(10px + env(safe-area-inset-top, 0px));
+  left: 10px;
+  right: 10px;
+  max-width: 420px;
+  gap: 0;
+  height: 44px;
+  padding: 0 2px;
+  border-radius: 999px;
+  background: var(--lam-glass);
+  -webkit-backdrop-filter: var(--lam-blur);
+  backdrop-filter: var(--lam-blur);
+  box-shadow: var(--lam-shadow);
+  opacity: 1;
+}
+.lam-ui[data-compact] .lam-library {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  justify-content: center;
+}
+.lam-ui[data-compact] .lam-top-plate {
+  height: 44px;
+}
+/* the plate name takes the pill's free width and gives it up to the switch
+   and Sound (it shrinks, they do not); a long name takes two lines, and only
+   then an ellipsis — the whole title is one tap away (the contents it opens,
+   the Read sheet) and in its accessible name */
+.lam-ui[data-compact] .lam-top-plate {
+  display: inline-flex;
+  flex: 1 1 0;
+  max-width: none;
+  padding: 0 10px 0 2px;
+}
+.lam-ui[data-compact] .lam-top-plate .lam-plate-line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  white-space: normal;
+  overflow-wrap: break-word;
+  line-height: 15px;
+}
+.lam-ui[data-compact] .lam-top .lam-top-lang {
+  margin-left: 0;
+}
+.lam-ui[data-compact] .lam-top-lang .lam-lang-long {
+  display: none;
+}
+.lam-ui[data-compact] .lam-top-lang .lam-lang-short {
+  display: inline;
+}
+.lam-ui[data-compact] .lam-caption {
+  width: calc(100% - 24px);
+  height: 46px;
+}
+.lam-ui[data-compact] .lam-cap-line {
+  font-size: 15px;
+}
+.lam-ui[data-compact] .lam-pop {
+  border-radius: 20px;
+}
+.lam-ui[data-compact] .lam-drawer-head {
+  padding-left: 26px;
+}
+/* narrow phones: Sound moves up into the top pill, so every toolbar button
+   keeps its 44 px target */
+@media (max-width: 420px) {
+  .lam-ui[data-compact] .lam-bar .lam-sound-btn {
+    display: none;
+  }
+  .lam-ui[data-compact] .lam-top-sound {
+    display: grid;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    color: var(--lam-ink-2);
+  }
+  .lam-ui[data-compact] .lam-top-sound[aria-pressed='true'] {
+    color: var(--lam-accent);
+  }
+  .lam-ui[data-compact] .lam-top-plate {
+    padding-right: 4px;
+  }
+}
+
+/* touch screens: every control keeps a 44 × 44 px target (WCAG 2.5.5), also
+   on landscape phones, which are not compact */
+.lam-ui[data-coarse] .lam-btn:not(.is-collapsed) {
+  min-width: 44px;
+}
+.lam-ui[data-coarse] .lam-help-btn {
+  width: 44px;
+  height: 44px;
+}
+.lam-ui[data-coarse] .lam-top {
+  height: 44px;
+}
+.lam-ui[data-coarse] .lam-library {
+  min-width: 44px;
+  min-height: 44px;
+}
+/* the narrowest phones (≤ 340 px) cannot fit seven 44 px controls in the
+   bar: Contents leaves it, since the plate name in the top pill opens the
+   same contents drawer */
+@media (max-width: 340px) {
+  .lam-ui[data-compact][data-coarse] .lam-bar .lam-contents-btn {
+    display: none;
+  }
+  /* the plate name keeps the 8 px the switch's dot would take */
+  .lam-ui[data-compact] .lam-top-lang .lam-lang-dot {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ short landscape (≤ 560 px tall) */
+/* Landscape phones ([data-short], set by the script): the App keeps at most
+   ~18 % of the height for the chrome, so a caption band would lie on the
+   book's tail edge. The caption steps aside (its narration is in the Read
+   sheet, the screen-reader text and the Moment slider) and the toolbar sits
+   lower, so the book gets the room. Portrait phones keep their caption. */
+.lam-ui[data-short] {
+  --lam-bar-gap: calc(10px + env(safe-area-inset-bottom, 0px));
+}
+.lam-ui[data-short] .lam-caption {
+  display: none;
+}
+/* The reading sheet takes the height. On landscape phones its title block
+   sits beside the text, as on the printed verso: a sticky header would leave
+   a sliver of the 390 px to read in. A top row holds the handle and Close. */
+.lam-ui[data-short] .lam-sheet {
+  max-height: calc(100% - 8px);
+}
+@media (min-width: 560px) {
+  .lam-ui[data-short] .lam-sheet {
+    display: grid;
+    grid-template-columns: minmax(200px, 30%) minmax(0, 1fr);
+    grid-template-rows: 44px minmax(0, 1fr);
+    width: min(920px, 100%);
+  }
+  .lam-ui[data-short] .lam-sheet-grab {
+    grid-column: 1 / -1;
+    height: auto;
+  }
+  /* edge to edge in landscape: keep clear of a notch (viewport-fit=cover) */
+  .lam-ui[data-short] .lam-sheet-head {
+    position: static; /* Close is placed against the sheet's top row */
+    padding: 0 20px 20px calc(26px + env(safe-area-inset-left, 0px));
+    border-bottom: 0;
+    border-right: 0.5px solid var(--lam-hair);
+  }
+  .lam-ui[data-short] .lam-sheet-close {
+    top: 0;
+    right: calc(8px + env(safe-area-inset-right, 0px));
+    height: 44px; /* a 44 × 44 px target, as every control */
+  }
+  .lam-ui[data-short] .lam-sheet-body {
+    padding: 0 calc(28px + env(safe-area-inset-right, 0px)) calc(22px + env(safe-area-inset-bottom, 0px)) 26px;
+  }
+}
+
+/* ------------------------------------------------------------------ reduced motion */
+.lam-ui[data-reduced-motion] *,
+.lam-ui[data-reduced-motion] *::before,
+.lam-ui[data-reduced-motion] *::after {
+  transition-duration: 0s !important;
+  transition-delay: 0s !important;
+  animation: none !important;
+}
+
+/* ------------------------------------------------------------------ high contrast */
+@media (forced-colors: active) {
+  .lam-bar,
+  .lam-pop,
+  .lam-card,
+  .lam-pill,
+  .lam-drawer,
+  .lam-sheet {
+    border: 1px solid CanvasText;
+  }
+  .lam-switch {
+    border: 1px solid CanvasText;
+  }
+}

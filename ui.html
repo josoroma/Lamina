@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Lámina UI Harness</title>
+    <meta name="description" content="Workbench for the Lámina book UI: toolbar, contents, labels, popovers and reading sheet over a static mock spread." />
+    <link rel="icon" href="data:," />
+    <style>
+      /* Harness-only styles: a flat stand-in for the 3D book so the overlay
+         can be reviewed without WebGPU. The real UI styles live in
+         src/engine/ui/ui.css and are imported by the module. */
+      html, body { margin: 0; height: 100%; background: #fff; overflow: hidden; }
+      #mock { position: fixed; inset: 0; font-family: 'EB Garamond', ui-serif, 'New York', 'Iowan Old Style', Georgia, serif; color: #1c1a17; }
+      .mk-shadow { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, rgba(120, 112, 98, 0.32), rgba(120, 112, 98, 0)); }
+      .mk-spread { position: absolute; display: flex; }
+      .mk-page { position: relative; overflow: hidden; background: #fbf8f1; box-shadow: 0 0 0 0.5px rgba(28, 26, 23, 0.08); }
+      .mk-verso { background: linear-gradient(to left, rgba(60, 50, 30, 0.13), rgba(60, 50, 30, 0) 9%), #fbf8f1; }
+      .mk-recto { background: linear-gradient(to right, rgba(60, 50, 30, 0.15), rgba(60, 50, 30, 0) 10%), #fbf8f1; }
+      .mk-compact .mk-recto { background: linear-gradient(to right, rgba(60, 50, 30, 0.1), rgba(60, 50, 30, 0) 5%), #fbf8f1; }
+      .mk-page svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+      .mk-text { position: absolute; inset: 8% 11% 10% 9%; display: flex; flex-direction: column; }
+      .mk-run { font: 600 0.62em/1 ui-sans-serif, -apple-system, 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.22em; text-transform: uppercase; color: #7b7466; }
+      .mk-num { margin-top: 9%; font: 500 2.6em/1 'Cormorant Garamond', ui-serif, Georgia, serif; color: #9e2b25; }
+      .mk-title { margin: 0.18em 0 0; font: 500 2.5em/1 'Cormorant Garamond', ui-serif, Georgia, serif; }
+      .mk-sci { margin: 0.25em 0 0; font-style: italic; font-size: 1.15em; color: #4d4943; }
+      .mk-rule { height: 1px; margin: 5% 0 4%; background: rgba(28, 26, 23, 0.16); }
+      .mk-lede { margin: 0 0 0.8em; font-size: 1.1em; font-style: italic; line-height: 1.38; }
+      .mk-body { margin: 0 0 0.6em; font-size: 0.86em; line-height: 1.5; text-align: justify; hyphens: auto; }
+      .mk-facts { display: grid; grid-template-columns: max-content 1fr; gap: 0.3em 1.2em; margin-top: auto; font-size: 0.8em; }
+      .mk-facts dt { font: 600 0.78em/1.5 ui-sans-serif, -apple-system, Arial, sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: #7b7466; }
+      .mk-facts dd { margin: 0; }
+      .mk-folio { position: absolute; bottom: 4.5%; font-size: 0.75em; color: #7b7466; }
+      .mk-blank { position: absolute; inset: 0; display: grid; place-items: center; font: italic 1.4em/1.3 'Cormorant Garamond', ui-serif, Georgia, serif; color: #7b7466; text-align: center; padding: 0 12%; }
+      #log { position: fixed; left: 14px; top: 64px; z-index: 30; margin: 0; max-width: 300px; padding: 8px 10px; border-radius: 10px; background: rgba(255, 255, 255, 0.86); box-shadow: 0 0 0 0.5px rgba(0, 0, 0, 0.1); font: 11px/1.5 ui-monospace, 'SF Mono', Menlo, monospace; color: #5c574f; pointer-events: none; white-space: pre-wrap; }
+      #log:empty { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="mock" aria-hidden="true"></div>
+    <pre id="log" aria-hidden="true"></pre>
+    <script type="module" src="./src/engine/ui/harness.js"></script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+// Spanish for src/engine/ui (ui). Keys are the exact English strings in code; values keep every
+// {placeholder}. See .scratch/bilingual/design-i18n.md §3.
+//
+// UI copy uses infinitives and nouns (no tú / usted / vos), sentence case.
+// Key names follow the Microsoft Spanish (Mexico) localization style guide,
+// §5.5.2 "Keys": Inicio, Fin, Re Pág, Av Pág, Intro, Esc, Flecha izquierda…;
+// the space bar's short cap is "Espacio" (its full name, "Barra
+// espaciadora", is too long for a key cap). Numbers are formatted in code
+// (fmtSeconds, fmtPercent: "2,4 s", "60 %"), never here.
+export default {
+  // toolbar and top bar
+  'Back to the library': 'Volver a la biblioteca',
+  'Library': 'Biblioteca',
+  'Sound': 'Sonido',
+  'Sound on': 'Sonido activado',
+  'Sound off': 'Sonido desactivado',
+  'Keyboard shortcuts': 'Atajos de teclado',
+  'Contents': 'Índice',
+  'Previous page': 'Página anterior',
+  'Next page': 'Página siguiente',
+  'Play the animation': 'Reproducir la animación',
+  'Pause the animation': 'Pausar la animación',
+  'Play': 'Reproducir',
+  'Pause': 'Pausar',
+  'Layers & dissection': 'Capas y disección',
+  'Export': 'Exportar',
+  'Exporting…': 'Exportando…',
+  'Full screen': 'Pantalla completa',
+  'Exit full screen': 'Salir de pantalla completa',
+  'Read this page': 'Leer esta página',
+  'Read': 'Leer',
+  'Book controls': 'Controles del libro',
+  'Page text': 'Texto de la página',
+  '{name}. Open contents': '{name}. Abrir el índice',
+  'Plate': 'Lámina',
+  'Lesson': 'Lección',
+  'Language': 'Idioma',
+
+  // layers & dissection popover
+  'Layers and dissection': 'Capas y disección',
+  'Layers': 'Capas',
+  'This plate is a single layer.': 'Esta lámina tiene una sola capa.',
+  'Explode': 'Despiece',
+  'Labels': 'Etiquetas',
+  'Name the parts on the plate': 'Nombrar las partes de la lámina',
+  'Moment': 'Momento',
+  'scrub the 5-second loop': 'recorrer el ciclo de 5 s',
+  'Animation time': 'Tiempo de la animación',
+  '{n} percent': '{n} por ciento',
+  '{secs} seconds': '{secs} segundos',
+  '{secs} seconds. {beat}': '{secs} segundos. {beat}',
+
+  // export menu
+  'Export · {kind} {number}': 'Exportar · {kind} {number}',
+  'SVG — colour plate': 'SVG — lámina en color',
+  'Colour fills and ink lines, print-ready': 'Rellenos de color y líneas de tinta, lista para imprimir',
+  'Preparing the colour plate…': 'Preparando la lámina en color…',
+  'SVG — line art': 'SVG — dibujo lineal',
+  'Colouring page: outlines only': 'Página para colorear: solo contornos',
+  'Preparing the line art…': 'Preparando el dibujo lineal…',
+  'PNG — current view': 'PNG — vista actual',
+  'The book as it lies now, without labels': 'El libro tal como está ahora, sin etiquetas',
+  'Preparing the PNG…': 'Preparando el PNG…',
+
+  // the loop's narration (reading sheet, screen readers)
+  'The animation': 'La animación',
+  'The animation · {title}': 'La animación · {title}',
+  '{n} seconds': '{n} segundos',
+
+  // live-region announcements
+  'Playing': 'Reproduciendo',
+  'Paused': 'En pausa',
+  'Paused. {beat}': 'En pausa. {beat}',
+  'Labels shown': 'Etiquetas visibles',
+  'Labels hidden': 'Etiquetas ocultas',
+  '{layer} shown': 'Capa {layer}: visible',
+  '{layer} hidden': 'Capa {layer}: oculta',
+  'Exploded view': 'Vista despiezada',
+  'Reassembled': 'Recompuesto',
+  '{name}. {index} of {total}.': '{name}. {index} de {total}.',
+  'Page {n}': 'Página {n}',
+
+  // contents drawer
+  'Close contents': 'Cerrar el índice',
+  'Plates': 'Láminas',
+  'Lessons': 'Lecciones',
+  'move': 'mover',
+  'open': 'abrir',
+  'close': 'cerrar',
+
+  // reading sheet, labels
+  'Close reading': 'Cerrar la lectura',
+  'Reading': 'Lectura',
+  'Figure labels': 'Etiquetas de la figura',
+  'Show': 'Ver',
+
+  // keyboard-shortcut card: sections and actions
+  'Book': 'Libro',
+  'While inspecting': 'Al inspeccionar',
+  'Previous or next page': 'Página anterior o siguiente',
+  'Title page or last page': 'Portada o última página',
+  'Zoom in or out': 'Acercar o alejar',
+  'Reset the zoom': 'Restablecer el zoom',
+  'Play or pause the animation': 'Reproducir o pausar la animación',
+  'Show or hide labels': 'Mostrar u ocultar las etiquetas',
+  'Explode or reassemble': 'Despiezar o recomponer',
+  'Toggle a layer': 'Mostrar u ocultar una capa',
+  'Inspect the figure': 'Inspeccionar la figura',
+  'Turn the figure 15°': 'Girar la figura 15°',
+  'Export SVG colour plate': 'Exportar la lámina en color (SVG)',
+  'Reset the view': 'Restablecer la vista',
+  'Turn the figure': 'Girar la figura',
+  'Tilt the view': 'Inclinar la vista',
+  'Rendering': 'Renderizado',
+
+  // key caps (as printed on Spanish keyboards) and their spoken names
+  'PgUp': 'Re Pág',
+  'PgDn': 'Av Pág',
+  'Home': 'Inicio',
+  'End': 'Fin',
+  'Space': 'Espacio',
+  'Enter': 'Intro',
+  'Esc': 'Esc',
+  'Page Up or Page Down': 'Re Pág o Av Pág',
+  'Home or End': 'Inicio o Fin',
+  'Plus or minus': 'Más o menos',
+  'Keys 1 to 9': 'Teclas del 1 al 9',
+  'Left or right bracket': 'Corchete izquierdo o derecho',
+  'Left or right arrow': 'Flecha izquierda o derecha',
+  'Up or down arrow': 'Flecha arriba o abajo',
+};

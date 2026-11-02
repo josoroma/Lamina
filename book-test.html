@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
+    <title>Lámina Book Test</title>
+    <meta name="description" content="Book-engine harness: page turning, riffles, drag and fling, inspect mode, sounds and a debug panel." />
+    <style>
+      :root { --ink: #1c1a17; --muted: #8a8377; --rule: #e8e3d9; --accent: #9e2b25; }
+      html, body { margin: 0; height: 100%; background: #fff; overflow: hidden; color: var(--ink);
+                   font: 11px/1.45 ui-monospace, 'IBM Plex Mono', Menlo, monospace; }
+      #stage { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+      #debug { position: fixed; top: 12px; left: 12px; width: 268px; padding: 10px 12px; border: 1px solid var(--rule);
+               border-radius: 8px; background: rgba(255, 255, 255, 0.92); box-shadow: 0 6px 24px rgba(28, 26, 23, 0.05);
+               user-select: none; }
+      #debug[hidden] { display: none; }
+      #debug h1 { margin: 0 0 6px; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+      #debug h1 small { float: right; color: var(--muted); font-weight: 400; letter-spacing: 0; text-transform: none; }
+      #debug .row { display: flex; justify-content: space-between; color: var(--muted); }
+      #debug .row b { color: var(--ink); font-weight: 500; }
+      #leaves { display: flex; flex-wrap: wrap; gap: 2px; margin: 8px 0; }
+      #leaves i { width: 15px; height: 20px; border-radius: 2px; font-style: normal; font-size: 9px; text-align: center;
+                  line-height: 20px; background: #f3efe6; color: var(--muted); }
+      #leaves i.L { background: #e2dccf; color: var(--ink); }
+      #leaves i.F { background: var(--accent); color: #fff; }
+      #leaves i.board { outline: 1px solid #b9b2a4; }
+      #leaves i.vis { box-shadow: inset 0 -2px 0 var(--ink); }
+      #debug .btns { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+      #debug button { font: inherit; padding: 2px 7px; border: 1px solid #d8d2c6; border-radius: 4px; background: #fff; cursor: pointer; color: var(--ink); }
+      #debug button:hover { border-color: var(--ink); }
+      #hint { position: fixed; left: 50%; bottom: 14px; transform: translateX(-50%); color: var(--muted); letter-spacing: 0.04em;
+              white-space: nowrap; pointer-events: none; transition: opacity 0.6s; }
+      @media (max-width: 600px) { #debug { width: auto; right: 12px; } #hint { display: none; } }
+    </style>
+  </head>
+  <body>
+    <canvas id="stage" aria-label="Interactive 3D book (test harness)"></canvas>
+    <aside id="debug" aria-label="Book engine debug panel"></aside>
+    <p id="hint">drag a page · ← → keys · scroll to zoom · two-finger swipe · double-click a figure · D: debug</p>
+    <script type="module" src="./src/engine/book/harness.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="./logo.svg" type="image/svg+xml" />
+    <title>Lámina Typeset Preview</title>
+    <style>
+      :root { color-scheme: light; }
+      html, body { margin: 0; background: #ecebe7; color: #2a2723; font: 12px/1.4 ui-monospace, Menlo, monospace; }
+      header { position: sticky; top: 0; z-index: 2; padding: 10px 16px; background: rgba(236, 235, 231, 0.94); border-bottom: 1px solid #d9d6cf; }
+      header b { font-weight: 600; }
+      #pages { display: flex; flex-direction: column; align-items: center; gap: 36px; padding: 28px 16px 64px; }
+      .spread { display: flex; align-items: center; justify-content: center; gap: 0; }
+      .slot { margin: 0; display: flex; flex-direction: column; align-items: center; }
+      .slot.empty { width: min(560px, calc((100vw - 120px) / 2)); }
+      .slot.verso .canvas-wrap { box-shadow: -6px 10px 24px rgba(0, 0, 0, 0.16); }
+      .slot.recto .canvas-wrap { box-shadow: 6px 10px 24px rgba(0, 0, 0, 0.16); }
+      .canvas-wrap { position: relative; line-height: 0; }
+      canvas { display: block; }
+      figcaption { margin-top: 8px; color: #7a756c; font-size: 11px; }
+      figcaption.warn { color: #b3302a; font-weight: 600; }
+      .hit { position: absolute; outline: 1.5px solid rgba(200, 40, 40, 0.75); background: rgba(200, 40, 40, 0.08); }
+      body.single { background: #fff; }
+      body.single header { display: none; }
+      body.single #pages { padding: 0; gap: 0; align-items: flex-start; }
+      body.single .canvas-wrap { box-shadow: none; }
+      body.single figcaption { display: none; }
+      body.view3d { background: #fff; overflow: hidden; }
+      body.view3d header, body.view3d #pages { display: none; }
+      #stage3d { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+    </style>
+  </head>
+  <body>
+    <header><b>Lámina typeset</b> · <span id="info">loading…</span></header>
+    <main id="pages"></main>
+    <script type="module" src="./src/engine/typeset/preview.js"></script>
+  </body>
+</html>

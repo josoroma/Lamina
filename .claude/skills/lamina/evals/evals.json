@@ -1,0 +1,104 @@
+{
+  "skill_name": "lamina",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add a fourth book to Lámina: 'Ranas', the frogs of Costa Rica — six plates (red-eyed tree frog, strawberry poison frog, glass frog, golden toad, Mexican burrowing toad, gladiator frog), each with a 5-second animation. Make it as good as Serpientes.",
+      "expected_output": "A registered, validated, fact-checked book with a new 'frog' figure subject that renders in the reader on WebGPU and WebGL 2.",
+      "files": [],
+      "assertions": [
+        "src/books/ranas.js exists, is registered in src/books/index.js and `node scripts/validate-books.mjs ranas` reports 0 errors",
+        "Both editions exist: src/books/es/ranas.js is registered as the book's `es` loader, BRIEFS.ranas is recorded verbatim in src/books/making/index.js (with its source in docs/prompts/) and translated in making/es.js, and `node scripts/validate-books.mjs ranas --lang all --fit` reports 0 errors",
+        "A 'frog' subject is registered in src/subjects/index.js and exports createFigure(params, ctx) returning root, title, duration 5, layers, labels, parts (with colours) and update",
+        "update(t) is a pure function of t: `node scripts/audit.mjs` reports no seam failure for the Ranas plates",
+        "New label ids are added to the canonical lists in docs/architecture/CONTRACTS.md §6 and scripts/validate-books.mjs",
+        "docs/books/ranas-research.md exists with sources and a fact-check log produced by at least two independent checkers",
+        "The golden toad is described as extinct (IUCN EX), not as a living species",
+        "Screenshots of every plate were taken on both WebGPU and ?gl=webgl and reviewed"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "On the Flores book the orchid's leaves go off the top of the screen on my laptop. Fix it without making the book smaller on the other plates.",
+      "expected_output": "Framing that includes the active figure's fitted box only when it exceeds the spread.",
+      "files": [],
+      "assertions": [
+        "The fix unions the active figure's fitted bounds (FigureHost m.box × m.fitScale at the recto anchor) into the camera rig's fit box instead of shrinking FIGURE_AREA for every figure",
+        "Plates whose figures fit inside the spread keep the ~95% width framing",
+        "The guaria morada plate is screenshotted at 1440×900 and 1600×1000 with nothing clipped"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Export every figure of Calaveras as an SVG colouring page and as a colour plate, and put them in docs/outputs.",
+      "expected_output": "Two SVGs per plate captured from a production build.",
+      "files": [],
+      "assertions": [
+        "Uses scripts/capture.mjs (or exportSVG via window.lamina / scripts/export-svg.mjs) rather than hand-written SVG",
+        "Runs the capture against `vite build` + `vite preview` (or explains why), not the reloading dev server",
+        "Produces <plate>-line.svg and <plate>-color.svg for all six lessons and opens at least one to check it",
+        "Line-art SVGs contain outlines only (colouring page); colour SVGs contain part fills"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Someone says the background of the book page is light grey instead of white on their machine. What's going on and how do we fix it?",
+      "expected_output": "Explains clear-colour tone mapping in WebGPURenderer and the transparent-canvas fix.",
+      "files": [],
+      "assertions": [
+        "Identifies that WebGPURenderer tone-maps the clear colour / scene.background, so #ffffff becomes grey",
+        "Fix: never set scene.background; alpha: true, setClearColor(0xffffff, 0) over a CSS #fff page",
+        "Suggests verifying by sampling a corner pixel of a screenshot (expect 255,255,255) on both backends"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Make me an interactive 3D encyclopedia of Costa Rican butterflies in a new folder ~/sites/mariposas.",
+      "expected_output": "A bootstrapped project with a butterfly book plan and the workflow to fill it.",
+      "files": [],
+      "assertions": [
+        "Runs .claude/skills/lamina/scripts/bootstrap.mjs ~/sites/mariposas (without --with-books) and npm install",
+        "Plans 6–8 plates with figure params, layers, canonical label ids and a 5-second story per plate before writing code",
+        "Proposes or creates a reusable wing kit (or extends kits/petal) instead of hand-modelling each species",
+        "Runs the accuracy protocol (author → two adversarial checkers → reviser) for the text"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "In the open-jaw skull lesson, make the condyle glide forward from the very start of opening instead of only after a third of the way.",
+      "expected_output": "A pure-function-of-t change to the jaw motion with beats and panels kept consistent.",
+      "files": [],
+      "assertions": [
+        "Edits jawMotion in src/subjects/skulls/lessons.js so glide is non-zero as soon as the jaw opens, keeping the loop seamless",
+        "Checks that the manifest animation.beats for open-jaw still describe what is on screen at their times",
+        "Verifies in lab.html at several t values (and the seam with scripts/audit.mjs)"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Ranas exists in English now. Add its Spanish edition so it reads in both languages like the other books.",
+      "expected_output": "A composed, validated Spanish edition plus the frog figure's Spanish strings, fitted and reviewed.",
+      "files": [],
+      "assertions": [
+        "src/books/es/ranas.js mirrors src/books/ranas.js (same keys and list lengths, plate ids and lookCloser labels kept, every lookCloser has a Spanish name of ≤ 3 words, locale 'es'), and `node scripts/validate-books.mjs ranas --lang es` reports 0 errors",
+        "Ids, numbers, theme and figure params are not changed; binomials stay identical and in *italics*; numbers use the decimal comma and U+00A0 (never U+202F)",
+        "The frog subject's figure strings are translated in its own dictionary (src/i18n/es/<folder>.js, registered in src/i18n/es/index.js); `node scripts/audit.mjs ranas --lang es --i18n --json out.json` reports no missing string and no Spanish label over 110 px, and `node scripts/validate-books.mjs ranas --lang es --runtime out.json` reports 0 errors (every look-closer name is exactly its label's Spanish pill)",
+        "`LAMINA_URL=… node scripts/validate-books.mjs ranas --lang all --fit` passes: same page sequence and folios in both languages, no overflow or hOverflow, every page ≥ 90 % and the making pages ≥ 25/26",
+        "The translation went through the two-lens review of references/accuracy.md (fidelity and language) and the golden toad is still described as extinct (IUCN EX → «Extinto»)",
+        "The reader was screenshotted at #/es/ranas on WebGPU and ?gl=webgl, desktop and phone, including a switch to English on a plate that keeps the spread and the moment"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "In the Spanish Serpientes on my phone, one of the matabuey's labels ends in an ellipsis. Fix it.",
+      "expected_output": "A shorter, still correct Spanish label in the snakes dictionary, measured under the pill limit.",
+      "files": [],
+      "assertions": [
+        "Finds the label with `node scripts/audit.mjs serpientes --lang es --i18n` (or the lab at &lang=es) rather than guessing",
+        "Changes only the Spanish value in src/i18n/es/snakes.js (the English key in src/subjects/snakes stays), keeping it a correct name for the same structure",
+        "The new value measures ≤ 110 px at 12.5 px in the UI font and the audit reports no Spanish label over the limit",
+        "Verifies at 390×844 on #/es/serpientes?plate=5 with labels on, reading the screenshot"
+      ]
+    }
+  ]
+}
