@@ -1,0 +1,260 @@
+/* App shell: pure white stage, the library header and fatal error card.
+   Book UI chrome lives in src/engine/ui/ui.css. */
+:root {
+  --ink: #1c1a17;
+  --muted: #6f685b;
+  --paper: #fbf8f1;
+  color-scheme: light;
+}
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  color: var(--ink);
+  font: 15px/1.45 ui-sans-serif, -apple-system, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+#stage {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  outline: none;
+  transition: opacity 0.35s ease;
+}
+body.is-loading #stage {
+  opacity: 0.15;
+}
+body.is-loading::after {
+  content: '';
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 28px;
+  margin: -14px 0 0 -14px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(28, 26, 23, 0.15);
+  border-top-color: var(--ink);
+  animation: lamina-spin 0.9s linear infinite;
+}
+@keyframes lamina-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.is-loading::after {
+    animation: none;
+  }
+}
+
+/* library */
+.library {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: max(20px, env(safe-area-inset-top)) max(28px, env(safe-area-inset-right)) max(22px, env(safe-area-inset-bottom))
+    max(28px, env(safe-area-inset-left));
+}
+/* header row: logo, name and tagline, the language switch at the right end
+   (its own stylesheet; the rules here name classes, so none restyles it) */
+.library header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.library header h1 {
+  display: block;
+  margin: 0;
+  font: 500 26px/1 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  letter-spacing: 0.02em;
+}
+.library .library-brand {
+  min-width: 0;
+}
+.library .library-tagline {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: var(--muted);
+}
+.library header .library-lang {
+  margin-left: auto;
+}
+/* phones: the switch (44 px targets) takes the row's right end, so the
+   margins and the tagline's tracking make room; it keeps to one line in
+   either language down to 375 px wide, and wraps in balance below */
+@media (max-width: 420px) {
+  .library {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+  }
+  .library header {
+    gap: 10px;
+  }
+  .library .library-tagline {
+    letter-spacing: 0.14em;
+  }
+}
+@media (max-width: 380px) {
+  .library .library-tagline {
+    letter-spacing: 0.1em;
+  }
+}
+.library ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.library.is-grid li { width: min(250px, 28vw); }
+.library.is-narrow li { width: min(160px, 40vw); }
+.library.is-narrow a { padding: 5px 4px; }
+.library.is-narrow a b { font-size: 18px; }
+.library.is-narrow .library-sub { display: none; }
+.library.is-strip li { width: min(150px, 13vw); }
+.library.is-strip a { padding: 5px 4px; }
+.library.is-strip a b { font-size: 16px; }
+.library.is-strip .library-sub { display: none; }
+.library li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  pointer-events: auto;
+  will-change: transform;
+}
+.library a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+.library a:hover,
+.library a:focus-visible {
+  background: rgba(28, 26, 23, 0.05);
+  outline: none;
+}
+/* keyboard focus must read at a glance (a 5% tint alone is ~1.1:1 on white) */
+.library a:focus-visible {
+  box-shadow: 0 0 0 2px var(--ink);
+}
+.library a b {
+  display: block;
+  font: 500 20px/1.1 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+}
+.library a .library-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+  max-width: 22ch;
+  margin: 3px auto 0;
+  text-wrap: balance; /* "Un herbario vivo / de Costa Rica", never a lone last word */
+}
+.library .hint {
+  margin: 10px 0 0;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .library ul {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .library a .library-sub {
+    display: none;
+  }
+}
+/* narrow phones: the hint keeps to one line, so the shelf keeps its size */
+@media (max-width: 480px) {
+  .library .hint .hint-more {
+    display: none;
+  }
+}
+/* landscape phones: the captions (reserved below the row) keep to the title
+   — the covers print the subtitles — and the hint to one short line */
+@media (max-height: 500px) and (orientation: landscape) {
+  .library a .library-sub,
+  .library .hint .hint-more {
+    display: none;
+  }
+}
+
+.fatal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* sized by its text, not by the half width that left: 50% leaves a
+     shrink-to-fit box (a phone wrapped the button in two); 16px gutters */
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(520px, calc(100vw - 32px));
+  overflow-wrap: anywhere; /* a long book id or URL wraps inside the card */
+  padding: 22px 26px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+}
+.fatal pre {
+  white-space: pre-wrap;
+  font-size: 12px;
+  color: #8a2a1e;
+}
+.fatal p {
+  margin: 0 0 12px;
+}
+.fatal a,
+.fatal button {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+  text-decoration: none;
+  padding: 10px 16px;
+  border: 1px solid rgba(28, 26, 23, 0.16);
+  border-radius: 999px;
+  background: #fff;
+  cursor: pointer;
+}
+.fatal a:hover,
+.fatal button:hover {
+  background: rgba(28, 26, 23, 0.05);
+}
+.fatal a:focus-visible,
+.fatal button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

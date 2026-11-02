@@ -14,16 +14,17 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { findProjectRoot, option } from './project-root.mjs';
 
-const ROOT = findRoot();
 const args = process.argv.slice(2);
+const ROOT = findProjectRoot({ series: option(args, 'series') });
 const id = args[0];
 const opt = (n, d) => {
   const i = args.indexOf(`--${n}`);
   return i >= 0 ? args[i + 1] : d;
 };
 if (!id || !/^[a-z][a-z0-9-]*$/.test(id) || /^[a-z]{2}$/.test(id)) {
-  console.error('usage: new-book.mjs <id: lowercase-kebab, not a two-letter language code> --title "Title" --subtitle "Subtitle" [--subtitle-es "…"] [--author "Name" --mark id]');
+  console.error('usage: new-book.mjs <id: lowercase-kebab, not a two-letter language code> --title "Title" --subtitle "Subtitle" [--subtitle-es "…"] [--author "Name" --mark id] [--series lamina]');
   process.exit(2);
 }
 const target = resolve(ROOT, 'src/books', `${id}.js`);
@@ -47,15 +48,19 @@ try {
 }
 const author = opt('author', byline?.name ?? '__Author__');
 const mark = opt('mark', opt('author') ? null : byline?.mark ?? null);
-const fill = (s) => s
-  .replaceAll('__ID__', id)
-  .replaceAll('__TITLE__', opt('title', id[0].toUpperCase() + id.slice(1)))
-  .replaceAll('__SUBTITLE__', opt('subtitle', 'A Living Atlas'))
-  .replaceAll('__Subtítulo__', opt('subtitle-es', '__Subtítulo__'))
-  .replaceAll('__AUTHOR__', author)
-  .replaceAll("'__MARK__'", mark ? `'${mark}'` : 'null')
-  .replaceAll('__YEAR__', String(new Date().getFullYear()))
-  .replaceAll('__N__', opt('volume', 'I'));
+const fill = (template) => {
+  const values = {
+    '__ID__': id, '__TITLE__': opt('title', id[0].toUpperCase() + id.slice(1)),
+    '__SUBTITLE__': opt('subtitle', 'A Living Atlas'), '__Subtítulo__': opt('subtitle-es', '__Subtítulo__'),
+    '__AUTHOR__': author, '__YEAR__': String(new Date().getFullYear()), '__N__': opt('volume', 'I'),
+  };
+  let text = template.replaceAll("'__MARK__'", () => JSON.stringify(mark));
+  for (const [token, value] of Object.entries(values)) {
+    const literal = JSON.stringify(String(value)).slice(1, -1).replaceAll("'", "\\'");
+    text = text.replaceAll(token, () => literal);
+  }
+  return text;
+};
 const tpl = (f) => readFileSync(resolve(import.meta.dirname, '../templates', f), 'utf8');
 writeFileSync(target, fill(tpl('book.js')));
 mkdirSync(resolve(ROOT, 'src/books/es'), { recursive: true });
@@ -68,6 +73,14 @@ if (!src.includes(`id: '${id}'`)) {
   const line = `  { id: '${id}', load: () => import('./${id}.js'), es: () => ${es} },\n`;
   src = src.replace(/(export const BOOKS = \[\n(?:.*\n)*?)(\];)/, `$1${line}$2`);
   writeFileSync(reg, src);
+}
+
+// Keep the portable series description in sync with the executable registry.
+const metadataPath = resolve(ROOT, 'series.json');
+if (existsSync(metadataPath)) {
+  const metadata = JSON.parse(readFileSync(metadataPath, 'utf8'));
+  metadata.books = [...new Set([...(metadata.books ?? []), id])];
+  writeFileSync(metadataPath, JSON.stringify(metadata, null, 2) + '\n');
 }
 
 // the brief: quoted verbatim in docs/prompts/<id>-brief.md, printed on the book's last page
@@ -105,13 +118,3 @@ next:
   6. node scripts/audit.mjs ${id} --lang es --i18n --json .scratch/${id}-es.json, then
      node scripts/validate-books.mjs ${id} --lang es --runtime .scratch/${id}-es.json
   7. open http://127.0.0.1:5173/#/en/${id} and #/es/${id}`);
-
-function findRoot() {
-  let d = process.cwd();
-  while (d !== '/') {
-    if (existsSync(resolve(d, 'src/books/index.js'))) return d;
-    d = resolve(d, '..');
-  }
-  console.error('run inside a Lámina project (src/books/index.js not found)');
-  process.exit(1);
-}

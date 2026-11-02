@@ -1,0 +1,18 @@
+{
+  "id": "lamina",
+  "title": "Lamina",
+  "number": 1,
+  "languages": [
+    "en",
+    "es"
+  ],
+  "books": [
+    "serpientes",
+    "flores",
+    "calaveras",
+    "atomos",
+    "celulas",
+    "fogata"
+  ],
+  "site": "https://josoroma.github.io/Lamina/"
+}

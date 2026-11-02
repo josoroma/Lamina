@@ -21,16 +21,25 @@ imprint, and its last leaf is **"How this book was made"**: the prompt that
 started the series and the book's own brief, verbatim (translated, and labelled
 so, in Spanish).
 
-The working reference implementation is this repository: three books
-(*Serpientes*, *Flores*, *Calaveras*) at `index.html#/en/` and `#/es/`. Read the
-code before inventing anything — most problems you will meet are already solved there.
+The first series is **Lamina**, in `series/lamina/`: *Snakes / Serpientes*,
+*Flowers / Flores*, *Skulls / Calaveras*, *Atoms / Átomos*, *Cells / Células* and
+*Campfire by the Beach / Fogata en la playa*. It is published at
+<https://josoroma.github.io/Lamina/>. The skill stays at `.claude/skills/lamina/`
+in the catalog root; each series app has its own source, assets, scripts and docs.
+
+All `src/`, `public/`, `docs/` and validation-script paths below are relative to
+the selected series app. From the catalog root, scaffolding commands select
+`series/lamina/` by default; pass `--series <id>` to select another folder.
+Inside an independently copied series repository, the app root is the repository
+root. For creating or moving a complete series, read
+[references/series.md](references/series.md).
 
 ## Quick start
 
 ```bash
-npm install
-npx vite --port 5173 --host 127.0.0.1      # http://127.0.0.1:5173/#/en/  (library) · #/es/
-npm test                                   # Node-only tests: the i18n core and Spanish hyphenation
+npm ci
+npm run dev                            # http://localhost:5173/#/en/ or #/es/
+npm test                                   # Node-only edition, narration, caption and reader tests
 ```
 
 | page | what it is for |
@@ -51,7 +60,7 @@ npm test                                   # Node-only tests: the i18n core and 
    `lithograph` for colour plates or `engraving` for drawing books).
 2. **Scaffold**:
    `node .claude/skills/lamina/scripts/new-book.mjs <id> --title "…" --subtitle "…" --subtitle-es "…"`
-   creates the English manifest, its Spanish edition `src/books/es/<id>.js`, the
+   creates the English manifest in the selected series, its Spanish edition `src/books/es/<id>.js`, the
    registry entry and a brief stub; for a new kind of figure,
    `node .claude/skills/lamina/scripts/new-subject.mjs <type> [--dir <folder>]`
    creates the subject and its Spanish dictionary `src/i18n/es/<folder>.js`.
@@ -234,16 +243,23 @@ and how the original build and the bilingual edition were parallelised.
   that withdraw its feature (or hide its anchor while the feature is gone), and look
   at every plate's labels at every beat.
 
-## Bootstrapping elsewhere
+## Bootstrapping another series
 
-`node .claude/skills/lamina/scripts/bootstrap.mjs <target-dir> [--with-books] [--author "Name"]`
-copies the engine, kits, app, i18n runtime and dictionaries, pages, scripts and
-this skill into a new project — without the three books (a bilingual starter book
-on the demo figure, with its making texts) unless `--with-books` — ready for
-`npm install`.
+```bash
+node .claude/skills/lamina/scripts/bootstrap.mjs ../my-series --id my-series --title "My series" --author "Name"
+```
+
+This produces a self-contained app with the engine, kits, reader, a bilingual
+starter, the demo figure, build tooling and a copy of this skill. Use
+`--with-books` to include every book and subject from the selected source series;
+use `--series <id>` to select that source in a catalog. It creates no Git history,
+remotes or deployment. The new directory can become its own repository or live
+under another catalog's `series/` folder. See [series.md](references/series.md)
+for the layout and concrete commands.
 
 ## Files in this skill
 
+- `references/series.md` — catalog folders, standalone repositories and bootstrap/scaffold commands
 - `references/architecture.md` — module map, data flow, languages, APIs, how the builds were parallelised
 - `references/manifest.md` — book schema, the Spanish edition, page order, text budgets, canonical ids
 - `references/figures.md` — figure contract, kits, strings, building and tuning a subject

@@ -1,38 +1,33 @@
 {
   "name": "lamina",
-  "private": true,
   "version": "0.1.0",
-  "type": "module",
-  "description": "Living 3D scientific plates: page-turnable, interactive WebGPU books built from a Claude Code skill.",
+  "private": true,
+  "description": "Lamina book engine, authoring skill and independent bilingual book series.",
+  "workspaces": [
+    "series/*"
+  ],
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "test": "node scripts/i18n-core-test.mjs && node scripts/hyphen-es-test.mjs && node scripts/narration-text-test.mjs && node scripts/narration-controller-test.mjs && node scripts/caption-pace-test.mjs && node scripts/book-view-test.mjs",
-    "test:i18n": "node scripts/i18n-core-test.mjs",
-    "test:hyphen-es": "node scripts/hyphen-es-test.mjs",
-    "test:narration": "node scripts/narration-text-test.mjs && node scripts/narration-controller-test.mjs && node scripts/caption-pace-test.mjs",
-    "test:book-view": "node scripts/book-view-test.mjs",
-    "narration:setup": "uv venv --python 3.12 --allow-existing .venv-narration && uv pip install --python .venv-narration/bin/python -r scripts/narration-requirements.txt",
-    "narration:serve": ".venv-narration/bin/python scripts/narration-server.py --port 8765",
-    "validate": "node scripts/validate-books.mjs",
-    "validate:all": "node scripts/validate-books.mjs --lang all",
-    "i18n": "node scripts/i18n-strings.mjs --lang es --missing",
-    "audit": "node scripts/audit.mjs",
-    "shot": "node scripts/shot.mjs",
-    "capture": "node scripts/capture.mjs",
-    "export-svg": "node scripts/export-svg.mjs"
-  },
-  "dependencies": {
-    "@fontsource/cormorant-garamond": "^5.3.0",
-    "@fontsource/eb-garamond": "^5.3.0",
-    "@fontsource/ibm-plex-mono": "^5.3.0",
-    "@fontsource/ibm-plex-sans-condensed": "^5.3.0",
-    "@fontsource/oswald": "^5.3.0",
-    "three": "^0.186.1"
-  },
-  "devDependencies": {
-    "playwright-core": "^1.64.1",
-    "vite": "^8.3.5"
+    "dev": "npm run dev --workspace @lamina/series-lamina --",
+    "build": "npm run build --workspace @lamina/series-lamina --",
+    "preview": "npm run preview --workspace @lamina/series-lamina --",
+    "test": "npm run test --workspace @lamina/series-lamina --",
+    "test:i18n": "npm run test:i18n --workspace @lamina/series-lamina --",
+    "test:hyphen-es": "npm run test:hyphen-es --workspace @lamina/series-lamina --",
+    "test:narration": "npm run test:narration --workspace @lamina/series-lamina --",
+    "test:book-view": "npm run test:book-view --workspace @lamina/series-lamina --",
+    "test:characters": "npm run test:characters --workspace @lamina/series-lamina --",
+    "narration:setup": "npm run narration:setup --workspace @lamina/series-lamina --",
+    "narration:serve": "npm run narration:serve --workspace @lamina/series-lamina --",
+    "validate": "npm run validate --workspace @lamina/series-lamina --",
+    "validate:all": "npm run validate:all --workspace @lamina/series-lamina --",
+    "i18n": "npm run i18n --workspace @lamina/series-lamina --",
+    "audit": "npm run audit --workspace @lamina/series-lamina --",
+    "shot": "npm run shot --workspace @lamina/series-lamina --",
+    "capture": "npm run capture --workspace @lamina/series-lamina --",
+    "export-svg": "npm run export-svg --workspace @lamina/series-lamina --",
+    "new:series": "node .claude/skills/lamina/scripts/bootstrap.mjs",
+    "narration:publish": "npm run narration:publish --workspace @lamina/series-lamina --",
+    "narration:check": "npm run narration:check --workspace @lamina/series-lamina --",
+    "narration:coverage": "npm run narration:coverage --workspace @lamina/series-lamina --"
   }
 }

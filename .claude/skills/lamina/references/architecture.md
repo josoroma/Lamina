@@ -8,7 +8,7 @@ route names its language, and a language switch changes the view in place.
 index.html ─ src/app/boot.js ─┬─ engine/renderer.js   WebGPURenderer (WebGL 2 fallback), custom tone curve
    │                          ├─ engine/stage.js      scene, light rig, ground shadow, CameraRig, floating `world`
    │                          ├─ app/route.js         #/<lang>/<book>?… ↔ { lang, book, params }; hrefs carry the language
-   │                          ├─ app/Library.js       three closed Books on a shelf + the language switch → #/<lang>/<id>
+   │                          ├─ app/Library.js       the series’ closed Books on a shelf + the language switch → #/<lang>/<id>
    │                          └─ app/Reader.js        one Book + FigureHost + UI + input + audio + export
    │                               │
    ├─ i18n/index.js  t/tl/msg, setLang/loadLang/onLang, formatters, preference
@@ -232,3 +232,8 @@ layers, parts and colours, the SVG's generated names, beats) and `info().missing
 The archived scripts are in `docs/prompts/` (`02-build-workflow.js` and later);
 reuse their shape for new books (one content pipeline, one translation pipeline and
 one subject agent per book).
+
+
+Paths in this reference are relative to the selected series app: `series/lamina/`
+in the catalog, or the repository root for a standalone copy. See
+[series.md](series.md) for selection and bootstrap commands.

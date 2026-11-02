@@ -1,0 +1,2593 @@
+{
+  "version": 1,
+  "model": "mlx-community/chatterbox-multilingual-v3",
+  "revision": "03565773edd72e949572557597af8063bb49a18a",
+  "voiceModel": "ResembleAI/chatterbox",
+  "voiceRevision": "5bb1f6ee58e50c3b8d408bc82a6d3740c2db6e18",
+  "parameters": {
+    "exaggeration": 0.1,
+    "cfg_weight": 0.3,
+    "temperature": 0.7,
+    "repetition_penalty": 1.2,
+    "max_new_tokens": 1000
+  },
+  "encoding": {
+    "format": "mp3",
+    "sampleRate": 24000,
+    "channels": 1,
+    "bitrate": 64000
+  },
+  "coverage": {
+    "completePages": 134,
+    "totalPages": 134
+  },
+  "pages": {
+    "flores:es:flores:imprint:c36e47ce": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Créditos",
+      "chunks": [
+        "1f8a2766ca7ca1655541c01c58aee44325617d340b9118bd40f4dbc8a589040f.mp3",
+        "f0b91927b62758093bfcf434c62e2cb60849bfd6fff185d7a59c17d2bf2cec80.mp3",
+        "885bec9e7b102ea4c2048265b5e2fa155ba2a2d93c5563dd4fe195ee1a8fe979.mp3",
+        "b9b14f3899c991ac7f7f4730c06f808fe2f8b76ceaf5320b38f02ea6bc0ee5f9.mp3",
+        "0575da81478d05153835742979df027c3683900a7b1a8d6c5a56480b38ea67ff.mp3",
+        "b41525dd70bae8f0989d534767aea2f2240384d91b7182f0f07ed5096999e3c7.mp3",
+        "8aa8ab227e57397e19d1c0c2ababa91f839720b8e0ff4ee05b0f02347dcde196.mp3"
+      ]
+    },
+    "flores:es:flores:intro:c2a47f65": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Las flores negocian",
+      "chunks": [
+        "2fa7de9e8cf25d51a406baf3e9f57fb4eda335d66aa5c5feeec99d7e28c76c3d.mp3",
+        "011e77db27e661a5204ce63ab465ce4ce852d4bfa4c76ad868fa082e9d9f3a86.mp3",
+        "415979b90da471b3175b70dff8011e28f9e67a0001a030196ade9393a8d8166d.mp3",
+        "4d3e4694469ddf70e0ac2fb97332279620c5c58085508644a71cd7d0a3fca831.mp3",
+        "104bd317b50b5c0c7b2c5e81515fc3e7dd994785cfc8ba2abb25357d2cf24088.mp3",
+        "9ec65c4b5f0dd7782631ceeb1190937bb79d24a3c147567fe0b5447aa1454d67.mp3",
+        "1df9041e56070413c4c904832de0148dc1eda2114b8d9886b73be1ad90ab1c57.mp3",
+        "5dfbf2b4c800e61c11d96f86713da7190542e3b81ef15dfee83a89f41511ba32.mp3",
+        "bcba0a1376d208f8f64430c4952ff2ebf96297928c1bfba2e030a6e6c60314e8.mp3",
+        "6bda5be3b9140ceab5b53e5c57f3c02e8a7cf9ec049052af94fbc208e676e305.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:imprint:e8dfbc2c": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Imprint",
+      "chunks": [
+        "23e0be698b3ceb88b63241f92c8d63dca22c7c6a8dd4d5cd94f325986c053108.mp3",
+        "47c58cb30e70c3e67c6b00e275f09507c5973c807f6eecdcb4f4f7081bd5b0a1.mp3",
+        "eb45dc1d212d6f4b90c082420ae56e035ab84f44dd4b6632faed4527932b4a96.mp3",
+        "703f9ae5a472d817a8944908faea33d4c016bf825220658d1c4938e383d46507.mp3",
+        "c620b1ef6bbb7d0b8a50f8c2a3671cef08dfdc49dc389141f819f45f700fa70d.mp3",
+        "57e0c478bd37aa77002df915c0a3fb2929d78cc33e77cf618b1c039dae702871.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:intro:71e19fa6": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Why So Many Snakes?",
+      "chunks": [
+        "5a22f30745ca6a708afcb0aa1bd8000d73d9e75e312edf34eaf3ae0218e232a5.mp3",
+        "f5d9247f60aaac84c913992d707d458b3a5fc580ab4b226f069dfaacb9715959.mp3",
+        "bafd864d67afd57e0637a089f3cea48658b27b811aafb534a08a9dd50cd35293.mp3",
+        "0478f43a68cda050bcfc930bd6c73e1ce2b6c904dc4c47cc390c27445d4d6e1f.mp3",
+        "de3d08a662b7d4e52abe937bd6f34adc32b64c09edd2d627f95266b517109934.mp3",
+        "f8f54ecb77e3e9cd68a10c9ea922d9f0994830c7e7b6df2e449dcf177a1bbed0.mp3",
+        "114d9b7e8174accd7a4afa5277d1b88fe2269c0d861476b0a92fb268f13d4a30.mp3",
+        "b46e02e79b1450bce8aa4f192dd8fc19e393241f15df833a83d422c307ee7b93.mp3",
+        "ca9596c67609431b70339bd78440bf29a5ad59416480a15378903e9612a22428.mp3",
+        "cace3fa9cf3bc863e2d84725f387e4c0baeaed4dbd5436703e24bf8bc67f2450.mp3",
+        "fd359ddb9dec18eaa838a91e146a88dcf79535f7fdd801147de71cf35fec3f6e.mp3",
+        "4ff2db81ffc2455a45dbb5c3441b2841b36cf210ee5ee3cc30fa0ee71dba3e65.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:terciopelo:5e09e438": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Terciopelo",
+      "chunks": [
+        "13212e204188f2fd20171b3262016a0550474e4aab616b4377c33606a03e22d9.mp3",
+        "52138064f5c3a25358623ead420280a6fdd4c5c32c287fe295884af0db41a82d.mp3",
+        "d1a081dfb91b137b97ca2768234016e72377f3e828352a6cca048d90a3c20809.mp3",
+        "e115614ff37597cc5b7f7cec9554c875ff0243910e4f5bb0c05f23e76dc8bfc2.mp3",
+        "4c0fb12f6fb8c98d09f8ba5ceba909665a3c0d2fae43819229f66c078a853f78.mp3",
+        "fd6ead2c41f27deba3fed991d069c60ffac187ef8dd9a26d3e75414c641fb8b9.mp3",
+        "51739cbc5a4e415c4ab9887df0ff62abbe6a143ad6cb3ca2c853b2fc1711a22a.mp3",
+        "05fbc4840ed404b407f7d17c650263b766df2ede2f9084e50728ebcab0256798.mp3",
+        "485717886124b982f5924dfcc66bb8fb8fb39cb57c0e8562251105a352b08357.mp3",
+        "f64820817c38caa6218131195f646b532b4ec4a910d70a9771a65f0fef710a6d.mp3",
+        "1b4c96bfc85855ec1a7906f0ce96ba08d92b26ca840e43058e5dbe4ca933d255.mp3",
+        "13bf53b34f663287ab08fd47f3643d71cb132f65291378c3fe6b08b90b7fd4bb.mp3",
+        "6e5ed94a3b9128a55c714ec19b92248020b67fd56c52c135e4797508ff689cb1.mp3",
+        "7d8be6cfafadd43922c9f97491af3d7a2c9cb15e6f1db45ca22f9911f3e285cb.mp3",
+        "09f7a099be3f8bb19704e490a1011e7616da2b07e80afb75b7fc647a0f45b13b.mp3",
+        "7993f68a868fcac03729f6c12e66f9775628f6a623f7fbbd300b3c31118ab474.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:bocaraca:9ef67a47": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Bocaracá",
+      "chunks": [
+        "e7a7f300250b4a06123b7a8d0cdfada627d0c80babd06d7614ebe8c718672408.mp3",
+        "c73964280273b727a56f1ed3da9a875b13959315d58581771df1c83e9c21c971.mp3",
+        "b530963eb6e80f4ba59cebe9629ed84f97971e4a3f3f0be7c23a09330d2ee2dc.mp3",
+        "7a30d94286604811952862dd673185c1c133716ceefdd7e294a77212dd22a6b9.mp3",
+        "c920718056ffca8a15465d2d7a9cf08b9b5499bfc1aabb84a6ad8a2341480a2c.mp3",
+        "f9885fdfb91c15dc4bbf72a89a7ff507f2b4b7f526712afefa9240f140f5fed1.mp3",
+        "392eebecd1943f1f7a57b4095b62cab3cd42454e6b8653ce47646d87f0c04507.mp3",
+        "a32f90598b39d591a6d863dbc27c2f5722d25ff7880852282176890b07ac122d.mp3",
+        "4278b311ce316da2a36daa0af4f60056a5606dd414111b930830cf857330df6e.mp3",
+        "3c160036ed7e06ab5037946770e3f941e7c5c58ac77678e857744210cee6e5dc.mp3",
+        "e40afe9374902249dab04788b09681413cdb9803d0d0a874a21fe4a45de13978.mp3",
+        "06141b7647ccf7e0226ddc638e05c042a3cd7bcd2ddf36c69fca2b14b16b7d68.mp3",
+        "1ccedf8c85cfd167621f3c262f62f80823bad00432f75c8510cc8ea0f45ecbfa.mp3",
+        "422c51c657c3a28bded899fc2913cdda65f5408b58a10c03ccac434b8e7160d2.mp3",
+        "edfa2c80f09180fff020091ed425fc2fceaacd0d442751eab1a4ad213157dd2d.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:coral:29b395d7": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Coral",
+      "chunks": [
+        "413ec8df4dfb1ce0095ae21404d1b298139c6852f6f1e8896109eb8978fd7a95.mp3",
+        "69da935f5e953810f8e3974611d0bfd59bdcfe95c8cf94c13f8774cbcaf9083c.mp3",
+        "aadf2558b29e4efeba434a8e119f78ecb090d4e4d1e6aa8793a331dcdfcc6f3d.mp3",
+        "02ef6094b5df91e9aed686e9e2ca9c035094fe9dc8ae02e74345e53b7afcd60c.mp3",
+        "95c98632d050f11a4b3ceadc8545b6c76e6b93ee583f4cc2217a1e0c90929e04.mp3",
+        "6257ce202fd831408b94edfa9ad35223bb747d111cf8ff38bef403a0b6f409e1.mp3",
+        "91a028e26432091f8c37ae684ce8ea23781bc738c451558fb7a01a77a416a116.mp3",
+        "f31f1d5ff89db34a2707e4c1fe9728af6a51a5c8b98b35373fbf143fdad0de01.mp3",
+        "fa74c410b0a8c5d35f29effb1d6f84c0d276cd0bb9d6403a3f711053727ce6dd.mp3",
+        "0ab3091998582cf3bfe7ebba8e44e4e6a92e68cb49b7d75b42bdc6aef889c96a.mp3",
+        "c35ae84ae9939e5ff1dfd233ad8ab61d2a648ca605db490838d5d64eb18d8a81.mp3",
+        "f30e22b0137c2a193a73a959a9fc15003418fa3f999c475e152fff9eb1538379.mp3",
+        "b8a282f673ff9b226bd42d6f660ef9abe0727d4310ee2b7c2e9f35ab0a4a9446.mp3",
+        "631641d10889fb7cddf24c158bdf145257df16a2cb16e46949a0c651b384b5b0.mp3",
+        "74d937532fe8ba82762d4f5ba6eb62328af940ddc4018893f33f0c888c941760.mp3",
+        "2b84a7aed0843955473f655ca99083b9d44832e8580e1c664b86aebd3e67c31b.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:cascabel:0e5656b0": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Cascabel",
+      "chunks": [
+        "10f8b7fc907cd7df4fde3d442e0b84c6668b25b07085c8aea32e84bf253c1e29.mp3",
+        "ba8a08f12fe0e064cd455a8c917deecbd7964c1c1929c00ddabe3b23dd82c4c4.mp3",
+        "146f16f36a688c8c613b2164c566467d03d83c49e343341cd5311ed70643a804.mp3",
+        "1669019894b4ff68bf61f5b981465a068ba5ea1052a090de6f8e0f46c09b8ab5.mp3",
+        "f788eb5fab278659e37aaa84e6fa2690a29e2348c299df05de0cc7350fd185e1.mp3",
+        "ea6ac0eeb56754dac3b3a0c8044e9f75847a3427113670087e3eb80cc0aa00f9.mp3",
+        "bf474af1df654a0748a2c3e8b820df19d31a73a77bdc08c781d476c1fadf3155.mp3",
+        "5c12b7e0f63f65c80969b5eb03ff77516d3d355487cc6d82bf8fb36e162f8801.mp3",
+        "237a5b392bebd3544dec7f00d4a1a2c8afa5e73b13b984de77af264d17a7fe10.mp3",
+        "763893598cce78429d0373ea72a8895f7ddf8008eba014a6aade7e4b5bb128ee.mp3",
+        "32568cc7c97db230edd941f01d0338066aef04c7182ec29b46a46f8274d2a120.mp3",
+        "cec10b508c489d905e6f2c822ba6a6c7a54226e2934b85b5e57661eb8f449d47.mp3",
+        "689a851ac6fff8e1e0108ea9a8987caf291e0067e96c4f0a181a9f6dcb36d1ad.mp3",
+        "d4916408cb6dae901ccdd91cb774bd763df763b7d66a0359bce0bc627c712ade.mp3",
+        "c590325a9ce84403da7a755cf0467d773648438c793e887bd1cdf5ef33680581.mp3",
+        "9dce2734c26cd327e016692732f3682b3c62027bb6cb9d661b38198c92aee233.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:matabuey:a9ff1315": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Matabuey",
+      "chunks": [
+        "56fa04bf1f21fd328871d0d4e276fea0d8df66f826fb448dd1227dba9550c0f9.mp3",
+        "357d2a2c911bf93dfdc1a626c039e6593d4291801602c73a33f182203eac58fa.mp3",
+        "b83bc61021a16f8a0635a70daeddbc3a3335374605e6abfa4cb82cedc207913e.mp3",
+        "1dc9a721fdb929e54468e2b394907323cf5400da9ba4171264b77c3eee40029d.mp3",
+        "5853574dedbe597776f33f5f297284fa1a23cadbe349556864ad726f0edea9b6.mp3",
+        "3ac1b2b59a05ffdeaa7814c1ecaf79c9cdbd6ca08e169f97cdb822fba5fbd341.mp3",
+        "89590b16b50fa68f86f5b811553001b51b3dac63c9350dffaac2412b90c25355.mp3",
+        "b86e74df64427dee968894a68c1928cc2acd35e39df4c38d099541c07a1a3294.mp3",
+        "8cb9794d8ee5582ba24214bb71ffeb3ea975332bc207be3adcd1f6452a0a56bd.mp3",
+        "877fec19a8412538e041da5fb54847436c125094c752e15a04cff700657fc5c8.mp3",
+        "e3239135c988c044cfd9be3e2dea2afa18cabab961f768be366b37105c4d23d7.mp3",
+        "623f044f4ca97ac3eaed45a2416a5eb404580dcab97e5fefa58c0f4de42c3844.mp3",
+        "4bf11b83f95cc511f8fc8f16d1187821040cb9a49526d9c1b81d782e8a9e5502.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:serpiente-marina:c8d7e5b2": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Serpiente marina",
+      "chunks": [
+        "92d42bbf7d7817490f982a6e275c74ff25dc34ffbbb17b0b5458e1ccc6e4364c.mp3",
+        "5f7b00fb6a2c479ca6b0dbdaae1a5cd88bbd8b4ef1906f36f49e9d25e4247f16.mp3",
+        "8731df0d8a078f9384d0c2b30cabc27bca92725dcd36dac3c6201362bb64f203.mp3",
+        "6fc1d04b2558ea3e3cbe00bdb5a163f1c78723a83bdb8e888994d3812dd5a3f1.mp3",
+        "fd76af9a2b5b3f5b23b6aef77a634e651e5cd4ed490342c4c08fcf9dd4896649.mp3",
+        "530e1e6a09745396beb5f6e9be4674c5899c5ea1f07a7111565fc029adae8ced.mp3",
+        "020ba86f8b8abc167da399ee94366cbca97ab3a80628f4d28d75778a59c262a6.mp3",
+        "c5b96e12658895c3d458d7711e2a3b7bf05ea82a6130ac4b5b01116cc1943486.mp3",
+        "4573f0010046bc457f8aae228cda80c95f8d32e155031a65eb12ee832cfb1e58.mp3",
+        "e61aa3a2dc38800b0c2c4425938525247386f68ab199f2e4133cb572cd55f2d9.mp3",
+        "a6c2229ccc81266ab1dde6c647ee7102a26f66d3da6e60a8449952be99926137.mp3",
+        "f7bbe36fb74ecda6b7447ff44420e0d5b50be82b55dddef5a8fa6832641d6619.mp3",
+        "9fa23587d1d2bf35881c187c231ec1f7e09053a40535821bbbf7faa9fd6230c9.mp3",
+        "a26cac7ff1fd6018a4a9b75032222fec0307cb5bb2bc0869f8a9ba8e4223fa44.mp3",
+        "69760fc4880647bf482f7a7dc903afd5f71844ebd541490a9c0062852039ec9c.mp3",
+        "97514e8e0b2d6aa76f2a4f5d713194a73fd3ce42438580a613c95c585daff7a4.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:plate-text:bequer:686dc993": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Béquer",
+      "chunks": [
+        "e0ed632900be1d4f89aa4806442986d67185a1f3dbc171f0de58981cb4477f58.mp3",
+        "08685274b9df02d8b34aeed28d7cebb5d2c9888998db46de23028235b524e21e.mp3",
+        "f7aac2bc42d86fa0fedcdc52b787f773732ac1ed5e1058c2a1c615cee93a88da.mp3",
+        "a2dcba109f2802630f2bde8f93d665e3b0f0eff93b2ad0210c0403fe65c0aafb.mp3",
+        "10bffb98403499b65c50ddf85f969242b342bfc8106597d385053f48dc5efe8d.mp3",
+        "000072c66fdfe681f15aacd6df5a86b525836d52c7604a6e95364926d46272e2.mp3",
+        "ce0e29a041c819cdccaa3a73f7560144d75b6052c7fb5c86f3b88bf642a54f8e.mp3",
+        "be5095d44a554b5ad67da39fac614568fec354764f7abbe8c8b04f85973139da.mp3",
+        "5fab0ddcb811305b7c2a3e34fe9b4a4672a7ebd5791be96687a39fe2eaa87f5a.mp3",
+        "75bb39e23e543f2e44810a64cff3ac666c3fb44ae893021337717f3b77ba6158.mp3",
+        "a76783448a9372fb014bff3b821625678bdb1d03a9b875b323ebf29ae198be81.mp3",
+        "1a8e62eef8f0d4adac3be4f14d7917826e79147b9338ffa105ea1d18342c1fbf.mp3",
+        "5cedb031f03a01ecfd04d01e65ae7bba14ed7204a55373e4b59ae533944eaff0.mp3",
+        "7cdb1ddf122ec6eccc009069e3eb5b21f1085ba8041dcdd792b58682c0bf9984.mp3",
+        "6e5b1761982bc87a7a57c350442d61a6c2e2281087a88cb149c46757a83e0f76.mp3",
+        "d1f28ca8e3b73ea7ec1d7e77fb5e17449105816fa5bedbbb98560c219551288a.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:note:c228d19e": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "If a Snake Bites",
+      "chunks": [
+        "48fb8b9e94a559c7df7ec5d57c592e83c46a3a970a7fd3b708e6606230231fbf.mp3",
+        "dc9b0a30d05edcd4e26dbc5f83bc0cdfea95a24d55622beb31e7ee83921d75b2.mp3",
+        "6f26acc26087aed2bb258139a7030a5031aa7e3293c36d496235cfc7ec2ecb0d.mp3",
+        "63596a1c64b5feb3ab775d29bf903684bef841f496223ea5c8150fc77471ec48.mp3",
+        "bc116911c2c5a58436d36edab02cb5069d471d9d1a19b554af8ff25e2aa911ef.mp3",
+        "ef557fa13e5dc8683f1baf61a8fce5a7cb39f87db7d15d83314aa706f9696a62.mp3",
+        "ba1ffe636881c15a14f1b7454b67c8c15c8bdb064e2f57c442686684ca5a0ccb.mp3",
+        "3b35e28d0d0ddef358c125f5ea02cdba4db6ee41bd140819e6c8e1b00739c923.mp3",
+        "638eb125ec39e6267566a57be47c409e47108b630c8a085d5313d0829b9e5309.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:glossary:71f6e582": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "Glossary",
+      "chunks": [
+        "0654e087e7e23f0aa27b70f593d9eb970aa67cd88d97277724ba353f3a1c18c7.mp3",
+        "04d1d3d9a81729dd74cafbebef063670c0e86416b45b49d364b5c855658e3dd0.mp3",
+        "c51c3c2831b9befa092c33865b69577e67df5bc75cbca13355e1750882ba399d.mp3",
+        "fbd2efd100ff8fb313b9d364a309ee0c1d520b60cb53745a62ce5abffbf9bc30.mp3",
+        "ad00b4cca56faee0be588a79291ac33e4bda210627499b33d71fd8d8fc8ec3d9.mp3",
+        "47054c339c03f63e0ba24e3d8620cdf7bffbe4be52cccbfb785550e26166b748.mp3",
+        "6770c700ece2f855a1d3cc6e979545a37c9577e54cc75bdfa90f8241ae67c9f7.mp3",
+        "ecd28c7f581796cef0a5aaca64477f265cabdfd810c83c4b22aca6a71f7bcbef.mp3",
+        "8ad4d49fda8178ba8e52e2d8d2642344f86acb223d2d1cc19171fe807f7c050f.mp3",
+        "0b8a121dfe401c599efb19ac9671c5cea94a6fcd59447ff24dc858a835d81d94.mp3"
+      ]
+    },
+    "serpientes:en:serpientes:making-brief:d9e180d3": {
+      "lang": "en",
+      "bookId": "serpientes",
+      "title": "This book’s brief",
+      "chunks": [
+        "c34113ce06ac13b19679d4767d879eda145268c04f3ee04e8d973837045603ec.mp3",
+        "dac4c663eafa79131e734dab6bc44a39595e0235e995ce961e1749f6c43adddb.mp3",
+        "812171d291e1d306562d4c563d07a333d4eb7a295bc84405eebc040ab16614a0.mp3",
+        "bb7f3fc060cb2ab439af7c251c7aa89242b1b916a3b0c8f6f82434b31991d945.mp3",
+        "c08f0f87dc144248431f4c36d904fdf791cc1ae572c55a888eea69fdb5003964.mp3",
+        "491be1d6871c5f999f0df8cbca9f417d44570a715769a14dfbfa57f5bdfc5732.mp3",
+        "d0c9ff904fc81ae3492426d9277b86185d363814506e356ff279d9201b85c305.mp3",
+        "72ada365d58ee90643901ce8fad70d682f6dd2d191006899b9dba0bbc66692af.mp3",
+        "cf54b8b7b6a5903887a528a353a748a714c36ba96d22ad8e5e5091036014773b.mp3",
+        "a1bbe4529bd74f93461b42458cf86e4bfc63f6fd4a232d6bb4abf4c74fe607c6.mp3",
+        "105ec044df3d1b88d786f8e6d89dd2288c2a64a2ca8015d529ba32a9ac4a716c.mp3",
+        "23f7d469c7228d9f5d3c2f23b1d37ead968ba93649486d4cad8766f3c5448cbb.mp3",
+        "86f2102e3d820ce50176fb1a9a80558fe7ae8c44b2690288b1673ec270dc8cce.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:imprint:ea434cab": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Créditos",
+      "chunks": [
+        "1997f401087d39240f7dac78f224bf54a93739db67b1caa18ccbf3a5c431ea4e.mp3",
+        "f0b91927b62758093bfcf434c62e2cb60849bfd6fff185d7a59c17d2bf2cec80.mp3",
+        "885bec9e7b102ea4c2048265b5e2fa155ba2a2d93c5563dd4fe195ee1a8fe979.mp3",
+        "b9b14f3899c991ac7f7f4730c06f808fe2f8b76ceaf5320b38f02ea6bc0ee5f9.mp3",
+        "0575da81478d05153835742979df027c3683900a7b1a8d6c5a56480b38ea67ff.mp3",
+        "adc1898cb6209974a69a4ffc70fc8c68f2fedd15fbfbb15a99f09c6aa171bf61.mp3",
+        "a3b1ec2ccd7145898de5800bd885c17aa6533ad32920767b398c10b27203b0bb.mp3",
+        "7ea61715d7c5546fc90930e3c819a439feeb4d72fc8a80c568de7ef780415d3e.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:intro:1d481efd": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "¿Por qué tantas serpientes?",
+      "chunks": [
+        "5c4a50df429bbcd45720cc6875ca8f46aca54588dce72fb48adba8b8d3fe71c2.mp3",
+        "ae39bfddcfc3c7bd339b7746c4c86b09544278c94075dd2393b9f6af37a42c40.mp3",
+        "d70accfae5a5d1c4273017920aa04af56e056d8873702de2d148d5df27abb0c5.mp3",
+        "83cb426a198e491eeb2f0f87dca8783f47d8611a68da1ee69925e332231b444d.mp3",
+        "96c7815cd6182631555a152e1ee15db182eea508bad59638531a37b36eb3cf44.mp3",
+        "ccc165bd8eb53db9254136f9d74e669c5c4f39fc4abe4a3f829f5bca4d7086bb.mp3",
+        "f01687fdfcf26715dc8ac80e9a3c0b7042bff2d7474b3a36d8c857160f992617.mp3",
+        "2188a0b356373f4a1b7bd9a8328658317d3a3edad823a83099f0a10f0c5a7d4f.mp3",
+        "6b3347d7f5792c4d83bb7d75ab390df92e4bf9b49ed3f94d676801a03a1f5c15.mp3",
+        "8009bb509a24b53547e408eca20de216ddb82e7ad4d8e74c70aa6fa00ad768d7.mp3",
+        "4f743bbe082d220a8bba1178497a38a1607252f32165873367edecaff959c933.mp3",
+        "201aae6cef8b5b6e1059a37184f280a410acd12f54477ee9696de05074001279.mp3",
+        "d356480b523351e0836283a7fe14e6ae650e9292a83c58b92dbc740dfffb4bb5.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:terciopelo:0029ad8a": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Terciopelo",
+      "chunks": [
+        "3f33d7b4c48c82474ad3b9d8d4fcd369aa2c172308bd2617ad12358b7cc71994.mp3",
+        "0870d6386dff579e24df50e61c11ab52f04d66ef2d0e08a40215423df16e7d4a.mp3",
+        "eedffc87b20f0ecad2d84b7377c5fd867823cf867e54f3e86301b644393d6dca.mp3",
+        "7f3b0f3341c429dacba092f4aa13e4d836b0ba7e82386c322c9a64ede01817bc.mp3",
+        "2ea1cd01d07ce7dd457492f2254d8fe8df074884fb0e9a936242c9eeaccbd66c.mp3",
+        "eb5305666cd55f2c13c6d5ea00865edd3aea9899ade8089ff0aa169f171924d8.mp3",
+        "d78fa7d5ebb498c5d4558791f5e606b6415e3062faf77d14b07e36ed9df12bab.mp3",
+        "ee4e2c3fafe9fa8ae15676704c553cf5a13c28a6e3280423143bee528e424619.mp3",
+        "a0baf6d1afbe544886a62f7396ac24c1a60cf6c61dfcf1965068300259066532.mp3",
+        "8576e0161d1f7bf8e22a34baae2adaefd626711ea12e561dff0c4f8e7ccb1018.mp3",
+        "13108e69ae2558933b0019f32f151e87130bdab12c46101a41b1735869dec034.mp3",
+        "3474b871237210746cdb8f8885b26dc75100dedebb749f64c36479610d7fbf4c.mp3",
+        "7e2da56b787b90468e077b34bcd495388658de7126b3698b9187b64b6df18312.mp3",
+        "17a045ce128abbb15444cd9947d885f78b304c13f51a12ca2e33ed9cc09b0cb5.mp3",
+        "c99ae9eaa6d4193fd094488ea928a2d0ef97fd3274f87ff01fa9771e84e5a2a4.mp3",
+        "f8cc76b80e04aec50176f4721aaf9c3dc649b8c8404cd058bbd0657434d5134c.mp3",
+        "66f99e16be0461488cf56ac06c5b64427ce1bcebf32860533d734aabc60f8f3c.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:bocaraca:98f4fcd6": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Bocaracá",
+      "chunks": [
+        "bdd4e79a7652f6452519c2176f774a9e817e3313478c7a9470f5aadee7a39939.mp3",
+        "ebea8a553ff537c13371a98f03a2dc5d3296d5a4b527e83f40273b1854521601.mp3",
+        "8fcf99e944f98e2edb6bc5c62e7a87d776bcafaa17bf228d87f587f5d50aee8f.mp3",
+        "162299d4c05121e206633b09cc7bd28a9dcf3449e5c4c8fd478784fe759c5fde.mp3",
+        "3a530e0187fbee10c565bb715bb2b2413e4e555d576f03ead6d3a5c3a28eca7f.mp3",
+        "1a76c2e7b9b1779e85f7b4da5c8d929477108489aab51ebb59d2f78467a4bad2.mp3",
+        "6e45a9ee61fafc6ad2f91dc7f94dba772bc1895af9143f38df896590e8d9b06e.mp3",
+        "c85a6d816d2e5fa94f09c4430b9cc6774429d145a0087caf9d47321341c4272b.mp3",
+        "61edf2bf8835d7cf6907f904611b9a23aeab64e4db5de2165c838b4e8b55192c.mp3",
+        "91b618223cb9b9c795751501447422ca5d46421a37735a681e33115494255b2b.mp3",
+        "684bb8072ef2abf934a43b133552f62c3b1970a577010ddbae5a44ee6bd1663b.mp3",
+        "8dc3ea5b3bffef102964f0c4b15560a55ca9b359954b0b3c238739a2d2d1f95c.mp3",
+        "86711875b408e6c8e3b6d80e9c2b9da00df96d694e0118a7808f118655c58e93.mp3",
+        "15dc1ad4fcfba10a0c4857878abaf861ef2593eb5dd8d6c900a8147624f41798.mp3",
+        "1b0c5209cb64eb15d8b7f9ddf794fdfc0565a85a20a8c4d98548d7c85301fb5a.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:coral:b17d85bd": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Coral",
+      "chunks": [
+        "5266f2919d1c472ce36de0c5de6e1fd2038b2e279ed39200a274f5d91426cdc3.mp3",
+        "4394e0f25ca308ab41fcfc2c384bb2cd677654a29d3580e6b43aed795cefc19e.mp3",
+        "49d8873f41c5fab42ce7170c609f2805d53e287ccd69a78877b4b394e2ea5a29.mp3",
+        "9a17550a1ec711554e32db49332c064b731064c2fe779da82a13c32eaa2ae9c5.mp3",
+        "208b10dd5bcee08cde2a2f01ca0b214384b6e311bd91cc1b45a3a95cc7128cf8.mp3",
+        "2a5a358513f83447fd5a527d8e65969bbe0ec18ba5f61b652c5b0dd54e96d318.mp3",
+        "db6b5625bee6194fd52a8b53f6f362b0995974d7cde4887b94bf84cbd64ab8ec.mp3",
+        "adda87241a7bee9862e1d13393ddd834a72c82c86697a8cfc192669a2012a93f.mp3",
+        "6a492b7fb4b4c0de89c43127dd8e24a1cab40878debf8d5263c89a9021f1ec6c.mp3",
+        "aff55842fa1aefd3e1319fda1261734792dc6f4ba3e098e85586c505b61d0816.mp3",
+        "c6948aa4b6bfff77e15b7328d79f4012e7b6ae5d44c3d914164fb11a014e2558.mp3",
+        "2fccd53bcd651b448254d5865ce11fb54826e2cb56ddde5b6054d7468d97fdd6.mp3",
+        "7fca95675174ad88d7466da875a26d6192c57f4a0365105bb9e2c6b089b95ccd.mp3",
+        "e74ba9609143e4d660256c20d928694a2f3ac2dbf278490edf50ad217d534acf.mp3",
+        "c25eeab07d07138392cf431b93a44f6b3d72a88547dd1c9a0183bd3866bc61ea.mp3",
+        "696b6aaea2a3fb75ae854c8940d3b6e8a4edcabb2d625cfacb80d5c90987cbc9.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:cascabel:790ce4d6": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Cascabel",
+      "chunks": [
+        "c7cf04e43d73b5940d412465c0a8c11ea7010b2f7645d1ec68634442f7d5cc3b.mp3",
+        "168d786f7c38d5cf7c98a6f3318f0ead2a3e4c6708850a372762aa2ce802f4fe.mp3",
+        "b2c7270ac8032647270efe10bdc3fdcc122130454be4656325dd480766af2442.mp3",
+        "fd68d6546d3698e6a5bd815d0afebd176ed2d4242556be3dfa25ddc111bbbe1e.mp3",
+        "50fe6c8f5bc4249e87e789b9502d7668252bf1998f63980166bc871d8903dbf4.mp3",
+        "5fa12518e68d5f5b3ba0a826ba05882238bc617804e19fe26de1b4f744a35586.mp3",
+        "bc4f94a6a31fa561b09616265fb28f630d80311d0148fd3eb25d5e8127f5c85a.mp3",
+        "e83001c876ab6252fb4cd36450314b1852addc720932f67ab58195d1fcc88cac.mp3",
+        "ba15d44137bd652182eb0b8e0cc902f80a30bc61e41732564229c16398b18eed.mp3",
+        "da2b50d7ab5e10ea521f6f472c846ace63bd4ddd519941a83df67ff911aee6ca.mp3",
+        "c40aeaebdbb0136a4ca518e916eda8b7d776ae1eece764b82cb365b78e30c14a.mp3",
+        "b29d75573e8be2793df035b07f9d7d52720f791f36ee08e4a0b68c60375f5cb0.mp3",
+        "045a79188ccac7b29b479dae9ca08b1adbea9a7e539eeaf95a018e4c150e6485.mp3",
+        "26b0dbf8039e6be2efaf3172d23157107e219029db86aad939cd9db07095aee2.mp3",
+        "5362c9f3e6fab8eed251bf7ab41b71367dd284d7cc3cf21be24c47fa7e386078.mp3",
+        "e0af2279c85f762d34c3b0cfe40817cfccf8a806516d16d8072eef0e35d2c0ff.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:matabuey:cac09172": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Matabuey",
+      "chunks": [
+        "3abe145fb5f8dd17e952b52f70f3281d8816aab3098f484dc933767af6f426c2.mp3",
+        "345fff74b63e9092b51d2f5207d2a28beb2b203e985d45706a62b99a952a8f13.mp3",
+        "64dbb09333eebe8198e902f0f9d3348117df1886ff68849e2f2f98ca9602b91c.mp3",
+        "2d48addc756b80b5b369dea2083f7f98f4341bd7a1f6b450a87bf5ffe074effe.mp3",
+        "869ad5064379ab19efb67f6271257e8de7e919173e6814451799b33cd210f291.mp3",
+        "d8a4e909478c25a06537eba27514902d8adefd127bff4bc0cf78e31432f5d9a6.mp3",
+        "a6363349d55d8c8dd31b3c26945f08f792674fcf40e810bb3284d262786d5a83.mp3",
+        "2746cca3240770939c27ea76605d15fd03f0cee4e05a673c0b1c139e5009f474.mp3",
+        "ade2090744cc00cd623447a53c27b0e4ecad952cf21f1435865c3a0bf4fccc34.mp3",
+        "07a9cdf36e6d13d34b68381e82ff4f127c715d18de3266181437b0a25dfc443b.mp3",
+        "2ff9f263ac08389b6e0121919742d6af928507452f2727835851f32acdf36bc2.mp3",
+        "55d8f355bf66554a7ee8a2fe03182a2b387cce806d6121a4091013a30554efa0.mp3",
+        "150dafe6f8890c0380865333313834ca5d257eca9c8565ae38683193da881d68.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:serpiente-marina:331a0e45": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Serpiente marina",
+      "chunks": [
+        "f56dfcce4b3fce1380a2645398255d00ffaa44195db279d428dda48dbacebad3.mp3",
+        "719c6fe5a1b10b3c96248d0647a506cd2c7cb40edddc152224428eaefdc59bcd.mp3",
+        "42a46ac054b49fd559a6058969a224dd136ada30b5dbe3f70b1f97467f9eea90.mp3",
+        "0bfa85747a886dddc07c316b8d7efeee3de48341432515b46a3b09c797722dac.mp3",
+        "519ef4d72fd430df5f865061ad3586e3bfcbadbd16b0b88e160d93daff0028cc.mp3",
+        "fffe15f52e1217e2c930826e4e5f6fee35c188d1140ada6fdf0e44932602f2ea.mp3",
+        "884e612f2b428110f03957ded6da421e818c2b766d8a2301c875c8de7b0698e1.mp3",
+        "a3065edb4c17bdeb1cd60996e8aa5fb1e56cb0ce74c7f69d9f7d033fcf3f2bf6.mp3",
+        "e1ede8f9c13640b29afc5d6d7cb704ddac1774e55163b2c32a586c7384ec35db.mp3",
+        "a9dc418213b571859762ccd29ab174b1ff4387b2bb47cf5aa5a98892ad0705b2.mp3",
+        "3405a76406ee7dc541eb42456972de2eea559fc09eeb901ed6135b4807621576.mp3",
+        "f68896e719aa3e1ae49b8fe76acbd4cf69e88ebcfc282257263b9c37ea5557b4.mp3",
+        "d5d5a10ced5d5fd104990eae11cc744da00ab2567facf49d33115ebb4eae1246.mp3",
+        "84ef19d34bd22ea360b892ce92af9da96dea3318411a65132fa0f436b35689ff.mp3",
+        "6bff333b24fa00fa6bd2caf3ac3d073a3a511b003c23c1a9e92ae2759e7ca252.mp3",
+        "4bab2ecd30ddbbb66f68104a947e59beb530e8e5aed9daf0c02d99d590e1cac8.mp3",
+        "dc7e0a10d20884a13bc580e9b3bd7cabfd73356a32856f2ba7ad8b628ce174f2.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:plate-text:bequer:15b54272": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Béquer",
+      "chunks": [
+        "5d27568469105f53a44904d54859be7af02afddd72e5f9890cd3f814a5f9a3a8.mp3",
+        "c46227a42a8e6cfef8eb940f72313fa5c06201a6ebc4c90939c41e82b6e7e944.mp3",
+        "30ebcc8b3157e370b2d061e75d9ba54e8a4fddecbe62d8fa7324e085b6b283bf.mp3",
+        "20d2242a4fd313338eb9997a92df6289462ff4ab9bbcd173536bcf77b571ea73.mp3",
+        "d298e225b548750fd617dc94e9950de056115cefb4c83e303d9dc6d8fc282efc.mp3",
+        "2be0ebba9c1c4e4d0a2c4cc99c54a9476473c119412667dc4c5691b4fc9c71f4.mp3",
+        "ee537615194c61facb1b90d66a53cbbc6136d075978f5f40e68506cff9fea30e.mp3",
+        "33d8eaaf30dbf86131162fd6a6dcbdac62d13128526400446f911120e72eee0c.mp3",
+        "ae7551abd916fa4b516c6f2d6270b7064e30b5a9eec4c40131a743f981d39a93.mp3",
+        "dfc410c4f7b2b366206f6f8ae6917bd4e494fc108ea932b04d448a70e9e253cb.mp3",
+        "3e8d18d65dd1d06c567854998a8ed5f6f4df712501ddae9c3a1b204d59a31f1a.mp3",
+        "3107ab6e4b0d55bcfa213ba33d2aab3cf9580a08cd49c51a7d1a7efe554f1924.mp3",
+        "09e5fab33b90d9683e6eee3322e618fb499d9f30b76ec3a9bd1a77760f944a32.mp3",
+        "8987ecb2a43a4da7b6290a18895a49b2a264999eb692fa89023994e0febebdec.mp3",
+        "be8fc26822e2936406063145a79d544b65cc0f64ba9dd82d3cef9d701fb086d0.mp3",
+        "5ab483454272cb25d0c6bef296a8a0721fccf1bf03a45ef471d614d74291990c.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:note:1f326eb1": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Si una serpiente muerde",
+      "chunks": [
+        "0f9551dff9daa6174135ac7ede90f1a95389bfa0eb3230e092efd185ebeab216.mp3",
+        "3790753df4a62b815b16d45248a098449a532e6c631f5ff1a79ccd46133a6027.mp3",
+        "1be37f3541f64d95b8cfb9af45be9c70cbc1eea994ccff53fb594164ef0f0c1a.mp3",
+        "f4afe70c206c05ab4c01b013326e485ff31c49c90ed58d3703bb80cd7c7695a0.mp3",
+        "b0593ab5e5cac9b1bea6168695dcdbce14055390b2db735dc3d9120a831433f9.mp3",
+        "cdf2ac8a8f9042fcfe080d95b41d63380d5c0ab1ecb99616409d0480607f9bdd.mp3",
+        "c622487e64e4be460b3ebfe484e6e59bad0b715796e14ba1ba11d89c4d72be54.mp3",
+        "f42008a9385343a161fe462b640bd6c92a08611dcd121caf8090d88fbadc2c10.mp3",
+        "a4851b91f16819b51ea403c35ad5ca5f202c14b261a87922c24bf908e0a8766b.mp3",
+        "141fe680b6b20dbc78a07f01f7a754bfaad35b7b533a3844ea254b5b95a0e6ea.mp3",
+        "51971e7fb655c25de1f1d6abf75ac689f613d507d4f40ac1a3ea2e32e17d77a5.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:glossary:e64ac883": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "Glosario",
+      "chunks": [
+        "afce642b9ca9be9e1e43754810f2e37d9695b26e501df990ab6915b52df4d5e8.mp3",
+        "311c5bc1dd2cef8c4bf1fdc3b4258e76963c04a076691118f63d49acde7be864.mp3",
+        "3cdc732689087f9abc5b770161b51ca31fda5721e9f2a0ed5cf656c3a69d3c7e.mp3",
+        "5f9bc20af8605a717ae4d634d5aa257d3ab8a1bee98b58402543c53c441f1e49.mp3",
+        "eb6b06d5cec7879592a0949d879f7d29c6f89e1bc4de06ddfd15bac47f358720.mp3",
+        "12a0c313f405404ff05917c5431648388f2884944ea5ad424a56e496bfe09c61.mp3",
+        "c49603135d56586c56e948c86dda254578b7a7a44a598264972315e405c5200c.mp3",
+        "fdc652806fe41b2dccb77c333f08558870295897d606048770a38bc10e28d3cb.mp3",
+        "8c1c65cf3f4deb86eedd995f25133ba8f08a02e7a14845da9f29d724cd65d0ff.mp3",
+        "88430401f3d214695f7ce361def3958b9ddaa298aed8e6ccb09e250e805ec570.mp3",
+        "414803213486198f0f107920ed64bacc62fc73dd0bda96d2aba1deceb03ad439.mp3",
+        "b98ecba8a302204704298359f6ff0885c899823076a95df70a93bace11303771.mp3"
+      ]
+    },
+    "serpientes:es:serpientes:making-brief:b62ab3ad": {
+      "lang": "es",
+      "bookId": "serpientes",
+      "title": "El encargo de este libro",
+      "chunks": [
+        "b6284998ef38fb5e975b2256edcbe4339df8705854f35af8f10f4a1260ba2339.mp3",
+        "7f2334eb7a940f79a2c0eca6bdc1b18d31df5286d35ed4753c9b5715f2a2fe2c.mp3",
+        "58e5a088ba96d3029be45f85257571ee0f0dff32d94f17a94f9e76f9066059e5.mp3",
+        "b8dede1583d97340ae371950f8f09110eb29c1cd3aad96ef05c934e4b16c05b0.mp3",
+        "6f69a30186895babb1264123756dd4637f22ef22837cec9c127406fe9d17d615.mp3",
+        "adbcc3a41b5e6a1e959ba2bbe5e8ec08f0c38fff556d0979a0ccac4fd2a7961a.mp3",
+        "d21b3b57a0756653825a0e6aabe6ea5c918da8504073c97f51fbfda3e127a2cc.mp3",
+        "066cb188c02ec3a37e98b970c07a66269884c21fcbf6c6bc8ee12d56e305d579.mp3",
+        "14598dd798cb98a6e5d55fced3c6049c26a6a730d632cef161dd98fcd9c5abed.mp3",
+        "de7da5e7d7eec98e990c29f8d4fe5ba43a4874e36dd7c3fa369438e0214e4d74.mp3",
+        "b298d44d45a5193c68a40c9d37beb013e589d48915b024567dbce5e5d1c26380.mp3",
+        "f9b8b12ceaffa3e8a67a4d1f9f13c6089d12d77e38b68952925b01e9caa23e9a.mp3",
+        "d88378dcbcb67b7709f0e278263e39c518e3cf94248488b8b1be76232edea105.mp3",
+        "304ea02a21795b4f53ea00e30c4037af3a4d2281214b4f83c50e05d537ef8fab.mp3"
+      ]
+    },
+    "flores:en:flores:imprint:978924b9": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Imprint",
+      "chunks": [
+        "1fc3ea984ad6a424b8cf4e0e28d6632f12394f56877c99a25f02a56b04db4d8c.mp3",
+        "47c58cb30e70c3e67c6b00e275f09507c5973c807f6eecdcb4f4f7081bd5b0a1.mp3",
+        "eb45dc1d212d6f4b90c082420ae56e035ab84f44dd4b6632faed4527932b4a96.mp3",
+        "703f9ae5a472d817a8944908faea33d4c016bf825220658d1c4938e383d46507.mp3",
+        "78df0d557c1715dacdc1928c0a07da6846d4b9c2ab97a581dbd7d5007ecd4c6a.mp3",
+        "89c7484602ce66a9d62530e7674d5c5e1cb98f676ba1c3c29dc38a334573b7ce.mp3"
+      ]
+    },
+    "flores:en:flores:intro:c0a101f2": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Flowers Are Negotiations",
+      "chunks": [
+        "8e4bf07bb9b168d01576672a2fa3253051ef83df74ad2a00911a71df9f83556a.mp3",
+        "4f198b0a330f9ef4f811e4cfb40946a491d589e9c14e6034140e810edb7832a9.mp3",
+        "44e86a3fc8795db7beff9f0b0c4c7226e75973f52a34c612c62bf62a0ddad96c.mp3",
+        "ae0927704b632c3336fa7d51f22281849babdfc76551ab0a99a83d6ed6193f6a.mp3",
+        "ec7562d480a2f23018f93129059e2a5d05f695022f0abee5c95c39e6339730ce.mp3",
+        "9cbbaf17f864caaceca76f7f41d119139083e84ec71f09dbbd08a4b784942242.mp3",
+        "84c5ff100d12011294ac3caa3ea55585905b6fe88b712ab3db4de0fcae21848c.mp3",
+        "c853e5ef9448b5ebaa75ed097af9df954b78bff4f01f09e66c369a4327ce5a20.mp3"
+      ]
+    },
+    "flores:en:flores:plate-text:guaria-morada:0468e4de": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Guaria morada",
+      "chunks": [
+        "f85bb373a8405ac9876ce926cbcb48780174675e32b1a8ec8b52e68957e3a81c.mp3",
+        "6f1da67df62ee6ce55b1f007b15924409eb49a3e91a6dc8c0afdf4ce038fe636.mp3",
+        "22b28c0729d213e3c0099c2184def77cf8bc9c98790eae9e6cb5ebd385591354.mp3",
+        "87ad1169f93d7ee5e9576a9eeff9017930cdf45507b8a8694a9736e7f90d6bf0.mp3",
+        "659a9a99cb1c415b3d129ec8f780e6c3a386c2fa386b1b5a59adf9b8f51459c6.mp3",
+        "eea71439713eb8a30fd0df3412564b8dcc19210d9d7704859f1a10e3d966d8b6.mp3",
+        "057a8cf4b04948b085a585179612555a19a67cf3d8284600c5d488eef4739384.mp3",
+        "24c70ad68b9e665f4062ab2af64f56cd0b7dc625a9ff995afb567c552024be7a.mp3",
+        "9753067960dd129fc10fcbb44c6a19dbc6cc0e049c9df3de55a078569cd1d0dc.mp3",
+        "8490efc33e88d7f897f1b3c0a7927ba87a2f6ae13bdc81507c49153145da7d71.mp3",
+        "915806d6ba6ef82e421d7e638209f3635ad92c45a0d588bcc81c40366aea0e65.mp3",
+        "4b601c3d473cacac19da765c3da77e7a7c5472392b705eb31f9c12814ba7c118.mp3",
+        "d8ca71f4167ef310bd4ca60db0362a79f38637b0f6f077df4881efc574ccc245.mp3",
+        "c5dd35781122731f14063470270cfca7d706b6f06c3c4a656259185559ea3071.mp3",
+        "f87885448e79e17fda060c99314b8353ba9f52c66e44b8c61fb2c3f244862d87.mp3"
+      ]
+    },
+    "flores:en:flores:plate-text:platanilla:de97265a": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Platanilla",
+      "chunks": [
+        "9435f350eb69b761662e8ca89f671e236adad1be0aa5e5f4db2ea3cf1edfe8b1.mp3",
+        "5f79060f1f414671a9ac4b59e83eb1cc2aa7fbddc1d9a285000aff11111d4e55.mp3",
+        "725e372ab4827acad8319b4457329b23e7e7d7cb557cfa36aec7add284585797.mp3",
+        "3eb88491f02326fc8071732ec53403bee640e468bbe83bd92d263019ca82bd3b.mp3",
+        "eaa0d3e74cb57240d626ddc544c22fab778db0d49a6353f0cdfc6db6bb2d6835.mp3",
+        "8c4719ef30ec89bf910132247f9a85312907fb2da0a800f847ba422cedc43fae.mp3",
+        "308e73b5e3cc02fc74d0f7f0eaea3242c4e4f4c75ad5bf5363ca0936829bc6d1.mp3",
+        "406df9a205cdafba5139312401560e9e0b9a25c685ecffd90038a4f840fb970e.mp3",
+        "455c624cef800ff0993bf0d1e2f77ed1f907d095fd98e2427d14079ed3fbc4e2.mp3",
+        "5e975b20042d5fe8653a2b6f34ffbf163b973b4ae94402f52b87ce61eb7c2aac.mp3",
+        "8012175d6bc6bb0eba45feed43fe9d7be6b7d1a4543631fb8cb55900734f02d7.mp3",
+        "a33448b31eab86f17d7ec22de7110cb3215c2588afd77acaae9a6cf43f233a1c.mp3",
+        "37f3c3d484ea06937e079a8fdcb37a4a86b9b58cbe21f3766a84d931ea5f1d99.mp3",
+        "4f25df86c4fdd4c655f283914c3c77c9f84488fdf0224bd8628f0d7529b03695.mp3",
+        "3d9a66ccb4a014bdece5abfb667e913e8aaecd592b56905f1d5b9b8c6c0ccfcd.mp3",
+        "da91aabdb9673a5e58a6969c4ce9ef9f7b8c77be338ad56af9b3510854055d66.mp3"
+      ]
+    },
+    "flores:en:flores:plate-text:granadilla-de-monte:6df37e97": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Granadilla de monte",
+      "chunks": [
+        "01fd6f3b2274ff810184095ac3174d4e0d61ef63d0079a4b178a8a4d44005bc3.mp3",
+        "90374b4c365d5cce0eda704393ac3c14d19df7a84218e8089aaae84304fa33c7.mp3",
+        "b2f2b8c31db0ee5d09f42c81a60347102b6c32d3b99e93b3d463118bcbb7a3d1.mp3",
+        "175199523f6cd06f1b2cccbb73735dc87958eba6f92d9ad4113045fa6b22f25e.mp3",
+        "0de7a546bf5617fcde2cbc757004ef6afdaad2fb7ac25cadbefc0f3ace8e1466.mp3",
+        "bb800d98fb5b022bacb33f2cd70c5760bf287fd8eb107a7b5154e99833d391f5.mp3",
+        "a97bf9cc465d003b793dff4cf9a4d0693edf95cd1864170f521e138a1298cbfa.mp3",
+        "6270165d20ec1d83775b6e8ee677d5f378cee8a34363ac32e112c11b04a528db.mp3",
+        "2d0a4db18fde56b00bd233c348c5c02fd61c578cb3ff7b78a297268ed24d382d.mp3",
+        "f757cde2cdb23d3ad0d6bbded1dcb38312f5a14b12d0920321f87be6e4d55921.mp3",
+        "dd222da460471fc5e8f1a618d47824f8b98b15f596c88a8d918a84ab86a7aa66.mp3",
+        "ded60f6cdcef083eff2a9e754c5eae6416ec75c26735256442422aeacee6a3b4.mp3",
+        "6c6147bcf02d2b5412f20bc5b6e5cb3cae8b4c8f802ff935ada7bff59aeed9f8.mp3",
+        "edeb66b6468d2b4a1bfef72d8b2128fd360daf6044783f5c60dd617a80a57eeb.mp3",
+        "0f0e9f7f11fa4efb7959554129891060f0bfc3a93cef13283b16b2f54eb9efa2.mp3"
+      ]
+    },
+    "flores:en:flores:plate-text:labios-de-mujer:b89e4142": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Labios de mujer",
+      "chunks": [
+        "f13ba3a39088d5249435320da626448fbd9b2aafd31c9483d15bc791810d3103.mp3",
+        "a6040892cfb6f1e6a36b0f5f54bc6828c170ff564705b1e19a925c6e800843a5.mp3",
+        "793834c9865facbabd4dd8330b9b91e3dfc039f0c5054cabd168d1b815d9180c.mp3",
+        "7038af42b02ace024765195ab26ffe52f8d6ee2d45e79ed61a446a34e2f60bea.mp3",
+        "d26bb4cc293729fc78bb92dc69f20e9e006755a9b11d0d45422284419ae1ff2d.mp3",
+        "7a1a5c10ae302168dd59a82e6f1cdd5b2f01a3d63d2d7608c88de38adc5b2dca.mp3",
+        "c43f1c74a23d56fb96d418c1df39fee131fb6a98f18d2d7db0f70f7db9147857.mp3",
+        "15c080cc2d8e541073b97b0218ab29728ea170564a721fa1c5be3e747ab071ea.mp3",
+        "25647d2e5b4bda1b5fd61e8b5f77e5104d7ddd10b6ae96509255ccbc12ccfa67.mp3",
+        "35f09898eabd89dd69d4958fbe1448ff547067f9f52b12b3fb5508752b3f48ab.mp3",
+        "844ae1db28b7e7d46d27a5ccce5a7c5ff3a175528a9392721871bb175d28d5e2.mp3",
+        "c60a520e2c2e31ebf8d38a9b1080bac43f82bfda5c61c96b03ac505f826d2dce.mp3",
+        "2d1b32029d8be0ff09c820ccdffd36ec5de2bd304fed29ff921bd7a7c09eef22.mp3"
+      ]
+    },
+    "flores:en:flores:plate-text:cortez-amarillo:e061f26f": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Cortez amarillo",
+      "chunks": [
+        "7644e065bbb853be525720c0b512a992150cb1e7487f066e41967415390e7a96.mp3",
+        "909013edb5576e95f226aa0eeaef58367579b9ecc18e1fa27ce1fc31847ace2d.mp3",
+        "8d6a61d3bf3d4d60f45d459d0ce53b881319ec7c42d306ed884911a1057b9a06.mp3",
+        "e95386bc7128a64a3e3de28eb7568737d7c2dfe7428cd7dea0edd29fe3e3fdf8.mp3",
+        "08769bd142a079a677749e36db31245e4e4eacea62a4be53cc7b19495b63a09f.mp3",
+        "6c8fedb797f6f422e4af3d3368819547fc36afe047541f83124883ad255052c0.mp3",
+        "2d8289f4c7e8ebc64ee9f08074967f814ea5012784ef0db47b988e996336123c.mp3",
+        "cd3541a21fd9ce2f0f3d66ab98c1b62575886e93cb5510ee79d8bbe59a0588b8.mp3",
+        "ff1883b97b4770395bc4e0e94e7847eb771ec379764c2a6afb64c4a990156bc0.mp3",
+        "519c6e493f2dc5f224ee05fdb0fc5da23ea26715c50481fa1c8d83532a093e5f.mp3",
+        "6e6823f473de71818034bbf1015072e9818063616ca3ce324d2a13731a5358eb.mp3",
+        "8ab7a72f1e05ab34dffe3e66198704b7a3b170c769dd2362b7b38faaf4f2ea66.mp3",
+        "0b0057f7021fbaa54249ef3ed756452fb04b766b8614066d6d26fe6e1737b553.mp3",
+        "26bc6beea18babdb450621b9c092293e85a4896c7e65f98ae8ed1b973b5ebbce.mp3",
+        "d776bf6b0874d73f418a9a2c151b728f20a7e65b5bc92847510495c692578626.mp3",
+        "171dcbd359ac7a69d7683289b735120ef264143df1daf9dab52b17b36c2458fc.mp3"
+      ]
+    },
+    "flores:en:flores:plate-text:nenufar:dcfd0612": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Nenúfar",
+      "chunks": [
+        "c161924a01bbbb6de4c7eeb7dcb44737a45ec4425764c115ba4d1131dc4e3447.mp3",
+        "17bcf0b7bcf3bc1a49c9a645775c3398fb86814db6cd2040eba32b15adb476ac.mp3",
+        "19e6c3e2fb86b9e0ab3aaf66cbb2fd5a9a655ee9a75259da7e23d3e87cc88f0b.mp3",
+        "db798ef3c1e4ed093df2cefa0c4d6de4f94d31ae7a8c41336feddabe1dea259e.mp3",
+        "aa6da05f63f6b7ed30c99f809a34dad85c82843a68fcbde2acb9242fac86c2e2.mp3",
+        "0293361000f8e9b0909847350f3a18a0282683d1206522d284f1d938892317fe.mp3",
+        "9ff773e20b744c1d003ee355af28509bd866d57fbae5c1a4d402c1a00f18c348.mp3",
+        "892b7dde624c39d0f7d941aef0884faa7f2b80194ccdc85443e09b67f2bb3e14.mp3",
+        "c40e9fd1303eb45a7199b826628ffcf88a8df0051edbbfb5714405d04778d50c.mp3",
+        "44f0bb2671b3a034db6ae5ad037bc5fff43664dd2b8dcf948d23a0ca942e41e6.mp3",
+        "416cfcaeea29ec309b05f543f14116b75a8afb24fb5dd36a9f6adf85f63cec51.mp3",
+        "bedbfb9ca9aed25ee6363ab7b075c7a852a7df04c104e980e76eea2fe15d4fe8.mp3",
+        "f924a4e1e3cdac871ad13ebaabf65e13e592b970d2192808bd0cc232900f94cf.mp3",
+        "444ec9fb8daea82b8f9efcefb04c364f7618bbbc9ed27c42171722457db7bb94.mp3",
+        "578457a294d2e002c382b1b51e2c349c290c77adf429a5ab06bd151c3437813d.mp3",
+        "34b2db1a6ac3fa7ce08693cdb5a761e6f3559f4ad7061a801ae444f3e2ddcabf.mp3",
+        "7dbf0aaa8d672c3d2b6bb9d90aa3c2c2fd84238e2104b9e4a290b54464798fcc.mp3"
+      ]
+    },
+    "flores:en:flores:note:598eb85d": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Look, Don’t Pick",
+      "chunks": [
+        "1a93444303845c085ef4bdb5ccd451fc6b49771085896cd8da83e6ba10a8d420.mp3",
+        "41f214ab0766303dc4a3e1c0b65bb76057ea4e37d6e3062eda986944cd46c6b7.mp3",
+        "595b1b92b2b7b3d5fa8dc38e97bdb75adad1f9c116328f8cb486d3820f5ba4fc.mp3",
+        "b03be9b30e44962500744fa6704ef617a535487f85ffef95e250e09c44e66c8d.mp3",
+        "915c9b1de561539c7fa84b0cf4908921738513b00c03f880f4567d0b608a78ec.mp3",
+        "fba3170fe82fb8a306c6b1c5807df2a8aff1e8466a2f44f95546fbec19902bd6.mp3",
+        "1a921a41bb834392aba4cfb8f4f983b336fc2f516034b7cf80971d3b2c0f9e91.mp3"
+      ]
+    },
+    "flores:en:flores:glossary:3204f19b": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "Glossary",
+      "chunks": [
+        "ba7787c17a8131b1b0fc93e6e52ec96cf1a31c3fe1dfde7f39540564760ff5a1.mp3",
+        "40df207dbbc488ddbcc332922b761d49ec99077c6d249ba8aa1ec058b2498ab5.mp3",
+        "e34798aaa111a0e77aeaf1c0a1e1e3cd6948a1f632fe89debfdbbae4cd67fdd1.mp3",
+        "7de708736478785c1ec41c22212a661b61320e79091f6bccf4729faf20c6cde3.mp3",
+        "c9eb1e0d606dcae30764155cf7124ab0c9c1a83e7392d5507bd41d1c2578f7d8.mp3",
+        "f5dbe0be1c50ce27f7bd23d9779450e484e087c1343a955cb4e44fb3fb490952.mp3",
+        "dfb6e26c022f07ded3aff0e61775b2dc0b5b61025de072738709daf8c1d3a5c1.mp3",
+        "ad9f29e7319eb63889819d16bafaa73f5668deaa656d2d3ec0473cd0dd8cf707.mp3"
+      ]
+    },
+    "flores:en:flores:making-brief:32b9b030": {
+      "lang": "en",
+      "bookId": "flores",
+      "title": "This book’s brief",
+      "chunks": [
+        "c34113ce06ac13b19679d4767d879eda145268c04f3ee04e8d973837045603ec.mp3",
+        "0cb7e746393a706fd04ab35b9b0a3b17e224c777457bc5be9e07908a27c89956.mp3",
+        "b9aefba350543f789d5602b35881d5bfdd6dc5ad4d862104730e1e3cc9d2d9cc.mp3",
+        "5a5df581f13d23a69156eff9e06f057e4916c7fc228d138aea30cd402339cee4.mp3",
+        "89b130855fb3699ef4a089184efc0321257233dc7cb940bace6ebcfd2e16d4cd.mp3",
+        "1aee5e38bbf7a9b30d2fd72d4a2757fe77215f41ab27a7c98c671c803c937ccc.mp3",
+        "5a0e101683686f45b592a632c132fea7e080345d45a58e293240981a09925b5b.mp3",
+        "f1132b369f0fe772cc446c050638adeb5d32f8c163a40487bc6f14bc613af513.mp3",
+        "e4abb8aa87bdff43d2ca2b46b6c6d7b825038914a8ded2e5ad8e9312a7882074.mp3",
+        "23f7d469c7228d9f5d3c2f23b1d37ead968ba93649486d4cad8766f3c5448cbb.mp3",
+        "86f2102e3d820ce50176fb1a9a80558fe7ae8c44b2690288b1673ec270dc8cce.mp3"
+      ]
+    },
+    "flores:es:flores:plate-text:guaria-morada:0b5e2890": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Guaria morada",
+      "chunks": [
+        "6dbd91b80e18a7ff7bfb7b95079788c8def3f8507fac544d7ae8e529463854dc.mp3",
+        "252227c8aa62ce2125f7db7212811288484a2b79f56c3e8a37cc34facbcbe565.mp3",
+        "835964d87c9c8a0210ac6dddd8813c4e7c27471543d7e2f702602d749125d285.mp3",
+        "feb07111b4ea0499fed1a9c05dffad4ad5906bbf17d2830261c844cc5242b401.mp3",
+        "3adf363d09be36be2a10bcc38c321f41417fda78cb34ce43484fad28d35e8eb6.mp3",
+        "4c459b59c9ca6489d1db8e1497cf36fdc0194fece22df21376a8d5ca694f5678.mp3",
+        "9d75c7703d338870390a499ccb2268e816f6a025c32f9e0a89fc67b09dd02268.mp3",
+        "5f7af97f8bc9d83a26a140449aad1f10b8f0dd2ecce70d89119e21a84d2d04e1.mp3",
+        "c288d2d1bc95a6b7f6cf4c3585daed178ad45127fc2aeab37135471e81d27d49.mp3",
+        "4666fa3c5541bef6ceda807a90cf14a166e2d51d1796d3f2148123e8158efeae.mp3",
+        "e89663b52d4e42cb49d298775c04b2351a562401baff2357c269d2255c4cb54d.mp3",
+        "48248be8bc082f66a8c1d24a67af9a48dfd71d9cec6f9a732ce6df1607936a3a.mp3",
+        "134a1bd8b6dc61958c3a0b4496e6b7212528f6e8ca3683709366e067ffa6a927.mp3",
+        "d23a1adc80fa8078734e7f8ccbdfb7fc93170f925ab467313729c6bf13fa530b.mp3",
+        "ba2e884ce66cdac7ed61094abe9403589d07d3a2d2d83851c34b4cbbf3af73ee.mp3",
+        "8d3c75cb0195731e1de55bf270c21ed40826c1af1c723c01330bdc3b45032d04.mp3",
+        "e81fadc5d382eddae7823f7cd3287732c330e5f8f7323a0f0f94db05be301665.mp3"
+      ]
+    },
+    "flores:es:flores:plate-text:platanilla:c8d609f4": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Platanilla",
+      "chunks": [
+        "aca83b2e0bcdc6ee895dfc9312ada0ea58524ed18433cc6996b4b876a09c4f76.mp3",
+        "8b9a9af6946ba1991874076621bd470cd387c41717468829b130c7947730b70b.mp3",
+        "273f18557621f2fba75cb36a72f1042923b3abdf9b30be19f4451de6a57e591f.mp3",
+        "33b30f7a6f418253f1c0f88db12ad4db4b750d6554b4f302044bf1d804ae7189.mp3",
+        "1878a97d7006c577b6bddc616b223c9efbea965b781c4e859bd7e92abd39597e.mp3",
+        "cd911671779f4d38191e85c3e0787264ea6c53e618d50b720c246d2f867021be.mp3",
+        "265b5f6ee573c08fee6031e8a40b1efbeb78d669122422d0e523d31b44d2d3d3.mp3",
+        "a04185c0f6fd2899d798bdfbd4ea9b56211a29695dd933189764f604453a787f.mp3",
+        "878baf440b067a5b0076bc95c3cfc5c1d05f13298cf7b14402f1c6559559570f.mp3",
+        "ce9fec63d6c0b9f889ef583f73e49f4e7bef38ff47185a570ab1f33c40a08999.mp3",
+        "4f3c011997bd654cc04f52f61b183806a5288724ff75fe882fcfe2d42bc69d62.mp3",
+        "ff6598fa4b6db200e5ff0e1e3dd437f45f1fe707cff1d05cda31b255f6148b3a.mp3",
+        "4fdd73c2b3f469884fbeef94ae89ae7e9b5f82fe805f254cf81db9ca41b38e3b.mp3",
+        "50e7c07777c670d7443e1ef3252860e976feb4a99a582f78141e4b82fb7bd653.mp3",
+        "94962c6b1adeb8d7767b10197bd32414e28aa07ecc455ac0a6eebb4143e9bc37.mp3",
+        "60e7f512526ce1078595f300211807653332ed17626be3805e87cf054f982e5e.mp3",
+        "9846d2b2ebb01cb48f6eb5a5394ac48b749b69e9ea9eefd87a1dbce68386f062.mp3"
+      ]
+    },
+    "flores:es:flores:plate-text:granadilla-de-monte:5d789f8c": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Granadilla de monte",
+      "chunks": [
+        "bb87aa335f0174bbae550730cc7c3bc1d3717a76352d55d48cc8a6ea6fa77b4b.mp3",
+        "369c6c3502bbb274da57044c2725f5ef6a38dd0530e031edb8a30a0418253a2a.mp3",
+        "384f644b5d0690768550a1024d8fc858e000269590152a51f688ecb20eab1468.mp3",
+        "2f827541ac4882c42835beb24b403c0e67407702285e1626ae4d942d76a54362.mp3",
+        "b1379d637bef7f592379e217cc969bb654dd598ebb8c4fcc928e280e3046baaa.mp3",
+        "c1f10f872bd21b28c5b4a4cff60303da1aa19438975a33fbb301628d240433fe.mp3",
+        "f8e5a26088b88b3db96c9392a3a39ff98a9ae47e0719ca3b94e8c832bf071c93.mp3",
+        "766a4ac05f7bfdff0458b16944114de9351f80bdc222cd24310b3d56796d685a.mp3",
+        "5d9b453cd9e600a687d361abb69264a760fb4825daf3052c116eddaf2fadfde1.mp3",
+        "1f6a174281eda7bfdc18e29d5d9589630dfbd11e7e81b2775f53ae228d99f0a1.mp3",
+        "04adb00ae340f0ab416001185680650234df5ed75e07d05dba59bd8eaf976eb3.mp3",
+        "0aa62394ffc26c46b84c43006edf6baef780aa483f62f1da31f3c5652fd540c9.mp3",
+        "ae5aabc48e47b394bcd1da079e0b0111a53fc585fa1e72d4037aab979f601049.mp3",
+        "11bf42b2a5adf8385cb885bb66f437af98b81d7dee736a265be3c6549dd5efa0.mp3",
+        "be265a86ebae591028628865451389ed764e441c30473d6dfe7f04dfa5a38bcb.mp3"
+      ]
+    },
+    "flores:es:flores:plate-text:labios-de-mujer:5f307f2a": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Labios de mujer",
+      "chunks": [
+        "3eee0c5b9b396c6baee0a4189d82e7e11bc08dd5d17ed3e4f96cda0015e8dc26.mp3",
+        "c202dff7592690d4675ffd5ac0c97f63437d3f228f47c6e346ae6d1b6abc2cac.mp3",
+        "9c2bf0b69ee5ec45603efecad63e36ad5ed583e7aa67ee0b913de83a2e2d6fa0.mp3",
+        "03b0b8d91c2b4d56361262c51d4082aa63dcb42b95502459d1d9d9e185d45690.mp3",
+        "eb6dc282d8ba7001a9a54f40e0bc5fd3f7e1ed6a1fd8ad644ef9fd031ad0d9d2.mp3",
+        "9bab82c0ff03cc1b1c203cc2146970d8caad6fc61c18663bfaa9c368a56ae3ff.mp3",
+        "31da94ae13a1675abb2781e0b4992dfff397a0785c7331b94ef1f5c571877148.mp3",
+        "094612d29f1cc34bb0c691d3dadb34fa6d8add4c2c8e954de085636c059be2ae.mp3",
+        "be7aaa9c1fd65006c43b24cb12622466126004e3c8b543e0630a2b3ce747dc05.mp3",
+        "d5411ea45c9765633f2bbe2b04fccd4362626cb593f62dab9ce958244f1901bd.mp3",
+        "90f69b08185c129f84c4766caecae2b23fc503468bc88be6dd8629f716125967.mp3",
+        "1b3b9444ad58c96364fc9fb2a7445304c51d5e1a26a82e9b0338ab2105de4101.mp3",
+        "7c00038f99a1ae4154ba69aa9bfafa88bf3002ec7550a9f960934b424e62af2e.mp3",
+        "05c9e064951160f1032cd01270ae4ac12770d3bcde3f8b359848e169eb30001e.mp3"
+      ]
+    },
+    "flores:es:flores:plate-text:cortez-amarillo:7b76bb8a": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Cortez amarillo",
+      "chunks": [
+        "baadb623ae5d797af8f5d937afe7649cbdcd6b75cb705f7776b04cca39d40a39.mp3",
+        "10c6f503b350288010e7690add7a115f41ded10b9f3cb8554b386ad56e7bcff2.mp3",
+        "c01a0f893997c4135702e223274aa1b2925f2353435fe438e4a90c1022fe3dd7.mp3",
+        "f2a73869bbd0bcc1f0d9d62a98151cfc58e40e2454640a8911c4910de9da7d47.mp3",
+        "40157d24a7de9c70a05e52bc5f540b84ba7de848aeb40c05e277c81c8fdbda67.mp3",
+        "38406d6c6aa82ec2b0152d4d4dce35695dc67acf77546b8e3e8318020e97f513.mp3",
+        "da5bd85dca12d7a404eef0a1ce9254981204d5b9f9bd2e1420351913d596f9ef.mp3",
+        "727672b84720b75718da6b022d07a7ab6306b2e40de60c34245d62a8e91669d5.mp3",
+        "18b2a8cf3db644cec5d2afcc012d04a8a9ec72aa61a23ec75ca4cca9deb854ea.mp3",
+        "d725778077ac5c6b140726bd631e123e19f48f1a29e2eec09f901f89647e08e6.mp3",
+        "03ce72dc37d3bfc595c73f881a2bf0f55ea4c48708b164161d5f7cfa964ea264.mp3",
+        "b2abf98dde2bdf42e4e6822ddcf75127a9aafd09ba90c8597299c41457f8ef84.mp3",
+        "28a5de9df17eb3ef2fc9100c2ed42cb66031207f35eebb193d4bbf9cfc9691af.mp3",
+        "4a3b0e997ff7c6d7a01fea0d92ec6e8cf6395db01dd72afca7235dcfcece3f48.mp3",
+        "050ec2355c0582b08413e89a4dc1e1c73255ecffdd2d48baf6b84ea1d2eeaec0.mp3",
+        "32a0d976d59d6f72956c5ba7d4af981dfc2e58020814631a0390441f6fe0fa80.mp3"
+      ]
+    },
+    "flores:es:flores:plate-text:nenufar:3ae09657": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Nenúfar",
+      "chunks": [
+        "16233b6e05187bde7bac6d8af9ce9304f2c23a460dd1bf38e44b62b62ede639d.mp3",
+        "674707837d784d3511b4e2ccafe6c7abfa9b60b28ff8efd27ae8ea15497a0f3d.mp3",
+        "5f9addcbf975749a8fd3a66003ed46a0cddd02ba40616e18dca61ee5513c17f9.mp3",
+        "da9440e610940676c5585aec261cf10bdb92160dd492b57fabfa768a3ab69e8b.mp3",
+        "a46c8106903c867ef1988ba41dbd3f6534d8b73c6a2cbd2c99e5eb877ef3b6ad.mp3",
+        "6b2531435e0307f43fc902b361f5efcd487711b894467e83ed5bc210b9e17d19.mp3",
+        "df9896c2110f1cb25d3bb4aec4d854ad78f63de27824f574629eb0a1d4d9fc3f.mp3",
+        "1261894430d7735bc007915cd39b5143b41d6cfb0606cdd8061b4072e27510dd.mp3",
+        "f0f10267ed915ec84c677006a387a9247469aa6c77547900d16d7fe1da0a60c2.mp3",
+        "2fd1720bd6828ae12fbec15f88b4003b36dab50cd41f8afa51602ba054590fea.mp3",
+        "62d26b615fb6dac283a088a32a3c2977587518377636d2f03003b2c9f0b212fe.mp3",
+        "447f19246ef7e3352cbb1c6c8512950edebe264f5386a9a758ba335e9af2d52b.mp3",
+        "2881fdd9bc2f05bbe30137b307c6bbc7979e14a8d84a4f885ffe1f2b0b81c731.mp3",
+        "1e49ec31aba2346b13e11bcef3dd0673ff4e91d0637364373a8b6299b50f3851.mp3",
+        "73017bd44ba424256ffdc7e680f1fd8c031116efaf9aac0943c148f6bdbeece6.mp3",
+        "cded1ad2527ec450fa91965e513351888e9a05c19fe26de8c98c4189180781d1.mp3",
+        "2357bd6f9ed352221fc3577cf2574b1df73150fc483fea236450c14205569ed1.mp3",
+        "ab03743c9147e683a8656b55488b0a137877a4955032f007647a7950ed9e65a0.mp3"
+      ]
+    },
+    "flores:es:flores:note:f663987a": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Mire, no corte",
+      "chunks": [
+        "fe884faa4eb6f4c778b3e4b54208fe0357fec625b1357afa1c19208b1ce7efa9.mp3",
+        "a93e318cd13e82a68dc799e35859b6555ea80d0a8c22e50514213b2d0a4c2e69.mp3",
+        "aaf0f6aee2f379282e1089758037358fd7115a8f3a2bcce1e4a2bed99d03b81a.mp3",
+        "66fed9ed88e9032c9216d271e89a7f01bd251a9c115b1ff9f4f6077683f0acf3.mp3",
+        "1a1d6f37f6d4a2da11d67f685d20b23f96683748f5192ccd0aa6ec053022e72c.mp3",
+        "3399b5530fe44c7faa8716ad8f84580d38a7f51fe476483346985a11dfc640b8.mp3",
+        "11eea07e0c7063a25a455b730160a4d302c5599f26fcdf829d7116e8d5a3d50b.mp3"
+      ]
+    },
+    "flores:es:flores:glossary:d2b19711": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "Glosario",
+      "chunks": [
+        "1df3103f9a8d77e1ac044c181fb930138bc4b3de718e16eddc52b60b3e0f518f.mp3",
+        "4a1f0a9d18158da90f15ca43d227ff8469c28dd8b5bb068a1feb1ab80adc450d.mp3",
+        "a29910ebf327974bc2550d6f46726211f5b403a7507e1f55378c2e8a1d382b21.mp3",
+        "fb2d7d3b7a18f04d4e5c9e224806e5e7c87e54ec66b487900b82312ab898e379.mp3",
+        "6a794735b7e702439b9ae4a75ce3c15fafea117815e2b318dcaf2d19728afe98.mp3",
+        "c2e639c5f96a71c4bf3d0a66a4ad95a9776aa58b7e19b5ce4ec312aeac08c9c0.mp3",
+        "ccad5a60528928fe8d9183b0c81e5d979efcbb33264e81551b15f6bb353a7549.mp3",
+        "52f1368fc5bc87d3910642025d1adaf2757ed51f4e3e9caae8a509c70e05fac6.mp3",
+        "ca083926df83eb6933c27bc5b2a0acca8916445429183b0457138a69a933f99c.mp3",
+        "872a9e0c7874d749cc0f3b795f8844eab6383c1df9f5d6217cc79385fe7a0ae5.mp3"
+      ]
+    },
+    "flores:es:flores:making-brief:6bb82f3c": {
+      "lang": "es",
+      "bookId": "flores",
+      "title": "El encargo de este libro",
+      "chunks": [
+        "b6284998ef38fb5e975b2256edcbe4339df8705854f35af8f10f4a1260ba2339.mp3",
+        "7f2334eb7a940f79a2c0eca6bdc1b18d31df5286d35ed4753c9b5715f2a2fe2c.mp3",
+        "93a659039534586d1744ed4b251589715a800fa1a19f038e69587ade89a529ea.mp3",
+        "c3ec28bee4d085022697f5a057f89000bc6ced902187ef0d1bfa803ccf5af94e.mp3",
+        "06fa0c0a2ba38a1efa62715844e3e6ab1ceca63ae1d4c0b28061b7c2a7a710fd.mp3",
+        "31fc4d9580b1d87acacd9f8196214cacc4c40153a95ea6ceb1ac456593020e84.mp3",
+        "daae9273f36aa1838006627300cb8ce5fb68d51465290d9d0e79e338c53aab85.mp3",
+        "deeb8c9198e4cc2df60da11fdc25ff6ce70d26c5e2ca7add9fc19cd020ec35b6.mp3",
+        "f2028d6f134ea2c63d3c606f811a625620d059ac659d1e28560ca7558b20fc3b.mp3",
+        "dec63de33ed49606b4a37eda879b56949668259972a70ccb7c6d89bb7bf2ff4f.mp3",
+        "65a092157bc0b9144c79d30681701ea9ac574dbc1797a185bbbd556ee3b74854.mp3",
+        "08bf889adc68acedeeb3965e45aa4b5b785af6ed3047c7b35dfdf413c3cf8750.mp3",
+        "d88378dcbcb67b7709f0e278263e39c518e3cf94248488b8b1be76232edea105.mp3",
+        "304ea02a21795b4f53ea00e30c4037af3a4d2281214b4f83c50e05d537ef8fab.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:imprint:2ac9a2ae": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Imprint",
+      "chunks": [
+        "520815d6c1c1e869003595fcb338145fa7f6559aa85263e5fcc645b4047b90c8.mp3",
+        "47c58cb30e70c3e67c6b00e275f09507c5973c807f6eecdcb4f4f7081bd5b0a1.mp3",
+        "26dbf3f0a68494f77c74643db8c2b62202b9014c8b2da5d17da8ab96708712d5.mp3",
+        "8890dfcb743a9adffe7f5553ea706d99144f63d596e009b65c82f922f4735615.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:intro:40ecbe24": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Why Draw the Skull",
+      "chunks": [
+        "b227ad5c39cbd94a493455b7600bcb4ab17cbac89d1b2b16a8c19296224620b6.mp3",
+        "63cb789472486fc39d1dd67568a1a5a724636e0a6baee27c979562c67be5877f.mp3",
+        "ecbac73a356e3806561b5161f29699e27b59398bb67d4f2032b6e8e58f2cf479.mp3",
+        "a40ff1a7e1581d338cb24114501c3045f426a37e02fc544cb4576e24b6c8c546.mp3",
+        "5ea421d83d35690b086d20517784b0e6cf754fb747a688668b07bdc3f10772f2.mp3",
+        "4b45968f40cd75126186457acafdf4d17fbebc0047789a109958885c3fbbd3c0.mp3",
+        "5c9c192ce3313ed76051b7b0ff2250d83445c641c7cc89d0b250cd83e99b7d7f.mp3",
+        "4bd3b02e1aa7d55db8833c9d2a94bd395b7516ebefaa49e7b9dcacb383b45a39.mp3",
+        "f6d606b9df6e77ee343e97c2154d80ea8e97aed421f23f227c4ae30c31486621.mp3",
+        "9fade081598876e0e035476af4b82130b66ef0eeeb61b720d4a1e7693e635231.mp3",
+        "d5057d240ec3c8ce3544d683b8f61c3d867da5362f3ed36eaa10c5cf8839ffb3.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:lesson-text:frontal:7104b3fc": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Frontal View",
+      "chunks": [
+        "209664befad6d0fa8036a9b86d472b3c76562ffe8d4cc3f33b996c375d09a6e1.mp3",
+        "4658d1861af0755c8dd682e4148c7c09ab9a5bc359f3d74bf3e5172ac998b3b9.mp3",
+        "02e55ed863a9aea2b563982ee65852bd857ed6ab7b6f2eac652ed12890e715af.mp3",
+        "5d69f33564ca6b00cd1d0fc89c9c749011c80e5fc8feea3ae07a6efe8b145c90.mp3",
+        "9ba602e23665e72d75f85525cdfbc3f52460512546fb379e972f8ba93f8a4168.mp3",
+        "90e8cc9bb16a31f5eef8716198bf7a73474d2496476eadf5c89fe41d61d138d2.mp3",
+        "c1406a694e2229df80e299835238867cdc3c07ab1a7b3c99827e55c9e9c741b3.mp3",
+        "19bf59be8b888e3546aa33f880624758cd103a6370a5c0c24176fc3e4f09377b.mp3",
+        "18e55a6c20910950ad74cd00ad8e75cbca9344ce374acfa7404f46270f5ccb2c.mp3",
+        "73e8c13a296110b24ae8e8f09903eec54c817f025c929f4bbfaf1748d697d328.mp3",
+        "55a9c6571b77584d141bc6f44d3cea56043803104dc6441637fdbe17a920bab1.mp3",
+        "c13f974054ea21216f470660cae65867f3560328b6032c22596cce6acbf1ca11.mp3",
+        "6706181705d843c7ada196686d7a0715ec777b432686352156f7542d6abb40c3.mp3",
+        "3fcbe32f279607ee8f52bfabf7da5f5ede3a1f635a4cd0e2d030d01f2296471e.mp3",
+        "6609d2353d8c56600c19fafa881ed184346ed2fd4834e0365712514be93b47b9.mp3",
+        "b6984fb521badc5075374a7c5e0eef81cea96d03f4af9040fc04031124948716.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:lesson-text:open-jaw:36b96bca": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Three-Quarter, Open Jaw",
+      "chunks": [
+        "d142aee5f4de790ddb3b0a5ca7861b3f1757b29f2455ddc9ce2e8bb2fd2d4d18.mp3",
+        "030aa80f299eb069d3cdf7ea86f5c7202361e8b80ea8b4664c54af6265120456.mp3",
+        "cfb438b470d7fbcf8b43903960f53b89cb9eb328fae9f7b66b892145062aa974.mp3",
+        "40127c2966642f067ff7677be1d26d364d4e9150e76bde97c664280ed67b2837.mp3",
+        "0cadbf59f8e25a79b9a487a754390ff6b7bb7bc8ca33d25e3bf443c53bdffbf6.mp3",
+        "c979664b3d4140b2a3d2742253ebbc9a5c35b28da764611e230a6656f07a4335.mp3",
+        "d1cade9886fbe4586f4cbb3bbe80777e58fe29c6069e08f051737a74df217617.mp3",
+        "a4ece1d337c7da88d09a629599c8ba373b9641a3983826c01466b6384c693ad4.mp3",
+        "f6b8803dd35fe7e8f20e6bc9fdd319a6846b9e7f0b8a2669ba3727a28272ea08.mp3",
+        "25818dd8a9c35975be847de4543a630f07e5527f05e2d7f5e056578a50ec5be2.mp3",
+        "b6e9092119f8e0c61264856e7ab7ef71df38af1299bc62860396459e9300b5e0.mp3",
+        "d39248f9e426034053ae98ba44b929df16f78715b274a3bcccac21e497979e6c.mp3",
+        "f7c8769c4f759b783a79df88a8e6b4acbb0f8e6ae7100a0e2c7cc5cafc03a4d6.mp3",
+        "725882c1d4861982c77f68e486ecc3d2537b64b83e237b9f11070c6cd18184a7.mp3",
+        "aa509217721b8d9e05cd083806e2fc3d00ccedd2991b9cf0e46f7deb74a3ab8d.mp3",
+        "98099fc4544de86a2c6cbdde825f1394bfe196c42750f685823976938327b831.mp3",
+        "82b810184336cc7262e356e10e7f6a99f8cc3bfc59e5173c064c105afd4ffcfc.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:lesson-text:profile:6e6e6f68": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Profile",
+      "chunks": [
+        "356986c48d2f170ac30f96e2458afdc941a309c927fbb8b3a7b849e85b0dac3e.mp3",
+        "de321e3ee61ebdc7db9e04f12822dae667a11cde6a7a8e7acba1a4cd7685d2da.mp3",
+        "1c01917cbea78c9bdb0b6009822689e7556dc42b8363f17c709ea74b52e55ff3.mp3",
+        "6e2699dfd5e836cf9d7dc3d14100c43badacf829bbaed1d650cb8aaffc4ec74e.mp3",
+        "f8a7512eab99f82e471846f2db7b6eff74706c18dc22992dcd9984d293bc7261.mp3",
+        "ab1df62745771df373d2a28a19b857624e231c4473377d50f5e89a6740f0ce45.mp3",
+        "2289b6f3b1b6c800209d23df5120ad4bd54c2fd5ebfc6c3640ec2842bdf58989.mp3",
+        "9cc6ab6214ec923984c8d7d274e244c32ddeecd1657b34610f11f60053f2604a.mp3",
+        "7e4cad4757b015ac882d76b22aa6a5674b6282d0e72c33312176491f6f3099f6.mp3",
+        "daf7a600edc194955a6ea4147b2c7e7d396704c9f23eac0961b099063843ece1.mp3",
+        "edfdce680c9ddbcfd9c36826d0dc0d6c70dfbb9bb259b066221e923b9ca151bc.mp3",
+        "dfb90973efff900dcd1df3600941666ffc94708eba8ccc1cda363c6150cb1f31.mp3",
+        "24ef35d0d0dfc697a37e5d89809446fca9c48977a381ba81da2e2050502bd414.mp3",
+        "11322b4e44a3833b1c91f71af87b04eb252c6ff125d53c1793a3cf6ede26c081.mp3",
+        "b6e0c6c8dc6e61a993922e1c58842c5cdb9bdb763a4da904661f4ca49928dbcb.mp3",
+        "63ea3ab15563116da6762ba5bf627da2f037e6095f7d5b7163b4fb021e6a176b.mp3",
+        "c1857f4858cd99df305afdcd3528a9b1203a686f79ddb5134c91b8e9053a28f3.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:lesson-text:bones:ec6a45f3": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "The Bones",
+      "chunks": [
+        "a129fe513d39230da5cfa105f2d4bc38b398ec541320c9911e1c6bd95bf319a6.mp3",
+        "f9c46a10a6bd59dab07574c5fb328c6e3666efe72b9d0f7b4678b5e0633f8c34.mp3",
+        "6ff86cdf4bca29a2fc7d41b3473d38fc82667494d881cfce05c025edda94c7e0.mp3",
+        "0d471a07d7fa72478206df8bde0fbc223ab9f23405c40773063c09ade4e49dab.mp3",
+        "43c616f4eb6fb2a9a7ffccac7b2f3ef539405ba8de006acba64f9936c01f82ee.mp3",
+        "7f9cf3992821c00575695657e1509af4dcbb85c8f487028e373d28164ce42a5f.mp3",
+        "159b274cfe55dc0f5134ea5667a44f8bcaf509b9660a8cfe88dcbee19b7b7dae.mp3",
+        "85616ea852fb0cc43c8938691a36617ab5950a2b3e30334c239978dade0adbe7.mp3",
+        "3fea82deac2500edfd4724d2228db378019e0123f7ee9b9cd43ee182f2422cc9.mp3",
+        "470d026797ff0583a92d4f2cf15bbddc0d8947d18678900c7598d3ea486a06f3.mp3",
+        "ae62dfc4e586a84b034a1520bbff0bf0ab7894af800f3a290e95efeb3c905541.mp3",
+        "4223be163197d5d9bfa8ad2a7cceedfd8c3974d6058e90e785ca4c1fefbe54b3.mp3",
+        "9db00d20cba70936a69d7c5943e286197060632776c24c7f71add62171ed0a95.mp3",
+        "435f46fc6b44b3b80b013a32e23a0000eb6d42ca916f0be40bea4c9f39066e27.mp3",
+        "82e748d10d1bf0eab728a1241dbc4a6d76eddc982bbfaea19b2451ab1fc410b4.mp3",
+        "faf256dcf16f3c02f2e4b693b783625507c9fe6aed2cc9f98a4dbc132c99d259.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:lesson-text:jaguar:2e154e0a": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Jaguar",
+      "chunks": [
+        "cb12ea232b78d3041e899f71ed0fc0af6a54012ca9d52e6fcc1e214135134b9e.mp3",
+        "39bb90382378a8d8099686e5475ac6bcf9a435d00742482a318baae1b74464da.mp3",
+        "dcbb27769aa80034c65c89b0b8423d320c8959137fad1e8e5df3a60c836c79fa.mp3",
+        "24f865749a0c05f7796bc8b8a13bbae46b1c8c76c6fa26616f3c1c02dc33d3a0.mp3",
+        "0614ee1bd3b09ba5fc1816b1595f2b2e6ec714f613a978b05748feedba738ea4.mp3",
+        "c186b44eb89389d362797dac7ea99ee763301945ecfeb4428fc2584ff3125d13.mp3",
+        "76ee1fcb4307225a8481fe8a99a8e13514ad951b92751aa4e977fb722c0d144e.mp3",
+        "10f6f83982b0276cc2766799c17f3b235c75ea48c4b9106b6e6dd1dc44085ece.mp3",
+        "5b7223d534ac941050d1e77a7f9f0a736969e888afedf5fb427029d93405c636.mp3",
+        "50ece948f040e2b90a3baba3849766f86afa7ef7c1e5f81f02a5370904cc9a7b.mp3",
+        "c635f0bde0f191a5ce60f047585c3d0d9f94eec2f0f3e6d6b50e2d0eeb2a71b0.mp3",
+        "060974e4e81a613d09a3f2124158f00283018d06553c0f382b2a9b964dcca44b.mp3",
+        "fda803ea53e739c9c8e651dbd59bfb168f06311993696fa52c03641916128d11.mp3",
+        "cc61f0a2a2e617d60209608340ccb8ce6fcb309af78441942ad2892e2bce3fbc.mp3",
+        "01f897a5f99293357c765192b8e490316db6ffaf41ad8cfd94d8187c1a3521ac.mp3",
+        "e43a15e4d6773e0d945e637622f6a5182228193e54d2c2b6795025b948e16061.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:lesson-text:skull-and-snake:6d5dd36a": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Skull & Snake",
+      "chunks": [
+        "0e9e0106cd842924f2f17386a6df69725cd669b7a8499b0ca488dbe8270e4c12.mp3",
+        "3174305f5d64f47727d61b4a2f2f2d00bb544bca7123486557a803c155883462.mp3",
+        "1b50aeffaea4b33c503f78bc7cd0831539f12fe3b3db2a4a90d167401cee89db.mp3",
+        "3d608bbe3359896cc5d1c553a61ae649581760ea888812baa000f8c233664085.mp3",
+        "94e30c4b8853ced6b61a80f266b428f310048d9df5fee5297d17eaf93f22eebc.mp3",
+        "2e330f76797e24abc8993c5884c31b9ba024abd092d84b83af000374449c182e.mp3",
+        "1e75efe84defe454f23cc429ef3c62044d6e34dcd886efff5be42ee9e28f8459.mp3",
+        "fcda15b9d9a9809ee241511943d14c56d897b96f1489a2858c3ccf3070324e6f.mp3",
+        "b3a54c82d4bbab8cfcd362717829eb1e503e26b9673cace0ffefc787432f6ac4.mp3",
+        "7f6e49592541d8e0d0e06eba27be7daa989d718834461764ce18668cb21e26ae.mp3",
+        "be914c585eb92348fda90f7416c147964ecfcf771c7e7e6d15e91f18ebfe7edf.mp3",
+        "ea6d8b5886455e7446d3a5b16163ab33590288e5d7d85116713885c9a69cfa22.mp3",
+        "10d5421ec8b6943bdb4161f8bf1702804473e03f6560b9f7fbc5740dc00066c4.mp3",
+        "de3aa3103a3da49621ff8614d5ebe0d1a7b34076d4353a7dbb3b6551c3bdfa38.mp3",
+        "6e3481e5c3b0fa17ceb25e3a5ea12901301c3cf70f5518f5a147cca5c11905db.mp3",
+        "98b6f86f065cc4b8e0777f5059a251e80783da28f96032d4d6d86d662bd15388.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:note:1e0caefd": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Practice, and Respect",
+      "chunks": [
+        "27a1202d562527cb2f1f307d3a4e0711f8e4400c067d60ab562b2168b86d5ec0.mp3",
+        "daa4c8efde1bcaedc744c010f98389f65cbde26b4fda7b9988a510f59c86421b.mp3",
+        "3360196c4ed3dc1dd6ef2aad97c073acdc0baaf48aded625fae4439a2d6143c1.mp3",
+        "03a36869f3a928d61e0ab029a6c86f6c791b162c3e010ddfd0e4523eb04feffe.mp3",
+        "2a9363cacf10c2e604185db8f5f3694a078ac02f5488805ddbefb98041b52632.mp3",
+        "a8804c724935226775ce00df678dc251b630381426cfe4954937821a54064f62.mp3",
+        "e9802da2b0e7597bd356e67580c0a44dd51c88fbbfd8320f7106d11be53101f5.mp3",
+        "30f8b147c00026bf2da830a37cca78d717903e479d0044efd7a37c6333030154.mp3",
+        "13ac7cc95ed882e4f1653fc2cbbfe53532eaefe078d1233b4258f0dca95ea61c.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:glossary:20cac0a6": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "Glossary",
+      "chunks": [
+        "3e8b221e8b8c85cb4eff438a147f62cddb675f7e85fb88e53131bc1836f9d01b.mp3",
+        "8a946c112f4cd1a778015c669e7556d6df02298c37233afb07469a6a38eba795.mp3",
+        "819bcae6a285de28f03dd9999f9d3dfdb3b1c6ede7000349af7c4b0c621833ef.mp3",
+        "4e88a8cda97d13d819c1ceb425055ecd5e7a61652fd385f3b8518461bcb6fe6e.mp3",
+        "9e69f387e7ce0e83cc8523bd4e3466e194a4e409d310b46b460876d642d5764f.mp3",
+        "b0e1ed125548394d80009a378e6fa4a168db2af817fa85c6c2b51e786348d701.mp3",
+        "9cce4862871d111fcae48b98e132b08af45378c40ebbc8c7823e88d3a1b0cfe5.mp3",
+        "1f4256ee26e5b81d6d8dbdbef18cb8574c2a3ea5c1e6199438dfbcbc13c41f5c.mp3",
+        "9a0c6f47ce796aa5ba7180fd86b30125596dad095574e28f71a6469efaed8442.mp3",
+        "2a7befe8e7849bf6e54bfccdb39c1cc514b60650d843a6db69038972b01b7e59.mp3",
+        "8896a10e7900df03b5c072585c60d8d2307469828463cae4923fbc35c190775d.mp3",
+        "f64b1562a25ff4178f101b6c7868e4839c1c44c82faf72f6559ea41f3f007a21.mp3",
+        "38e72e9e617c1bb2233a897f1ec56f91e9d3c2d9ab70e23a9e7ab09ffbc40998.mp3"
+      ]
+    },
+    "calaveras:en:calaveras:making-brief:e093cf92": {
+      "lang": "en",
+      "bookId": "calaveras",
+      "title": "This book’s brief",
+      "chunks": [
+        "c34113ce06ac13b19679d4767d879eda145268c04f3ee04e8d973837045603ec.mp3",
+        "d7ae5238dab94817b74303eecf9c8c8d9b4b5e9e3e7c81698a50f4382870a682.mp3",
+        "34ae8d5f2e474550027d8d8c1737af9d267ac68fc355ffcaf4e4f6b4dce4a21f.mp3",
+        "98eea007432adf739fd33868aaad091acb982c30ee15e4e65aa6fa1a9ddca34b.mp3",
+        "c365b46e2d738b5aecaa618bdabcfb3640f5bf69b95fa5573051e358ba03a070.mp3",
+        "7bc6f2301e70e51b332b7ec9b1841c27948781924b6ec98616f2c3b01989611b.mp3",
+        "5b83a1691a4ef46319cfe095bf607214e3e0ec1aff8e99dde5b02423a97c415b.mp3",
+        "7313d3ce5272b73a846873605cc2f41bdb71c730423d1bf5d0fa00f3341e054a.mp3",
+        "1b0eb8740ad120bba8eaa390cd6dd2930fef2a7cd71007344c1c57cb7c0fdf4d.mp3",
+        "549d384bdc991cfa417d734bdbf92b32154635d0d202aae809cefcdaa60cfc56.mp3",
+        "d68984e67f3dfe802bcf4b77a3923f82989d55b7510236bfb055cbdad45490a2.mp3",
+        "d0e46f85bce01a32c9762885f86f40ecd3ea1d7841bd338acb76aa747ea22550.mp3",
+        "41821e43ee06b628a793636ba63ff0137c0ec0cda191c22eaf7007072dceb61f.mp3",
+        "550cd9922c50c6c883db88668b9f17d35403df5b4d0d2ee954c61c4fba152f95.mp3",
+        "8226624cf62cbf8a9b1607777605eea0537f0045b2f52ba191368ed8231e4f56.mp3",
+        "23f7d469c7228d9f5d3c2f23b1d37ead968ba93649486d4cad8766f3c5448cbb.mp3",
+        "86f2102e3d820ce50176fb1a9a80558fe7ae8c44b2690288b1673ec270dc8cce.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:imprint:0fda0919": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Créditos",
+      "chunks": [
+        "376892dddfb786b9faf6c487d18a017374947a57f30c2d43fc258f3fdfe38c3e.mp3",
+        "f0b91927b62758093bfcf434c62e2cb60849bfd6fff185d7a59c17d2bf2cec80.mp3",
+        "885bec9e7b102ea4c2048265b5e2fa155ba2a2d93c5563dd4fe195ee1a8fe979.mp3",
+        "a72de974661465d23c173d897bd75cd46641ce2b717ffaf1746b7831608e3d6b.mp3",
+        "0575da81478d05153835742979df027c3683900a7b1a8d6c5a56480b38ea67ff.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:intro:ddbfb7ce": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Por qué dibujar el cráneo",
+      "chunks": [
+        "27da5228b8ac48713839561f95977c9cfc31b74b86d112be5fbfb23f25cd9335.mp3",
+        "036d7111f57675b774dad744f16f0a2d777007cfa8af7162de6a86ecbe35bccb.mp3",
+        "e1d08f7eb25fda7094e462138ad71f20b0a98a931169497b208d0bd91ae044f4.mp3",
+        "619dfef901bd6d32d67a3d8ca7b3eeddb5a495d4fa0c8be9973e8b210e5ee41a.mp3",
+        "b12be2035ebdcefb8c2f62816f9c5db940cf458019be0b7a60f1703d000296f4.mp3",
+        "84a0ea7a7391c85e6cbdc4d936fe2a2c362e7b93046afd830e383d9b5a7c8e4a.mp3",
+        "41a3071c489f1795f4103a766fb7cf9352a78ab519666767629d2a10bb81c63f.mp3",
+        "15bb21b0d9208aefb11ae0e027cbaa8ef675071170b890b16aeb41799aaf5c8c.mp3",
+        "421ab67d399ad4d7528ad9130c470a65d3e502755d5a1c02913886d7d5fb418a.mp3",
+        "8eb07896ffa2287dca57f68f825c2175273e42239d5a5e015e9489a05d88f751.mp3",
+        "06c27342ab1f9295f365cac7e6a414ed63ea8a412926621d66ab5a44aee1c31c.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:lesson-text:frontal:c5451e3c": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Vista frontal",
+      "chunks": [
+        "2ffdb4abd6c126b1170fe16d0c70a6bcce5d12f593c52b3e84715bd49e2bb608.mp3",
+        "75529ed57f6e6ea42b1a86274499df80146933bb6c99ad17061875c8540e34fb.mp3",
+        "fee01bbd6260054a18775dfb4efe6478035e879fad097d502e0f44cccbed59da.mp3",
+        "e9cb6d0fa13a6a94070e211e2e79091e4b7d2936829867360020969f16bbd71b.mp3",
+        "35c08edea3a677e21c20ebc892dafcf75453d43eca96b97f47c53948abdc81f6.mp3",
+        "16689140d2faa165a54862ed40aedef2ab717d262d6e992a364338dbbea75f5a.mp3",
+        "b299231def41c60a23fdf7c27b2deb050979d4babe374dab920e8ba90de784f0.mp3",
+        "cb96c35d4d51f623f3401a02c6d4ddd21379a97c82febb2d18492b8b726cb0dc.mp3",
+        "d0786682520d9389038ad86cc4563e23c0c2406f4d07b17f9c6b0c18f4fa5a00.mp3",
+        "e17e537b84964192e665f8a65bcc955adc5fc509d227ac9e0be9e38a10cbde78.mp3",
+        "81a2c4c69dafe29c858842eb00dcdf300ddacfd20e16cae4331263a9533840bb.mp3",
+        "aea5b03ecb0e397612095e4311599a2059b765138a5414b0d8b52b62b9e0b11e.mp3",
+        "d040a7a89f0d7f9f918c4f5f39c0e2a9cc7bb14a9be6f98d4f5aa04d5a8ad8cd.mp3",
+        "6762761e662d3ef081ff3f88d2d86fe66880f3120c178ae41e7b1104ce318036.mp3",
+        "bcd030eaedb3943a0e721913511ee009e5784139b99455e870bff168f54202b0.mp3",
+        "e64c5f201847c9f3b121c0b42c5ee3690c9f14a5d19cb9ee21504affb3445054.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:lesson-text:open-jaw:b177ed58": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Tres cuartos, mandíbula abierta",
+      "chunks": [
+        "6a5226a7b66d0b70be42ee00b332131c2160596834649180dcd7b2738a190a9e.mp3",
+        "6dcd0b79411eabf90b8d54ddfdd43b12ad02167e712fd57b9fd25d4987fa7865.mp3",
+        "84f2c671e9795293768f16ae4b91f21b8d4e154ab12aaf8a8def71a36366cae4.mp3",
+        "aaf7ebe83468a97f215aaec6fd96cd12fbc2aca105d60964efc65fd4f48fd525.mp3",
+        "d9b12f68a05973ee972b5a23acd1da833c85d57fd043ba71c03d02c89baae444.mp3",
+        "48694c79e4289642d9609049195ec29ceedc21b3625958dc2f0065a4df79c53d.mp3",
+        "26ca480d70394171f2b77e5cf6657b6dbeb70ccb9583f9930ed5ce1cbb25bc65.mp3",
+        "c9bd6592ef77a192219b5647601820d2efbc16f830d9c296f9470b6cd74ada99.mp3",
+        "294e907093c5669b9295b37da8ef4777654da9fe6e731467eef4caea97c74e12.mp3",
+        "817744750724acf0a28f1f3b9aa5f22b872225082d2c5175cff05e0f7911c59a.mp3",
+        "292221cdc006a231f610b1f7c930375f41c82cbdf053e2f09a3a644d397f2c74.mp3",
+        "fcaa6285e4661ccf33b5bbba797c317fcee2e601eb31f1880dd4171cfe1616b9.mp3",
+        "54679e8d5c2f02b8525c0b157ceae72fc4d6a3bc22b395d0c11f5815216a65a3.mp3",
+        "bafb43d3c71a6100e809cab8b0d76dada6d6c7ad69b4ccae4dff2cdd18660e43.mp3",
+        "5aad05b625cd9daebbd466444e89bcf8b44dc18b0b9ae42adf810d46ed8da340.mp3",
+        "0885b25e17f9de41c3e268bfaee72197cfd29311b6819a431979c614fed6659b.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:lesson-text:profile:1b92954f": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Perfil",
+      "chunks": [
+        "48bd076170a0347276fe638256e39263f81a68ec9e154b04cdaa7162cb1911c0.mp3",
+        "a4dc79bda6f8ee60272a15b80c8e371be572152f022cab86f95ade6d9678bd33.mp3",
+        "d2f709e0233aba231971304656c3d4a20215289c63ee68a7fb92e48eccae47b0.mp3",
+        "6e8c3e721ee60b218014a82a408f2dbd82e6e433c48442588b29a5ca2cbd998a.mp3",
+        "34c6f8d1e5370d90ee84b3078a1f9302e52f4037d2abc39b319eef92c2fac611.mp3",
+        "edd6f76c17acdad041d46e552e896c0dc2187346c5e24f35c2646f15733abc0a.mp3",
+        "90796fd2cccd48845c35009fef434d5c179523a9d622a0858b80ac1f3e8ab1ac.mp3",
+        "29b894512118ff8b58e1b29e24413b6154e11ad008be5215dea190bff8fb0476.mp3",
+        "e0ef51146b1026361cb5c1d900bb00611ebea467fc737376b007a5dc6abbc53a.mp3",
+        "4f878db63eea5d7d6b84fc3d79d82d8d1262f1f1953928b04dbc06e5756407c1.mp3",
+        "dfbb237ab74369932bf29cffa67f0611102541bc623ab6758246000f59d2ac75.mp3",
+        "9af7e0bb0d90d6de3f9e3fec80a069c1c365befe91e451d13aa6e37705b37733.mp3",
+        "7653bf7a157af632ea6175f2b109d503407f8987c791ec0f721ad7d2e18eeeb0.mp3",
+        "fc4a621877e355e24acdbe2cd4dd82b279510c302cdb759d31015ff5841e107e.mp3",
+        "f0fe6bceb8b031068fc171ef0d8ef41b836a0dc69c1fba1d8baa57caad10d725.mp3",
+        "b6379f0cc5b763a53ba26d4d656be63020e8bfc12dff27cf2dc18653710d6bd6.mp3",
+        "fa972bcaed6abd151ae9db7ce63de067567dbf3219712f80d7f356280de9d4b6.mp3",
+        "7ea897109c2018dbac20a82a8c7e2c28f596764f4b703cbec37dd5747bd314fa.mp3",
+        "383052f9c4f50e9e76056790626e674efd9ddaf77e0e8aab37e8c63c6f6be7cd.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:lesson-text:bones:11825ad0": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Los huesos del cráneo",
+      "chunks": [
+        "22250b323d0fb69b532f88fc4d6802654b7505d0ba576a2b20c2b08496f9c4aa.mp3",
+        "4bc882efa4055b1739cc72a83176ac22a2a371129f4c19c8bfe0e8dd2d9eed07.mp3",
+        "9e66fb7453b7cf461ad0d6c9cd2ae00f48bbb1625beb9a576e8f0cb02130601b.mp3",
+        "28620c52c903e3f72aef5b128419b2763b91b8b7087cbe8476b8efac914bc49d.mp3",
+        "0e6b912550f769cd4e782dd317e41c800cc7a68da5783163af2272d362674728.mp3",
+        "6540158201e7724477a896a5446a320543b9725d0412a97781ce97cba8ef361f.mp3",
+        "826d5464c740e3078f2336d895440f13d63f799236ad769e89aed32b1de58ef7.mp3",
+        "d12c4403ead832bb926193d4d409ecdc0976504fa1a7a1d99b96f796c6c59d8b.mp3",
+        "538aa2793c847909965dca60f1c6e46d12e1d0b0aaa72f50d7dcbdbe2178520d.mp3",
+        "70b74dbb6ade02999a6549b4f6105e75396356c4b577310a88c13a1821ce0ff1.mp3",
+        "0bf38b11bbefa39d9e5209ff849768bfc8243c5cd160ede2ab4f4cb1c87a5f43.mp3",
+        "1366287d245ef0ae68c74185d5e07aa07d894a13fb42ed1cb0412f935b877559.mp3",
+        "6bafc71e16761903326f89c48dc15ca5e4c9ee378a418a8217a3d3f3fe2aa659.mp3",
+        "a591a09f7b30e730e657c859c6d9a240a9cbac40c92c3005ac4e78ee67de6517.mp3",
+        "4a5df279bfa3f2e023a9ccd5b27ee898cd244a608b32a606312ca991a628a946.mp3",
+        "3c74b2b9bbe1edac1d331f2ef9d1ed730e5a454c9b1756a86ced0432cb42c53a.mp3",
+        "b3d8b0cb02b1efff7ef3ce5b6de1120dcf5a220f78ec454b3c9f432616b3908a.mp3",
+        "eaee4b596707959b07f6018aec479984f376448f947d7452fc7092f39a0dd450.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:lesson-text:jaguar:2b70e0e9": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Cráneo de jaguar",
+      "chunks": [
+        "bd7caad67a419ec07e28bf17ecb8119b7073d12b84c4eb2dc2fdbb15dd76cbc3.mp3",
+        "ca3e4bb5a218dd9691d7ba7139f412fbdb9d7a650e7634c628d64aaa3aac2142.mp3",
+        "1e7acd46d09623efd2e409a4a16678ccca2a5f6e40ac52a14a8fa97a9736fde0.mp3",
+        "348bd569b8cc37e5c039df68ded3a53e0615d02717372dc97a66c666c0652192.mp3",
+        "4059f73c2c456fabcb93a61f8c3ae768c5973e02275c596bb5dc18975db51bbe.mp3",
+        "2a53d4b37f1d485232b3ae7f70ab91c6394df2f1578385838f401cf20ad5de61.mp3",
+        "3934075d1fccc7bfe63f3731db9e34f16a193e887dec80676cd308294c6049c2.mp3",
+        "0b1ce9e7affbea0fc8a21cebc575b0fe83cb2bc3d7c9cba9c10ad5fbe645a7c2.mp3",
+        "7ecd0dfbcf21c2945434bcf3303f629094589e85575e0bf76a9acc85c63e2623.mp3",
+        "5da5bff2525d8485aec70feb5927dbc851f13c5c2b66b69a2ac00e4dc2ae4aa4.mp3",
+        "34d7455d88c590a317fc49c4946219c9cd78b00a64779fcf5653276315f4fb6f.mp3",
+        "578f11a82b5ced928b2cde441f542f2200b9f78cc68a53de2ff0be3950dfb1d9.mp3",
+        "91320000fa9740c666e5dd845971a582b3945cd9c43ded36de86ac01d32b7c08.mp3",
+        "da807e0b87e309519abe4339019d12c86372d0eb7b8d89945af2938dda63767b.mp3",
+        "a3a69adb379d7a10ab6c4f4480ae76eb3cc3affed3396fde86799364bcb22440.mp3",
+        "50a0be15c82f63840ac6b0922cbb9ca509905029be5e720d7d1b041bd33c0250.mp3",
+        "d62f35dddb12e2b9d0c53dcae9cb4ac1f4aaeb368f8804ebb22557d640a13e64.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:lesson-text:skull-and-snake:5a1e4ba6": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Calavera y serpiente",
+      "chunks": [
+        "d7725d03aeaec6eee34f1a6d696ca8e54a7576ce7e1199dc907ad106e6e897ab.mp3",
+        "826e3fbf84ba0019fd388e5f28f862cd69e1764a4a29a0a6527f1d544ab899ec.mp3",
+        "128849062610f8974b40930ba62ab663d936ff133ed51e9770d0ed0ff5308225.mp3",
+        "2b01aeda6a24c212c911358e9afac1567f04b8259120a26f63576139d22aa213.mp3",
+        "c195fe63e6ba703231513380a160ade5f45cee255f32ac16c2ce9e1330d30579.mp3",
+        "b9ad8b0c2e75088d9a216177e50c4fe84d4ba3f4231d66536d981a80b5c62004.mp3",
+        "15a0c2d8367b34f6c39daf29eb0f706d1a70599f144ab83c43b33c15b3481d8d.mp3",
+        "ecf828ebeda44aa5e1ea62c416dbda65843b05105de359a76c475f5e316eeb08.mp3",
+        "363ab634c647a31954dab488529fd1a9c93246c5bb55b39547cdf14af5c3d00e.mp3",
+        "7b9ef4a20244adec7e1bce8dc210c064015000ff9f342ea9fffac555e22fed31.mp3",
+        "69d4545da9e19aa19c56122d9de0563e9e26fdab10fb9d90b0519dd0e7554bf6.mp3",
+        "a853684d40b0e7c7dd9b17e549e05e8952abc9845606b7f1bf92c5fade97fbc0.mp3",
+        "79642c22aaa8ec80b1210e1456851ffdd6503dea65a08ae4f6a18acb7dc57fea.mp3",
+        "79945a28011f1a675e5cbed6a9bc7685097d5c305c0ec26a5128b4b5751e3860.mp3",
+        "27edf7c78824b9f7a5781e53e0f5e97a085a61429af3648ea66a788579452562.mp3",
+        "3e18142694001187f26f9bcb29a32a07f022da173d00a1359ac29b68028f851c.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:note:3266316a": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Práctica y respeto",
+      "chunks": [
+        "170935bc8bf67d71ef4bc79bf547c6268362417e18f695dac7e50fb09ed21e68.mp3",
+        "2a54905e11cbde10a44e14c30fe0036b7ce8f5994e16c0bb501180678795db34.mp3",
+        "7584bc70b692bb41a07bd98446fe200ec397498fa1de0d68b876f3946c73f456.mp3",
+        "795f5bf9705a55139ef7f1966a2d04c2e426de4f9b1429c52f01ed267e9516a9.mp3",
+        "ff939346f7e0ebb3f7a8718f2470dfe40f4027e1fcc2fa9622e6b443cae7bc73.mp3",
+        "2ad36c93361d28a07e28b62068f0f989dc7006717307193d5aec2ff0d99802f0.mp3",
+        "87cd71067cab70af9c9b4db60e6ce4b5c6922533c64cebd2a05140a7d589ebc0.mp3",
+        "280c839b35d75b9e69e2f55e61737df180734b51f9b22b9c4c96ec323161736d.mp3",
+        "f93b2c0040d91ea31f21018e751bb305b24efb7ae74406cf25ba80b20ad910a5.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:glossary:6bacdf7c": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "Glosario",
+      "chunks": [
+        "6c3bcb3cf9429a3ecb8bfd743bf513e1a81fc4a09dce62e968c968431e200b1f.mp3",
+        "c00c82f6ae10db1e2d728d81776457fa79d53593be0e2f07dd264c7472f0e481.mp3",
+        "2b541b421b857cfb24413b4e286d7ab02f1f186af50297069164e0177d862ac7.mp3",
+        "9ea5a8ff946fda7eeee61e2abc308897992852d0eef9d073f922afeeb77e2b30.mp3",
+        "de2dd36f2d06362aca884b4b7a5e0f8e17c04a2575913496da4cead2261f5d89.mp3",
+        "3bbf1f43fa8752bbd618751b28f7aa2d335825644ac1ea442d1db806ec08e355.mp3",
+        "03f201a1261c49e9de98f7298f199025e59fb272765ee94e234180d8142a4f04.mp3",
+        "5a3d2d1e0db7b4721e79310b2453c600ece16ba61e55bd829c3766b5b7454463.mp3",
+        "c0b814dea4afda4ecdfb5c87b49363cba5443ef3dd13281d635a417cb7f84642.mp3",
+        "0eebb9579d626ae3ee10531ddf3944a345da79ad543061ddb3de5c410a7c093e.mp3",
+        "b322ba3f4c7e8cfd548feafc7c76e947d9abaa4f45b5507f4314939f6904c731.mp3",
+        "4cbba368f9018f3886c05f7f7e780444152dce34b16454852cc5bceeccc4cf4c.mp3",
+        "eb35ce6c0a79f8dcdc4fd3f38f4a31e3339232c2f1e520393461bdda29b81dfa.mp3"
+      ]
+    },
+    "calaveras:es:calaveras:making-brief:8436693c": {
+      "lang": "es",
+      "bookId": "calaveras",
+      "title": "El encargo de este libro",
+      "chunks": [
+        "b6284998ef38fb5e975b2256edcbe4339df8705854f35af8f10f4a1260ba2339.mp3",
+        "7f2334eb7a940f79a2c0eca6bdc1b18d31df5286d35ed4753c9b5715f2a2fe2c.mp3",
+        "d80943289a7eb525ad50ef67032b2bd8e8f6c85067a7ad80df6ffd3730ebe40a.mp3",
+        "bdeab4ad1588c0512bc910fce1c6958bec91c0b5e9e56bdd89284d40265ea488.mp3",
+        "563fe415458bc8618036b54c55bd28f23a7e5d6da0d75e365a99036be40ef926.mp3",
+        "17ad95b0f2356e7336ba72a0f0733d6c1505a4db38cdc866a84b311baa38a742.mp3",
+        "74e77b1cd18044effd9bf2c837efe3a44bc8368ad1edb72b39489793b2a2ae5a.mp3",
+        "8b20bf04a059a18eb82fbeb0b5e3a3da4cc882261e9f160b4471538b8836b1fc.mp3",
+        "c6f367e13bd9304df303015e3d795e9e27737bcb98666a7a7e618b96df51bfec.mp3",
+        "311ad0b89a53461ee6c9f766e5106b000a885cb9fe18b80034acd45f4c3753d0.mp3",
+        "bd5f707a280e392bfef069b315fadc02af64dfcd8dabfef47867ebecbc223262.mp3",
+        "46c2f1b4c4408bf6379029a6945d19792c751f6cc86cb8ebe58c817cef0618ec.mp3",
+        "86e900baebc5e56b0e46a77a63848e63ce9bb0d28dcb61030744614e498402a7.mp3",
+        "24f8eb08e4631d913cae6d9ed73f0defed1cfe191a60e67f55d0db030dda803e.mp3",
+        "ce6f07a12e46520de2a90267b91467a342a92ea2fdf496739ff8094716cab47d.mp3",
+        "14c622f205d35c9d12bacc2095c135eea16a1da2e018eee1a51ffceeee73dc62.mp3",
+        "eb423ebe62257ab13fb6f35506e8f4a55d55f86594145f6358a8e3aadaa00719.mp3",
+        "ee9412762e130e45ae46b01da90232cfefb083f44a98d681803f3d8a308a1735.mp3",
+        "d88378dcbcb67b7709f0e278263e39c518e3cf94248488b8b1be76232edea105.mp3",
+        "304ea02a21795b4f53ea00e30c4037af3a4d2281214b4f83c50e05d537ef8fab.mp3"
+      ]
+    },
+    "atomos:en:atomos:imprint:0175dd51": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "Imprint",
+      "chunks": [
+        "f980a5f303e3c282e455d08adfa447765871fc87c10b49f6a1ea4bd389b0632a.mp3",
+        "47c58cb30e70c3e67c6b00e275f09507c5973c807f6eecdcb4f4f7081bd5b0a1.mp3",
+        "eb45dc1d212d6f4b90c082420ae56e035ab84f44dd4b6632faed4527932b4a96.mp3",
+        "703f9ae5a472d817a8944908faea33d4c016bf825220658d1c4938e383d46507.mp3",
+        "5203fe494b70e1a72a63f1f96c344a1ba4c50b3e090f4734b35f0dfbe08c21a2.mp3"
+      ]
+    },
+    "atomos:en:atomos:intro:786bda13": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "A Universe in a Drop",
+      "chunks": [
+        "68be04a73f099b08ef67daaa9d12fdee0c9a7f66591491e07352f2af6ccdd5b2.mp3",
+        "6d06cdf9d1e33f0c29d80d25376cbf7e9a1a3fb5fef4dcf89a5f987286e0e83c.mp3",
+        "8860900f7f2a8a04a930e8068ee0024bf06869a60c18c2cd87c18cec33637e38.mp3",
+        "6316b5aa8e0ff9bbcb17c235d4281eb9f5afdbaf958768beca942d2836bd5bf4.mp3",
+        "5b8334ad374063a256c874118686fc378793a05c8e69d4007101e00af2c16703.mp3",
+        "32acc18441e6a928fba1edf1021dafd78255b7236b0c90716b910e610a3a9413.mp3",
+        "38ea1fe8b0ac25699a50ca5e2c1e78a97d98f14b6ece8fef5f650c3b26009929.mp3",
+        "c9900cd82e332ae6dc5e89f5240c322589ff8fa9fb68c94401f92af4e1f2f62c.mp3"
+      ]
+    },
+    "atomos:en:atomos:plate-text:cloud:536655d3": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "Where Is the Electron?",
+      "chunks": [
+        "51555549b5d1954b0e988000e8de6d041a08561362910ff815477e211af5b137.mp3",
+        "e5212a41ed3d02ffe45536904e60eaae607e85aada24bbafec269807b5194b7b.mp3",
+        "3e9f54630fa55211455d3709b1506ceea7f1bc00f34fc2966e79e81fe396c7dc.mp3",
+        "e35ab08f605de679bcb44dd465bcdabce965b89481a55fc5ea31100231d45760.mp3",
+        "e3736781d3b6e8c91d94f563e10e7811afe9c50553de70d34513e13ab0a5cda0.mp3",
+        "cada0898cb66498d12c1467148a3d56784d045ec55322509f70341b3c5e3a884.mp3",
+        "00ff0233602eba0c851f9d7138488963532d517296d54ab14505c0daadb4859b.mp3",
+        "326fceec8b1c06936efc7fc0d334c2ce6b20ae436c20756d9deb7cecfb662125.mp3",
+        "212f901f708f427b65f0b1db6248c814da045ef9a97a2392afd73652803ca798.mp3",
+        "ad1e6c79d78e63f0ee7a581264550a0ec365a359c46c78b08d53d102afee4be2.mp3",
+        "996a322be2c5159d7a466edd9cdbd95edddbb77f85c6d8b643024345bde23b84.mp3",
+        "e31e4c5f1b58aa3106b68dac0e544b3575c16b3722908da0b65c1bb01a0e295f.mp3",
+        "6301564573f601d8f41fd4743c625b2dd8500ba66ceefb8fc8c21b7e2f8cbf67.mp3"
+      ]
+    },
+    "atomos:en:atomos:plate-text:isotopes:26f46b6d": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "Count the Protons",
+      "chunks": [
+        "2276d9ac1a884c7e232ba1b26ade2bffe6617918f18faa38db646e4104f3c9cb.mp3",
+        "ae37c582da4529b010d8d7e86d09a0d16897f1b763e0b8a627a4ccb294cff79f.mp3",
+        "145166ea244eab758dcb983c68dfb2870096ffd6b615f34389cc909ef4a1082d.mp3",
+        "7aeaad07e5c8d0b63997ecc0e91abdd12dd42ca5cb4dafbccf79f5d82c28f1c3.mp3",
+        "369a0dce51c41c9e88bb729e4149e44c7130d30e50bdc883f09292aaf2dc7e5d.mp3",
+        "1fa2c4029080e22d365c19eda17ecf97f187549269570ac189cd26dc7043fd6f.mp3",
+        "64ca85d80513159b7e17f0cfd4b9ab1e68b15d28ed3f8e7ab2366df0625000c5.mp3",
+        "9c38049e46c1ae3004b4af3cca6e78c8336bf0aa28914145d7d27a0587e4fc99.mp3",
+        "78efc42e026d32c71507288e1f0d45d5ffeb9e144a7467a95871d258f45cde38.mp3",
+        "5aac7d2c3de53ce971a03a077c738d0c729108b8558ba51b9e58e17b0d015daf.mp3",
+        "830052e0a3ca3afebf9a7432685179db0e21c48d444931dbbca82f6fd16fa2db.mp3",
+        "df1399fa5a1633daa3fa56cb268e599a2e60d28995ec4ea34c340182ef25e549.mp3",
+        "6ead0ba06c4382a4bc44920e4222889e7bb6e02eb75467784661e3106924e022.mp3"
+      ]
+    },
+    "atomos:en:atomos:plate-text:water:32a38ed5": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "A Bent Little Molecule",
+      "chunks": [
+        "99656a8a680590c9436be54af3fd536b333cc637b8577775293b8f04fc106e47.mp3",
+        "5cf55c96e8bacea3a93409e699bd004612e9b2feb9deb543b89f0f2522bfe8e1.mp3",
+        "2d9307d5ef3eb1a9c33b738b5e97ed1ddc426fd4ec2296492b68c6bd1fad0963.mp3",
+        "2843f5056257bbaf66097acd4a33521dc988f56c239bf2dcdd5a7fa9d7e30e9f.mp3",
+        "9af9a490ee1ce759dea4b6da3483554f936591ff4f108f6430dd46834170dc28.mp3",
+        "185d645b87daa812f8f78c36a15b63eda41dc2fa0f7868523fda4f0887d651c0.mp3",
+        "08ac8b89928a3b2c29d474bdba2d4977b041d3f31a2eb8057433d45d65443137.mp3",
+        "d92358347eb5fc40ebdc761f589c2344ef2a28fbf8f318e45391da062f7c2fbf.mp3",
+        "60d3148555553dadf573c87bb84e43ef2b3f1fc47626eafe2b41c39d8274b81e.mp3",
+        "868bc735399165f3454c3a153724820c62b50f19771f7783b6e533cb5de7f382.mp3",
+        "42e9214f434691609f294b802e5a86f8401ba3f3afaa4baffa120132f643bad6.mp3",
+        "4181604bf24a2cebc0c4b08b934308187f4f8c35369e9db6e08131225edd3131.mp3",
+        "82a394199791cb32a47fa085a7f73d189d30165fdfe5d791dc7170abc1076c3e.mp3",
+        "d6065ec857f266f6cf159567e7c9a747fbbf7d1191d9115616edf35b7695bf70.mp3"
+      ]
+    },
+    "atomos:en:atomos:plate-text:states:ed51d9c4": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "The Crowd Is Moving",
+      "chunks": [
+        "3f37f38d3f35e624311d4bc36e825e0f36ce894bc58dba31f4cf3ce180ffe42d.mp3",
+        "51a2fabf38778d1adbc57941bc39a9e510e3fbaba21e97d5f61987bd3bbcc17c.mp3",
+        "e5e0ad65b7f16e768f60f8b384a4472719ee21e2de41d8300b6e23fbb1ceba1a.mp3",
+        "1a8ce57162cdcffb3b564609e7c32f3d4d08688615d8acc93a937e52fdd04a23.mp3",
+        "befa4723c4967f95a8cd544cae0911059a752134dd80cf9e1df355b0c1a956e4.mp3",
+        "0b85de1e90fbc15d22448521be8d25f7130c34c193811f6077a85e6e12f26f47.mp3",
+        "ccaea048f517c0efdf7c02c3ecfe0440f221f01b5832833a1057870a2a0d9ceb.mp3",
+        "39a15a7ccebf523fb1f8f404acac131132d0333e82aae7f2ba23bce3256622ed.mp3",
+        "7219274cd402428a7d0fba52b512fd0168824992492cd02d11ee8bf5fc25cb55.mp3",
+        "1d4f0a1cdf0f4cadb51a3fb095f6803a1531d00a86aa09359e5f3b83d0b0c38c.mp3",
+        "e369f29d54b29b31cc0b10a38efebda796ffb6baf42f61aa1dc7691d7081f50d.mp3",
+        "b196fbe170e56c20fc3ebd4ba1b186b6245a3f5069404ef3a58c5b2495d83b3b.mp3",
+        "72aed5c8eab63e00d68445f296d8baf404c4c386806611b74af44802510c8ee6.mp3"
+      ]
+    },
+    "atomos:en:atomos:plate-text:carbon:37a2ca57": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "Same Carbon, New World",
+      "chunks": [
+        "892f52cc6dcf0069cd154fe48cd4678f74941eb2af3d73c56f14dd324496751c.mp3",
+        "7b68cddc2816ad40a20328ed5b520e21bec31301665fe36e869bd8514c584c5f.mp3",
+        "649c5a4de98366927f7367f2a442253f0a8c13b515f0e7aacde83edd8954dbe9.mp3",
+        "595c71a5c3432366862108f2371843fc4d1c4ed70ced049d9bb98cbddc93768c.mp3",
+        "c9d00fc0614cc2484e19feb78ed7dd059a548f7fd9d354dfdaa5817afe7c298c.mp3",
+        "59251d1ac49d63840d4a17b19341b506b14ef871909534b38803a60f5650ec69.mp3",
+        "9e9bbe7ea4c12f45d75748705b508af5f379ddad20c93a23c324754a5ebb423a.mp3",
+        "cb65f46816051d3849092aac6034928f078f64f29c89f310bd3d07d47758c1a4.mp3",
+        "120fbd842623540f1652c12acde300f26294e161a83a3ca71d60f688ef936041.mp3",
+        "53e3093f8e6f65f1264c931509d8fbbbdd78279dc6f569d00132a27bb5a800a0.mp3",
+        "aeeee9f4eb9740d03199adb9526cfc8ab90cce229f75149a089d2fe57d874783.mp3",
+        "6936e165a28fe8e0b4337b0ebb397d2df5bcc096f89f564c1990f1bdb2579050.mp3",
+        "61cad5ac0bdbadcfac798d59f119ab398f615ab9363774cefee0aa11dee5fc22.mp3",
+        "64c660c6d1f21c9916a6d07af096d84cb0a2faef2e057bd2c145f85efa7a3a2c.mp3",
+        "ac412d84030ffd3ac52b1af88a84ba22c3b3c5583bd5414b4d0804b2990aee21.mp3"
+      ]
+    },
+    "atomos:en:atomos:plate-text:light:c09b1fa9": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "An Atom Sends a Message",
+      "chunks": [
+        "73d7ed33eea9fcf3be2ec4cd121c527ae0fc60202a208e13c9ab0d2efeef9f13.mp3",
+        "031d997e585f6417cabb930713f1c26f45b27336c23a1a7eb5ffd7047b4288ed.mp3",
+        "5cfa4ef4962256a2a8a4839817c4eb768fedd1e7c67df8a172ac07dda0bc97e8.mp3",
+        "ed30544ad87dbca4f222a57ab6813250097dd1fe6b5173f6e7d7fb5c7a294e73.mp3",
+        "5063bdc226292a4fd8c5b6c789d29b2b1929506c93a0bfca34efc0173b4921eb.mp3",
+        "22277ca00f81efa0f9daafdf59a77e55c95e3a3888b829980c34fa8cdce727df.mp3",
+        "36f898ce9c027c7a056111b7efdef4c1d8ff09f431b86915992f7f151c25bbdb.mp3",
+        "0e9cdb44736d674baf614b0c7f04a798b12a525486e1c147aa5bc8bc692d3640.mp3",
+        "97a401fcdd7b10397a0b1b9bb06f00e32f490610059c018b90c652c163501268.mp3",
+        "9a95c9ab06e40b21996b147cd1817e5890bc4f1f3041908f3f0aafce64507700.mp3",
+        "9c7abaab6a8efa925f268cd4c22a82968db7740320072f2b7cbb83212671fc63.mp3",
+        "ced7de7d133d781098fc4efa1b4ab0cc4f3363d893cb95767defe3d79681220e.mp3",
+        "9a37072e0f5ee4f1c1582045c487551501a0f674bd8c26800ee62fef7b10bd82.mp3",
+        "5db4accd1ef9b4185a8df1225b5817d90a3c25b9cf6f290ce5f1725ca755c844.mp3",
+        "65427227eaf018a75fa97a5c14f3db1deb01a297d56546e9dce315a165e18f7c.mp3",
+        "11357dabbe1261fb5967a3ddd654fbee5b562ffbebf2faf8af95056bc4bb1466.mp3"
+      ]
+    },
+    "atomos:en:atomos:note:43c84bf9": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "The Model Is a Question",
+      "chunks": [
+        "f556829694c91574c2dc87d282c75463deaba1f3251ac23dd63a6cc12dbc8d57.mp3",
+        "5126c261f9036f13edf9e47458532a5fcdc6247aa16ddfe6a188bba40e5b141f.mp3",
+        "f35e75a37abb634268afd1e6d1215730892f01e1f91b583bbc6e45015f0214b0.mp3",
+        "463c3a4fde0e03c90c25c9af8d082b7a517a65b526498619a22e35f75e6eb8ae.mp3",
+        "1dccf41935483eaecf6362519a7ebe710686197452500f4aa0795b5e910ba5c3.mp3",
+        "6f67c2fe8b2cf44db4c4d0a5b1b7ce5dd906607bf4568adc66d3a4d54d25fd94.mp3",
+        "41c3c0da4fcdfc435854852ff0460c58a11255d309facdcc6469319b540c0d9a.mp3"
+      ]
+    },
+    "atomos:en:atomos:glossary:99c62e30": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "Glossary",
+      "chunks": [
+        "8baf3a2c025640e9cf7e499b934e75d376ce3be54e8c3548bfbc2fc49ffcf225.mp3",
+        "963840def3a3aeb3257d066f40650effb226dd6ba5d408adb37368edac5f6504.mp3",
+        "18e970e47acd7c60ea14b7a24b9550bd4fcfa855c6447d65a2ea1712ca25f886.mp3",
+        "1004129af677e369e700ee0db7408cf7b0507002434c65d3ed7c771d0521b348.mp3",
+        "89d9d62b81741ecdfd6e0846018889fd953bfd8d5d2cbc4c7d5124742f59ef42.mp3"
+      ]
+    },
+    "atomos:en:atomos:making-brief:62ea400e": {
+      "lang": "en",
+      "bookId": "atomos",
+      "title": "This book’s brief",
+      "chunks": [
+        "c34113ce06ac13b19679d4767d879eda145268c04f3ee04e8d973837045603ec.mp3",
+        "53fff7f7a6943b86c982ff5277b874ca15a8643b4039a53924212a8652727321.mp3",
+        "0685a8ab535f5f3d2fd3d1fac96bc12e5f780c8bf0d8a31b822aba3ab88d8fce.mp3",
+        "dee110cc67fdbadd844ba24d11aaf433dc9f68f41fc857ff84fc590ed6a09e43.mp3",
+        "2fce7e55d88abad7a5a3ace888f1edaa9e7ff0b6cedaade61ab1f44e015eae1f.mp3",
+        "32b59486d786c94b506a7beda7e686b4b03ea7196f990518978d03eb696393a4.mp3",
+        "172b68704d610e494b30f2f72092cd184bccba37e22dd813c7c72a785b41bdcb.mp3",
+        "2d0490fc956f08774c1de9a090774b406f6b5ec7eb072c6e7f84add4c0d83e9a.mp3"
+      ]
+    },
+    "atomos:es:atomos:imprint:7febfafd": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Créditos",
+      "chunks": [
+        "089de5e77d2abb6fa7a9b30d887f194353dd3b453156a48158bff76066a8f250.mp3",
+        "f0b91927b62758093bfcf434c62e2cb60849bfd6fff185d7a59c17d2bf2cec80.mp3",
+        "885bec9e7b102ea4c2048265b5e2fa155ba2a2d93c5563dd4fe195ee1a8fe979.mp3",
+        "b9b14f3899c991ac7f7f4730c06f808fe2f8b76ceaf5320b38f02ea6bc0ee5f9.mp3",
+        "0575da81478d05153835742979df027c3683900a7b1a8d6c5a56480b38ea67ff.mp3",
+        "7264a9426a200de1204dc5c9630e73a731597669d02504ac7ca23d206b187f45.mp3"
+      ]
+    },
+    "atomos:es:atomos:intro:74e5b9f9": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Un universo en una gota",
+      "chunks": [
+        "e33f2bc3a9a98b71e11b505b4c1e98e40d970ef742d6bde31c0b6b2dba1d0d53.mp3",
+        "d0ef9d92d7b816d2083a92315366eb87e6a2fa206e0f218f2254bd6155fb8a7f.mp3",
+        "bb15e37a30221fe2d81f81737162bcab7864aca017db80573cafe5e02171d7cf.mp3",
+        "c8b3597e70acb76f278ccff5c5297e23ecca15ad8ec26a05a7114c09c367df5b.mp3",
+        "a6f8c9743f9dc74d1a1a689f33e0df439a7ecf5138c0acd2eba848bc349448f2.mp3",
+        "0ed87c97abf333fec73c7e82ab6a78fe1956f7e6fde0329d711b20a31765765a.mp3",
+        "c3e3c57894aa77ff6160628c1435d514d132375f59b5025c387049eb7edf5fbe.mp3",
+        "b33106f99dfc2027b5fd61c2cd2b9dbce459232767ff40a06c5d421a271bc393.mp3"
+      ]
+    },
+    "atomos:es:atomos:plate-text:cloud:399be5d0": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "¿Dónde está el electrón?",
+      "chunks": [
+        "23063dd009789c99b300d76bc2783893bce09c75435e59629c13b0fce8344958.mp3",
+        "49e0b70e1c323f6034dd2523ffb96a2f02cde0553041c6cb3f54df0f9793754e.mp3",
+        "98d327a04053f37dfdb08df0843f4f37bf032f57fe3bf9f216dfe4eb85b65b65.mp3",
+        "2e0da068425a85e34d2ef6271ee08af3eb0de5c22ee967cc25976056d704fa40.mp3",
+        "216fcc07a736480eeef8fc3141c1796c6554e772d6e0033f336a3fecd3f7a703.mp3",
+        "6898b77e0b4e485a6d901322ec5a817827b98b1196dfd1eecf49af58d6b80141.mp3",
+        "ee0e08da6ce749d691c92e861ce271a2b8400b4aa108f7b51c7a1876a8cffe7e.mp3",
+        "fde04d4b1d0144feafd67d4967f69edba32c7872ec5daf3565a10832d9b2bd45.mp3",
+        "539ded19bf9e5576c9db4ce939944a7e90aee13b850e7d40d6f0e3f3a7bd63e9.mp3",
+        "b536cecc69f4ab4c8a2a931a5497252cbe7ee8ca46679480f98b8b93bf93b3a3.mp3",
+        "cd277b458e7cd2be7451142ecf80c29cff8084f22c54e47a73ddefc25f3732a6.mp3",
+        "39525297f5562a3c050483d2cf7c83f94443cbeeac0516c938dcfde8c9067d4c.mp3",
+        "a4c14da9bf45ee1585887389cd9223f089650b23c146202d205e68ae2841c9a2.mp3"
+      ]
+    },
+    "atomos:es:atomos:plate-text:isotopes:7f9617ed": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Cuenta los protones",
+      "chunks": [
+        "95e794716e8026d0e55cb7fe615b5d2d7dee2acdb9817faf6874567a037af8c7.mp3",
+        "19ac9943fbb4cf50b4ee872d28b56ad0f5b29ea22ca170094a60b37775e11ea8.mp3",
+        "51f7a3bd5db8a61011b93a1a4beadeadaa8a1fd690e19a7170aa573f3281460e.mp3",
+        "528c0dfee427b119085947ce6ce296a3a062ffe4434244a3ff34e073ff519871.mp3",
+        "df3df2663d94a7d659d095b0131ffaab2eadbc339eedb78c78eb2df702327977.mp3",
+        "3c9518d70d65be7aee050860013e7a49ea9ddff9019c7655cd9b9cd5a1ab8898.mp3",
+        "28eafcf31e26d276c3780fcb073890cd24d317336ab2e043ea2231152cd574ad.mp3",
+        "f3763d28fe66e6f71461f4047c6e2b41802f4caa50139bf1225fd9839605e8b7.mp3",
+        "d42b8a4e2d8a76eb11a732f969023446fef08818542d5366058f5b7a470b7fa0.mp3",
+        "0330e0f3421ab747c7ac1dc2ca8a044097833a68c0ae63939e12fd428b7eabf2.mp3",
+        "07eca8f3d52d8742b520d2393caff54ee66e8e838ee9f6dd4373b43f33b8300a.mp3",
+        "f63bdb14557ee09332d469b23ab005d70d86bf73bedccf970364beee57522a50.mp3",
+        "6cd92216742a0737b4554a15096071348252458d827fe7c4db6a820892866f58.mp3",
+        "7dc81377724dda34a429826013857ff0ff41b8885de0f3ac7ffb5757ac0ac46d.mp3"
+      ]
+    },
+    "atomos:es:atomos:plate-text:water:1be84c0b": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Una molécula doblada",
+      "chunks": [
+        "81711e7da7044d0a122eb9e724e62c30953a1267659d9fb04019a9f276dd125e.mp3",
+        "10ac6828e43071a2461469c625c050f3d3eebeb230f5df73d90d72bdac844eaa.mp3",
+        "e1c8a15ed2329da8a898ddfa26d1208540de2ca016155ce26bbf4b44237fb267.mp3",
+        "db33f3a37aa03e596c5edb901ccaf13f4977ee75083d81dad19b5b5821e3a5c8.mp3",
+        "8a9376c7bec292a2eb53f22ab7854096ca9b6fe89e59c78ef50979207e2ec1ca.mp3",
+        "382fb132eee0842809ef853399fef2bc9b4d2672fb15655633f4770941523875.mp3",
+        "5fac4860a64a5f564f2c499d53497910694eb5af52a86908c100af557d97e6b1.mp3",
+        "120d2e009a7cdb98d0085c7813dd51999ff028bca45b6bef5f34101c74242f54.mp3",
+        "931c157f7d9046d8074fd9779d88f438acdbf68b69ca98313966a491a4957963.mp3",
+        "8e812afdfa4a887fceef1380e413c1d28f42dafe0aa259b78a065cab7b910518.mp3",
+        "1451a17cf242260f5bda4a1a95ac370b2c7e9943daf08c8b52490570eacaba1f.mp3",
+        "0643067be1ecb7c62260dcb6260790bec950aafda8ca774b1d2db3edd0f611f3.mp3",
+        "4a89b2353319c78ab5052ba263366f32ee34637a04cb8192fdf7475febddf19d.mp3",
+        "3566999a0a6418cb9265c15fb34d028e4ed86a7a13bace92fc0822fd1998a851.mp3",
+        "df7e99b94aec8174282b47549adcb5f7c8bbc7c3581091ee40e370b4f034dc18.mp3"
+      ]
+    },
+    "atomos:es:atomos:plate-text:states:b7ccf079": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "La multitud se mueve",
+      "chunks": [
+        "ae7080aa7361c4d15a20e07bf8baea9869243762787be3b84a7217c7064c0230.mp3",
+        "63e17d349804ea10e18cd8ee1d9313a65e741acf7c04efb52f18ff57abaa8597.mp3",
+        "1e65feb4d843c39c2ca63149ddbb1fb77d0835e91914285d54300913b70ee35f.mp3",
+        "89e236b70ecc0022c391c6905ac86127988020d25f2165a9c25f5859c5b03064.mp3",
+        "de67340d3c8b3bb9f4d81ce0710e142b3ffe7afbbb1f7c8822b162445727b288.mp3",
+        "45c123d537de061482314368d7370c73fa3c61a7cf55073b6a6c8aa5ed7c3547.mp3",
+        "6828684018818713969441c727da2a9b35aa3c28d59b3a88030603794bc0d4ca.mp3",
+        "bfc5d9a42ce96ff561001d78ea15a8945361a2a02542971af80c479e41525780.mp3",
+        "9a19e51b86f339a1313a9cc79ced252817b6b83b8f391bb0850c17beaed7230b.mp3",
+        "8372b5c5954b6edb52867c54478d5f5710366a220a24a3036a319356c8087979.mp3",
+        "0d316d551871c4a5f5e6a54b2bd96f602f0f65b7d70e0c18edffe280cca9a54c.mp3",
+        "f43dae899a0fc517045f3d5faff2c6c1bec8fda4cc49b918c9d2ca125e2ae811.mp3",
+        "b0c0361fd85c1a2b48b281afd267e195b473d1183ef294361549525e021a1a49.mp3",
+        "338284ab847877b621985c06c250312c82b727f6551bc1858e299b25dfee7788.mp3"
+      ]
+    },
+    "atomos:es:atomos:plate-text:carbon:1d411ebf": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Mismo carbono, otro mundo",
+      "chunks": [
+        "53febec9c84e4b7b62d383ef14eda0b0edb526438046d4f9f9fccaf139b821e7.mp3",
+        "34550514d0a8e644d3ec46f852f4de0c054ad7100e9c7b187fbe4169084d4ca6.mp3",
+        "17478831752fcf1a85c407a0b991622e9160ce70c8bb414b1548bcc3bbdbb0e1.mp3",
+        "8d29cc395f56f7b11f624961e3be0e0703e5314d826398e5681e99b060e823db.mp3",
+        "eed3ba47eaefb29db7e913d58102dfb1e501ff82c8bd7e7c88a6b250c90fc529.mp3",
+        "a193d154aad4487c2129a46b832e51028da879599bff67e40efd9d3a2bd69555.mp3",
+        "423747245ddb98145aa155c3f1d9e1e61cf06fbf259f15cfa3c63b0918d6edfa.mp3",
+        "b72b85e37a68953dcc84048a27ea6a7182bf9498cbad32219c0c0a89464c23e2.mp3",
+        "6a37e751675fa240a50c38353e9a4e52e54e7843a6f1495aa1f6781de6dfb3d3.mp3",
+        "260748e5ff552026e635d5304c4832e8e71c01dd8532e1340824be6aa62a6dce.mp3",
+        "62f0c28fae82e92f32b4268ac5b3a173e5b8ab29a61c7e67b9d2626c3047d5cd.mp3",
+        "a082dc45afeff04069c6f53f614b342288d1199542816863acfa92fa7432ad7c.mp3",
+        "f13cb96485f13bd375402bea207c28f7533997a1bfb1d1d001281b1bd55232ef.mp3",
+        "cd9a610856cd0cc3c09a6de32c51f9be26690a40a5a5a613defd6ef74d4b50e8.mp3",
+        "f776f8a410de43393b8c7e3bca2c8c72eed4e9704ee502612bac861267540e44.mp3"
+      ]
+    },
+    "atomos:es:atomos:plate-text:light:02d0656e": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Un átomo envía un mensaje",
+      "chunks": [
+        "c44e6602e2a8e4d188c21f3e08767d5fa4def2649fe692d154f8aceccc596d1d.mp3",
+        "18c1fb2deea9d0a3ba6e118c4b7b82f4186b3287d40ff2d144612db5162cd8a6.mp3",
+        "2232adbbd792a4897b8e763ad371ee1363b105eed13d27e08e8f12ae82322c18.mp3",
+        "101509c1ca2a4052455212cb6d37e76865c4f08921378af3f2d71604845ac330.mp3",
+        "97470a23382637856f4d37ca1ac2e2ed1597f7f04e7e0a1b36bc929dc9ea9ca9.mp3",
+        "4cc675629919a1c45b8091931c7b7b98b2e6ef2e53dcb64ba7fb97a6e60be11b.mp3",
+        "88003f69515a5d44b41de351f2a2f0db0bb62b707e9ab06a2f7cdb81a1347f25.mp3",
+        "a8ea2376b3372a39cc0103161cf49af8f8eaa6b1afeddaad26575a778c72a59f.mp3",
+        "64133674546c9ab53ec99859bc77fd2f4cffc4a0e1125d02d157c76327e518de.mp3",
+        "87b756459599f9217dfb579f2a104dc57e3b3653171562e155adb461d2d1a5d1.mp3",
+        "062e8b612695e3bba1bebc1a26a3088b5636fa2adb2548c3ca33e1816ad4cf62.mp3",
+        "e0d19dfb14a6c53ee4840aad58edee83c098f2a3245e8c2aee5af13e26fba354.mp3",
+        "1df9a74dca2e48b429b7832b470b679adee527aff094bea00978d1724451dea7.mp3",
+        "98587a7d7988b53862f31b9791b9c344d994acb40afd6e59d87ba03ef992a859.mp3",
+        "200c8526bb962f6199f1e35c582e2acaf8913f0a122fd63d633852a715b1aa0f.mp3",
+        "d2af75fa07a05c1c5fed6542fd8f5e8ba7a402bc3628f72afa325be5579217e5.mp3",
+        "1920793d07680c340b1bcb3227f12b7949a624f947b48b5e46266a01bb4ac5b4.mp3"
+      ]
+    },
+    "atomos:es:atomos:note:dab23e40": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "El modelo es una pregunta",
+      "chunks": [
+        "80f06d6775fc458dc76bb94b59a78cc2065d41810b084a76a38ef3c989e9360a.mp3",
+        "9e83c29f62fa4290b40426836d7b0a277ef720db432aa6c3fbf7240ab67c9f21.mp3",
+        "d0610bfdf713cdaf02f035739a24f85985597cf115b460949f1a1ca44dcf384d.mp3",
+        "a1dc859b8a64d65f62c58a4d23bcc96c6a81a317e69b28eddbaaee2db77be7ee.mp3",
+        "ddeaf2004067d5b94c21e4c01e14bd811b3fc7bb4baf746e898d23cb337e3697.mp3",
+        "dd60d869a0703e2f0be5887f83548bd8b925dbb0113ce25f14f292905bad49fa.mp3",
+        "51fdfc31cc8515210ef5ceac93205afd185e0c18db748225a799f6b40b6221ab.mp3"
+      ]
+    },
+    "atomos:es:atomos:glossary:06249465": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "Glosario",
+      "chunks": [
+        "3c2963b2cea98949cb0ab9b50cde54b5e720c75a4671649d6bacbf1ef5800b35.mp3",
+        "315c93f2cc6c87d8cc384c422e536dc0e6195206cc49941d38239373cb5d0f13.mp3",
+        "6763ade6a4ad62f963cc53178cbf4f54857973d8e953cc9bdafd92f56aeb1a6e.mp3",
+        "844aadc583f3cab29476ee4059d3485128a108142082ada1d94b5c8fdb5ecfce.mp3",
+        "08000fa244a5375eb672ac31226537b0a571b33bdf03198cfcd6b13290a04007.mp3"
+      ]
+    },
+    "atomos:es:atomos:making-brief:55a8351c": {
+      "lang": "es",
+      "bookId": "atomos",
+      "title": "El encargo de este libro",
+      "chunks": [
+        "b6284998ef38fb5e975b2256edcbe4339df8705854f35af8f10f4a1260ba2339.mp3",
+        "7f2334eb7a940f79a2c0eca6bdc1b18d31df5286d35ed4753c9b5715f2a2fe2c.mp3",
+        "c8e26b639aa9ca9773f3fea7a7fa952676689c358a87a4b14a54bcdc81d902d1.mp3",
+        "09ef73001558d2c1e3bd6c7bd9d7ad3cbc497ba430e542e6321a89a129481734.mp3",
+        "06997ae5204e0cf5c2ea09e765f3be8afc07a0724c748a3023a1f2bebfc06f0b.mp3",
+        "07abb1a956d6af5785b488a2c329461ba38670dedc5933a851749a8fd41d0166.mp3",
+        "753b77ed371b7f3ba615ae27065b273ebf1ce10e31a8e595498f235755bd2e08.mp3",
+        "fac2bbc637acac5e1646e3d56e1f9e63387f46b7362d364fe8fc99025fe80898.mp3"
+      ]
+    },
+    "celulas:en:celulas:imprint:828ca31a": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "Imprint",
+      "chunks": [
+        "d024ec55ff70c1c48d272415c5453e5c3cd91dd65b09c2112309bba7aeb02dcc.mp3",
+        "47c58cb30e70c3e67c6b00e275f09507c5973c807f6eecdcb4f4f7081bd5b0a1.mp3",
+        "eb45dc1d212d6f4b90c082420ae56e035ab84f44dd4b6632faed4527932b4a96.mp3",
+        "703f9ae5a472d817a8944908faea33d4c016bf825220658d1c4938e383d46507.mp3",
+        "8ebc650032dd8869fff3fd282e6f5cfbbd4f2eb61cd2326912136cb7c5e17b29.mp3"
+      ]
+    },
+    "celulas:en:celulas:intro:0a9db1ef": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "A Factory with No Foreman",
+      "chunks": [
+        "61a3d22c65e76c1d77ed2843f0d8c4fc72e1b25add0288ab10ae609b8c1f875e.mp3",
+        "96288a234af5e95300d715151590c22484f4957bc8320174ba2ca20ebc45fb16.mp3",
+        "678db6ee85c1d4753f246992d6b708bdea19b2bfeeed7963daf91239ea61925e.mp3",
+        "5d82f2f66b49e2a2a42d0bb667bfb379c71d7b0b71a8f601730320b906b3402a.mp3",
+        "cd26f6d26630f9e9dc2aec5477983d1423a8c46a5e17eb436ce1f0b5e49fa73c.mp3",
+        "5a2ec601d6f5f874fcdd3c4f52ec0695701afc47bd4f9e6f04b0ca6a797e7119.mp3",
+        "f8ccae4d26dab20943b6625f352c933c3031076226d737240d3a0a9ae9d58c57.mp3",
+        "60e6b7f60debb58475947ab38ea757c727948753d1c80de7556bf54fb7383591.mp3"
+      ]
+    },
+    "celulas:en:celulas:plate-text:organization:5ff1a064": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "An organised drop",
+      "chunks": [
+        "8bc07511d89195ea220872cce5a1a8c4021ef33946650adf80a28f531a9c4940.mp3",
+        "5a26dd11208ac9528ffaa838324708987c87e63062ccb45b1aa42d3570d1ce63.mp3",
+        "fe897b7fe5766ef80314088e822f59605933ca60e826df752217ef3c6cfe8c95.mp3",
+        "a256bc9f447af41c370375dbcdf82aad148ea2bd0aaf3871f1fa42059da129d9.mp3",
+        "08800b487f2bcf5dd90382d052079c507f415035716426e871cc7378e6563dad.mp3",
+        "402af32ad287a7766c96d83d334e8cd2526a07bd3579cc462a2fa9c0f4bafef9.mp3",
+        "62160ffd9262b245a3407e09bb493cd694e965cf6de69479a45445e408a26a76.mp3",
+        "5fddb482f569777c907ca2a3ce49096619c9f534a84f21e6032feb3467d473e6.mp3",
+        "4f9ddbcbc9a082428e59ae84100b63411991343b609ed8e580202d65b301d706.mp3",
+        "71cdeda19e36cc42a3e8a47815eb0d19ee2dfee7313fbdfc9b558b603bc43b25.mp3",
+        "c09639660e55be67e82bb8738edb6bd5729dcf743cddfadfcc7e5be48af17838.mp3",
+        "0430e60f65c08bebadd920e680f0fe933ba0d9c886f645b058c5a9416095da4b.mp3"
+      ]
+    },
+    "celulas:en:celulas:plate-text:membrane:161cf69f": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "A border with doorways",
+      "chunks": [
+        "0a58121520bf420111f33f5432eb0f3e7cf73e5f85b914ada55736ad9bc0b091.mp3",
+        "5c8a7d845a651fac69f68d9deb9bf4ef2eb7478340abdf8dc7c463da8bbeb463.mp3",
+        "6953f6ea39d15e848d2ee818c3c6ff112b4134d69b398cff7d17e532a5fc50ca.mp3",
+        "ade6b6b9f10be0431cb3e7d45bab69e75880fc2a8127560ddc027afbe020e19e.mp3",
+        "e44d9ef8742b17618dddc09da3ddf913cca36327e5200856f3071c78f80099db.mp3",
+        "b0dd4ead1a0cb232a8bc9f413b41c37a6db0d4572213aea0c7f6470958833035.mp3",
+        "bda421f7ae9e24fffd47bf02a3e5de2845f11494723d04aaf938fcefe7e8ffe0.mp3",
+        "f8b6a1e5fb99c75b682b56194bab0ce265924cdb34c5cc33b944520abf6c3e91.mp3",
+        "7fda89e2e9cd468d53ff0ec777b5fc531b5448eaac9db6d37670a19579189239.mp3",
+        "92833ef44655e37094d35d0fa6309b758356900923da606a4f4cc8aafc62231e.mp3",
+        "d237d30031e8358adb1512ec97c56941591f8d15453e7ead96f249d80cd999d7.mp3",
+        "1ab23b0e99d4a06a45b844893d17c2b560187838dd5a2023d2618920bb2763f0.mp3",
+        "c981c6fe05916541be9e289bc0b1eda739c9f42f85421f89b8a50aef05b49842.mp3",
+        "73590b61d99ea064718171cd842dabdb052b5a842800ca0345df012a340b06a8.mp3"
+      ]
+    },
+    "celulas:en:celulas:plate-text:protein:32268657": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "From message to machine",
+      "chunks": [
+        "bfa4f246a43671a515eaeb783a4d0570314a56857578618179361ff65dc43821.mp3",
+        "d4700249d2d2ecbb2671538ef25160e3e26eea95d925a7c332dcdababca08c00.mp3",
+        "eb614e030a9a10dd38e93b2427a29a4221122ae98753f7beca7c0e91171dc4ff.mp3",
+        "0a84a177661dcc268411b3918a780812e551fef059bb2b399eb62c4183a5aa63.mp3",
+        "901efa5a25e1a1c6251d6a6d75421c9b0a5e17fd34ca75d31f3fd7a2c0cf5fab.mp3",
+        "61cb6f11a2495b3d7a054f33c4eb5712f67334c7b9f2889812c2929fc9a0a75f.mp3",
+        "09fb79af6034eeb2fc2ff0cd448250cf487d993dd2f78d895475d61f680f82b9.mp3",
+        "9e2e80f17a1217e50a99b227bf27fbe51edd34cda223c7283a28460b224be027.mp3",
+        "b7501e9c6607c5e60c5aaf32ce499db28b03bfd1be3f5d1745a47016f8b0f1da.mp3",
+        "c280835d45c118422c303b3d5c4d69258b64da8ced6a61d35775f4bba6265a08.mp3",
+        "eec7dc6f6adfe37c1a553411f4491e6aa69362919f9939f142e9e234de486da1.mp3",
+        "2e87d8a14725950c3680be048498f29c67c0805b6bda3c4f9fdce574b6200a30.mp3",
+        "870be9feb51add7ecca421dfdf07fc2608a406a602ab9ccc559764ce7ce20919.mp3",
+        "a5804b93d4c604ecab9ca91cde238d187d4f23c9a9d35a5e17326cb16733d408.mp3"
+      ]
+    },
+    "celulas:en:celulas:plate-text:energy:047fbed4": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "A tiny energy converter",
+      "chunks": [
+        "d0422c3336e9fe3623537a031c8d77408260d96c05dc8b0112f7a6e6ff2d08d9.mp3",
+        "6aaaa73baea0724cb9e4b056696ccba88dc4188a118abf5b1ba8d87e756f00c0.mp3",
+        "6317d72fce21dae2c4b9cb5701efe6dc3edbcad37deb8717e5ccc10f0714f655.mp3",
+        "5bd613841a1bf7d02f0cb1405b0c3bb9ff93a31c6cdecbfbda631220a4e7b7a2.mp3",
+        "b472e887b4ab8b4c06367a52ef014e1a45172e7472baf6315e7db5ae467aa9c6.mp3",
+        "54aa8c1e2d6adcf864add5a4d4bb5ac0b613a4bd7f510022f8deced5e2989e0c.mp3",
+        "dcf0ab90bb841b5c7e6a00139915830db167e93286184b24fac87dd99da1b4bc.mp3",
+        "a9cc446eb6ef3bd7aee1ae5ecefa995172ebe1532ad361ff51bfbefac46355f9.mp3",
+        "7433096c075f3ad0e1d42294333f43bc10524158c0540cf50910e35cc16a56aa.mp3",
+        "7b8127334f01ea194c248da935c6b55bacebe7f375c9fd7537318aac8d4b008d.mp3",
+        "989175460b6203ce3a6d468cc7aae7c5d430c2b0d9d709a7f4f70b980a78ef28.mp3",
+        "ad45b2afc05aae96b20bfdfa18c53bbb419a557cb03e978e87f55e91ad184a47.mp3",
+        "b52f279dee9a1db2ca4e75c6c3d93de654c9a35224b3486c642fac0636fff222.mp3",
+        "7cb2ec98dc9ea1404200ce6f295708a382af33520f0141024a7719e2fff9b934.mp3",
+        "8f905b27aa7dac9719a33caff4b9d3ce95ba4fd6fd000b49c981e007241315eb.mp3",
+        "352bd24c47f6ed4796c6eaef40acf6e7e64e2523e6a393c85babb2c9be5c3376.mp3"
+      ]
+    },
+    "celulas:en:celulas:plate-text:photosynthesis:26f5252e": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "Sunlight becomes chemistry",
+      "chunks": [
+        "492042268cd003c20eb34125c06ac67abbedaf7dd6eaa51b1e14473c06e9c5ce.mp3",
+        "1bcf24a9ef71d725efc6010c1528f99df0c5dd4209638126519a2e210ae9c7c7.mp3",
+        "8bf2f1f5e4232cd635da172d5f1cb71d478052be84ae2dd40da5f0d2cb2606be.mp3",
+        "b70daf719285e828a4fc72599f3c11a35f39cbb2339ca7b2191241d13f0dcb2e.mp3",
+        "d930f8bf94dcbcb9d065252f15bdc7703c5503a325076fe470ff379723c2cad9.mp3",
+        "39a82803f4c0f13da40ee92ca4d79f68e8af6f264a17148629ff7fd1fc47b897.mp3",
+        "26269910d36ad28c4d2f67567c68f58d813b49da2f5584dff16d77de11e47831.mp3",
+        "a0453aa8c02ee25496e8ca28153eab3a1ef5ac8a9ee08cb5d1084cfcc6aee38c.mp3",
+        "a86f5aceb693c126463be5611694c96191d436503ec8cda51efefd2f2dc04ab5.mp3",
+        "93ee8797438dacef005a9e16a7ec1550dec723236da4651ca0c9d805bd1715dc.mp3",
+        "f728ad68a9f81fbd418122e362759ea34249d6064b3182664e4f75d3aa7f823f.mp3",
+        "6f6bae1fddd557cfdc4487c576b90c9f74ce032aedc0a5cfa387753cfa30715c.mp3",
+        "d29fab4aa9d11f4ea46d44c06a8da95c1e3a50b77b928a217d4aedb3c3076b31.mp3",
+        "5898ca86e2d6a5135000426955d81b2375947b5c26d6c682c7ce93a37f96f0bf.mp3"
+      ]
+    },
+    "celulas:en:celulas:plate-text:division:13e12477": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "One becomes two",
+      "chunks": [
+        "e3d7afd6f5ceeb8d9c45400c858ecc8ddfc30b3232e061baf4f1defa267c0453.mp3",
+        "8a64cc08b59daa2942fb7d9323c88eb074403d9cde20325aca0b181042636465.mp3",
+        "8ed0928078bb0bbf6f859369aeba5e8bbf4ef11e0ef4c76f6aab3a967d73752d.mp3",
+        "2e94505786f087a5019f67343452c9a3f386d113bbf38bbfb622a5f610742b46.mp3",
+        "935f83e99b6e2bd076dd7efd892ac7fb151de9ef87233d33aea325bff74173e2.mp3",
+        "677fc9ffab3fccb896cf46b450327573446e3cb806cda839c4ba3a6334692fd5.mp3",
+        "a900fc6b3bc0481b66cad92e7741e80c144953ec0739735486d90dc70e29514b.mp3",
+        "9ae734b825e47cbd5a771aaac6999fd89f6cb851dca3bb4c3fbf39860a0db786.mp3",
+        "cd7c42afb65685d6a046c057ab2c4f9e45443e820491eb3e5454503973c32689.mp3",
+        "534c6d487f11fcf59046493e3e9ac8a4473ad1cf6e849eaeeb96781984a0f45f.mp3",
+        "ec75d586a63948d62775d4b5980cf7c4c4096d6a0e32bca628e22526ed5305ad.mp3",
+        "289a27bb6cabe34eed30d2ec8107d43eff0fbee969b23f620c636d8c67c42324.mp3",
+        "b93c946724db6a2b1f6170958b0e74853a5563164b049a29c493ae6012d1dc58.mp3",
+        "330404504342ea4ccc3a252e976f83c87a0e01fb0bfc3a9ae1a35b3af5cad661.mp3"
+      ]
+    },
+    "celulas:en:celulas:note:ae5769d3": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "The Questions Are the Tools",
+      "chunks": [
+        "0c132ec2ea92c0b33276cdc3f7762bf22d24faa0d76ddf85ee775245d751e0a3.mp3",
+        "e7e230d7d43d20b7204b1e8abba3f21a814fb63d78250a5724587585ee17b21a.mp3",
+        "e1423b9521558f8c6b1ba8c66c5ef3b7e730e34dad1e92a16cb5e5b0b8970e85.mp3",
+        "e6af6d1fe631bd4fff61f8fb5f2649b24ba52d4dd79dc15bd3f7d9d21715bf84.mp3",
+        "fd34d06b03857088200b70872e149cc3ff3692a65a45b80ff7e3374350a23b3b.mp3",
+        "0c07a13337937b07d30765247b2342cf945c44516ebe1aed2eb337808c7f2115.mp3"
+      ]
+    },
+    "celulas:en:celulas:glossary:a3e3fe39": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "Glossary",
+      "chunks": [
+        "a98ef12d83cdf151bf2b3dd04a7c57459055c6d7b26637b6616aff3bdcbbc634.mp3",
+        "12b2386c02b27b326a31a74a6512d2d610dc1c3c848b4a57832e3f4a95598afe.mp3",
+        "a9c179421ed1a8f127e0409295914b77e19f972100d8f1125b94eebd6ff6619b.mp3",
+        "5b2cabf1cffbd23c75eab9a2565fce6aa4434de7a3aaa430e30efbabaa64557e.mp3",
+        "2d8674a7cc512b661c5370f572070620e4067cd3bc4cabcc6111ae54013454dd.mp3",
+        "9493558d0a84e1f9349af45fdb834f1a300b038592466ab5242edfebd6802472.mp3"
+      ]
+    },
+    "celulas:en:celulas:making-brief:5e5d35e6": {
+      "lang": "en",
+      "bookId": "celulas",
+      "title": "This book’s brief",
+      "chunks": [
+        "c34113ce06ac13b19679d4767d879eda145268c04f3ee04e8d973837045603ec.mp3",
+        "d1ee1211a38cfab2603834ef8b351d2269d32f9d900291c1b943955b2f7a6de7.mp3",
+        "ead438d4916144c958c4200a2a36a7e40970ba8de9c0891c52f0a7143c1f108f.mp3",
+        "8d57763621994e19cf3abd7a102e7d559c52f2248e0d41fdb2eeeaf8c9a06007.mp3",
+        "5d51f1adc751c14bd662d43e2e04e86476886f00ef15bd6d18d5d390fd9d6fa6.mp3",
+        "94d5e8de05730c588608686349aaafc4bc60fc27332e3846f22c7648b478355b.mp3",
+        "172b68704d610e494b30f2f72092cd184bccba37e22dd813c7c72a785b41bdcb.mp3",
+        "2d0490fc956f08774c1de9a090774b406f6b5ec7eb072c6e7f84add4c0d83e9a.mp3"
+      ]
+    },
+    "celulas:es:celulas:imprint:46fd9867": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Créditos",
+      "chunks": [
+        "5dc1bf39cf05447249447f04d852139a2269684ffa071d2ecb851ba71cb1ff3a.mp3",
+        "f0b91927b62758093bfcf434c62e2cb60849bfd6fff185d7a59c17d2bf2cec80.mp3",
+        "885bec9e7b102ea4c2048265b5e2fa155ba2a2d93c5563dd4fe195ee1a8fe979.mp3",
+        "b9b14f3899c991ac7f7f4730c06f808fe2f8b76ceaf5320b38f02ea6bc0ee5f9.mp3",
+        "0575da81478d05153835742979df027c3683900a7b1a8d6c5a56480b38ea67ff.mp3",
+        "3668e916d1d5c58455fec6fd9c5fb87d0b8be4cf8960cd30fc3f973a1d784fdd.mp3"
+      ]
+    },
+    "celulas:es:celulas:intro:d89c3355": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Una fábrica sin capataz",
+      "chunks": [
+        "c9928057fa12139dad0af8f92512120d9fe0909a04c4ac50145f35c15c2a3acc.mp3",
+        "ee93f7db41091d7761081a8b35c43f4e326cb52ed40c6fc8572e16de1b241aef.mp3",
+        "036a6303fabe2e31cbcf1edbf0c919c2135e1da0c4a3c5a640ae318aad8f22ae.mp3",
+        "55b87f0ef6d37d93ef3544d2f7b3ce7aef4986fd75f237beca552327345e0230.mp3",
+        "7eb9d8a921a6cb063ff83801b21fa494941bcd4d0ee32d4a8608a4c666054402.mp3",
+        "b9f8841a7390baf2bf3e926cf5ef83bfadde78001a8c2019fcfa84a428fb4661.mp3",
+        "5457d121279c01e73c8ccbbbcc93367990830bb888e574ecea9a648d27a3467b.mp3",
+        "938fb116bf3bf4df25e816b98cbc18c8b1e7abf8c051669d191ab1027ac8aa5d.mp3"
+      ]
+    },
+    "celulas:es:celulas:plate-text:organization:c12f06d6": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Una gota organizada",
+      "chunks": [
+        "68406bc4242297e9ed040166260c32ee3338ebe408f81c9e1eadfc42d6022d36.mp3",
+        "42c5166fa45b544c4ef59555207c7d0b6957f062f3f5002bafbacfd24ae7212e.mp3",
+        "35b8a54a3fcbad0069f80b77b9034d2cf1bbe1d6bb17120fb1283babfbcde911.mp3",
+        "773c571035d8905fc03fdc317be76616250b5ba13c0730381136b657872a7f51.mp3",
+        "cab59b2499c3a0e7f55a420b76efa390889170dcbdcc8af0e5ef69fa75495b5b.mp3",
+        "30a5fd302426686fd69dfa15ee10bfb991dd02284be6c67e5c4e783970aac7c8.mp3",
+        "f14467a3f9fd9d47b9d60c6d27fb02133be8f5ba32f08778ba162b41c1ee523b.mp3",
+        "032e3372add0fcc539b4faf81c28737f1ecb93f3896b836d35823b70798695b2.mp3",
+        "4ae1cb14380627726eea0843c367252486bd9c72c450e18280353a3dbec47405.mp3",
+        "158126f4aa8913402e517675c43dba1e5eff3ebec5bba19a1a70553378338062.mp3",
+        "46911eca01c59ece8d9783133523cdfec8a02de0d264dcc5ea91f426a9c46d0d.mp3",
+        "3d4270a8c3673d21f122da7a2857462a9863a4ee53c4321748a77f61f6e7b428.mp3",
+        "afa729c640fd8030ca685e0f0ad7dbe1e8d46400e0adbca398839bbacd4f7375.mp3",
+        "e4026a9cd9bc2d0716c57015966a65dfd34682fbd368f12db7695d122f47cc12.mp3",
+        "6e95415062d3fa5955d73de992ff06d01b3a3f674f8e9ec5797f6b6f93dba642.mp3"
+      ]
+    },
+    "celulas:es:celulas:plate-text:membrane:00cc05dd": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Una frontera con puertas",
+      "chunks": [
+        "60ef0a0ec812158e7248c327fc6509ccd48ec2e44eb7b7b33c3e5b51783dd532.mp3",
+        "1bf29f6b72b0e3d5ca683123568fbbb350b4ed3af5e74127d5c4d2bc5f9589e0.mp3",
+        "1dd5b4a47734989da331cf8e3be9d08ca6b68ebf733fa37cd7b07ee1de03fd71.mp3",
+        "48d18d1e02f04fe9e0caa18e97b8aba0f7b350287769b475deb2352d5bb12045.mp3",
+        "e5413cafeb87dbe63a28aaafb8ab2f9d7070d95cc2fc4d561438b6a89416251f.mp3",
+        "883d7776c81e2235e81ba677e5d20c0c406febf4f74bd0d40f379903a39f243a.mp3",
+        "6f10f23a5edbf0fea507835f3652ebad89926dbe42c1e3e9c36e292f33b82b39.mp3",
+        "b53160130a165b28f655950e703d1bc4f7d93644d12ebf4e35d5d18cacaa6f06.mp3",
+        "2330f207459e7da7daab259635d16e6217ca3454a2db35868c11c862cd0221a6.mp3",
+        "f3c59c38f29abeee4efc17ed30f49f38f67b124f03e5dedf664924eaacdbd9da.mp3",
+        "3da124e05e2a620a9411184e719bfd084865c1d1eccbe4aeb04791ea719497db.mp3",
+        "6fab5c6e30d17b08237ebb613e97879fdc00c001482a18aaaa5b29bdda945e11.mp3",
+        "cb93560219e2bf65d5c498c26b8302a732e7864743d7231c8e695a40687ad365.mp3",
+        "c4f5d9c9a49f580a58b7abacff90972c0153d7852b3c3ffe06a20363eef42dd3.mp3",
+        "0d42a578f14a28703c12287e03a8b15694bced1c80fbbcb4cd058751010c91c8.mp3",
+        "62102df6ca42c3f2cc0641d35e72d73d1e2786babf45f5252e609a1d422a574e.mp3"
+      ]
+    },
+    "celulas:es:celulas:plate-text:protein:aa06589e": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Del mensaje a la máquina",
+      "chunks": [
+        "57126bd7761273e4760cdca039942698cb4a14adc64eb42e99fae9ad0a1f686e.mp3",
+        "f5f1a2733a7cf655567f8046eb79365a38664c88fd3d0278ae5fd9085b48a651.mp3",
+        "82782fd32bd7255cb555b1919d664b4e61f45b1fbc8958ef719825b35f4e1d16.mp3",
+        "8082e08c27beabc09e04c62fba106e27cc934bf13879a2967bdd06d0c787b41a.mp3",
+        "0c8e40080fc3e46bd1415bb3bea7b7b5c9814fc6dc4d1ec2e9521c43c9e387da.mp3",
+        "080d30e50c224bb6a67b39dcacccb1677844a0db27f39210de9360c5e44b8ad8.mp3",
+        "5f9928de6d991daee739871c42eefc33ecb5043990611ca21fada8eb34467bd8.mp3",
+        "8440c175ecf0e648d00e90579c700e94568081c036bd2f2cb6653c64af3eb492.mp3",
+        "d01aac2476d72e93a6ac04d11d9f6cfcecd6a7781aabce84d8731b3d5bc63f7b.mp3",
+        "c22a49c3955c4ff74de8f83f8e0ab7cc7534247a4a40130d5f9f53b3c30237c1.mp3",
+        "0f9867f13c6f974f85b88766bc2194711cf65dce7a296398ccf3d6d44882729c.mp3",
+        "580d05dc81f7b680c28be208ef455f7aea1f677f1d5c01ed25fafe9af728c077.mp3",
+        "55b1bf3460d3ba886bae6fae65b4e8f5a0c94e3d87e11a37175cf6aa62b1ce11.mp3",
+        "8abe5dc7a6d5b23d8ca10ad54df0bbdec89f27b006dfeeb3e217f0c0069db350.mp3",
+        "4ad0a8dc92d43dab93a85867a1215595a5451ee8da5856f1df461c2f51799454.mp3"
+      ]
+    },
+    "celulas:es:celulas:plate-text:energy:8588b6da": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Un convertidor diminuto",
+      "chunks": [
+        "83b0cf3bfd03902ea394e20fdbc0b0a0d4b73156d97104d7680eee1557504d6d.mp3",
+        "0cf2e5cb284135c094f160b0f731ce210ddc1b4db9ca909484e7ca274566fa1a.mp3",
+        "6778a51a56bd6f5b10367493d6c5afa4ad354b7e5ca06fe12b7a77cf19243878.mp3",
+        "60ab37babf3a92e9283087be1242918296c6791a32b4721f21c563111c122ca6.mp3",
+        "a5c05092f54da38fde56755a374c581f689c1881bb687a5f945e13062cad8c5d.mp3",
+        "50c0e3d737f37d831b174c1d575d3534c7b7b375bc810682506f8443048e911d.mp3",
+        "cc68877281f3e9ff7f9493edff9c7555eeb19d54b66d9d821839daf75e8a7501.mp3",
+        "83d540fe2e89015f5021f955bc559e2ed1f83a7743a1cdfbf90adbdaccf86a21.mp3",
+        "37c4c4e02e71e43361c4475cbde4da4044775bcf88ca8394298681b9848aca98.mp3",
+        "97bb3a6496636296ca347a2a773d4f053a9de1d7045d5c1b4e134b4e72413d52.mp3",
+        "5c367f6ce63d458ecc9ac8fe0019c3bfac4454ad23442b9b268119ea8b11a147.mp3",
+        "fcf4504b55d2e4e45ccc4b9e6ade2fe22fb472d9ada8afcee77f1049c460c8a0.mp3",
+        "42426d38e26ec22fe65c926b26aff24bbeb23b1939b188181b6c95718216a0b3.mp3",
+        "c945593de7b109566b3502592552576dd27440b83d86667f1b284e5fe7fa5850.mp3",
+        "c6a8ced3f3833517a83787e8204e8d21b99157240927fe82dd7b8d646981a961.mp3",
+        "bfe3a122fc857e7cd356ecd0d5289f68e27c1b269c917c359fe49bd447a8be06.mp3",
+        "a8fb01c86fbe6ab35cfa873c9ec1377168a3a5cbfe7b1245d9158b6d65eb74d8.mp3"
+      ]
+    },
+    "celulas:es:celulas:plate-text:photosynthesis:2ded6825": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "La luz se vuelve química",
+      "chunks": [
+        "c978e5b76ac3d8ca88a9eb3973cff24853f7662f7a6d23f73d074f2db8fd56a6.mp3",
+        "5fd720f18003e68cf22a553493239a7d51013ba8ea52a706c5347516de79fd35.mp3",
+        "f742f01943dec81233add80a7d7b54cb0f6f2a0f68ee53144b27e674365af108.mp3",
+        "f2adca9f71301bba57bc54077f99d99bb5571d7b66a95f5ddedc31cbf768da4c.mp3",
+        "397f6e432cba92603beef22abe8f15d15e35378daee0cf902bdb91a56b011f19.mp3",
+        "0e9d0889fa14bab6a2360a9cd8b05274ebf6a88235c3b76be729bab32b840a1e.mp3",
+        "ff2ef9ff7bf7c249aa64d9d96d82501a06f6285372282bdc3dedde268ff3ec9b.mp3",
+        "b8451f0b689941be63a153ac4744a4e99bf1f2ad3ca6cb697fe15b2b9ccc9ece.mp3",
+        "fc13b91326cb16ef40eefc6b15aebc3521ff5821b44faa31cb9225c0e1fc6760.mp3",
+        "fc75b9996bf67f2fb0673d9c2d3dccdbfdf17ddadb9b23fbfec3014827c3c8f6.mp3",
+        "b50c75ca10ab678df09ea6d6c933941c6c985889c26e4c3603299221715c6f91.mp3",
+        "eab15c20c8d27ab676a539eff80049b44fc96064ba29d6019e214040a1103332.mp3",
+        "f7cfd7fd9de35622e49dbf2feda8b155b30414c40f1260354206041018f2fc8a.mp3",
+        "008c49f95653b54fca4c8613addfec0d045928f8aa29e7bacd365c27b77c7c9d.mp3",
+        "410b012ef6a63ed25489a0532f7ca1cd4c7fa0822178ad2908ad29a4b6383840.mp3",
+        "9b8eba0ff80bb2bf7bec394d95ce59b3afc45004a9b920b2467ca1632bf11758.mp3"
+      ]
+    },
+    "celulas:es:celulas:plate-text:division:4c802daf": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Una se convierte en dos",
+      "chunks": [
+        "e62e2bc7c338311abc9b5016b664bcf584faa4e1c52bc8b3a941fee58aae9433.mp3",
+        "b940f0d65df18fdb38e072aa5379e4861a148dff52b5365ee4abe82a0fac49d6.mp3",
+        "42ff94ed5f13e4f6ec8d0696310bc1dee8a7827a89a6855add07a226f0c4ca2f.mp3",
+        "d707893efb62ecabb51648241c48a48fe032a1850d3e267b7a7d9e22527873fe.mp3",
+        "0a88a4c77213fad6434636338d3fb74e0d80b84e938701a9c44d4045004e1cec.mp3",
+        "23c14e7657adc057a1b751ad079b0478463056a440bed41071a75922ff70c551.mp3",
+        "574e0cc72d641254f185ea512d87bf95c56ba9df91bfe5d4cbfa6ef5e5643f54.mp3",
+        "6d00547f38539101f0bdd8f84ee127421e24d40506549542ea8bff64a380ac31.mp3",
+        "38c3ff7c2a1dce2dcabdd3b05e49cddf03bea3abe681798cdb7e2f0846f279c5.mp3",
+        "247f0d49d0e9106a6be25cdf39fa2a9e0457760f6d6b3b789bbc924bce9ffccf.mp3",
+        "06cbf4722f2fdbc493d8f03431611283380c60cef766c62978d8ae5ba79cadfd.mp3",
+        "f6519b556279f2464d76f1e0737afa532aea7f47a47300df5ba8a3e64f5bd261.mp3",
+        "1918872b9ef868153820b31a12ec579728628b700e146d9e3132d38b336da0e0.mp3",
+        "fc19184923b78b6c28ae0926530aaec2888d8b9c0c610b80a33a52949510f1b2.mp3",
+        "9ffbc707e6a8010282fba3c7c5c9cfc1a9e588fca5b8f8ea854405809c01272c.mp3",
+        "d0d5cf4274643b62bb9fd3a8633530187eb7b00bacabd94fdc7f27e69eef232e.mp3"
+      ]
+    },
+    "celulas:es:celulas:note:5c365f9f": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Las preguntas son las herramientas",
+      "chunks": [
+        "b64fa608f547539d8a9b88478d13e6bc0f0bd950fdf12eeb6ea3c47b1e1e27cf.mp3",
+        "b2db3e39a07b16f8fd9bb9e0e58f60b8325601c175a5e6a15e08d4b851de389e.mp3",
+        "fec166a827132d81d4ee6a2a8e8db673d76cc9e65ae12adb17c80dc1595c9e99.mp3",
+        "18fae8d8388dca89f8d65d373b1fc912d5f40bdc99857c2e5a0c3d40999566c9.mp3",
+        "410c6762e859a1479ebf9dc30ee351b5463f2bca35844e3365e126dba5860a0a.mp3",
+        "9d755f0dd346c8bed06225a4402885010c92980ff7841f590212f01aa7cd34c2.mp3"
+      ]
+    },
+    "celulas:es:celulas:glossary:aff1407a": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "Glosario",
+      "chunks": [
+        "027dd391534de65a3fb85e9830594d65543eee072f20ea75eecd2b5f115adb7e.mp3",
+        "0239981fec1ad1f476608c0f543a8e2954e71e3bab59d8a12d81b8b439c67c16.mp3",
+        "c0a4867e7aaa5a496d6dacb5e152bd39e401755d5bc606673ce704f8a5188189.mp3",
+        "b42b683e82c3f16f3912f0932c554aa56aa85c1b15ce6d114aedae5a8131ae75.mp3",
+        "82d9d9f4f1c9ee245a96ab930513d980b500fe2da5d9fd45d627e92e06d168a3.mp3",
+        "a1e5d85f17f1968dab3428ce90817a0bee7283a04d7a2f1a983e4d12877f89fa.mp3"
+      ]
+    },
+    "celulas:es:celulas:making-brief:057f748c": {
+      "lang": "es",
+      "bookId": "celulas",
+      "title": "El encargo de este libro",
+      "chunks": [
+        "b6284998ef38fb5e975b2256edcbe4339df8705854f35af8f10f4a1260ba2339.mp3",
+        "7f2334eb7a940f79a2c0eca6bdc1b18d31df5286d35ed4753c9b5715f2a2fe2c.mp3",
+        "1b504afda3f2b7b2a34c0d993d99dedbe01efb7fbddf1749011312b62ad70a08.mp3",
+        "66892242f53196a2e514eec6d75f34b81d2b6fc105e3a5c34e1310c360127510.mp3",
+        "4c8c99523e11df62f28834596901bcbae3e99d0ff74255ad36d617a0ce019f44.mp3",
+        "74204a3b3da50ed3622dc3b4aedbf9769125a2154145894457df331d227d0d4a.mp3",
+        "753b77ed371b7f3ba615ae27065b273ebf1ce10e31a8e595498f235755bd2e08.mp3",
+        "fac2bbc637acac5e1646e3d56e1f9e63387f46b7362d364fe8fc99025fe80898.mp3"
+      ]
+    },
+    "fogata:en:fogata:imprint:539d4ab5": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Imprint",
+      "chunks": [
+        "abab9007abc479a27ea4b2b2ac48ee4f1511eb6d144b64204344cfbc8bac2521.mp3",
+        "47c58cb30e70c3e67c6b00e275f09507c5973c807f6eecdcb4f4f7081bd5b0a1.mp3",
+        "eb45dc1d212d6f4b90c082420ae56e035ab84f44dd4b6632faed4527932b4a96.mp3",
+        "703f9ae5a472d817a8944908faea33d4c016bf825220658d1c4938e383d46507.mp3",
+        "4efbcd660aac250d7a291dd29aa9493726b0b8339fb9e75cdda7caf1ca2a74aa.mp3"
+      ]
+    },
+    "fogata:en:fogata:intro:a29a4d0b": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Begin with Something Ordinary",
+      "chunks": [
+        "d265d3b17a5aea9632f674d7a7bee0a5b1bf4e4bfb7bd8edd6b9289db2206398.mp3",
+        "4870318777a8e9a4253685d863bd5f7aa25d74770e3c00c13433c43467c0258e.mp3",
+        "bbc8fb41c32732b67034a1b003383ef0ae792b7b4d0757a5438bf6c922a2eca1.mp3",
+        "b8ff42c54bbf8ab463b5fb74b751885b45f9333c90b90d2fabd29d8f6b2e5e4c.mp3",
+        "fc41731b2e490b72914d2575df036b49946428ff3044c957be8d2399024a7b2c.mp3",
+        "083e1363b645f728d5bcf6211a0e3a696cdfcdc3214e9e65f5dea05bd168acd1.mp3",
+        "012e0c4412d8a752545363491a2dd8fac009a298f4e483e219fef8bd6003dba6.mp3",
+        "60344a353c4400747760c27edf5a8adbd9b62872286fb121a3a49455794d39c6.mp3"
+      ]
+    },
+    "fogata:en:fogata:plate-text:shore:a7843ee5": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Where did the wood go?",
+      "chunks": [
+        "f3c574aaaf2d3c90ad89d82191a9fa5a49608abffab3860fe76dd971d2340319.mp3",
+        "23b49f4a1b5bf75765931b16c037ead473d2c77947d54da818d3d2a8dceed563.mp3",
+        "a3166c6584e409201206bb2b414d9b7fc952f9a875ce191aca39ad391c6d65b6.mp3",
+        "2654680c691a56d7318fc6ffd1ffa638d3510f72259ae33c100a673b9860c1e1.mp3",
+        "a025724e2e492e685f44bb475f6764c430fb97468ec5664da2e1019d403b25f0.mp3",
+        "9bdce142a0977d9f651f8f50a005a70b0af04dff8403c97ed084f039b7fd6207.mp3",
+        "d6b2788614cae95d9a684dd0009b7d270e9c5e8c3b56b27ee460a50fb8c1cd10.mp3",
+        "d6714d2702e04b52e3e585d00c64b05c4b50893d046502459f32457485f92845.mp3",
+        "d7fa6477eb28a223f420d415b8e64b374ffcf930a2c8aed468c59e55081f6347.mp3",
+        "2feed354f87e94d80738c9e2d1c48330ce4f74036951e7cf7eba3998c0514c9b.mp3",
+        "cb4e177bf0926ab5bfcd2fca1a8fecf57d97110c230bb899cebf085c954223b6.mp3",
+        "c496d8fb4fccff0f6eb70bf5a8c3a456d93dc4a925717a71a9dd9c65534ebdbe.mp3"
+      ]
+    },
+    "fogata:en:fogata:plate-text:pyrolysis:76edf905": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "The flame above the log",
+      "chunks": [
+        "3de716a280bce6aed34538028c3d02d4b46be7c2daeaac4bd732a8cb9b8c0926.mp3",
+        "047778fd9a29072de39a65116a684302ae85a5d3cbcfb960871cd687fdba975e.mp3",
+        "02299c4b4587821570acb40010d3dc517fb0cc56cd04b918f92185cc83db6046.mp3",
+        "6a9e567e47a4b3a3abea1751fddbee4628b388bda6f90954e4e6001ac5ec59a1.mp3",
+        "2494bf8e02591175bb0fe19d0bfde1ba3ba1d787583f8a6daa7dd1fa7502ea0e.mp3",
+        "371b6cf4eb12110422727469a63ec10c2f43730202c702635e399ea4d95af031.mp3",
+        "d4a950f8ce8c45fa66c0a55bd9b4ce89c3719a1e5171cafeecb7cffe79c4d27d.mp3",
+        "98504ac9e2496cf24b692ac9699d473e06caab003db10dfee87b54a57317bd14.mp3",
+        "9e679dcd9e86ab3a64bf9ebefe68f2d3df2f7a2fc4924e5d9c4576cf4025772a.mp3",
+        "6f29ed615e85eca88790fa2923b301000d634dce9a7f75cdc7b48c401a77171a.mp3",
+        "8fa0aff13546895643313424bede8828c69e1ba7228d19e57891d4ec784f7882.mp3",
+        "27fb5d66fc019d6781f376383b3d6c2801f664a30d009f2091c5b575acdeecf0.mp3"
+      ]
+    },
+    "fogata:en:fogata:plate-text:reaction:85407497": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Atoms change partners",
+      "chunks": [
+        "d0b37912df14c8f263b35b537750799153facb064b5684d7c18f401f1eed9d6f.mp3",
+        "2e6fe3ff6e731bbab4398c87b5a571432db2ecd07cad5a602c3e751a1067dc01.mp3",
+        "dda8293fcad774d328497a25f7e169eab6de6de5838cf3e0d82fd880c7c6f488.mp3",
+        "bd81a1dd57418fc147095a13c9b060e22e553fe34f35e57276158005ca42d9a8.mp3",
+        "5260faa9d57d7aed71d7a22a53c9afca321d5a2a73858de5d370b768fc969a8c.mp3",
+        "0777106d132b1f9924eb41612758e20fabd625c87bf435204f29bc23deccfb19.mp3",
+        "3bbbdc39548f21b506adebfd6c17e251a4ca9c649c3b0a2c928f4a6e11e52b26.mp3",
+        "63cd1ad82e1f47971f1ed1343f4bb6458785f14fd81828b4983eeb4c13453846.mp3",
+        "f5c77d127f30bec8db691240c7b1eff242514074c84125eb3a7d24b35114df8e.mp3",
+        "7ff8ab17523fd5714174accc8560e38d0864dbb28b661eae1f45aa60ac259943.mp3",
+        "aec5d08bcab5d4d6ff9235d51da7070a42ecde3842393b8b01f355333607f55e.mp3",
+        "6f896c0799d97a0a3d1322373d63ba6d6705bbe71fda95326a70bbd3d835b447.mp3"
+      ]
+    },
+    "fogata:en:fogata:plate-text:heat:940a5121": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Warmth takes different roads",
+      "chunks": [
+        "bd880c90002a545955ed2f1839cb1434417ba1d3baaeb1831fd1dab10342521c.mp3",
+        "8b808989158b83acbf37b8d19089bec918ab0836053f3345ff76535c0e1d3fd7.mp3",
+        "74a89e8544a9457372d5443fe50b59358f614581936316a9ee0fa7b2e27bee5e.mp3",
+        "3c3fec0eb6c5a39699a422f4af3df069339d206f203ea03c7f5042cd41deb78f.mp3",
+        "1f0f70dfed54149d1c8f05896f0b3adaaafdf496af9ccafedb66fa83e6e5835c.mp3",
+        "e6962524d0eff1b7c37bd22cbb836ae99e9b5b940eb9c1a8c72fd8a8e106498b.mp3",
+        "debcff3547274d7150a0dbbae2d3d281ade58ba0a1e79c89db6ceb2f6ec14b46.mp3",
+        "9c21fc967d322292f52e902c57ea2a366939df99305d5f94d7654abfb9719d7f.mp3",
+        "8e81ec30de850403c3f35de9a1b3fbb32c4c9328d9e982148fbb6660754017b7.mp3",
+        "a89e8aade698a0e362640e170cbe22464eed660d2daf14fb975a50f93f1f0ec3.mp3",
+        "95a6165c952cf1054e21af62ec776d2ccac155dbaca5879b78b3b80e08ceb717.mp3",
+        "23328f0c3386f94d82ef4c9ea5ca6e78d479ab595b0e19553535e454e976d524.mp3",
+        "03f1035da2e753e9ce4572aacb00321bad86a758e98404939fd140ed991f0c61.mp3"
+      ]
+    },
+    "fogata:en:fogata:plate-text:light:7d790359": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Little glowing messengers",
+      "chunks": [
+        "7079f88e5afbbc1aba4085ad0beef86145e1372bf247d3edc8dc9290b24375e1.mp3",
+        "24eeec1e5345aaaa3589a6bde137410600b55752e1938fb5d40848b92b783766.mp3",
+        "19bde3e64d32743e399162a07cc1cfbe96938f1a6bf9fa786c6d23ba426cfcca.mp3",
+        "31b9cbfc667cc7d9f047bfcad200819276ea109d841ac2e5fa3f462e8cb8062e.mp3",
+        "2033cc43fb91b95a4d9011fb0260cff33f2fdf4e5a4f452dcc0e51e2b6ecbfdb.mp3",
+        "9d72c88a604b20d09ef847b9482fa9b68b20550897b7fe55753fffe05b3da4d3.mp3",
+        "3802e4050e276e7ab15933b590ba33ee7866f18e11e3ad420be157d3632de04d.mp3",
+        "26ba19dd4d1317854bf3b8f885d15330f7ac0ee9ba0f11740112b91813814d15.mp3",
+        "2b49bbad0e15498f5a074e5c6b84065a2fa20c0e83a97898bcdd2a944417293a.mp3",
+        "394831b7a9d4b6d054f7564db941c60124f13ef70cda82c595b96b05de83c645.mp3",
+        "b67fca1ab2b07f16ae374dd25f82518b6c306740039958995e6c78abe26c7fe2.mp3",
+        "61f1501e08a1cf5500d07861bf0b02c191043adaef9ebc79e3e739464737641a.mp3",
+        "b958f34130598d1f9fe5a54bd7101dc91eae18cd9e782f2a6e50dc5245355df8.mp3",
+        "8fe701098fb024f4d791c5f24e4d24c574f1209689a01346b21ab513717ad2cd.mp3"
+      ]
+    },
+    "fogata:en:fogata:plate-text:sunlight:42ebf4ea": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "The fire and the stars",
+      "chunks": [
+        "1fa6ca6d1717470f0f31e67cea24035503c00117c931dad8df7e89c7d3808c74.mp3",
+        "0d23b4fae8ee7ab3600cf83ea0469d48d97b116de6c50f6246c9f31ad29f8e3a.mp3",
+        "ffd526f521b506395e1e07ec9a1cbc5d263cc47b12ad6506df43728d6ec146fa.mp3",
+        "35c4b40e7ca20bc53c0a705555a67c0e383a8bbe3e59e83efbd8548890ed094b.mp3",
+        "8410831adced4a6422755266ebe78bd0588840682874a99a1949500814563f03.mp3",
+        "7637cd8ddaccb27f8902aefc4b700f0714d8c3e71973d62f9c0126aea722ee06.mp3",
+        "e2f1c09ae3f822576024499fbf1fd20624ee596fcb75f486e5ae04963a190c8a.mp3",
+        "9c619d41aa08e072b70338353f428577a336ce7c5ae796fb1b91b50e05b287f5.mp3",
+        "4476c3cd7f4ab9dfedbf317580e5380b674ca9b8b0d26edbd1a051417bbb829e.mp3",
+        "24ba59cdeb10e513d51c53d016b19ecd745a7de06d5ed670a8ddb42c8bbaf1b7.mp3",
+        "169faca98d4492039c4319715108b54e69d251d13ba6ea6353d8d96579b6b5d5.mp3",
+        "8c53007afc584a68f042dfc4a9dd1987cf58e3e413f96336faf16ca6acfa369b.mp3",
+        "c93da74d13b85458426564e39bc7d7e92f1de4b31beaa90e737937c6c05eba23.mp3",
+        "8e1b13b12ecd7279dc353b528244624878a9007a37f6322ec690ec5e026220c0.mp3"
+      ]
+    },
+    "fogata:en:fogata:note:b1ef712b": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Leave Questions, Not Embers",
+      "chunks": [
+        "6882ccaeeb60e02f673031ac5232523bc3e378013d419ac0eb0f24b1732748c9.mp3",
+        "840da6a908fe5219047008a08fdf82fefc131c3b7c5ffa0393f75fc78d5de19a.mp3",
+        "08c0d6f1dfb6c5f1d999a86ab64837ad98b2e61e7d8a40d1ee6abc95854dcfe6.mp3",
+        "b3c57503bdd5852187b115925039722871dbf865f87fed5eebad39b0d3915752.mp3",
+        "3811bc222ce37857fecd1ae4f613c0087f6793c1da299bf77d0687dfe8b7e6b0.mp3",
+        "58461c22946c6e4fd1e58b45941fe2a90137f7ebcc57812b8f97129ee5ac061c.mp3",
+        "6da5b97ca8b42b5740d2edb1d155e7d5361dc39e57bbf1e143bc6c5661108e00.mp3"
+      ]
+    },
+    "fogata:en:fogata:glossary:5cd27f5a": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "Glossary",
+      "chunks": [
+        "8469896905e016db57ade2963571fc9bab407515326d6322411dbc7bb79a5b7a.mp3",
+        "35eec3639d293b2fb2d4aa8c8fabac1b023a327d56f562b58d0c1a79ba36e8fa.mp3",
+        "beb1d3790498257617bdb2e502f22f42f0cfd3448cbe973aab66ae740aee1838.mp3",
+        "cd8004c327d767082840355607a461b34cfca85e6204204eacd0b3ab24ee1b9d.mp3",
+        "cf8b2d00e4a2f258cdb035f06ce38054a7cd539bca61cc36932c2977e8d6c9c4.mp3",
+        "f3e113fd4a8d3ee6c3b69e3315a75e4038954788750fa64dfbdbc2345b59f563.mp3",
+        "74638f54566205cc04266560f2372e3940d8caa1107d38788fb20a9b2c7a9a76.mp3"
+      ]
+    },
+    "fogata:en:fogata:making-brief:67d474c3": {
+      "lang": "en",
+      "bookId": "fogata",
+      "title": "This book’s brief",
+      "chunks": [
+        "c34113ce06ac13b19679d4767d879eda145268c04f3ee04e8d973837045603ec.mp3",
+        "4d84da5e62b42e4ea851d4038a9d3b16bf0660119eb70417204a5589cfd7e0c3.mp3",
+        "fe28828c847b028bf74b325437e92e653f7bc5d6552e5b5d8c6e58cbb8d4ad81.mp3",
+        "68f638ae9c2aa7b7592b2c692b6f00ecbb37c2c5acba6f40b2dd9097186530f9.mp3",
+        "cd4f66ea1057264f39bbee1c3d89f2649af5f6c6488a5cb3ffb23d8efa74c4ed.mp3",
+        "28fcb2711b5b6a4d7cea5d6b6ffe009abd820ae60bc3629aa1f3889dc55475e5.mp3",
+        "172b68704d610e494b30f2f72092cd184bccba37e22dd813c7c72a785b41bdcb.mp3",
+        "2d0490fc956f08774c1de9a090774b406f6b5ec7eb072c6e7f84add4c0d83e9a.mp3"
+      ]
+    },
+    "fogata:es:fogata:imprint:79baa14d": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "Créditos",
+      "chunks": [
+        "3efeb7d30e3cffc8ec01a4617690d288d0fa7d96b63887c994b577dbb81d4b27.mp3",
+        "f0b91927b62758093bfcf434c62e2cb60849bfd6fff185d7a59c17d2bf2cec80.mp3",
+        "885bec9e7b102ea4c2048265b5e2fa155ba2a2d93c5563dd4fe195ee1a8fe979.mp3",
+        "b9b14f3899c991ac7f7f4730c06f808fe2f8b76ceaf5320b38f02ea6bc0ee5f9.mp3",
+        "7114e0eaf796a8531edefa12d41deaabb6f7779c5dc63b57084dbd43028af06f.mp3",
+        "78c8588850cf21dbcbfddef8f8d23b58d2be5dd7537b361b096105cb9abeaba3.mp3"
+      ]
+    },
+    "fogata:es:fogata:intro:32b7b46a": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "Comenzar con algo cotidiano",
+      "chunks": [
+        "dcef7ac5d37170154f69c36789b4d059dd79c49d09a2c73ee8b77ce1d5676fd7.mp3",
+        "7735d0cb6ac73a1467c3194ace3b38649cf72109fffc59ff8b28f635f9d28468.mp3",
+        "406862546f8fdf906bd6e567685019f9ee550b7f215136d7be0b66af842258cd.mp3",
+        "27c59a550905166733571489c68ff0bebf1cc53a44da2b380712d5cdca1db61f.mp3",
+        "05038cea8c8e3d0f53152c231c6adc1df47b454cf5ab03cb880703a1052b284b.mp3",
+        "e02a779320ed62cbdda08da07beaf69769e2af34f4b22e0546a3cbb7f88a2004.mp3",
+        "eddacf945a780bf356dd5d8aed4959cc6c99e61ae329e5f61c0f103b090b9a6c.mp3"
+      ]
+    },
+    "fogata:es:fogata:plate-text:shore:e1aa881e": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "¿Adónde fue la madera?",
+      "chunks": [
+        "628f9534bd215861fd1d0c8eae6c9bafb687a5fd55854ac17284d151aa1567a1.mp3",
+        "c49e8c5ffccb22d5b1b87d6f2a5c5c3bdc8e4e130e5a8af8cebe94ecc207db02.mp3",
+        "c95caced7bb2b0905ceada6933908ed6bab4da5c0ed5d7f4167741ce675d7761.mp3",
+        "b6849a45f75059ab87612a0d4312e62b055811edea5c825e149a15c6e76eb59f.mp3",
+        "fa4fc11f05808166869277f24949c11fe4acdda43a2551173fba36d4a219abd5.mp3",
+        "4ce4d978289c4ed62dd91a4e6d77beb7f666c606fa1853a7a3bd9d72cfabb9f9.mp3",
+        "fdc253b0d5be6eb7b8b1b7fdc7f380ffbcd94a88521459458df2d0d3bdc1cfcb.mp3",
+        "71e18c767d4dd57837eae6fd2904d00bf24cb1c44a042292a555cc2deb93acd8.mp3",
+        "75cfc16a288d3c51b9d8d6570d10aae85241ded420e185610faa8f9e3e072827.mp3",
+        "0cf0872392c782e53eb6406381bce80bb9bce1252287ff26eff5c411691678e6.mp3",
+        "20ed2b12584f62cf25ed5a5f1f4def9d54106f19b8e9c06cd2a1ea4d3d6b7894.mp3",
+        "3846805d8b1b5f9f658d4e92399cd66e068c1e6a480fe5c34befbaddc8cc2fb3.mp3",
+        "b82d820ead929b6e5afc0c9a19a0118afbc080a03dac4caca285417a136bf0ae.mp3"
+      ]
+    },
+    "fogata:es:fogata:plate-text:pyrolysis:1d9728ea": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "La llama sobre el tronco",
+      "chunks": [
+        "eb2dd766fe402851a183969d74032d84ebf632c83f725c3e1db298b43585327f.mp3",
+        "6e44365131b509e5469be843c9b8377ce38bb9d72e82349c143080f78b10d370.mp3",
+        "16e87824ce38b3b4abc2f123276ada76e12925159998185ec77228cdc7e3e7b2.mp3",
+        "3d4e1fc8e665f79dec06d62d2120927d37c55fc9af887ec4b4d09d26db91423a.mp3",
+        "865e2d48657d70d574a94b751fe345450ea0d87761490c241a783e07eccab70e.mp3",
+        "e3fc7d9db40ca9a697331f29d6dd12402ab9b9425701c678ffcc9201525e504c.mp3",
+        "b42c665a5f38ec50dda1f3bbcc085f6ecd2ce60c03635af04ebcfc5fa2ed1c25.mp3",
+        "f830f467037a45e9eee222b3066b9d44915f9852b4d397e9a348150b5f142a25.mp3",
+        "0b520dacdc28e0e43b11657f45266f1cb16e4c898ca0d4e770e3cfeeb8271674.mp3",
+        "15450005efde774b5fa8faf8175beb36f2d2dab32bb2c5a58a8f2512a01490dc.mp3",
+        "3825581c39e18bd965d64d7723374f2550d3648a59b6947979857a5c224f3bc1.mp3",
+        "7a81aeafc31cb6284ce134450e6c03a23899504cf6c8c9ab88440d046684c4a6.mp3"
+      ]
+    },
+    "fogata:es:fogata:plate-text:reaction:5313fef9": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "Los átomos cambian de pareja",
+      "chunks": [
+        "1605134785a0a61cebb3b9df1e64276ea5a50c4d08cca023658285315cd2bd66.mp3",
+        "361354710ba45d847928b58a39d5e4c2c92d43b8bc49fd81061e7b5a77d57917.mp3",
+        "3f0c06c7e9a3bc22b5c690666146416128c6ab43b62c807567c387ea93db5960.mp3",
+        "31a58475dc299c28923b058f24c6776c1c7ca3d99c3ca3d03fb1622c9e04f96e.mp3",
+        "cd4edbc5295759adbaea87a945d8ecfabf34b8fa7fc9ebab24b3e590cc627b33.mp3",
+        "784f4090caee3ac08263a4ea16d5a80ae7c9eb0006c34e9eaba68712b6befdac.mp3",
+        "0e01fe1b6231be60c642df58e05f7795f5bd5442c4e50393a435ae3ade3415dd.mp3",
+        "0d56640f234a01412047040758918ac473e393af06e4cd35497d525870f437d8.mp3",
+        "02def97d576bbb456716cb53d6d00068c71ecf44e48b7227591a1e19120fba9d.mp3",
+        "3d9ea39684df6360b260234b1a336178a37bb5bba7375bb3edcdb6d8fcdc4f92.mp3",
+        "522a2ac1c6071f27c496584a7bbeb6c9bd0caa0b93b941dedbb307d936633a50.mp3",
+        "7405be1461a1de6090f06bdcbd124ac33cf33931aa149f1ea9272ec21bd27a03.mp3",
+        "844659f75417d8c9df163fd7cb9887156ef6e9e7da87051771bccc89bd75b65f.mp3"
+      ]
+    },
+    "fogata:es:fogata:plate-text:heat:43d8b207": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "El calor toma distintos caminos",
+      "chunks": [
+        "b574cf61b432d01abae874e5bd7468899193acdbd0aae7903476e2120e59fa22.mp3",
+        "cc697124700ca872bcc8fbf50714e24c5df63b60f944674eb5d80f745f7e1421.mp3",
+        "645723c7e01585a49c4ee3f165589469e72f45fcbefaff52cb76855a79fd2414.mp3",
+        "baec3b6f4ab54e8d691c2004b305d1b8d7f8cb9d6d6d7f06351db5bb62877901.mp3",
+        "04cf94882a845e3f077a8c4694fe7823402ef10fdea539a91b19e687f1682bbb.mp3",
+        "405b790beeec3e2cf624b91a729842e4df7e386aad2edb3e3cbed97a0a595417.mp3",
+        "fe1cc4bc6b57f2071c68a104352a7d564c5b595b08a5649a6194a30fbb1c5705.mp3",
+        "ddfdf2f5648289d30d38b378e6e8acae40f442c19a069aba59afa65d0a66f58b.mp3",
+        "a30484799c443a75bf1ef2b2f5dce688a39114557e975584360221d9f3fa81a1.mp3",
+        "aa5e9cdf716b0cfd9ca236c444c94b6095f24acc35fd9768a2d0838712753a82.mp3",
+        "c031140b6a2a8db79b20a640eec9a0dfbee9b994aa9675b5ccb54f82bad9c212.mp3",
+        "393adb1608376c491186bdd491709a52068b9ca98d4c5bcc9075d9c784158278.mp3",
+        "9c9e54cbfd7cbb325abfcbeb5799f7376a4eeacda5b3d814437bc3ad699b9cc3.mp3"
+      ]
+    },
+    "fogata:es:fogata:plate-text:light:2f59b33f": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "Pequeños mensajeros luminosos",
+      "chunks": [
+        "b378c309c27b5ede0b12db12ebf42d8ddc84a4e96b63a4c72b652af3b64ea5c8.mp3",
+        "ea1e932a20fad808c058134986c59d0a0c6983273f727769610d9fab0f027362.mp3",
+        "157602f34553beaff64d692799ffb4943cd990a70196f7587a4c6bef90e7ccf7.mp3",
+        "52a18cc52ffd47535183a28e754212b13d889239f6fb39a77911ca88bfcc7e56.mp3",
+        "536013df008af9f48d8b1d227bea85899694772c0d342ca0707ede18a93ae117.mp3",
+        "48805a4a04aeae575088f91928aa53787969a41b9f2ea25d18b8a3aed98c75cf.mp3",
+        "2ccd2e91f284983fbf2fe18d37e41e9400662dbeaa351413cd3969e752e64867.mp3",
+        "d22544801db9233a404202ae0d6aa816fd6c48287939f0bb51f8391c162d6480.mp3",
+        "b16e2c1b3864ab8778d1dfb93ff8c533385a62fe62c2051a1e886415471f631b.mp3",
+        "f9226ebfee2a48032d07c610de16a0d5b5ae9f492be1b86eb9947c5bdef158e2.mp3",
+        "2ca66169735f7d4133bb648148ea02758a9c3c7334976e7cd45c3fa48e22f6e3.mp3",
+        "40be3460876c26e9dc7da70224aae7751bcfec97185e9e8334124b7309966deb.mp3",
+        "a15a30bc881f102d1ee36eab47f03eee1e9f2842926a1e9d864c5ade6bb86453.mp3",
+        "e7fe3406106d1a49caf8a6aba76da889542e6f02ac0dd517a87b1ad0c2789495.mp3"
+      ]
+    },
+    "fogata:es:fogata:plate-text:sunlight:df99221b": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "La fogata y las estrellas",
+      "chunks": [
+        "7e22be9875c1f0d528a717c029c0d8cdc0ed5053ebcb0eb731f965439877a028.mp3",
+        "e5b365333f0b34cc42bc5ebd792f5adc923b25b542c9926b01340db3f5ca9a21.mp3",
+        "31c571bff5ee0b72cecef1af1cee5327cbe908d5f69c3b36719912d5a93febf4.mp3",
+        "d9e66be1580d91834c1f0c6c4a989cee3c35b3ea5cc1fb2b815056a02df49039.mp3",
+        "217166e8e6e4d4e1d91ac2b9592414475420c678b39b34da657f00faeb788e44.mp3",
+        "78f39c505af47565096446fa2b7a6aabe38c9a166401ebb89634f11387f0bda4.mp3",
+        "d735755e948a6179871760d1841fcbe29410ba2f9bc91d5ebe0394fb6720d7ed.mp3",
+        "ea1b96c2e6cb85e8a2bcbb14b9ed348a380f644a01576b32987e6176a0c5e979.mp3",
+        "bb919f69ea76ab20516e25387a046b2bf84c63dfb4911662ca8e2c87f699e188.mp3",
+        "613728952c9c5fe0f0654afad2069a59bedc17e8c0ec1f9e84f1a7a82d5a970a.mp3",
+        "b7c7ee7bfab34d40f43bc6e5c6e6717a1d848fbdba2f4bced41de2c31a5a40c1.mp3",
+        "10db5dabfb4f1d513778f2826b8ce628aa65390a9d8cdbec39681537c27b0dcf.mp3",
+        "ba1ffb24a93f6164566f54caced69d2c2b42477073e7d00f72c25614d23e936b.mp3",
+        "cf10e1085d07f6501af16684bbb14d07ad3d8976700b790900245f3f3f649d5a.mp3",
+        "011e8537b928166639b19fd070b98dc8a2471671490815fdf11cfc006b3dde61.mp3",
+        "ff580b71da3fdad7cfde578e3c30434e5859b1b7d3ca30a8066d5bf7af6118f9.mp3"
+      ]
+    },
+    "fogata:es:fogata:note:d5d34b45": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "Dejar preguntas, no brasas",
+      "chunks": [
+        "42be6fda20cbacb953c7af0eccd9141ecd8f718ce320e5e2c27e30c28f94ded1.mp3",
+        "2e3f5fd3b161e4837e236aab5e64ff164664aa8e7764fa54e6245a8310938029.mp3",
+        "35c09543efcb271a154b26e6716efa26d5aec3972b1f953cc9f4e72a0a155c19.mp3",
+        "46d3685d2b3bfa07494129effbd0974ff3856299ecd33eb9c4c0d037f414d2e8.mp3",
+        "6da521e53cc12fde8d138ac6ae88b31fc604e2c32f5dd61b7e2750689fbbba53.mp3",
+        "e47c715bcd0f89648077adb99010a7aa633604e8edb2539877067ad4640e85e9.mp3",
+        "bdb6b933cb31e5a9b083a7ff21de66da00c9b16991cc0932ab56bc3e82cf8417.mp3",
+        "82e788598fa3cd7aa35ca3d92ee9e70079f42f4e5054a83fff8c9f5ca5f88698.mp3"
+      ]
+    },
+    "fogata:es:fogata:glossary:7ba1180b": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "Glosario",
+      "chunks": [
+        "53aae301e9b0bd2e80f502a04fe5944bd0b0ab049363188ddaf976aad0204a7c.mp3",
+        "f2d81bd3344426103f62ff184c900a6faa50edab097d3847cf63a51c880d83fe.mp3",
+        "5c9c0a04b32ddf903521884038f7d4e9ecdad48dcad7e7bb12ac255fd75beff4.mp3",
+        "75d80d433ce96cee85fc7737ca0dc7977251ba7826953aa456e30de7e8b5af45.mp3",
+        "0da28a5cddb584fa6e47b73f0c2d410a2ab106f10d36ad689e08d8c84bc0b9a0.mp3",
+        "d50db3f16f0ac0c7662ac9cab40947ff04866278ef0f9448479614826511d559.mp3",
+        "d2c0c8fe1ca38db962969fca6d09903787f8ba0de145f380784fa7f5cffbd510.mp3"
+      ]
+    },
+    "fogata:es:fogata:making-brief:1c5edc9c": {
+      "lang": "es",
+      "bookId": "fogata",
+      "title": "El encargo de este libro",
+      "chunks": [
+        "b6284998ef38fb5e975b2256edcbe4339df8705854f35af8f10f4a1260ba2339.mp3",
+        "7f2334eb7a940f79a2c0eca6bdc1b18d31df5286d35ed4753c9b5715f2a2fe2c.mp3",
+        "1eda3f695d16f0a55f3f828bcd9bdb1fd9da0cb13b4f0619955e971761eff42e.mp3",
+        "89d4d5d5f95248b1d8f1bd48590231d47274f0d6497bd495d6048d6c34a86df2.mp3",
+        "d592858803292164e79ba48c8655ca9657a3e95429b71a8128b1e7152f8eb3d2.mp3",
+        "aac7ca6eff325a4f1537e3066c7a54079fd81cec8dda903ba6fc40c8ba575275.mp3",
+        "753b77ed371b7f3ba615ae27065b273ebf1ce10e31a8e595498f235755bd2e08.mp3",
+        "fac2bbc637acac5e1646e3d56e1f9e63387f46b7362d364fe8fc99025fe80898.mp3"
+      ]
+    }
+  }
+}

@@ -1,0 +1,1614 @@
+{
+  "capturedAt": "2026-11-02T19:29:17.117Z",
+  "base": "http://127.0.0.1:4173",
+  "lang": "es",
+  "items": [
+    {
+      "kind": "library",
+      "lang": "es",
+      "file": "docs/outputs/es/library.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 0,
+      "file": "docs/outputs/es/atomos/00-cover.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 1,
+      "file": "docs/outputs/es/atomos/01-title.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 2,
+      "file": "docs/outputs/es/atomos/02-contents.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 3,
+      "file": "docs/outputs/es/atomos/03-introduction.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "cloud",
+      "file": "docs/outputs/es/atomos/plate-01-cloud.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "cloud",
+      "mode": "color",
+      "file": "docs/outputs/es/atomos/svg/cloud-color.svg",
+      "bytes": 1072986,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "cloud",
+      "mode": "line",
+      "file": "docs/outputs/es/atomos/svg/cloud-line.svg",
+      "bytes": 841588,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "isotopes",
+      "file": "docs/outputs/es/atomos/plate-02-isotopes.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "isotopes",
+      "mode": "color",
+      "file": "docs/outputs/es/atomos/svg/isotopes-color.svg",
+      "bytes": 100503,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "isotopes",
+      "mode": "line",
+      "file": "docs/outputs/es/atomos/svg/isotopes-line.svg",
+      "bytes": 58391,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "water",
+      "file": "docs/outputs/es/atomos/plate-03-water.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "water",
+      "mode": "color",
+      "file": "docs/outputs/es/atomos/svg/water-color.svg",
+      "bytes": 61280,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "water",
+      "mode": "line",
+      "file": "docs/outputs/es/atomos/svg/water-line.svg",
+      "bytes": 39558,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "states",
+      "file": "docs/outputs/es/atomos/plate-04-states.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "states",
+      "mode": "color",
+      "file": "docs/outputs/es/atomos/svg/states-color.svg",
+      "bytes": 301420,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "states",
+      "mode": "line",
+      "file": "docs/outputs/es/atomos/svg/states-line.svg",
+      "bytes": 153464,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "carbon",
+      "file": "docs/outputs/es/atomos/plate-05-carbon.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "carbon",
+      "mode": "color",
+      "file": "docs/outputs/es/atomos/svg/carbon-color.svg",
+      "bytes": 406239,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "carbon",
+      "mode": "line",
+      "file": "docs/outputs/es/atomos/svg/carbon-line.svg",
+      "bytes": 253463,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "light",
+      "file": "docs/outputs/es/atomos/plate-06-light.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "light",
+      "mode": "color",
+      "file": "docs/outputs/es/atomos/svg/light-color.svg",
+      "bytes": 121487,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "atomos",
+      "plate": "light",
+      "mode": "line",
+      "file": "docs/outputs/es/atomos/svg/light-line.svg",
+      "bytes": 78337,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 10,
+      "file": "docs/outputs/es/atomos/90-afterword.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 11,
+      "file": "docs/outputs/es/atomos/91-glossary.png",
+      "capturedAt": "2026-11-02T16:48:22.068Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 12,
+      "file": "docs/outputs/es/atomos/92-making.png",
+      "capturedAt": "2026-11-02T16:48:23.832Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "atomos",
+      "spread": 13,
+      "file": "docs/outputs/es/atomos/93-back-cover.png",
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "i18n",
+      "lang": "es",
+      "book": "atomos",
+      "missing": [],
+      "edition": {
+        "lang": "es",
+        "fallback": null,
+        "notes": [],
+        "missing": [],
+        "extra": [],
+        "changedIds": [],
+        "lengths": [],
+        "types": [],
+        "unknown": [],
+        "order": []
+      },
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "switch",
+      "lang": "es",
+      "book": "atomos",
+      "files": [
+        "docs/outputs/es/atomos/switch-1-es.png",
+        "docs/outputs/es/atomos/switch-2-en.png"
+      ],
+      "kept": true,
+      "capturedAt": "2026-11-02T14:48:34.341Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 0,
+      "file": "docs/outputs/es/celulas/00-cover.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 1,
+      "file": "docs/outputs/es/celulas/01-title.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 2,
+      "file": "docs/outputs/es/celulas/02-contents.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 3,
+      "file": "docs/outputs/es/celulas/03-introduction.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "organization",
+      "file": "docs/outputs/es/celulas/plate-01-organization.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "organization",
+      "mode": "color",
+      "file": "docs/outputs/es/celulas/svg/organization-color.svg",
+      "bytes": 382115,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "organization",
+      "mode": "line",
+      "file": "docs/outputs/es/celulas/svg/organization-line.svg",
+      "bytes": 249738,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "membrane",
+      "file": "docs/outputs/es/celulas/plate-02-membrane.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "membrane",
+      "mode": "color",
+      "file": "docs/outputs/es/celulas/svg/membrane-color.svg",
+      "bytes": 814287,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "membrane",
+      "mode": "line",
+      "file": "docs/outputs/es/celulas/svg/membrane-line.svg",
+      "bytes": 453378,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "protein",
+      "file": "docs/outputs/es/celulas/plate-03-protein.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "protein",
+      "mode": "color",
+      "file": "docs/outputs/es/celulas/svg/protein-color.svg",
+      "bytes": 265482,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "protein",
+      "mode": "line",
+      "file": "docs/outputs/es/celulas/svg/protein-line.svg",
+      "bytes": 151434,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "energy",
+      "file": "docs/outputs/es/celulas/plate-04-energy.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "energy",
+      "mode": "color",
+      "file": "docs/outputs/es/celulas/svg/energy-color.svg",
+      "bytes": 212541,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "energy",
+      "mode": "line",
+      "file": "docs/outputs/es/celulas/svg/energy-line.svg",
+      "bytes": 127781,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "photosynthesis",
+      "file": "docs/outputs/es/celulas/plate-05-photosynthesis.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "photosynthesis",
+      "mode": "color",
+      "file": "docs/outputs/es/celulas/svg/photosynthesis-color.svg",
+      "bytes": 385502,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "photosynthesis",
+      "mode": "line",
+      "file": "docs/outputs/es/celulas/svg/photosynthesis-line.svg",
+      "bytes": 262228,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "division",
+      "file": "docs/outputs/es/celulas/plate-06-division.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "division",
+      "mode": "color",
+      "file": "docs/outputs/es/celulas/svg/division-color.svg",
+      "bytes": 371796,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "celulas",
+      "plate": "division",
+      "mode": "line",
+      "file": "docs/outputs/es/celulas/svg/division-line.svg",
+      "bytes": 264093,
+      "capturedAt": "2026-11-02T15:01:22.126Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 10,
+      "file": "docs/outputs/es/celulas/90-afterword.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 11,
+      "file": "docs/outputs/es/celulas/91-glossary.png",
+      "capturedAt": "2026-11-02T16:48:27.764Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 12,
+      "file": "docs/outputs/es/celulas/92-making.png",
+      "capturedAt": "2026-11-02T16:48:29.584Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "celulas",
+      "spread": 13,
+      "file": "docs/outputs/es/celulas/93-back-cover.png",
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "i18n",
+      "lang": "es",
+      "book": "celulas",
+      "missing": [],
+      "edition": {
+        "lang": "es",
+        "fallback": null,
+        "notes": [],
+        "missing": [],
+        "extra": [],
+        "changedIds": [],
+        "lengths": [],
+        "types": [],
+        "unknown": [],
+        "order": []
+      },
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "switch",
+      "lang": "es",
+      "book": "celulas",
+      "files": [
+        "docs/outputs/es/celulas/switch-1-es.png",
+        "docs/outputs/es/celulas/switch-2-en.png"
+      ],
+      "kept": true,
+      "capturedAt": "2026-11-02T14:56:06.920Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 0,
+      "file": "docs/outputs/es/serpientes/00-cover.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 1,
+      "file": "docs/outputs/es/serpientes/01-title.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 2,
+      "file": "docs/outputs/es/serpientes/02-contents.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 3,
+      "file": "docs/outputs/es/serpientes/03-introduction.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "terciopelo",
+      "file": "docs/outputs/es/serpientes/plate-01-terciopelo.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "terciopelo",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/terciopelo-color.svg",
+      "bytes": 222689,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "terciopelo",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/terciopelo-line.svg",
+      "bytes": 110191,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "bocaraca",
+      "file": "docs/outputs/es/serpientes/plate-02-bocaraca.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "bocaraca",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/bocaraca-color.svg",
+      "bytes": 158398,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "bocaraca",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/bocaraca-line.svg",
+      "bytes": 86941,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "coral",
+      "file": "docs/outputs/es/serpientes/plate-03-coral.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "coral",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/coral-color.svg",
+      "bytes": 133755,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "coral",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/coral-line.svg",
+      "bytes": 55807,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "cascabel",
+      "file": "docs/outputs/es/serpientes/plate-04-cascabel.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "cascabel",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/cascabel-color.svg",
+      "bytes": 276813,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "cascabel",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/cascabel-line.svg",
+      "bytes": 142887,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "matabuey",
+      "file": "docs/outputs/es/serpientes/plate-05-matabuey.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "matabuey",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/matabuey-color.svg",
+      "bytes": 259460,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "matabuey",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/matabuey-line.svg",
+      "bytes": 132384,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "serpiente-marina",
+      "file": "docs/outputs/es/serpientes/plate-06-serpiente-marina.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "serpiente-marina",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/serpiente-marina-color.svg",
+      "bytes": 37853,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "serpiente-marina",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/serpiente-marina-line.svg",
+      "bytes": 24491,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "bequer",
+      "file": "docs/outputs/es/serpientes/plate-07-bequer.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "bequer",
+      "mode": "color",
+      "file": "docs/outputs/es/serpientes/svg/bequer-color.svg",
+      "bytes": 388672,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "serpientes",
+      "plate": "bequer",
+      "mode": "line",
+      "file": "docs/outputs/es/serpientes/svg/bequer-line.svg",
+      "bytes": 195726,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 11,
+      "file": "docs/outputs/es/serpientes/90-afterword.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 12,
+      "file": "docs/outputs/es/serpientes/91-glossary.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 13,
+      "file": "docs/outputs/es/serpientes/92-making.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "serpientes",
+      "spread": 14,
+      "file": "docs/outputs/es/serpientes/93-back-cover.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "i18n",
+      "lang": "es",
+      "book": "serpientes",
+      "missing": [],
+      "edition": {
+        "lang": "es",
+        "fallback": null,
+        "notes": [],
+        "missing": [],
+        "extra": [],
+        "changedIds": [],
+        "lengths": [],
+        "types": [],
+        "unknown": [],
+        "order": []
+      },
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "switch",
+      "lang": "es",
+      "book": "serpientes",
+      "files": [
+        "docs/outputs/es/serpientes/switch-1-es.png",
+        "docs/outputs/es/serpientes/switch-2-en.png"
+      ],
+      "kept": true,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 0,
+      "file": "docs/outputs/es/flores/00-cover.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 1,
+      "file": "docs/outputs/es/flores/01-title.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 2,
+      "file": "docs/outputs/es/flores/02-contents.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 3,
+      "file": "docs/outputs/es/flores/03-introduction.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "flores",
+      "plate": "guaria-morada",
+      "file": "docs/outputs/es/flores/plate-01-guaria-morada.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "guaria-morada",
+      "mode": "color",
+      "file": "docs/outputs/es/flores/svg/guaria-morada-color.svg",
+      "bytes": 231719,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "guaria-morada",
+      "mode": "line",
+      "file": "docs/outputs/es/flores/svg/guaria-morada-line.svg",
+      "bytes": 126727,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "flores",
+      "plate": "platanilla",
+      "file": "docs/outputs/es/flores/plate-02-platanilla.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "platanilla",
+      "mode": "color",
+      "file": "docs/outputs/es/flores/svg/platanilla-color.svg",
+      "bytes": 164084,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "platanilla",
+      "mode": "line",
+      "file": "docs/outputs/es/flores/svg/platanilla-line.svg",
+      "bytes": 104116,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "flores",
+      "plate": "granadilla-de-monte",
+      "file": "docs/outputs/es/flores/plate-03-granadilla-de-monte.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "granadilla-de-monte",
+      "mode": "color",
+      "file": "docs/outputs/es/flores/svg/granadilla-de-monte-color.svg",
+      "bytes": 271059,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "granadilla-de-monte",
+      "mode": "line",
+      "file": "docs/outputs/es/flores/svg/granadilla-de-monte-line.svg",
+      "bytes": 196616,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "flores",
+      "plate": "labios-de-mujer",
+      "file": "docs/outputs/es/flores/plate-04-labios-de-mujer.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "labios-de-mujer",
+      "mode": "color",
+      "file": "docs/outputs/es/flores/svg/labios-de-mujer-color.svg",
+      "bytes": 77659,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "labios-de-mujer",
+      "mode": "line",
+      "file": "docs/outputs/es/flores/svg/labios-de-mujer-line.svg",
+      "bytes": 49797,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "flores",
+      "plate": "cortez-amarillo",
+      "file": "docs/outputs/es/flores/plate-05-cortez-amarillo.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "cortez-amarillo",
+      "mode": "color",
+      "file": "docs/outputs/es/flores/svg/cortez-amarillo-color.svg",
+      "bytes": 242078,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "cortez-amarillo",
+      "mode": "line",
+      "file": "docs/outputs/es/flores/svg/cortez-amarillo-line.svg",
+      "bytes": 130015,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "flores",
+      "plate": "nenufar",
+      "file": "docs/outputs/es/flores/plate-06-nenufar.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "nenufar",
+      "mode": "color",
+      "file": "docs/outputs/es/flores/svg/nenufar-color.svg",
+      "bytes": 129818,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "flores",
+      "plate": "nenufar",
+      "mode": "line",
+      "file": "docs/outputs/es/flores/svg/nenufar-line.svg",
+      "bytes": 72032,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 10,
+      "file": "docs/outputs/es/flores/90-afterword.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 11,
+      "file": "docs/outputs/es/flores/91-glossary.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 12,
+      "file": "docs/outputs/es/flores/92-making.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "flores",
+      "spread": 13,
+      "file": "docs/outputs/es/flores/93-back-cover.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "i18n",
+      "lang": "es",
+      "book": "flores",
+      "missing": [],
+      "edition": {
+        "lang": "es",
+        "fallback": null,
+        "notes": [],
+        "missing": [],
+        "extra": [],
+        "changedIds": [],
+        "lengths": [],
+        "types": [],
+        "unknown": [],
+        "order": []
+      },
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "switch",
+      "lang": "es",
+      "book": "flores",
+      "files": [
+        "docs/outputs/es/flores/switch-1-es.png",
+        "docs/outputs/es/flores/switch-2-en.png"
+      ],
+      "kept": true,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 0,
+      "file": "docs/outputs/es/calaveras/00-cover.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 1,
+      "file": "docs/outputs/es/calaveras/01-title.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 2,
+      "file": "docs/outputs/es/calaveras/02-contents.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 3,
+      "file": "docs/outputs/es/calaveras/03-introduction.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "frontal",
+      "file": "docs/outputs/es/calaveras/plate-01-frontal.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "frontal",
+      "mode": "color",
+      "file": "docs/outputs/es/calaveras/svg/frontal-color.svg",
+      "bytes": 223277,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "frontal",
+      "mode": "line",
+      "file": "docs/outputs/es/calaveras/svg/frontal-line.svg",
+      "bytes": 135611,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "open-jaw",
+      "file": "docs/outputs/es/calaveras/plate-02-open-jaw.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "open-jaw",
+      "mode": "color",
+      "file": "docs/outputs/es/calaveras/svg/open-jaw-color.svg",
+      "bytes": 263939,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "open-jaw",
+      "mode": "line",
+      "file": "docs/outputs/es/calaveras/svg/open-jaw-line.svg",
+      "bytes": 164255,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "profile",
+      "file": "docs/outputs/es/calaveras/plate-03-profile.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "profile",
+      "mode": "color",
+      "file": "docs/outputs/es/calaveras/svg/profile-color.svg",
+      "bytes": 196955,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "profile",
+      "mode": "line",
+      "file": "docs/outputs/es/calaveras/svg/profile-line.svg",
+      "bytes": 120058,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "bones",
+      "file": "docs/outputs/es/calaveras/plate-04-bones.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "bones",
+      "mode": "color",
+      "file": "docs/outputs/es/calaveras/svg/bones-color.svg",
+      "bytes": 293171,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "bones",
+      "mode": "line",
+      "file": "docs/outputs/es/calaveras/svg/bones-line.svg",
+      "bytes": 181292,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "jaguar",
+      "file": "docs/outputs/es/calaveras/plate-05-jaguar.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "jaguar",
+      "mode": "color",
+      "file": "docs/outputs/es/calaveras/svg/jaguar-color.svg",
+      "bytes": 180972,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "jaguar",
+      "mode": "line",
+      "file": "docs/outputs/es/calaveras/svg/jaguar-line.svg",
+      "bytes": 102139,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "skull-and-snake",
+      "file": "docs/outputs/es/calaveras/plate-06-skull-and-snake.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "skull-and-snake",
+      "mode": "color",
+      "file": "docs/outputs/es/calaveras/svg/skull-and-snake-color.svg",
+      "bytes": 266092,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "calaveras",
+      "plate": "skull-and-snake",
+      "mode": "line",
+      "file": "docs/outputs/es/calaveras/svg/skull-and-snake-line.svg",
+      "bytes": 149772,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 10,
+      "file": "docs/outputs/es/calaveras/90-afterword.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 11,
+      "file": "docs/outputs/es/calaveras/91-glossary.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 12,
+      "file": "docs/outputs/es/calaveras/92-making.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "calaveras",
+      "spread": 13,
+      "file": "docs/outputs/es/calaveras/93-back-cover.png",
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "i18n",
+      "lang": "es",
+      "book": "calaveras",
+      "missing": [],
+      "edition": {
+        "lang": "es",
+        "fallback": null,
+        "notes": [],
+        "missing": [],
+        "extra": [],
+        "changedIds": [],
+        "lengths": [],
+        "types": [],
+        "unknown": [],
+        "order": []
+      },
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "switch",
+      "lang": "es",
+      "book": "calaveras",
+      "files": [
+        "docs/outputs/es/calaveras/switch-1-es.png",
+        "docs/outputs/es/calaveras/switch-2-en.png"
+      ],
+      "kept": true,
+      "capturedAt": "2026-11-02T12:12:51.183Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 0,
+      "file": "docs/outputs/es/fogata/00-cover.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 1,
+      "file": "docs/outputs/es/fogata/01-title.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 2,
+      "file": "docs/outputs/es/fogata/02-contents.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 3,
+      "file": "docs/outputs/es/fogata/03-introduction.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "shore",
+      "file": "docs/outputs/es/fogata/plate-01-shore.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "shore",
+      "mode": "color",
+      "file": "docs/outputs/es/fogata/svg/shore-color.svg",
+      "bytes": 488937,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "shore",
+      "mode": "line",
+      "file": "docs/outputs/es/fogata/svg/shore-line.svg",
+      "bytes": 248972,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "pyrolysis",
+      "file": "docs/outputs/es/fogata/plate-02-pyrolysis.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "pyrolysis",
+      "mode": "color",
+      "file": "docs/outputs/es/fogata/svg/pyrolysis-color.svg",
+      "bytes": 215416,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "pyrolysis",
+      "mode": "line",
+      "file": "docs/outputs/es/fogata/svg/pyrolysis-line.svg",
+      "bytes": 126394,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "reaction",
+      "file": "docs/outputs/es/fogata/plate-03-reaction.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "reaction",
+      "mode": "color",
+      "file": "docs/outputs/es/fogata/svg/reaction-color.svg",
+      "bytes": 46005,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "reaction",
+      "mode": "line",
+      "file": "docs/outputs/es/fogata/svg/reaction-line.svg",
+      "bytes": 24421,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "heat",
+      "file": "docs/outputs/es/fogata/plate-04-heat.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "heat",
+      "mode": "color",
+      "file": "docs/outputs/es/fogata/svg/heat-color.svg",
+      "bytes": 279266,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "heat",
+      "mode": "line",
+      "file": "docs/outputs/es/fogata/svg/heat-line.svg",
+      "bytes": 149946,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "light",
+      "file": "docs/outputs/es/fogata/plate-05-light.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "light",
+      "mode": "color",
+      "file": "docs/outputs/es/fogata/svg/light-color.svg",
+      "bytes": 214764,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "light",
+      "mode": "line",
+      "file": "docs/outputs/es/fogata/svg/light-line.svg",
+      "bytes": 121879,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "plate",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "sunlight",
+      "file": "docs/outputs/es/fogata/plate-06-sunlight.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "sunlight",
+      "mode": "color",
+      "file": "docs/outputs/es/fogata/svg/sunlight-color.svg",
+      "bytes": 605945,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "svg",
+      "lang": "es",
+      "book": "fogata",
+      "plate": "sunlight",
+      "mode": "line",
+      "file": "docs/outputs/es/fogata/svg/sunlight-line.svg",
+      "bytes": 313016,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 10,
+      "file": "docs/outputs/es/fogata/90-afterword.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 11,
+      "file": "docs/outputs/es/fogata/91-glossary.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 12,
+      "file": "docs/outputs/es/fogata/92-making.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "spread",
+      "lang": "es",
+      "book": "fogata",
+      "spread": 13,
+      "file": "docs/outputs/es/fogata/93-back-cover.png",
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "i18n",
+      "lang": "es",
+      "book": "fogata",
+      "missing": [],
+      "edition": {
+        "lang": "es",
+        "fallback": null,
+        "notes": [],
+        "missing": [],
+        "extra": [],
+        "changedIds": [],
+        "lengths": [],
+        "types": [],
+        "unknown": [],
+        "order": []
+      },
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    },
+    {
+      "kind": "switch",
+      "lang": "es",
+      "book": "fogata",
+      "files": [
+        "docs/outputs/es/fogata/switch-1-es.png",
+        "docs/outputs/es/fogata/switch-2-en.png"
+      ],
+      "kept": true,
+      "capturedAt": "2026-11-02T19:29:17.117Z"
+    }
+  ],
+  "pathBase": "series-root"
+}

@@ -3,27 +3,19 @@
   "configurations": [
     {
       "name": "lamina-dev",
-      "runtimeExecutable": "npx",
+      "runtimeExecutable": "npm",
       "runtimeArgs": [
-        "vite",
-        "--port",
-        "5173",
-        "--host",
-        "127.0.0.1"
+        "run",
+        "dev"
       ],
       "port": 5173
     },
     {
       "name": "lamina-preview",
-      "runtimeExecutable": "npx",
+      "runtimeExecutable": "npm",
       "runtimeArgs": [
-        "vite",
-        "preview",
-        "--port",
-        "4173",
-        "--host",
-        "127.0.0.1",
-        "--strictPort"
+        "run",
+        "preview"
       ],
       "port": 4173
     }

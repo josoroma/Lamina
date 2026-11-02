@@ -1,0 +1,11 @@
+{
+  "default": "lamina",
+  "series": [
+    {
+      "id": "lamina",
+      "title": "Lamina",
+      "path": "series/lamina",
+      "site": "https://josoroma.github.io/Lamina/"
+    }
+  ]
+}

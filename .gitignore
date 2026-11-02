@@ -3,7 +3,11 @@ dist/
 .DS_Store
 *.log
 .scratch/
-.venv-narration/
-.cache/
+.venv-narration
+.cache
 __pycache__/
 *.pyc
+
+.env
+.env.*
+!.env.example

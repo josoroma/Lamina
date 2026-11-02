@@ -9,32 +9,37 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { addDictionary } from './i18n-domain.mjs';
+import { findProjectRoot, option } from './project-root.mjs';
 
-const ROOT = findRoot();
+const ROOT = findProjectRoot({ series: option(process.argv.slice(2), 'series') });
 const type = process.argv[2];
 if (!type || !/^[a-z][a-z0-9-]*$/.test(type)) {
-  console.error('usage: new-subject.mjs <type: lowercase-kebab> [--dir <folder>]');
+  console.error('usage: new-subject.mjs <type: lowercase-kebab> [--dir <folder>] [--series lamina]');
   process.exit(2);
 }
 const folder = (() => {
   const i = process.argv.indexOf('--dir');
   return i >= 0 ? process.argv[i + 1] : type;
 })();
+if (!/^[a-z][a-z0-9-]*$/.test(folder)) throw new Error('--dir must be a lowercase folder name, not a path');
 const dir = resolve(ROOT, 'src/subjects', folder);
 const file = resolve(dir, 'index.js');
 if (existsSync(file)) {
   console.error(`${file} already exists`);
   process.exit(1);
 }
-mkdirSync(dir, { recursive: true });
-writeFileSync(file, readFileSync(resolve(import.meta.dirname, '../templates/subject/index.js'), 'utf8'));
-
 const reg = resolve(ROOT, 'src/subjects/index.js');
 const src = readFileSync(reg, 'utf8');
-const rel = `./${dir.split('/').pop()}/index.js`;
-if (!src.includes(`${type}:`)) {
-  writeFileSync(reg, src.replace(/(export const figureLoaders = \{\n(?:.*\n)*?)(\};)/, `$1  ${type}: () => import('${rel}'),\n$2`));
+if (new RegExp(`^\\s*['"]?${type}['"]?\\s*:`, 'm').test(src)) {
+  console.error(`Figure type "${type}" is already registered`);
+  process.exit(1);
 }
+const rel = `./${folder}/index.js`;
+const updated = src.replace(/(export const figureLoaders = \{\n(?:.*\n)*?)(\};)/, `$1  '${type}': () => import('${rel}'),\n$2`);
+if (updated === src) throw new Error('Cannot find figureLoaders table; no files were written');
+mkdirSync(dir, { recursive: true });
+writeFileSync(file, readFileSync(resolve(import.meta.dirname, '../templates/subject/index.js'), 'utf8'));
+writeFileSync(reg, updated);
 
 // the subject's dictionary: its domain is the folder (scripts/i18n-strings.mjs maps src/subjects/<folder>/ to it)
 let dict = null;
@@ -52,13 +57,3 @@ next:
      (label pills ≤ 110 px in Spanish: node scripts/audit.mjs --i18n; a label a look-closer note names reads
      exactly like the note's Spanish name)
   5. node scripts/audit.mjs  (seamless loop, layers, labels, cost) and --webgl`);
-
-function findRoot() {
-  let d = process.cwd();
-  while (d !== '/') {
-    if (existsSync(resolve(d, 'src/subjects/index.js'))) return d;
-    d = resolve(d, '..');
-  }
-  console.error('run inside a Lámina project (src/subjects/index.js not found)');
-  process.exit(1);
-}

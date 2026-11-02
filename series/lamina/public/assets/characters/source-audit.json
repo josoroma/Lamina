@@ -1,0 +1,321 @@
+{
+  "sourceRepository": "https://github.com/kblood/CharacterCreator",
+  "commit": "852e48f316b90a0937234886630e4fb4cdfd1f78",
+  "license": "CC0-1.0 (generated assets only, runtime code GPL-3.0-or-later)",
+  "licenseProof": "https://github.com/kblood/CharacterCreator/blob/852e48f316b90a0937234886630e4fb4cdfd1f78/LICENSE-NOTES.md",
+  "files": {
+    "hair_ponytail01.glb": {
+      "bytes": 1825960,
+      "sha256": "944efb6fb4bc223017697d4838ba27ec95c58866f2c98eac661e32f50467ebed"
+    },
+    "hair.json": {
+      "bytes": 2008,
+      "sha256": "8f54ea98cd039ce61ed15658d8a6c738253a454e23d2f3f9b7706f63bfbdc372"
+    },
+    "base_body.glb": {
+      "bytes": 7234380,
+      "sha256": "b5b450af89f6fbf8debf387eda8da40cd0a8c3253a2d59871c730ce7e7f46469"
+    },
+    "base_body.joints.json": {
+      "bytes": 45258,
+      "sha256": "47c40fcaeb9f089f0f32ba781e2a0ac7d7a925a47b6db3c46102f0091a53a839"
+    },
+    "asset_licenses.json": {
+      "bytes": 7730,
+      "sha256": "b18bbc7f45fe7c28bcf3b119f44f7b8425d3b4c871f99c694b181b5603f4758e"
+    },
+    "hair_braid01.glb": {
+      "bytes": 1842008,
+      "sha256": "ff1bb5c33a0ae9f172a2fa44b9dab8ea4c48760ad41d744ad09732814bf370eb"
+    },
+    "LICENSE-NOTES.md": {
+      "bytes": 18771,
+      "sha256": "18af8d071bcb1cab2260263991ad49c314dc616facf7f33b0ab19bee78d4ec13"
+    },
+    "hair_long01.glb": {
+      "bytes": 1545168,
+      "sha256": "d340fff458f920dd16dcc80493a1a33207b00c6bbfb08c4c53aba54704a78818"
+    }
+  },
+  "meshes": [
+    {
+      "name": "base",
+      "primitives": [
+        {
+          "vertices": 14517,
+          "triangles": 26756,
+          "attributes": [
+            "_CCZONE",
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eyebrows",
+      "primitives": [
+        {
+          "vertices": 124,
+          "triangles": 192,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eyelashes",
+      "primitives": [
+        {
+          "vertices": 250,
+          "triangles": 368,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eyes",
+      "primitives": [
+        {
+          "vertices": 360,
+          "triangles": 640,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        },
+        {
+          "vertices": 232,
+          "triangles": 420,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        },
+        {
+          "vertices": 524,
+          "triangles": 980,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Teeth",
+      "primitives": [
+        {
+          "vertices": 4494,
+          "triangles": 7120,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tongue",
+      "primitives": [
+        {
+          "vertices": 253,
+          "triangles": 448,
+          "attributes": [
+            "POSITION",
+            "NORMAL",
+            "TEXCOORD_0",
+            "JOINTS_0",
+            "WEIGHTS_0"
+          ]
+        }
+      ]
+    }
+  ],
+  "boneNames": [
+    "Root",
+    "pelvis",
+    "spine_01",
+    "spine_02",
+    "spine_03",
+    "clavicle_l",
+    "upperarm_l",
+    "lowerarm_l",
+    "hand_l",
+    "index_01_l",
+    "index_02_l",
+    "index_03_l",
+    "middle_01_l",
+    "middle_02_l",
+    "middle_03_l",
+    "pinky_01_l",
+    "pinky_02_l",
+    "pinky_03_l",
+    "ring_01_l",
+    "ring_02_l",
+    "ring_03_l",
+    "thumb_01_l",
+    "thumb_02_l",
+    "thumb_03_l",
+    "clavicle_r",
+    "upperarm_r",
+    "lowerarm_r",
+    "hand_r",
+    "index_01_r",
+    "index_02_r",
+    "index_03_r",
+    "middle_01_r",
+    "middle_02_r",
+    "middle_03_r",
+    "pinky_01_r",
+    "pinky_02_r",
+    "pinky_03_r",
+    "ring_01_r",
+    "ring_02_r",
+    "ring_03_r",
+    "thumb_01_r",
+    "thumb_02_r",
+    "thumb_03_r",
+    "neck_01",
+    "head",
+    "thigh_l",
+    "calf_l",
+    "foot_l",
+    "ball_l",
+    "thigh_r",
+    "calf_r",
+    "foot_r",
+    "ball_r"
+  ],
+  "targetNames": [
+    "gender_female",
+    "gender_male",
+    "age_child",
+    "age_old",
+    "weight_min",
+    "weight_max",
+    "muscle_min",
+    "muscle_max",
+    "height_short",
+    "height_tall",
+    "proportions_ideal",
+    "proportions_uncommon",
+    "breast_cup_min",
+    "breast_cup_max",
+    "breast_firm_min",
+    "breast_firm_max",
+    "face_nose_width_decr",
+    "face_nose_width_incr",
+    "face_nose_length_decr",
+    "face_nose_length_incr",
+    "face_nose_height_decr",
+    "face_nose_height_incr",
+    "face_jaw_width_decr",
+    "face_jaw_width_incr",
+    "face_chin_decr",
+    "face_chin_incr",
+    "face_cheekbones_decr",
+    "face_cheekbones_incr",
+    "face_eye_size_decr",
+    "face_eye_size_incr",
+    "face_eye_spacing_decr",
+    "face_eye_spacing_incr",
+    "face_eye_tilt_decr",
+    "face_eye_tilt_incr",
+    "face_lips_decr",
+    "face_lips_incr",
+    "face_mouth_width_decr",
+    "face_mouth_width_incr",
+    "face_ear_size_decr",
+    "face_ear_size_incr",
+    "face_forehead_decr",
+    "face_forehead_incr",
+    "blink_left",
+    "blink_right",
+    "look_left",
+    "look_right",
+    "look_up",
+    "look_down",
+    "corr_gender_female__age_child",
+    "corr_gender_female__age_old",
+    "corr_gender_male__age_child",
+    "corr_gender_male__age_old",
+    "corr_weight_min__muscle_min",
+    "corr_weight_min__muscle_max",
+    "corr_weight_max__muscle_min",
+    "corr_weight_max__muscle_max",
+    "corr_gender_female__muscle_min",
+    "corr_gender_female__muscle_max",
+    "corr_gender_male__muscle_min",
+    "corr_gender_male__muscle_max",
+    "corr_gender_female__weight_min",
+    "corr_gender_female__weight_max",
+    "corr_gender_male__weight_min",
+    "corr_gender_male__weight_max",
+    "corr_breast_cup_min__breast_firm_min",
+    "corr_breast_cup_min__breast_firm_max",
+    "corr_breast_cup_max__breast_firm_min",
+    "corr_breast_cup_max__breast_firm_max",
+    "corr_breast_cup_min__age_child",
+    "corr_breast_cup_min__age_old",
+    "corr_breast_cup_max__age_child",
+    "corr_breast_cup_max__age_old",
+    "corr_breast_cup_min__muscle_min",
+    "corr_breast_cup_min__muscle_max",
+    "corr_breast_cup_max__muscle_min",
+    "corr_breast_cup_max__muscle_max",
+    "corr_breast_firm_min__age_child",
+    "corr_breast_firm_min__age_old",
+    "corr_breast_firm_max__age_child",
+    "corr_breast_firm_max__age_old",
+    "bdet_breast_dist_decr",
+    "bdet_breast_dist_incr",
+    "bdet_breast_point_decr",
+    "bdet_breast_point_incr",
+    "bdet_breast_height_decr",
+    "bdet_breast_height_incr",
+    "dyn_breast_up",
+    "dyn_breast_down",
+    "dyn_breast_left",
+    "dyn_breast_right",
+    "dyn_breast_fwd",
+    "dyn_breast_back"
+  ],
+  "notes": [
+    "Assets are fully self-contained GLB with embedded textures.",
+    "Every mesh carries 92 morph targets including identity, body, blink and gaze.",
+    "Zero imported default influences before setting female and other identity targets.",
+    "Set gender_female=1, gender_male=0; age_child=age_old=0 for adult.",
+    "No jaw or emotional expression targets included; add official MakeHuman CC0 expression data separately.",
+    "Separate hair shares same morph names and 53-joint skeleton; rebind by matching bone names for shared pose.",
+    "Skin, hair, eyebrow, eyelash, iris colors multiply their material extras.tint.gain to preserve texture neutrality.",
+    "Apply identity morphs to all parts consistently; sidecar contains joint offsets for body morph alignment.",
+    "Do not copy GPL-licensed runtime implementation."
+  ]
+}

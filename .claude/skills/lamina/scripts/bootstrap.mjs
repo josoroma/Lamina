@@ -1,29 +1,33 @@
 #!/usr/bin/env node
 // Bootstrap a new Lámina project from this one: engine, kits, app shell, i18n
 // runtime and dictionaries, pages, scripts, contracts and this skill — plus
-// either the three reference books in both languages (--with-books) or a
+// either the complete selected series in both languages (--with-books) or a
 // one-plate bilingual starter book that renders immediately with the demo
-// figure. Then: cd <target> && npm install && npx vite.
+// figure. Then: cd <target> && npm ci && npm run dev.
 //
-//   node .claude/skills/lamina/scripts/bootstrap.mjs <target-dir> [--with-books] [--author "Name"] [--force]
+//   node .claude/skills/lamina/scripts/bootstrap.mjs <target-dir> [--with-books] [--author "Name"] [--series lamina] [--id name] [--title "Series name"] [--force]
 import { cpSync, existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve, relative, join } from 'node:path';
 import { addDictionary } from './i18n-domain.mjs';
+import { findProjectRoot, option } from './project-root.mjs';
 
 const args = process.argv.slice(2);
-const target = args.find((a, i) => !a.startsWith('--') && args[i - 1] !== '--author');
+const valueFlags = new Set(['--author', '--series', '--id', '--title']);
+const target = args.find((a, i) => !a.startsWith('--') && !valueFlags.has(args[i - 1]));
 const withBooks = args.includes('--with-books');
 const force = args.includes('--force');
-const author = (() => {
-  const i = args.indexOf('--author');
-  return i >= 0 ? args[i + 1] : '__Author__';
-})();
+const author = option(args, 'author', '__Author__');
+const SKILL = resolve(import.meta.dirname, '..');
 if (!target) {
-  console.error('usage: bootstrap.mjs <target-dir> [--with-books] [--author "Name"] [--force]');
+  console.error('usage: bootstrap.mjs <target-dir> [--with-books] [--author "Name"] [--series lamina] [--id name] [--title "Series name"] [--force]');
   process.exit(2);
 }
-const SRC = findRoot();
+const SRC = findProjectRoot({ from: import.meta.dirname, series: option(args, 'series') });
 const DST = resolve(target);
+const id = option(args, 'id', DST.split('/').pop().toLowerCase().replace(/[^a-z0-9-]+/g, '-') || 'lamina-series');
+if (!/^[a-z][a-z0-9-]*$/.test(id)) throw new Error('--id must start with a lowercase letter and use letters, digits or hyphens');
+const title = option(args, 'title', id[0].toUpperCase() + id.slice(1));
+if (DST === SRC || relative(SRC, DST).startsWith('src/')) throw new Error('Choose a destination outside the source app');
 if (existsSync(DST) && readdirSync(DST).length && !force) {
   console.error(`${DST} is not empty (use --force to copy into it anyway)`);
   process.exit(1);
@@ -45,12 +49,23 @@ const write = (rel, text) => {
 };
 
 // pages, config, static assets (fonts, the author marks), tooling, contracts, the skill
-for (const f of ['index.html', 'lab.html', 'typeset.html', 'book-test.html', 'ui.html', 'vite.config.js', 'package.json', '.gitignore']) copy(f);
-for (const d of ['public', 'scripts', 'docs/architecture', 'docs/assets', '.claude/skills/lamina']) copy(d);
+for (const f of ['index.html', 'lab.html', 'typeset.html', 'book-test.html', 'ui.html', 'vite.config.js', 'package.json', 'package-lock.json', '.gitignore']) copy(f);
+for (const d of ['docs/architecture', 'docs/assets']) copy(d);
+copy('scripts', p => withBooks || !['scripts/arm-mechanics-test.mjs', 'scripts/character-contact-test.mjs'].includes(p));
+copy('public', p => withBooks || (!p.startsWith('public/assets/characters') && !p.startsWith('public/narration')));
+// The starter has no character models. Keep every package/font notice intact,
+// but remove the index sentence linking to the omitted character provenance.
+const notices = join(DST, 'public/licenses/README.md');
+if (!withBooks && existsSync(notices)) {
+  const characterNotice = 'The MakeHuman-derived character assets have separate [provenance and CC0 notices](../assets/characters/README.md). ';
+  writeFileSync(notices, readFileSync(notices, 'utf8').replace(characterNotice, ''));
+}
+cpSync(SKILL, join(DST, '.claude/skills/lamina'), { recursive: true });
 // engine, kits, app, lab, the i18n runtime with its dictionaries
 for (const d of ['src/engine', 'src/kits', 'src/app', 'src/lab', 'src/i18n']) copy(d);
 
-const SUBJECTS = withBooks ? ['demo', 'snakes', 'flowers', 'skulls'] : ['demo'];
+const sourceSubjects = readdirSync(join(SRC, 'src/subjects'), { withFileTypes: true }).filter(e => e.isDirectory()).map(e => e.name);
+const SUBJECTS = withBooks ? sourceSubjects : ['demo'];
 for (const s of SUBJECTS) copy(`src/subjects/${s}`);
 
 if (withBooks) {
@@ -75,16 +90,18 @@ export async function loadFigureFactory(type) {
 }
 `);
   write('src/books/index.js', starterRegistry());
-  const fill = (s) => s
-    .replaceAll('__ID__', 'starter')
-    .replaceAll('__TITLE__', 'Starter')
-    .replaceAll('__SUBTITLE__', 'A Living Atlas in the Making')
-    .replaceAll('__Subtítulo__', 'Un atlas vivo en preparación')
-    .replaceAll('__AUTHOR__', author)
-    .replaceAll("'__MARK__'", 'null')
-    .replaceAll('__YEAR__', String(new Date().getFullYear()))
-    .replaceAll('__N__', 'I');
-  const tpl = (f) => readFileSync(join(SRC, '.claude/skills/lamina/templates', f), 'utf8');
+  const fill = template => {
+    let text = template.replaceAll("'__MARK__'", 'null');
+    const values = { '__ID__': 'starter', '__TITLE__': 'Starter', '__SUBTITLE__': 'A Living Atlas in the Making',
+      '__Subtítulo__': 'Un atlas vivo en preparación', '__AUTHOR__': author,
+      '__YEAR__': String(new Date().getFullYear()), '__N__': 'I' };
+    for (const [token, value] of Object.entries(values)) {
+      const literal = JSON.stringify(String(value)).slice(1, -1).replaceAll("'", "\\'");
+      text = text.replaceAll(token, () => literal);
+    }
+    return text;
+  };
+  const tpl = (f) => readFileSync(join(SKILL, 'templates', f), 'utf8');
   write('src/books/starter.js', fill(tpl('book.js')));
   write('src/books/es/starter.js', fill(tpl('book.es.js')));
   // "How this book was made": the project's own prompt, recorded verbatim (and its translation)
@@ -165,7 +182,7 @@ export const LATER = {
 };
 `);
   // dictionaries follow the subjects: the reference subjects stay out, the demo figure gets its Spanish
-  for (const s of ['snakes', 'flowers', 'skulls']) {
+  for (const s of sourceSubjects.filter(name => name !== 'demo')) {
     if (existsSync(join(DST, 'src/i18n/es', `${s}.js`))) {
       write(`src/i18n/es/${s}.js`, `// Spanish for the ${s} figures. This project has no ${s} subject (bootstrap.mjs without
 // --with-books): the file stays empty so src/i18n/es/index.js keeps loading.
@@ -181,30 +198,77 @@ export default {
 const pkgPath = join(DST, 'package.json');
 if (existsSync(pkgPath)) {
   const pkg = JSON.parse(readFileSync(pkgPath, 'utf8'));
-  pkg.name = DST.split('/').pop().toLowerCase().replace(/[^a-z0-9-]+/g, '-') || 'lamina-book';
+  pkg.name = id;
+  if (!withBooks) delete pkg.scripts['test:characters'];
   writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
+  const lockPath = join(DST, 'package-lock.json');
+  if (existsSync(lockPath)) {
+    const lock = JSON.parse(readFileSync(lockPath, 'utf8'));
+    lock.name = id;
+    if (lock.packages?.['']) lock.packages[''].name = id;
+    writeFileSync(lockPath, JSON.stringify(lock, null, 2) + '\n');
+  }
 }
 
-console.log(`Lámina copied to ${DST}${withBooks ? ' (with the three reference books, English and Spanish)' : ' (bilingual starter book + demo figure)'}
+const sourceMetadata = existsSync(join(SRC, 'series.json')) ? JSON.parse(readFileSync(join(SRC, 'series.json'), 'utf8')) : {};
+write('series.json', JSON.stringify({ id, title, languages: ['en', 'es'],
+  books: withBooks ? sourceMetadata.books ?? [] : ['starter'], source: 'https://github.com/josoroma/Lamina' }, null, 2) + '\n');
+if (!existsSync(join(DST, 'AGENTS.md'))) write('AGENTS.md', `# Lamina series
+
+Read the [Lámina authoring skill](.claude/skills/lamina/SKILL.md) for book,
+engine, figure and series scaffolding work.
+
+This repository is a standalone application. Its \`src/\`, \`scripts/\`,
+\`public/\` and \`docs/\` paths are relative to the repository root.
+Keep book text and navigation bilingual in English and Español. Keep source
+records and asset provenance with the series; exclude runtime caches and
+Python environments from source control.
+
+Run \`npm test\`, \`npm run validate:all\` and \`npm run build\` from this root.
+The starter's draft content must be completed before content validation passes.
+Review anatomy, figures and page layout in the browser after visual changes.
+
+Static hosting plays prepared narration recordings. Generate and validate
+recordings for the current left-page text before publishing a narrated series;
+the local Python narration service runs only in a server environment.
+`);
+write('README.md', `# ${title}
+
+An independent bilingual book series built with [Lámina](https://github.com/josoroma/Lamina).
+${withBooks ? 'This project includes the selected source series. Replace its book content to develop a different series.' : 'The starter book and seed-pod figure are scaffolds: replace their draft text and model with researched content.'}
+
+\`\`\`bash
+npm ci
+npm run dev
+npm test
+npm run build
+\`\`\`
+
+Add a bilingual book with \`node .claude/skills/lamina/scripts/new-book.mjs <id> --title "Title" --subtitle "Subtitle" --subtitle-es "Subtítulo"\`.
+Add a figure subject with \`node .claude/skills/lamina/scripts/new-subject.mjs <type>\`.
+
+The [Lámina skill](.claude/skills/lamina/SKILL.md) describes research, translation,
+figure modelling and verification. Books live in \`src/books/\`, figures in
+\`src/subjects/\`, static assets in \`public/\`, and source records in \`docs/\`.
+The project can be committed directly to its own repository; bootstrap does not
+create commits, configure remotes or publish it. Serve \`dist/\` after building.
+`);
+
+console.log(`Lámina copied to ${DST}${withBooks ? ' (with the selected series, English and Spanish)' : ' (bilingual starter book + demo figure)'}
 next:
   cd ${relative(process.cwd(), DST) || '.'}
-  npm install
-  npx vite --port 5173 --host 127.0.0.1     # http://127.0.0.1:5173/#/en/  ·  #/es/
-  npm test                                  # the i18n core and Spanish hyphenation
+  npm ci
+  npm run dev                          # http://127.0.0.1:5173/#/en/  ·  #/es/
+  npm test                             # edition, narration, captions and reader tests
   node scripts/validate-books.mjs --lang all
 then follow .claude/skills/lamina/SKILL.md ("Making a new book").`);
 
 /**
- * The starter's registry: this project's registry with its BOOKS replaced by the
- * starter (so the Spanish loader helper and MAKING stay exactly as here).
+ * The starter's independent registry and bilingual loaders.
  */
 function starterRegistry() {
-  const line = `  { id: 'starter', load: () => import('./starter.js'), es: () => spanish('starter') },`;
-  const here = readFileSync(join(SRC, 'src/books/index.js'), 'utf8');
-  const out = here.replace(/export const BOOKS = \[\n[\s\S]*?\n\];/, `export const BOOKS = [\n${line}\n];`);
-  if (out !== here && /function spanish\(/.test(out) && /export const MAKING/.test(out)) return out;
-  return `// Book registry: route id → lazy manifest, its Spanish edition and the
-// "How this book was made" texts. Node-safe (scripts import it outside Vite).
+  return `// Book registry: route id → lazy manifest, its Spanish edition and making texts.
+// Node-safe: validation scripts import this registry outside Vite.
 export const BOOKS = [
   { id: 'starter', load: () => import('./starter.js'), es: () => import('./es/starter.js') },
 ];
@@ -217,18 +281,7 @@ export const MAKING = {
 export async function loadManifest(id) {
   const entry = BOOKS.find((b) => b.id === id);
   if (!entry) throw new Error(\`Unknown book "\${id}"\`);
-  const mod = await entry.load();
-  return mod.default;
+  return (await entry.load()).default;
 }
 `;
-}
-
-function findRoot() {
-  let d = import.meta.dirname;
-  while (d !== '/') {
-    if (existsSync(resolve(d, 'src/engine/book/Book.js'))) return d;
-    d = resolve(d, '..');
-  }
-  console.error('bootstrap.mjs must run from inside a Lámina checkout (src/engine/book/Book.js not found)');
-  process.exit(1);
 }
