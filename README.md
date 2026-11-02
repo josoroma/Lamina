@@ -107,18 +107,37 @@ record the request and provenance.
 | turn pages | drag a corner (it follows, springs back, or commits on a flick), click a page | swipe, drag | ← → · PageUp/PageDown · Home/End |
 | language | English / Español in the top bar | same | Tab to the language group, then arrow keys |
 | contents | ☰ | ☰ | C |
-| play / scrub the 5 s loop | ▶ and the *Moment* slider | same | Space |
+| play / scrub the animation | ▶ and the *Moment* slider | same | Space |
+| listen to the left page | headphones: listen, pause, resume; Stop in Help | headphones and Stop in the top bar | Tab to the control, then Enter |
 | rotate a figure | drag it | drag it | [ ] |
+| adjust the book's reading angle | drag up/down outside the book, or use **Book view** | Contents → **Book view** | ↑ ↓ · 0 restores the original view |
 | inspect up close | double-click it, then orbit | double-tap | I, then ← → ↑ ↓ · Esc |
-| zoom & pan | wheel, then drag to pan | pinch, then drag | + − 0 |
+| zoom & pan | wheel, then drag on paper to pan (Shift-drag on the background) | pinch, then drag | + − 0 |
 | layers · explode · labels | Layers popover | same | 1–9 · E · L |
 | export | SVG colour plate, SVG line art, PNG | same | S |
 | "look closer" | tap a note on the left page: its label lights up (and its layer turns on) | same | — |
+
+All three books open at their original inclined angle. **Book view** offers a
+continuous slider plus **Inclined view** and **Front view** presets. Dragging
+upward on the white space brings the pages face-on; dragging downward restores
+the incline. The angle stays put while reading and switching languages. Mouse
+movement without a press does not move the camera. The frontal view reserves
+space above the book for the top controls.
 
 With reduced motion, turns are instant cuts and loops start paused. Every control
 is reachable by keyboard, and every printed page (plates, introduction,
 afterword, glossary, imprint and prompt pages) is mirrored as HTML for screen readers and the
 reading sheet on phones and portrait tablets.
+
+Caption playback is paced for reading: every sentence stays visible for at
+least four seconds, with more time for longer text. The figure slows with its
+caption so the explanation still matches the action.
+
+The headphones read **only the current left page**, in the selected language,
+using local **Chatterbox Multilingual V3**. Changing pages or languages stops
+the previous narration; listening never turns the page automatically. Page-turn
+sound effects have a separate switch in Help. The first generation takes longer;
+subsequent plays reuse cached audio.
 
 ## Quickstart
 
@@ -126,6 +145,11 @@ reading sheet on phones and portrait tablets.
 npm install
 npm run dev            # http://127.0.0.1:5173/#/   (library)
 ```
+
+For local narration on Apple Silicon, run `npm run narration:setup` once
+([uv](https://docs.astral.sh/uv/) required). Vite starts the voice service on demand
+when Listen is used, in both development and preview. To run it separately, use
+`npm run narration:serve`. See [narration setup and model provenance](docs/narration.md).
 
 Open the library in [English](http://localhost:5173/#/en/) or
 [Español](http://localhost:5173/#/es/). A link without a language uses the saved

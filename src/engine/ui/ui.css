@@ -170,6 +170,40 @@
   grid-area: i;
 }
 
+/* The headphones control reads the page; paper sounds stay in Help. */
+.lam-narration-btn {
+  grid-template-areas: 'i';
+}
+.lam-narration-btn > * {
+  grid-area: i;
+}
+.lam-narration-btn .lam-i-pause,
+.lam-narration-btn .lam-i-play,
+.lam-narration-btn[data-status='playing'] .lam-i-headphones,
+.lam-narration-btn[data-status='paused'] .lam-i-headphones {
+  display: none;
+}
+.lam-narration-btn[data-status='playing'] .lam-i-pause,
+.lam-narration-btn[data-status='paused'] .lam-i-play {
+  display: block;
+}
+.lam-narration-btn[data-status='paused'],
+.lam-narration-btn[data-status='loading'] {
+  color: var(--lam-accent);
+}
+.lam-help-audio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font: 13px var(--lam-sans);
+}
+.lam-help-audio .lam-btn {
+  flex: 0 0 44px;
+  width: 44px;
+  min-height: 44px;
+}
+
 /* ------------------------------------------------------------------ toolbar */
 .lam-bar {
   position: absolute;
@@ -513,8 +547,48 @@
 .lam-top-plate .lam-plate-line {
   font-size: 13px;
 }
-.lam-top-sound {
+.lam-top-narration,
+.lam-top-narration-stop {
   display: none;
+}
+.lam-book-view-btn {
+  display: inline-flex;
+  gap: 6px;
+  width: auto;
+  height: 36px;
+  padding: 0 10px;
+  color: var(--lam-ink-2);
+  font-size: 12px;
+}
+.lam-book-view-text {
+  white-space: nowrap;
+}
+.lam-drawer-book-view {
+  display: none;
+}
+.lam-view-presets {
+  display: flex;
+  gap: 8px;
+  padding: 4px 10px;
+}
+.lam-view-preset {
+  flex: 1;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--lam-hair);
+  border-radius: 10px;
+  font-size: 12px;
+}
+.lam-view-preset:hover,
+.lam-view-preset[aria-pressed='true'] {
+  background: var(--lam-tint);
+  color: var(--lam-accent-text);
+}
+.lam-view-hint {
+  margin: 10px;
+  color: var(--lam-ink-2);
+  font-size: 12px;
+  line-height: 1.5;
 }
 /* the language switch ends the bar, behind its own hairline (langswitch.css
    styles it; here only its place). Its arrows must not turn pages: the
@@ -1857,11 +1931,25 @@
 .lam-ui[data-compact] .lam-div {
   margin: 0;
 }
-.lam-ui[data-compact] :is(.lam-plate, .lam-fs-btn, .lam-book-title, .lam-top-rule, .lam-help-btn, .lam-library-text) {
+.lam-ui[data-compact] :is(.lam-plate, .lam-fs-btn, .lam-book-title, .lam-top-rule, .lam-help-btn, .lam-library-text, .lam-book-view-btn) {
   display: none;
 }
+.lam-ui[data-compact] .lam-drawer-book-view {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  min-height: 44px;
+  margin: 0 26px 12px;
+  padding: 0 12px;
+  border-radius: 10px;
+  text-align: left;
+  color: var(--lam-accent-text);
+  background: var(--lam-tint);
+  font-size: 13px;
+}
 /* the pill runs the width of the screen (up to 420 px), so the switch and
-   Sound keep one place at its right end whatever the plate's name is in
+   narration keep one place at its right end whatever the plate's name is in
    either language: a second tap on the same spot switches back, it never
    lands on the name (which opens the contents) */
 .lam-ui[data-compact] .lam-top {
@@ -1888,8 +1976,16 @@
 .lam-ui[data-compact] .lam-top-plate {
   height: 44px;
 }
+.lam-ui[data-compact] .lam-top-narration-stop:not([hidden]) {
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  color: var(--lam-accent);
+}
 /* the plate name takes the pill's free width and gives it up to the switch
-   and Sound (it shrinks, they do not); a long name takes two lines, and only
+   and narration (it shrinks, they do not); a long name takes two lines, and only
    then an ellipsis — the whole title is one tap away (the contents it opens,
    the Read sheet) and in its accessible name */
 .lam-ui[data-compact] .lam-top-plate {
@@ -1929,13 +2025,13 @@
 .lam-ui[data-compact] .lam-drawer-head {
   padding-left: 26px;
 }
-/* narrow phones: Sound moves up into the top pill, so every toolbar button
+/* narrow phones: Narration moves up into the top pill, so every toolbar button
    keeps its 44 px target */
 @media (max-width: 420px) {
-  .lam-ui[data-compact] .lam-bar .lam-sound-btn {
+  .lam-ui[data-compact] .lam-bar .lam-narration-btn {
     display: none;
   }
-  .lam-ui[data-compact] .lam-top-sound {
+  .lam-ui[data-compact] .lam-top-narration {
     display: grid;
     flex: none;
     width: 44px;
@@ -1943,7 +2039,7 @@
     min-width: 44px;
     color: var(--lam-ink-2);
   }
-  .lam-ui[data-compact] .lam-top-sound[aria-pressed='true'] {
+  .lam-ui[data-compact] .lam-top-narration[aria-pressed='true'] {
     color: var(--lam-accent);
   }
   .lam-ui[data-compact] .lam-top-plate {

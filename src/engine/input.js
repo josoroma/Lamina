@@ -1,7 +1,8 @@
 // Input: one pointer layer for the book — page drags with fling, the pop-up
 // figure turntable, pinch / wheel zoom, trackpad and touch swipes, taps and
-// double-taps — for mouse, touch and pen alike. Zoomed in, drags (on paper
-// too) and sideways scrolls pan the view; taps, keys and the toolbar turn.
+// double-taps — for mouse, touch and pen alike. Mouse/pen drags starting on
+// white space tilt the book towards a frontal reading view. Zoomed in, drags
+// on paper (or Shift-drags on white space) pan; taps, keys and the toolbar turn.
 //
 // Why a single router: every gesture starts with a pointerdown, and what it
 // means depends on what is under the pointer (a pop-up figure, a page or a
@@ -14,6 +15,8 @@ const TAP_SLOP = { mouse: 6, pen: 8, touch: 12 };
 const DOUBLE_TAP_MS = 330;
 const FIGURE_YAW_PER_PX = 0.011;
 const ORBIT_PER_PX = 0.0065;
+/** A deliberate vertical stroke outside the book spans its full reading-angle range. */
+const BOOK_TILT_PER_PX = 1 / 280;
 /** Above this zoom the paper is what you hold to move the view: drags pan, taps still turn. */
 const PAN_ZOOM = 1.05;
 /** A wheel gesture that started as a pan keeps panning (both axes) while its events keep coming. */
@@ -263,6 +266,13 @@ export function createInput({ canvas, stage, book, host, onTap, onHover, onInspe
       setCursor('grabbing');
       return;
     }
+    // The gesture belongs to the background where it starts, even when it
+    // later crosses a page. Touch keeps margin swipes; Shift keeps zoomed pan.
+    if (!hit && e.pointerType !== 'touch' && !e.shiftKey) {
+      gesture = { ...base, kind: 'book-tilt', startTilt: rig.bookTilt };
+      setCursor('ns-resize');
+      return;
+    }
     // Zoomed in, there is often no white space left to grab: a drag on the
     // paper pans the view (it would otherwise lift a page you are reading),
     // while a tap keeps its meaning (turn the page, follow a printed link).
@@ -301,6 +311,9 @@ export function createInput({ canvas, stage, book, host, onTap, onHover, onInspe
     g.ly = y;
     if (!g.moved && Math.hypot(x - g.x0, y - g.y0) > (TAP_SLOP[g.type] ?? 8)) g.moved = true;
     switch (g.kind) {
+      case 'book-tilt':
+        if (g.moved) rig.setBookTilt(g.startTilt + (g.y0 - y) * BOOK_TILT_PER_PX);
+        break;
       case 'figure':
         if (g.moved) host?.rotateActive?.(dx * FIGURE_YAW_PER_PX);
         break;
@@ -394,6 +407,9 @@ export function createInput({ canvas, stage, book, host, onTap, onHover, onInspe
     const y = e.clientY;
     const now = performance.now();
     switch (g.kind) {
+      case 'book-tilt':
+        if (!g.moved) onTap?.({ kind: 'background', x, y, pointerType: g.type });
+        break;
       case 'page': {
         // On touch a quick sideways stroke is a decision, not a throw: it turns
         // the leaf its way even though it lifted it little (a phone's page is
@@ -562,8 +578,8 @@ export function createInput({ canvas, stage, book, host, onTap, onHover, onInspe
         const side = dragSideFor(hit);
         if (fig || pans || (side > 0 ? book.canNext() : book.canPrev())) c = 'grab';
       } else if (fig || pans) {
-        c = 'grab'; // (a near miss on the white around a tall figure turns it too)
-      }
+        c = fig ? 'grab' : 'ns-resize'; // near misses still hold the figure
+      } else c = 'ns-resize';
     }
     const override = onHover?.(info);
     setCursor(typeof override === 'string' ? override : c);

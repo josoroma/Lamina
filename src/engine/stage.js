@@ -367,7 +367,7 @@ const _bandOut = { lo: -1, hi: 1 };
  *              at ~45° elevation so pop-ups read in 3/4 view while text stays
  *              legible, between the screen bands the UI reserves (setInsets);
  *              follows a closed book to the centre; zoom 1×–3× towards the
- *              pointer, pan while zoomed (over the framed page), small clamped orbit.
+ *              pointer, pan while zoomed (over the framed page), adjustable reading tilt.
  *  - 'inspect' orbits a point (a figure) at a distance; free azimuth, clamped
  *              elevation, dolly zoom (as near as the subject allows: minDistance);
  *              carry() moves it with a moving subject (a head up close).
@@ -381,6 +381,8 @@ export class CameraRig {
     this.baseElevation = THREE.MathUtils.degToRad(45);
     /** Minimum elevation on portrait screens: one page, seen more face-on, fills a tall view. */
     this.portraitElevation = THREE.MathUtils.degToRad(58);
+    /** Almost perpendicular to the paper: leave one degree to keep a stable camera up axis. */
+    this.frontElevation = THREE.MathUtils.degToRad(89);
     this.elevation = this.baseElevation; // book-mode elevation (user orbit included)
     this.azimuth = 0;
     this.fill = 0.95; // fraction of the viewport width the framed box spans
@@ -428,7 +430,22 @@ export class CameraRig {
   }
 
   _bookElevation() {
-    return this.isPortrait ? Math.max(this.elevation, this.portraitElevation) : this.elevation;
+    const start = this.isPortrait ? this.portraitElevation : this.baseElevation;
+    return THREE.MathUtils.lerp(start, this.frontElevation, this.bookTilt);
+  }
+
+  /** Reading angle: 0 is the original inclined view, 1 faces the paper. */
+  get bookTilt() {
+    return clamp((this.elevation - this.baseElevation) / (this.frontElevation - this.baseElevation), 0, 1);
+  }
+
+  setBookTilt(amount) {
+    if (!Number.isFinite(amount)) return;
+    const elevation = THREE.MathUtils.lerp(this.baseElevation, this.frontElevation, clamp(amount, 0, 1));
+    if (this.elevation === elevation) return;
+    this.elevation = elevation;
+    this.refit();
+    if (this.reducedMotion && this.mode === 'book') this.snap();
   }
 
   get isPortrait() {
@@ -656,7 +673,7 @@ export class CameraRig {
     this.mode = 'book';
   }
 
-  /** Orbit by (dAzimuth, dElevation) radians — free in inspect mode, gently clamped over the book. */
+  /** Orbit by radians — free azimuth in inspect; bounded between inclined and frontal over the book. */
   orbit(dAz, dEl) {
     if (this.mode === 'inspect') {
       const s = this.inspectState;
@@ -665,7 +682,7 @@ export class CameraRig {
       return;
     }
     this.azimuth = clamp(this.azimuth + dAz, -0.5, 0.5);
-    this.elevation = clamp(this.elevation + dEl, 0.55, 1.25);
+    this.elevation = clamp(this.elevation + dEl, this.baseElevation, this.frontElevation);
     this.refit();
   }
 

@@ -56,6 +56,57 @@ validation beyond the existing cited research dossiers.
 
 ## Reproduce
 
+### Narration and readable captions follow-up
+
+The reader now uses Chatterbox Multilingual V3 locally in English and Spanish,
+with source and setup documented in [narration.md](narration.md). It extracts
+only the physical left page, cancels on page/edition changes, buffers short
+segments, and never advances to another page by itself. Controls support
+pause/resume and stop, including narrow phones. Caption pacing slows the
+figure's model clock to keep its words synchronized, giving every caption at
+least four seconds and sufficient time for approximately 150 words per minute.
+
+The additional checks pass: 12 text-extraction cases covering all 68 readable
+left pages in both editions; 17 playback/cancellation/race cases; all 160
+localized caption beats; six backend HTTP tests. Browser UI tests covered
+all three books in both languages, including 320/390 px mobile controls.
+The six-edition UI matrix used explicitly mocked WAVs. A separate production
+browser check used the real local model in English and Spanish, verified WAV
+decoding and playback, pause/resume, and cancellation on language/page changes,
+with no browser errors. First playback took 8.9 seconds in English and 32.5
+seconds in Spanish in that run, including the initial two-segment buffer;
+latency depends on the cache and outstanding synthesis. The backend also
+passed real English/Spanish generation and cache-reuse checks. Local evidence
+is in `.scratch/codex-narration-live/report.json` and its screenshots.
+
+```bash
+npm run test:narration
+.venv-narration/bin/python scripts/narration-server-test.py
+```
+
+### Adjustable reading angle follow-up
+
+All three readers retain their original initial angle and now support a
+mouse/pen drag starting outside the book to adjust towards a frontal view.
+The gesture stays assigned to the camera when crossing a page. Paper and
+figure gestures, touch margin swipes, and inspect orbit keep their behavior.
+Desktop has a **Book view** control; compact screens expose the same slider
+and presets through Contents. The angle survives page and language changes;
+`0` resets it. Frontal framing reserves the top controls' screen band.
+
+`npm run test:book-view` passes 11 checks for camera bounds, framing, portrait
+rotation, reset, reduced motion, gesture routing, cancellation and existing
+interactions. The production browser checks passed for Snakes, Flowers and
+Skulls, including real background drags in both directions, unchanged angle
+on mere mouse movement, page/language preservation, keyboard, presets and
+slider. Controls also passed at 320 and 390 px with no horizontal overflow,
+and a fresh reduced-motion session applied the angle immediately. No browser
+errors were recorded. Screenshots and the report are under
+`.scratch/codex-book-view/`. The full `npm test`, production build and Spanish
+UI string audit pass.
+
+### Build and capture commands
+
 ```bash
 npm test
 npm run build

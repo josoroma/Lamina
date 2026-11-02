@@ -1,0 +1,5 @@
+# Apple Silicon, Python 3.12. Pinned backend used for the local book narration.
+mlx-audio==0.4.7
+soundfile==0.14.0
+# Used once to safely convert the official bundled voice's tensor dictionary.
+torch==2.15.0

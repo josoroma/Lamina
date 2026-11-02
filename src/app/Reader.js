@@ -21,6 +21,7 @@ import * as THREE from 'three/webgpu';
 import { t, msg, getLang, setLang, isLoaded, loadLang, loadEdition, lastReport, missingKeys } from '../i18n/index.js';
 import { Book } from '../engine/book/Book.js';
 import { FigureHost } from '../engine/figures/FigureHost.js';
+import { recommendedPlaybackRate } from '../engine/figures/captionPace.js';
 import { FIGURE_AREA, FIGURE_DURATION } from '../engine/figures/contract.js';
 import { WORLD } from '../engine/stage.js';
 import { loadFonts, buildSides } from '../engine/typeset/index.js';
@@ -32,6 +33,8 @@ import { figureLoaders } from '../subjects/index.js';
 import { bookHref, libraryHref, replaceHash } from './route.js';
 import { PageCache } from './pages.js';
 import { plateHTML, plateAnnouncement, sideHTML, LOOK_HREF } from './a11y.js';
+import { createNarration } from './narration.js';
+import { narrationForLeftPage } from './narration-text.js';
 
 const FIGURE_LAYOUTS = new Set(['plate-figure', 'lesson-figure']);
 /** Pages a portrait reader never stops on (portrait screens frame one page at a time). */
@@ -380,6 +383,16 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     lang,
   });
   ui.setBackend?.(backend);
+  const narration = createNarration({
+    onState: ({ error, finished, ...state }) => ui.setNarration?.({ ...state, status: finished ? 'ended' : state.status }),
+  });
+  let narrationSide = null;
+  function syncNarration() {
+    const sideKey = book.busy ? null : `${lang}:${book.opened}`;
+    if (sideKey === narrationSide) return;
+    narrationSide = sideKey;
+    narration.setPage(sideKey ? narrationForLeftPage(sides, book.opened, lang) : null);
+  }
   if (params.get('ui') === '0') ui.setChromeVisible?.(false);
   const barEl = ui.el?.querySelector('.lam-bar');
   const capEl = ui.el?.querySelector('.lam-caption');
@@ -448,7 +461,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     if (!active) return;
     // runs after every command (a scrubbed slider too): the key reads no layout
     const h = Math.max(1, innerHeight); // the stage canvas is fixed to the viewport
-    const key = `${h}|${innerWidth}|${!!host.get(book.opened)?.figure}`;
+    const key = `${h}|${innerWidth}|${!!host.get(book.opened)?.figure}|${Math.round(Math.min(1, stage.rig.bookTilt * 4) * 100)}`;
     if (!force && key === reserveKey) return;
     reserveKey = key;
     const px = chromeReservePx();
@@ -461,12 +474,14 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
    * The top bar's band (CSS px) where it runs over the book: on phones its
    * pill spans the width, and on short landscape screens (data-short: no
    * caption band below) the height-bound book grows up to the top edge, so
-   * its head edge would run under the bar's title. Wider screens keep the
-   * bar in a corner over white space.
+   * its head edge would run under the bar's title. A frontal reading angle
+   * also fills that space on desktop; reserve the band progressively while
+   * leaving the original inclined framing unchanged.
    */
   function topReservePx() {
-    if (!topEl?.offsetHeight || !(isCompact() || ui.el?.hasAttribute('data-short'))) return 0;
-    return topEl.offsetTop + topEl.offsetHeight + 6;
+    if (!topEl?.offsetHeight) return 0;
+    const share = isCompact() || ui.el?.hasAttribute('data-short') ? 1 : Math.min(1, stage.rig.bookTilt * 4);
+    return (topEl.offsetTop + topEl.offsetHeight + 6) * share;
   }
 
   // ---------------------------------------------------------------- portrait: one page at a time
@@ -485,6 +500,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
   function showPage(side) {
     if (!stage.rig.isPortrait) side = 'right';
     if (side === portraitSide) return false;
+    narration.stop();
     portraitSide = side;
     if (active) applyPage();
     lastSpread = -1; // the title, reading text and announcement follow the framed page
@@ -581,13 +597,24 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
         return done;
       }
       case 'lang':
+        narration.stop();
         return askLang(c.lang);
+      case 'narration':
+        syncNarration();
+        return narration.toggle();
+      case 'narration-stop':
+        narration.stop();
+        break;
       case 'fullscreen':
         if (document.fullscreenElement) document.exitFullscreen?.();
         else document.documentElement.requestFullscreen?.().catch(() => {});
         break;
       case 'reset-view':
         stage.rig.reset();
+        break;
+      case 'book-view':
+        exitInspect();
+        stage.rig.setBookTilt(c.amount);
         break;
       case 'sound':
         state.sound = c.on ?? c.value ?? !state.sound;
@@ -596,6 +623,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
         ui.setSound?.(state.sound);
         break;
       case 'library':
+        narration.stop();
         onLibrary?.();
         break;
       case 'contents':
@@ -1445,7 +1473,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
   // ---------------------------------------------------------------- keyboard
   // The UI's SHORTCUTS table is the single source of truth (it also renders
   // the help card); a few extra reading keys are handled here: PageUp/Down,
-  // Home/End, + − 0 zoom, I inspect, [ ] turn the figure, and while
+  // Home/End, + − zoom, 0 reset, ↑ ↓ book tilt, I inspect, [ ] turn the figure, and while
   // inspecting ← → turn the figure and ↑ ↓ tilt the view (the same moves as
   // a horizontal / vertical drag there).
   const onKey = (e) => {
@@ -1478,6 +1506,9 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     if (extra) {
       e.preventDefault();
       command(extra);
+    } else if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+      e.preventDefault();
+      stage.rig.setBookTilt(stage.rig.bookTilt + (e.key === 'ArrowUp' ? 0.1 : -0.1));
     } else if (e.key === '+' || e.key === '=') stage.rig.zoomBy(1.25);
     else if (e.key === '-' || e.key === '_') stage.rig.zoomBy(0.8);
     else if (e.key === '0') stage.rig.reset();
@@ -1541,6 +1572,9 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     const p = plateBySpread.get(spread);
     const m = host.get(spread);
     const fig = m?.figure;
+    const beats = p?.plate.animation?.beats ?? host.beats(spread);
+    host.speed = recommendedPlaybackRate(beats, FIGURE_DURATION);
+    syncNarration();
     lastShown = shownKey();
     ui.setSpread?.({
       index: spread,
@@ -1555,7 +1589,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
       labels: state.labels,
       explode: m?.explodeTarget ?? 0,
       playing: host.playing,
-      beats: p?.plate.animation?.beats ?? host.beats(spread),
+      beats,
       animationTitle: p?.plate.animation?.title ?? '',
       duration: FIGURE_DURATION,
       canPrev: book.canPrev(),
@@ -1595,6 +1629,8 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
       syncUI();
     }),
     book.on('turnstart', ({ leaf, riffle }) => {
+      narrationSide = null;
+      narration.setPage(null);
       // both faces of a turning leaf and what it uncovers must be printed
       for (const s of [leaf * 2, leaf * 2 + 1, leaf * 2 + 2, leaf * 2 - 1]) ensureSide(s, !riffle);
       ui.setBusy?.(true);
@@ -2176,6 +2212,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
   let lastW = -1;
   let lastH = -1;
   let lastSingle = null;
+  let lastBookTilt = -1;
   function frame(dt) {
     // print queued pages within a small time budget (keeps turns smooth); a
     // riffle queues the faces of every leaf it flips: print only those still
@@ -2205,6 +2242,11 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     // a dissection crossing half-way shows or hides layers whose switches did not move
     if (shownKey() !== lastShown) syncUI();
     const canvas = renderer.domElement;
+    if (stage.rig.bookTilt !== lastBookTilt) {
+      lastBookTilt = stage.rig.bookTilt;
+      ui.setBookView?.({ amount: lastBookTilt });
+      reserveChrome();
+    }
     const w = canvas.clientWidth;
     const h = canvas.clientHeight;
     if (w !== lastW || h !== lastH) {
@@ -2514,6 +2556,9 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     setLayer: (id, on) => command({ type: 'layer', id, on }),
     setExplode: (a) => command({ type: 'explode', amount: a }),
     setLabels: (on) => command({ type: 'labels', on }),
+    narrate: () => command('narration'),
+    stopNarration: () => narration.stop(),
+    narrationInfo: () => ({ ...narration.state, page: narrationForLeftPage(sides, book.opened, lang) }),
     inspect: (on = true) => (on ? stage.rig.mode !== 'inspect' && toggleInspect() : exitInspect()),
     exportSVG: (mode = 'color') => exportSVG(mode),
     info() {
@@ -2532,8 +2577,10 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
         labels: m?.figure?.labels?.map((l) => l.id) ?? [],
         time: host.time,
         playing: host.playing,
+        playbackRate: host.speed,
         busy: book.busy,
         mode: stage.rig.mode,
+        bookView: { amount: stage.rig.bookTilt, elevation: THREE.MathUtils.radToDeg(stage.rig.currentElevation), zoom: stage.rig.zoom },
       };
     },
   };
@@ -2575,6 +2622,7 @@ export async function createReader({ renderer, backend, stage, bookId, params, r
     if (reprintHandle) cancelIdle(reprintHandle);
     reprint.clear();
     offAudio();
+    narration.dispose();
     audio.dispose?.();
     input.dispose?.();
     ui.destroy?.();

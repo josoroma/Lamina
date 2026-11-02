@@ -49,7 +49,7 @@ export { SHORTCUTS, SHORTCUT_GROUPS, matchShortcut, sanitizeHTML, solveColumn, c
 /** Every command type the UI can emit through onCommand. */
 export const UI_COMMANDS = Object.freeze([
   'next', 'prev', 'goto', 'play', 'pause', 'time', 'labels', 'layer', 'explode',
-  'export', 'fullscreen', 'reset-view', 'sound', 'library', 'contents', 'lang',
+  'export', 'fullscreen', 'reset-view', 'book-view', 'sound', 'narration', 'narration-stop', 'library', 'contents', 'lang',
 ]);
 
 /**
@@ -97,14 +97,14 @@ let instances = 0;
 /**
  * @typedef {Object} UICommand
  * @property {'next'|'prev'|'goto'|'play'|'pause'|'time'|'labels'|'layer'|'explode'|'export'
- *            |'fullscreen'|'reset-view'|'sound'|'library'|'contents'|'lang'} type
+ *            |'fullscreen'|'reset-view'|'book-view'|'sound'|'narration'|'narration-stop'|'library'|'contents'|'lang'} type
  * @property {number} [spread]   goto
  * @property {'left'|'right'} [page]  goto: the page of the spread a contents entry is printed on
  *           (a portrait screen frames that one; "How this book was made" shares the glossary's spread)
  * @property {number} [t]        time (seconds, 0..duration)
  * @property {boolean} [on]      labels, layer, sound
  * @property {string} [id]       layer
- * @property {number} [amount]   explode (0..1)
+ * @property {number} [amount]   explode or book-view (0..1)
  * @property {'svg-color'|'svg-line'|'png'} [mode]  export
  * @property {boolean} [open]    contents: notification that the drawer opened/closed
  * @property {'en'|'es'} [lang]  lang: the reader chose this language with the switch
@@ -187,6 +187,8 @@ export function createUI({
     t: 0,
     duration: 5,
     sound: false,
+    narration: { status: 'unavailable', available: false, error: '' },
+    bookView: 0,
     fullscreen: false,
     busy: false,
     backend: '',
@@ -219,7 +221,7 @@ export function createUI({
   const el = h('div', { class: 'lam-ui', 'data-lam-ui': uid });
   const live = h('div', { class: 'lam-sr-only', role: 'status', 'aria-live': 'polite', 'aria-atomic': 'true' });
 
-  // top bar: library link + book title + language switch (phones: plate label, switch, sound)
+  // top bar: library link + book title + language switch (phones: plate label, switch, narration)
   // (every string of the chrome is written by localize(), below)
   const libraryText = h('span', { class: 'lam-library-text' });
   const library = h('a', { class: 'lam-library', href: libraryHref }, icon('back'), libraryText);
@@ -231,13 +233,20 @@ export function createUI({
     { type: 'button', class: 'lam-top-plate', 'aria-haspopup': 'dialog', 'aria-expanded': 'false' },
     h('span', { class: 'lam-plate-line' }, topNum, topName)
   );
-  // narrow phones: the sound switch moves up here so every toolbar button keeps a 44 px target
-  const topSound = h(
+  // Narration occupies the former sound slot; quiet paper effects live in Help.
+  // Narrow phones move narration here, keeping every target at least 44 px.
+  const narrationIcons = () => [icon('headphones'), icon('pause'), icon('play'), busyRing()];
+  const topNarration = h(
     'button',
-    { type: 'button', class: 'lam-btn lam-sound-btn lam-top-sound', 'aria-pressed': 'false' },
-    icon('soundOff'),
-    icon('soundOn')
+    { type: 'button', class: 'lam-btn lam-narration-btn lam-top-narration', 'aria-pressed': 'false' },
+    narrationIcons()
   );
+  const topNarrationStop = h('button', { type: 'button', class: 'lam-btn lam-top-narration-stop', hidden: true, disabled: true }, icon('stop'));
+  const bookViewText = h('span', { class: 'lam-book-view-text' });
+  const bBookView = h('button', {
+    type: 'button', class: 'lam-btn lam-book-view-btn', 'aria-haspopup': 'dialog',
+    'aria-expanded': 'false', 'aria-controls': `${uid}-book-view`,
+  }, icon('book'), bookViewText);
   const langSwitch = createLangSwitch({ value: state.lang, size: 'auto', className: 'lam-top-lang', onChange: (lang) => requestLang(lang) });
   const top = h(
     'header',
@@ -248,7 +257,9 @@ export function createUI({
     topPlate,
     h('span', { class: 'lam-top-rule lam-top-rule-lang', 'aria-hidden': 'true' }),
     langSwitch.el,
-    topSound
+    bBookView,
+    topNarration,
+    topNarrationStop
   );
   const helpBtn = h(
     'button',
@@ -279,11 +290,13 @@ export function createUI({
   bExport.append(busyRing());
   const bSound = toolBtn('sound', 'soundOff', { 'aria-pressed': 'false' });
   bSound.append(icon('soundOn'));
+  const bNarration = h('button', { type: 'button', class: 'lam-btn lam-narration-btn', 'aria-pressed': 'false' }, narrationIcons());
+  const bNarrationStop = h('button', { type: 'button', class: 'lam-btn lam-narration-stop-btn', disabled: true }, icon('stop'));
   const bFull = toolBtn('fs', 'fullscreen', { 'aria-pressed': 'false', 'data-key': 'F' });
   bFull.append(icon('fullscreenExit'));
   // the sheet carries whatever the spread prints: plate text, introduction, afterword, glossary, imprint
   const bRead = h('button', { type: 'button', class: 'lam-btn lam-read-btn', 'aria-haspopup': 'dialog', hidden: true });
-  const bar = h('nav', { class: 'lam-bar' }, bContents, bPrev, bPlay, bPlate, bNext, divider, bLayers, bExport, bSound, bFull, bRead);
+  const bar = h('nav', { class: 'lam-bar' }, bContents, bPrev, bPlay, bPlate, bNext, divider, bLayers, bExport, bNarration, bFull, bRead);
   // measures the plate label's candidate texts off screen (fitPlateWidth)
   const plateMeasure = h('div', { class: 'lam-plate-measure', 'aria-hidden': 'true' });
 
@@ -302,6 +315,7 @@ export function createUI({
   const popLayers = new Popover({ id: `${uid}-layers`, width: 320, className: 'lam-pop-layers', avoidFigure: true });
   const popExport = new Popover({ id: `${uid}-export`, role: 'menu', width: 316, className: 'lam-pop-export' });
   const popHelp = new Popover({ id: `${uid}-help`, placement: 'bottom', width: 344, className: 'lam-pop-help' });
+  const popBookView = new Popover({ id: `${uid}-book-view`, placement: 'bottom', width: 304, className: 'lam-pop-book-view' });
   const drawer = new ContentsDrawer({
     idPrefix: uid,
     onGoto: (spread, page) => {
@@ -310,10 +324,12 @@ export function createUI({
     },
     onRequestClose: () => closeDrawer(),
   });
+  const drawerBookView = h('button', { type: 'button', class: 'lam-drawer-book-view', 'aria-haspopup': 'dialog', 'aria-controls': `${uid}-book-view` }, icon('book'), h('span'));
+  drawer.el.insertBefore(drawerBookView, drawer.nav);
   const sheet = new ReadingSheet({ idPrefix: uid, onRequestClose: () => closeSheet() });
   const srReading = h('section', { class: 'lam-sr-only' });
 
-  el.append(caption, toasts, tip, popLayers.el, popExport.el, popHelp.el, drawer.scrim, drawer.el, sheet.scrim, sheet.el, srReading, live);
+  el.append(caption, toasts, tip, popLayers.el, popExport.el, popHelp.el, popBookView.el, drawer.scrim, drawer.el, sheet.scrim, sheet.el, srReading, live);
   (root ?? document.body).append(el);
 
   // ------------------------------------------------------------------ helpers
@@ -361,6 +377,14 @@ export function createUI({
     fitLibraryWidth(false);
     if (openPop) {
       if (openPop === popLayers) buildLayers(); // a phone ↔ wide change reorders it
+      if (openPop === popBookView) {
+        const anchor = bookViewAnchor();
+        if (openPop.trigger !== anchor) {
+          openPop.trigger?.setAttribute('aria-expanded', 'false');
+          openPop.trigger = anchor;
+          anchor.setAttribute('aria-expanded', 'true');
+        }
+      }
       openPop.place(frame());
       coverLabels();
     }
@@ -481,7 +505,7 @@ export function createUI({
     // everything else in the bar, at its awake size (figure tools included, so turning
     // to a spread without a figure never changes the label's width)
     const btnW = mqCoarse.matches ? 44 : 40;
-    const buttons = [bContents, bPrev, bPlay, bNext, bLayers, bExport, bSound, bFull].filter((b) => !b.hidden).length;
+    const buttons = [bContents, bPrev, bPlay, bNext, bLayers, bExport, bNarration, bFull].filter((b) => !b.hidden).length;
     const others = 12 + 13 + buttons * btnW + (bRead.offsetWidth || 0);
     const cap = Math.max(PLATE_MIN_W, Math.min(PLATE_MAX_W, vw - others - 24));
     const w = Math.round(clamp(plateNeed + PLATE_PAD, PLATE_MIN_W, cap));
@@ -565,8 +589,50 @@ export function createUI({
   }
 
   function syncSound() {
-    for (const b of [bSound, topSound]) b.setAttribute('aria-pressed', String(state.sound));
+    bSound.setAttribute('aria-pressed', String(state.sound));
     bSound.dataset.tip = state.sound ? t('Sound on') : t('Sound off');
+  }
+
+  function syncNarration() {
+    const n = state.narration;
+    const label = !n.available ? t('No text on the left page')
+      : n.status === 'loading' ? t('Preparing narration. Cancel')
+      : n.status === 'playing' ? t('Pause narration')
+      : n.status === 'paused' ? t('Resume narration')
+      : n.status === 'ended' ? t('Read the left page again')
+      : n.status === 'error' ? t('Try reading the left page again')
+      : t('Listen to the left page');
+    for (const b of [bNarration, topNarration]) {
+      tool(b, label);
+      b.disabled = !n.available;
+      b.dataset.status = n.status;
+      b.classList.toggle('is-busy', n.status === 'loading');
+      b.setAttribute('aria-pressed', String(n.status === 'playing'));
+      b.setAttribute('aria-busy', String(n.status === 'loading'));
+    }
+    const canStop = n.available && ['loading', 'playing', 'paused'].includes(n.status);
+    bNarrationStop.disabled = !canStop;
+    topNarrationStop.disabled = !canStop;
+    topNarrationStop.hidden = !canStop;
+  }
+
+  /** Narration belongs to the App; the UI only reflects its state. */
+  function setNarration(next = {}) {
+    const old = state.narration;
+    const allowed = ['idle', 'loading', 'playing', 'paused', 'ended', 'error', 'unavailable'];
+    const status = allowed.includes(next.status) ? next.status : old.status;
+    state.narration = { status, available: next.available == null ? old.available : !!next.available, error: String(next.error ?? '') };
+    syncNarration();
+    if (status !== old.status && !['idle', 'unavailable'].includes(status)) {
+      const message = status === 'loading' ? t('Preparing narration…')
+        : status === 'playing' ? t('Reading the left page')
+        : status === 'paused' ? t('Narration paused')
+        : status === 'ended' ? t('Finished reading the left page')
+        : state.narration.error || t('Narration could not be loaded. Try again.');
+      if (status === 'error') toast(message, { duration: 5500 });
+      else announce(message);
+      activity();
+    }
   }
 
   const fsEnabled = !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
@@ -702,7 +768,7 @@ export function createUI({
     const timeField = h(
       'div',
       { class: 'lam-field', dataset: { field: 'time' } },
-      h('div', { class: 'lam-field-head' }, icon('clock'), h('span', { class: 'lam-field-title' }, t('Moment')), h('span', { class: 'lam-field-note' }, t('scrub the 5-second loop')), timeOut),
+      h('div', { class: 'lam-field-head' }, icon('clock'), h('span', { class: 'lam-field-title' }, t('Moment')), h('span', { class: 'lam-field-note' }, t('Choose a moment')), timeOut),
       h('div', { class: 'lam-range-wrap' }, ticks, timeInput)
     );
     const sep = () => h('div', { class: 'lam-sep', role: 'separator' });
@@ -893,6 +959,51 @@ export function createUI({
     }
   }
 
+  // ------------------------------------------------------------------ reading angle
+  // These controls stay mounted, so a live camera update or language switch
+  // never replaces the slider while it owns pointer or keyboard focus.
+  const bookViewLabel = h('label', { class: 'lam-field-title', for: `${uid}-book-angle` });
+  const bookViewOut = h('output', { class: 'lam-field-value', for: `${uid}-book-angle`, 'aria-hidden': 'true' });
+  const bookViewInput = h('input', {
+    type: 'range', id: `${uid}-book-angle`, class: 'lam-range lam-range-book-view',
+    min: '0', max: '100', step: '1', value: '0', 'aria-describedby': `${uid}-book-angle-hint`,
+  });
+  const inclinedPreset = h('button', { type: 'button', class: 'lam-view-preset', 'aria-pressed': 'true' });
+  const frontPreset = h('button', { type: 'button', class: 'lam-view-preset', 'aria-pressed': 'false' });
+  const bookViewHint = h('p', { id: `${uid}-book-angle-hint`, class: 'lam-view-hint' });
+  popBookView.el.append(h('div', { class: 'lam-pop-body' },
+    h('div', { class: 'lam-field' },
+      h('div', { class: 'lam-field-head' }, bookViewLabel, bookViewOut),
+      h('div', { class: 'lam-range-wrap' }, bookViewInput)),
+    h('div', { class: 'lam-view-presets' }, inclinedPreset, frontPreset), bookViewHint));
+  function syncBookView() {
+    const percent = Math.round(state.bookView * 100);
+    if (+bookViewInput.value !== percent) bookViewInput.value = String(percent);
+    setRangeFill(bookViewInput);
+    bookViewOut.textContent = fmtPercent(state.bookView);
+    bookViewInput.setAttribute('aria-valuetext', percent === 0 ? t('Inclined view') : percent === 100 ? t('Front view') : t('{n} percent', { n: percent }));
+    inclinedPreset.setAttribute('aria-pressed', String(percent === 0));
+    frontPreset.setAttribute('aria-pressed', String(percent === 100));
+  }
+  function setBookView({ amount } = {}) {
+    if (!Number.isFinite(amount)) return;
+    const next = clamp(amount, 0, 1);
+    if (state.bookView === next) return;
+    state.bookView = next;
+    syncBookView();
+  }
+  function changeBookView(amount) {
+    setBookView({ amount });
+    emit({ type: 'book-view', amount: state.bookView });
+    activity();
+  }
+  bookViewInput.addEventListener('input', () => changeBookView(+bookViewInput.value / 100));
+  inclinedPreset.addEventListener('click', () => changeBookView(0));
+  frontPreset.addEventListener('click', () => changeBookView(1));
+  function bookViewAnchor() {
+    return bBookView.offsetParent !== null ? bBookView : topPlate;
+  }
+
   // ------------------------------------------------------------------ help card
   const helpBody = h('div', { class: 'lam-pop-body' });
   popHelp.el.append(helpBody);
@@ -927,6 +1038,11 @@ export function createUI({
     ];
     const be = state.backend ? backendName(state.backend) : '';
     const parts = SHORTCUT_GROUPS.flatMap(([id, heading], i) => [i ? h('div', { class: 'lam-sep', role: 'separator' }) : null, ...group(id, heading)]);
+    parts.push(
+      h('div', { class: 'lam-sep', role: 'separator' }),
+      h('div', { class: 'lam-help-audio' }, h('span', null, t('Stop narration')), bNarrationStop),
+      h('div', { class: 'lam-help-audio' }, h('span', null, t('Page-turn sounds')), bSound)
+    );
     if (be) {
       parts.push(
         h(
@@ -1075,6 +1191,7 @@ export function createUI({
     export: { open: (kb) => state.hasFigure && openPopover(popExport, bExport, kb), close: () => openPop === popExport && closePopover(), is: () => openPop === popExport },
     help: { open: (kb) => openPopover(popHelp, helpAnchor(), kb), close: () => openPop === popHelp && closePopover(), is: () => openPop === popHelp },
     reading: { open: () => openSheet(), close: () => closeSheet(), is: () => sheet.isOpen },
+    'book-view': { open: (kb) => openPopover(popBookView, bookViewAnchor(), kb), close: () => openPop === popBookView && closePopover(), is: () => openPop === popBookView },
   };
 
   // ------------------------------------------------------------------ actions
@@ -1150,9 +1267,14 @@ export function createUI({
     [bLayers, (e) => togglePopover(popLayers, bLayers, e.detail === 0)],
     [bExport, (e) => togglePopover(popExport, bExport, e.detail === 0)],
     [helpBtn, (e) => togglePopover(popHelp, helpAnchor(), e.detail === 0)],
+    [bBookView, (e) => togglePopover(popBookView, bBookView, e.detail === 0)],
+    [drawerBookView, (e) => { closeDrawer(false); openPopover(popBookView, bookViewAnchor(), e.detail === 0); }],
     [bRead, () => openSheet()],
     [bSound, toggleSound],
-    [topSound, toggleSound],
+    [bNarration, () => emit({ type: state.narration.status === 'loading' ? 'narration-stop' : 'narration' })],
+    [topNarration, () => emit({ type: state.narration.status === 'loading' ? 'narration-stop' : 'narration' })],
+    [bNarrationStop, () => emit({ type: 'narration-stop' })],
+    [topNarrationStop, () => emit({ type: 'narration-stop' })],
     [bFull, () => emit({ type: 'fullscreen' })],
   ]);
   for (const [btn, fn] of clickHandlers) {
@@ -1210,7 +1332,7 @@ export function createUI({
     if (t.closest?.('button')) return e.key === ' ' || e.key === 'Enter';
     return isEditable(t);
   }
-  for (const pop of [popLayers, popExport, popHelp]) {
+  for (const pop of [popLayers, popExport, popHelp, popBookView]) {
     pop.el.addEventListener('focusout', (e) => {
       const to = e.relatedTarget;
       if (openPop === pop && to && !pop.el.contains(to) && !pop.trigger?.contains(to)) closePopover(false);
@@ -1263,6 +1385,7 @@ export function createUI({
 
   function canIdle() {
     if (!idleHide || state.reducedMotion || mqCoarse.matches || hovering || dragging) return false;
+    if (['loading', 'playing', 'paused'].includes(state.narration.status)) return false;
     if (openPop || drawer.isOpen || sheet.isOpen || overlay.hasPinnedCard) return false;
     const a = document.activeElement;
     if (a && a !== document.body && el.contains(a) && a.matches(':focus-visible')) return false;
@@ -1623,15 +1746,24 @@ export function createUI({
   function localize({ defer = false } = {}) {
     library.setAttribute('aria-label', t('Back to the library'));
     libraryText.textContent = t('Library');
-    topSound.setAttribute('aria-label', t('Sound'));
     tool(helpBtn, t('Keyboard shortcuts'));
+    tool(bBookView, t('Book view'));
+    bookViewText.textContent = t('Book view');
+    drawerBookView.querySelector('span').textContent = t('Book view');
+    bookViewLabel.textContent = t('Angle of the book');
+    inclinedPreset.textContent = t('Inclined view');
+    frontPreset.textContent = t('Front view');
+    bookViewHint.textContent = t('Drag up or down outside the book to adjust its angle.');
+    syncBookView();
     tool(bContents, t('Contents'));
     tool(bPrev, t('Previous page'));
     tool(bNext, t('Next page'));
     tool(bLayers, t('Layers & dissection'));
     bExport.setAttribute('aria-label', t('Export'));
     syncExportTip();
-    bSound.setAttribute('aria-label', t('Sound'));
+    bSound.setAttribute('aria-label', t('Page-turn sounds'));
+    tool(bNarrationStop, t('Stop narration'));
+    tool(topNarrationStop, t('Stop narration'));
     bFull.setAttribute('aria-label', t('Full screen'));
     bPlay.dataset.key = keyCap('Space');
     bRead.setAttribute('aria-label', t('Read this page'));
@@ -1641,6 +1773,7 @@ export function createUI({
     popLayers.setLabel(t('Layers and dissection'));
     popExport.setLabel(t('Export'));
     popHelp.setLabel(t('Keyboard shortcuts'));
+    popBookView.setLabel(t('Book view'));
     // generated text in CSS (the look-closer rows' cue, in the reading sheet): a CSS
     // string, set on the sheet so a new word restyles that subtree, not the whole chrome
     sheet.el.style.setProperty('--lam-t-show', JSON.stringify(t('Show')));
@@ -1651,6 +1784,7 @@ export function createUI({
     overlay.localize();
     syncPlay();
     syncSound();
+    syncNarration();
     syncFullscreen();
     renderPlate(false, { fit: !defer });
     placeNarration();
@@ -1689,6 +1823,9 @@ export function createUI({
     if (a === openPop.el) return { self: true };
     if (a === explodeInput) return { field: 'explode' };
     if (a === timeInput) return { field: 'time' };
+    if (a === bookViewInput) return { field: 'book-view' };
+    if (a === inclinedPreset) return { field: 'inclined' };
+    if (a === frontPreset) return { field: 'front' };
     if (a.dataset?.layer) return { layer: a.dataset.layer };
     if (a.dataset?.labels) return { labels: true };
     if (a.dataset?.mode) return { mode: a.dataset.mode };
@@ -1699,6 +1836,9 @@ export function createUI({
     let to = null;
     if (k.field === 'explode') to = explodeInput;
     else if (k.field === 'time') to = timeInput;
+    else if (k.field === 'book-view') to = bookViewInput;
+    else if (k.field === 'inclined') to = inclinedPreset;
+    else if (k.field === 'front') to = frontPreset;
     else if (k.layer) to = layersBody.querySelector(`[data-layer="${CSS.escape(k.layer)}"]`);
     else if (k.labels) to = labelsRow;
     else if (k.mode) to = exportBody.querySelector(`[data-mode="${CSS.escape(k.mode)}"]`);
@@ -1901,6 +2041,8 @@ export function createUI({
     setTheme,
     setBook,
     setSound,
+    setNarration,
+    setBookView,
     setLang,
     /** The language the chrome is in. */
     get lang() {
@@ -1946,9 +2088,9 @@ export function createUI({
     },
     /** @returns {boolean} true if it was open */
     closeContents: () => closeDrawer(),
-    /** @param {'contents'|'layers'|'export'|'help'|'reading'} name */
+    /** @param {'contents'|'layers'|'export'|'help'|'reading'|'book-view'} name */
     open: (name) => SURFACES[name]?.open(keyboardModality),
-    /** @param {'contents'|'layers'|'export'|'help'|'reading'} [name]  omit to close everything */
+    /** @param {'contents'|'layers'|'export'|'help'|'reading'|'book-view'} [name]  omit to close everything */
     close: (name) => {
       if (name) return !!SURFACES[name]?.close();
       let any = false;
@@ -1956,9 +2098,9 @@ export function createUI({
       overlay.closeCard();
       return any;
     },
-    /** @param {'contents'|'layers'|'export'|'help'|'reading'} name */
+    /** @param {'contents'|'layers'|'export'|'help'|'reading'|'book-view'} name */
     toggle: (name) => (SURFACES[name]?.is() ? SURFACES[name].close() : SURFACES[name]?.open(keyboardModality)),
-    /** @param {'contents'|'layers'|'export'|'help'|'reading'} name */
+    /** @param {'contents'|'layers'|'export'|'help'|'reading'|'book-view'} name */
     isOpen: (name) => !!SURFACES[name]?.is(),
     /** Snapshot of the UI state (for automation and tests). */
     getState: () => ({
@@ -1975,6 +2117,8 @@ export function createUI({
       t: state.t,
       beat: state.beat,
       sound: state.sound,
+      narration: { ...state.narration },
+      bookView: state.bookView,
       busy: state.busy,
       idle: state.idle,
       compact: state.compact,
